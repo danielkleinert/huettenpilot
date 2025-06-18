@@ -1,0 +1,2638 @@
+[
+  {
+    "hutId": 1,
+    "hutName": "Blüemlisalphütte SAC"
+  },
+  {
+    "hutId": 2,
+    "hutName": "Glecksteinhütte SAC"
+  },
+  {
+    "hutId": 3,
+    "hutName": "Capanna da l'Albigna CAS"
+  },
+  {
+    "hutId": 4,
+    "hutName": "Kesch-Hütte SAC"
+  },
+  {
+    "hutId": 5,
+    "hutName": "Lidernenhütte SAC"
+  },
+  {
+    "hutId": 6,
+    "hutName": "Monte Rosa Hütte SAC"
+  },
+  {
+    "hutId": 7,
+    "hutName": "Capanna di Sciora CAS"
+  },
+  {
+    "hutId": 8,
+    "hutName": "Capanna Basòdino (Robiei) CAS"
+  },
+  {
+    "hutId": 9,
+    "hutName": "Britanniahütte SAC"
+  },
+  {
+    "hutId": 10,
+    "hutName": "Cabane des Dix CAS"
+  },
+  {
+    "hutId": 11,
+    "hutName": "Doldenhornhütte SAC"
+  },
+  {
+    "hutId": 12,
+    "hutName": "Konkordiahütte SAC"
+  },
+  {
+    "hutId": 13,
+    "hutName": "Leglerhütte SAC"
+  },
+  {
+    "hutId": 14,
+    "hutName": "Mutthornhütte SAC"
+  },
+  {
+    "hutId": 15,
+    "hutName": "Oberaarjochhütte SAC"
+  },
+  {
+    "hutId": 16,
+    "hutName": "Terrihütte SAC"
+  },
+  {
+    "hutId": 17,
+    "hutName": "Geltenhütte SAC"
+  },
+  {
+    "hutId": 18,
+    "hutName": "Capanna del Forno CAS"
+  },
+  {
+    "hutId": 19,
+    "hutName": "Fründenhütte SAC"
+  },
+  {
+    "hutId": 20,
+    "hutName": "Capanna Cristallina CAS"
+  },
+  {
+    "hutId": 21,
+    "hutName": "Badushütte"
+  },
+  {
+    "hutId": 22,
+    "hutName": "Cabane des Diablerets CAS"
+  },
+  {
+    "hutId": 23,
+    "hutName": "Bächlitalhütte SAC"
+  },
+  {
+    "hutId": 24,
+    "hutName": "Hohganthütte"
+  },
+  {
+    "hutId": 25,
+    "hutName": "Chamanna d'Es-cha CAS"
+  },
+  {
+    "hutId": 26,
+    "hutName": "Camona da Maighels CAS"
+  },
+  {
+    "hutId": 27,
+    "hutName": "Gaulihütte SAC"
+  },
+  {
+    "hutId": 28,
+    "hutName": "Trifthütte SAC"
+  },
+  {
+    "hutId": 29,
+    "hutName": "Tällihütte"
+  },
+  {
+    "hutId": 30,
+    "hutName": "Zwinglipasshütte"
+  },
+  {
+    "hutId": 31,
+    "hutName": "Dossenhütte SAC"
+  },
+  {
+    "hutId": 32,
+    "hutName": "Hundsteinhütte SAC"
+  },
+  {
+    "hutId": 33,
+    "hutName": "Chamonna Tuoi CAS"
+  },
+  {
+    "hutId": 34,
+    "hutName": "Capanna Cadlimo CAS"
+  },
+  {
+    "hutId": 35,
+    "hutName": "Hörnlihütte - Matterhorn Base Camp"
+  },
+  {
+    "hutId": 36,
+    "hutName": "Capanna Campo Tencia CAS"
+  },
+  {
+    "hutId": 37,
+    "hutName": "Brunnihütte"
+  },
+  {
+    "hutId": 38,
+    "hutName": "Capanna Sasc Furä CAS"
+  },
+  {
+    "hutId": 39,
+    "hutName": "Glattalphütte SAC"
+  },
+  {
+    "hutId": 40,
+    "hutName": "Bärgbeizli Underbärgli"
+  },
+  {
+    "hutId": 41,
+    "hutName": "Rugghubelhütte SAC"
+  },
+  {
+    "hutId": 42,
+    "hutName": "Capanna Adula CAS"
+  },
+  {
+    "hutId": 43,
+    "hutName": "Cabane du Vélan CAS"
+  },
+  {
+    "hutId": 44,
+    "hutName": "Gspaltenhornhütte SAC"
+  },
+  {
+    "hutId": 45,
+    "hutName": "Windgällenhütte AACZ"
+  },
+  {
+    "hutId": 46,
+    "hutName": "Carschinahütte SAC"
+  },
+  {
+    "hutId": 47,
+    "hutName": "Oberaletschhütte SAC"
+  },
+  {
+    "hutId": 48,
+    "hutName": "Cabane des Violettes CAS"
+  },
+  {
+    "hutId": 49,
+    "hutName": "Capanna Bovarina"
+  },
+  {
+    "hutId": 50,
+    "hutName": "Chamanna Cluozza"
+  },
+  {
+    "hutId": 51,
+    "hutName": "Täschhütte SAC"
+  },
+  {
+    "hutId": 52,
+    "hutName": "Berghaus Männdlenen"
+  },
+  {
+    "hutId": 53,
+    "hutName": "Igloo des Pantalons Blancs"
+  },
+  {
+    "hutId": 54,
+    "hutName": "Grathaus Moron"
+  },
+  {
+    "hutId": 55,
+    "hutName": "Chelenalphütte SAC"
+  },
+  {
+    "hutId": 57,
+    "hutName": "Spitzsteinhaus"
+  },
+  {
+    "hutId": 58,
+    "hutName": "Neue Prager Hütte"
+  },
+  {
+    "hutId": 60,
+    "hutName": "Chalet de Roseyres"
+  },
+  {
+    "hutId": 61,
+    "hutName": "Dümlerhütte ÖAV"
+  },
+  {
+    "hutId": 62,
+    "hutName": "Glungezer-Hütte"
+  },
+  {
+    "hutId": 63,
+    "hutName": "Ascher Hütte"
+  },
+  {
+    "hutId": 64,
+    "hutName": "La Borbuintze"
+  },
+  {
+    "hutId": 65,
+    "hutName": "Wildstrubelhütte SAC"
+  },
+  {
+    "hutId": 66,
+    "hutName": "Gelmerhütte SAC"
+  },
+  {
+    "hutId": 67,
+    "hutName": "Cabane Barraud"
+  },
+  {
+    "hutId": 68,
+    "hutName": "Chalet Lacombe"
+  },
+  {
+    "hutId": 69,
+    "hutName": "Rotstockhütte"
+  },
+  {
+    "hutId": 72,
+    "hutName": "Bettelwurf-Hütte"
+  },
+  {
+    "hutId": 73,
+    "hutName": "Höllentalangerhütte"
+  },
+  {
+    "hutId": 74,
+    "hutName": "Cabane du Petit Mountet"
+  },
+  {
+    "hutId": 75,
+    "hutName": "Schesaplana Hütte"
+  },
+  {
+    "hutId": 76,
+    "hutName": "Refuge des Petoudes"
+  },
+  {
+    "hutId": 77,
+    "hutName": "Mönchsjochhütte"
+  },
+  {
+    "hutId": 78,
+    "hutName": "Chamonna Lischana CAS"
+  },
+  {
+    "hutId": 79,
+    "hutName": "Klostertaler Umwelthütte"
+  },
+  {
+    "hutId": 80,
+    "hutName": "Silvrettahütte SAC"
+  },
+  {
+    "hutId": 81,
+    "hutName": "Blaueishütte"
+  },
+  {
+    "hutId": 82,
+    "hutName": "Hallerangerhaus"
+  },
+  {
+    "hutId": 83,
+    "hutName": "Fritz-Putz Hütte"
+  },
+  {
+    "hutId": 84,
+    "hutName": "Stöhrhaus"
+  },
+  {
+    "hutId": 85,
+    "hutName": "Staufner Haus"
+  },
+  {
+    "hutId": 86,
+    "hutName": "Frassen-Hütte"
+  },
+  {
+    "hutId": 87,
+    "hutName": "Karwendelhaus"
+  },
+  {
+    "hutId": 88,
+    "hutName": "Sarotla-Hütte"
+  },
+  {
+    "hutId": 89,
+    "hutName": "Heinrich-Hueter-Hütte"
+  },
+  {
+    "hutId": 90,
+    "hutName": "Freschen-Haus"
+  },
+  {
+    "hutId": 91,
+    "hutName": "Tilisuna-Hütte"
+  },
+  {
+    "hutId": 92,
+    "hutName": "Totalp-Hütte"
+  },
+  {
+    "hutId": 93,
+    "hutName": "Peter-Anich-Hütte"
+  },
+  {
+    "hutId": 94,
+    "hutName": "Klinkehütte"
+  },
+  {
+    "hutId": 95,
+    "hutName": "Kaltenberghütte"
+  },
+  {
+    "hutId": 96,
+    "hutName": "Neue Reutlinger Hütte"
+  },
+  {
+    "hutId": 97,
+    "hutName": "Freiburgerhütte"
+  },
+  {
+    "hutId": 98,
+    "hutName": "Edmund-Graf-Hütte"
+  },
+  {
+    "hutId": 99,
+    "hutName": "Bergheim Au"
+  },
+  {
+    "hutId": 100,
+    "hutName": "Gaudeamushütte"
+  },
+  {
+    "hutId": 101,
+    "hutName": "Saupsdorfer Hütte"
+  },
+  {
+    "hutId": 103,
+    "hutName": "Neue Heilbronner Hütte"
+  },
+  {
+    "hutId": 104,
+    "hutName": "Rotwandhaus"
+  },
+  {
+    "hutId": 105,
+    "hutName": "Berliner Hütte"
+  },
+  {
+    "hutId": 106,
+    "hutName": "Goiserer Hütte"
+  },
+  {
+    "hutId": 107,
+    "hutName": "Bergsteigerunterkunft Lauschige Ecke"
+  },
+  {
+    "hutId": 108,
+    "hutName": "Gablonzer Hütte"
+  },
+  {
+    "hutId": 109,
+    "hutName": "Zollnersee-Hütte"
+  },
+  {
+    "hutId": 110,
+    "hutName": "Geraerhütte"
+  },
+  {
+    "hutId": 111,
+    "hutName": "Hofpürgl-Hütte"
+  },
+  {
+    "hutId": 112,
+    "hutName": "Linzerhaus / Wurzeralm"
+  },
+  {
+    "hutId": 113,
+    "hutName": "Linzer Tauplitz-Haus"
+  },
+  {
+    "hutId": 114,
+    "hutName": "Alpenrosenhütte im Brixental"
+  },
+  {
+    "hutId": 115,
+    "hutName": "Rüsselsheimer Hütte"
+  },
+  {
+    "hutId": 116,
+    "hutName": "Neue Bamberger Hütte"
+  },
+  {
+    "hutId": 117,
+    "hutName": "Mödlinger Hütte"
+  },
+  {
+    "hutId": 118,
+    "hutName": "Nebelsteinhütte"
+  },
+  {
+    "hutId": 119,
+    "hutName": "Olpererhütte"
+  },
+  {
+    "hutId": 121,
+    "hutName": "Hannoverhaus"
+  },
+  {
+    "hutId": 122,
+    "hutName": "Greizer Hütte"
+  },
+  {
+    "hutId": 123,
+    "hutName": "Lizumer Hütte"
+  },
+  {
+    "hutId": 124,
+    "hutName": "Nürnberger Hütte"
+  },
+  {
+    "hutId": 125,
+    "hutName": "Edelweiss-Hütte am Schneeberg"
+  },
+  {
+    "hutId": 126,
+    "hutName": "Meraner Hütte"
+  },
+  {
+    "hutId": 127,
+    "hutName": "Dortmunder Hütte"
+  },
+  {
+    "hutId": 128,
+    "hutName": "Reintalangerhütte"
+  },
+  {
+    "hutId": 129,
+    "hutName": "Neue Magdeburger Hütte"
+  },
+  {
+    "hutId": 130,
+    "hutName": "Hochrieshütte"
+  },
+  {
+    "hutId": 131,
+    "hutName": "Dessauer Hütte"
+  },
+  {
+    "hutId": 132,
+    "hutName": "Clarahütte"
+  },
+  {
+    "hutId": 133,
+    "hutName": "Essener und Rostocker Hütte"
+  },
+  {
+    "hutId": 135,
+    "hutName": "Capanna Scaletta"
+  },
+  {
+    "hutId": 136,
+    "hutName": "Richterhütte"
+  },
+  {
+    "hutId": 138,
+    "hutName": "Oberlandhütte"
+  },
+  {
+    "hutId": 139,
+    "hutName": "Lenggrieser Hütte"
+  },
+  {
+    "hutId": 140,
+    "hutName": "Memminger Hütte"
+  },
+  {
+    "hutId": 141,
+    "hutName": "Peter-Wiechenthaler-Hütte"
+  },
+  {
+    "hutId": 142,
+    "hutName": "Hinteralm-Haus"
+  },
+  {
+    "hutId": 143,
+    "hutName": "Bremer Hütte"
+  },
+  {
+    "hutId": 144,
+    "hutName": "Ingolstädter Haus"
+  },
+  {
+    "hutId": 145,
+    "hutName": "Riemannhaus"
+  },
+  {
+    "hutId": 146,
+    "hutName": "Annaberger Haus"
+  },
+  {
+    "hutId": 147,
+    "hutName": "Julius-Seitner-Hütte"
+  },
+  {
+    "hutId": 148,
+    "hutName": "Gufferthütte"
+  },
+  {
+    "hutId": 149,
+    "hutName": "Knorrhütte"
+  },
+  {
+    "hutId": 150,
+    "hutName": "Münchner Haus"
+  },
+  {
+    "hutId": 151,
+    "hutName": "Watzmannhaus"
+  },
+  {
+    "hutId": 152,
+    "hutName": "Heinrich-Schwaiger-Haus"
+  },
+  {
+    "hutId": 153,
+    "hutName": "Schweinfurter Hütte"
+  },
+  {
+    "hutId": 154,
+    "hutName": "Gruttenhütte"
+  },
+  {
+    "hutId": 155,
+    "hutName": "DAV Edelweisshaus"
+  },
+  {
+    "hutId": 156,
+    "hutName": "Bordierhütte SAC"
+  },
+  {
+    "hutId": 157,
+    "hutName": "Chamanna Jenatsch CAS"
+  },
+  {
+    "hutId": 158,
+    "hutName": "Grünburger Hütte"
+  },
+  {
+    "hutId": 159,
+    "hutName": "Salm-Hütte"
+  },
+  {
+    "hutId": 160,
+    "hutName": "Muttekopf-Hütte"
+  },
+  {
+    "hutId": 161,
+    "hutName": "Berglihütte SAC"
+  },
+  {
+    "hutId": 162,
+    "hutName": "Neue Bonner Hütte"
+  },
+  {
+    "hutId": 163,
+    "hutName": "Tölzer Hütte am Schafreuter"
+  },
+  {
+    "hutId": 164,
+    "hutName": "Wildhornhütte SAC"
+  },
+  {
+    "hutId": 165,
+    "hutName": "Cufercalhütte SAC"
+  },
+  {
+    "hutId": 166,
+    "hutName": "Topalihütte SAC"
+  },
+  {
+    "hutId": 167,
+    "hutName": "Chamanna dal Linard CAS"
+  },
+  {
+    "hutId": 168,
+    "hutName": "Capanna Monte Bar"
+  },
+  {
+    "hutId": 169,
+    "hutName": "Gamshütte"
+  },
+  {
+    "hutId": 170,
+    "hutName": "Friesenberghaus"
+  },
+  {
+    "hutId": 171,
+    "hutName": "Riffelseehütte"
+  },
+  {
+    "hutId": 172,
+    "hutName": "Anton-Karg-Haus"
+  },
+  {
+    "hutId": 173,
+    "hutName": "Gepatschhaus"
+  },
+  {
+    "hutId": 174,
+    "hutName": "Bad Kissinger Hütte"
+  },
+  {
+    "hutId": 175,
+    "hutName": "Bietschhornhütte AACB"
+  },
+  {
+    "hutId": 176,
+    "hutName": "Calandahütte SAC"
+  },
+  {
+    "hutId": 177,
+    "hutName": "Kampthaler-Hütte"
+  },
+  {
+    "hutId": 178,
+    "hutName": "Kasseler Hütte (im Zillertal)"
+  },
+  {
+    "hutId": 179,
+    "hutName": "Pfeis-Hütte"
+  },
+  {
+    "hutId": 180,
+    "hutName": "Furtschaglhaus"
+  },
+  {
+    "hutId": 181,
+    "hutName": "Brandenburger Haus"
+  },
+  {
+    "hutId": 182,
+    "hutName": "Chamonas d'Ela CAS"
+  },
+  {
+    "hutId": 183,
+    "hutName": "Göppinger Hütte"
+  },
+  {
+    "hutId": 184,
+    "hutName": "Stripsenjoch-Haus"
+  },
+  {
+    "hutId": 185,
+    "hutName": "Porze-Hütte"
+  },
+  {
+    "hutId": 186,
+    "hutName": "Südwiener Hütte"
+  },
+  {
+    "hutId": 187,
+    "hutName": "Rottenmanner Hütte"
+  },
+  {
+    "hutId": 188,
+    "hutName": "Barmer Hütte"
+  },
+  {
+    "hutId": 189,
+    "hutName": "Schwarzwasserhütte"
+  },
+  {
+    "hutId": 190,
+    "hutName": "Sudetendeutsche Hütte"
+  },
+  {
+    "hutId": 191,
+    "hutName": "Jamtalhütte"
+  },
+  {
+    "hutId": 192,
+    "hutName": "Stuttgarter Hütte"
+  },
+  {
+    "hutId": 193,
+    "hutName": "Werkmannhaus"
+  },
+  {
+    "hutId": 194,
+    "hutName": "Schwabenhaus"
+  },
+  {
+    "hutId": 195,
+    "hutName": "Kärlingerhaus"
+  },
+  {
+    "hutId": 196,
+    "hutName": "Grubenberghütte"
+  },
+  {
+    "hutId": 197,
+    "hutName": "Capanna Corno-Gries CAS"
+  },
+  {
+    "hutId": 198,
+    "hutName": "Capanna d'Alzasca CAS"
+  },
+  {
+    "hutId": 200,
+    "hutName": "Straubinger Haus"
+  },
+  {
+    "hutId": 201,
+    "hutName": "Bayreuther Hütte"
+  },
+  {
+    "hutId": 202,
+    "hutName": "Nördlinger Hütte"
+  },
+  {
+    "hutId": 203,
+    "hutName": "Karl-von-Edel-Hütte"
+  },
+  {
+    "hutId": 204,
+    "hutName": "Schreckhornhütte SAC"
+  },
+  {
+    "hutId": 205,
+    "hutName": "Rastkogelhütte"
+  },
+  {
+    "hutId": 206,
+    "hutName": "Brochhütte"
+  },
+  {
+    "hutId": 207,
+    "hutName": "Plauener Hütte"
+  },
+  {
+    "hutId": 208,
+    "hutName": "Almagellerhütte SAC"
+  },
+  {
+    "hutId": 209,
+    "hutName": "Weissmieshütten SAC"
+  },
+  {
+    "hutId": 210,
+    "hutName": "Brünnsteinhaus"
+  },
+  {
+    "hutId": 211,
+    "hutName": "Zeller-Hütte"
+  },
+  {
+    "hutId": 212,
+    "hutName": "Tutzinger Hütte"
+  },
+  {
+    "hutId": 213,
+    "hutName": "Finsteraarhornhütte SAC"
+  },
+  {
+    "hutId": 214,
+    "hutName": "Windegghütte SAC"
+  },
+  {
+    "hutId": 215,
+    "hutName": "Landsberger Hütte"
+  },
+  {
+    "hutId": 216,
+    "hutName": "Weidener Hütte"
+  },
+  {
+    "hutId": 217,
+    "hutName": "Friedrichshafener Hütte"
+  },
+  {
+    "hutId": 218,
+    "hutName": "Bodenschneidhaus"
+  },
+  {
+    "hutId": 219,
+    "hutName": "Simony-Hütte"
+  },
+  {
+    "hutId": 220,
+    "hutName": "Stüdlhütte"
+  },
+  {
+    "hutId": 221,
+    "hutName": "Capanna Motterascio CAS"
+  },
+  {
+    "hutId": 222,
+    "hutName": "Biberacher Hütte"
+  },
+  {
+    "hutId": 223,
+    "hutName": "Gleiwitzer Hütte"
+  },
+  {
+    "hutId": 224,
+    "hutName": "Wanderheim Kreuzmoos"
+  },
+  {
+    "hutId": 226,
+    "hutName": "Cabane des Vignettes CAS"
+  },
+  {
+    "hutId": 227,
+    "hutName": "Salbithütte SAC"
+  },
+  {
+    "hutId": 228,
+    "hutName": "Dammahütte SAC"
+  },
+  {
+    "hutId": 229,
+    "hutName": "Muttseehütte SAC"
+  },
+  {
+    "hutId": 230,
+    "hutName": "Oberetteshütte"
+  },
+  {
+    "hutId": 231,
+    "hutName": "Taschachhaus"
+  },
+  {
+    "hutId": 232,
+    "hutName": "Passauer Hütte"
+  },
+  {
+    "hutId": 233,
+    "hutName": "Reuttener Hütte"
+  },
+  {
+    "hutId": 234,
+    "hutName": "Wiesbadener Hütte"
+  },
+  {
+    "hutId": 235,
+    "hutName": "Augsburger Hütte"
+  },
+  {
+    "hutId": 236,
+    "hutName": "Tübinger Hütte"
+  },
+  {
+    "hutId": 237,
+    "hutName": "Neue Thüringer Hütte"
+  },
+  {
+    "hutId": 238,
+    "hutName": "Vernagthütte"
+  },
+  {
+    "hutId": 239,
+    "hutName": "Pforzheimer Hütte"
+  },
+  {
+    "hutId": 240,
+    "hutName": "Camona da Punteglias CAS"
+  },
+  {
+    "hutId": 241,
+    "hutName": "Fergenhütte SAC"
+  },
+  {
+    "hutId": 242,
+    "hutName": "Seetalhütte SAC"
+  },
+  {
+    "hutId": 243,
+    "hutName": "Lobhornhütte"
+  },
+  {
+    "hutId": 244,
+    "hutName": "Spannorthütte SAC"
+  },
+  {
+    "hutId": 246,
+    "hutName": "Ramozhütte SAC"
+  },
+  {
+    "hutId": 248,
+    "hutName": "Rieder Hütte"
+  },
+  {
+    "hutId": 249,
+    "hutName": "Glocknerhaus"
+  },
+  {
+    "hutId": 250,
+    "hutName": "Berggasthaus Alpenblick"
+  },
+  {
+    "hutId": 252,
+    "hutName": "Salzkofelhütte"
+  },
+  {
+    "hutId": 253,
+    "hutName": "Ybbstaler-Hütte"
+  },
+  {
+    "hutId": 254,
+    "hutName": "Bifertenhütte AACB"
+  },
+  {
+    "hutId": 255,
+    "hutName": "Chalet du Hohberg"
+  },
+  {
+    "hutId": 256,
+    "hutName": "DAV-Haus-Spitzingsee"
+  },
+  {
+    "hutId": 257,
+    "hutName": "Hochfeilerhütte"
+  },
+  {
+    "hutId": 258,
+    "hutName": "Jonsdorfer Hütte"
+  },
+  {
+    "hutId": 259,
+    "hutName": "Voralphütte SAC"
+  },
+  {
+    "hutId": 260,
+    "hutName": "Guttenberg-Haus"
+  },
+  {
+    "hutId": 261,
+    "hutName": "Seethalerhütte"
+  },
+  {
+    "hutId": 262,
+    "hutName": "Austria-Hütte"
+  },
+  {
+    "hutId": 263,
+    "hutName": "Winteregghütte"
+  },
+  {
+    "hutId": 264,
+    "hutName": "Binntalhütte SAC"
+  },
+  {
+    "hutId": 265,
+    "hutName": "Haus Schattwald"
+  },
+  {
+    "hutId": 266,
+    "hutName": "Zittauer Hütte"
+  },
+  {
+    "hutId": 267,
+    "hutName": "Wolayersee-Hütte"
+  },
+  {
+    "hutId": 268,
+    "hutName": "Obstansersee-Hütte"
+  },
+  {
+    "hutId": 269,
+    "hutName": "Sewenhütte SAC"
+  },
+  {
+    "hutId": 270,
+    "hutName": "Prinz-Luitpoldhaus"
+  },
+  {
+    "hutId": 271,
+    "hutName": "Kaunergrathütte"
+  },
+  {
+    "hutId": 272,
+    "hutName": "Otto- Mayr-Hütte"
+  },
+  {
+    "hutId": 273,
+    "hutName": "Millstätter Hütte"
+  },
+  {
+    "hutId": 274,
+    "hutName": "Kröntenhütte SAC"
+  },
+  {
+    "hutId": 275,
+    "hutName": "Neue Regensburger Hütte"
+  },
+  {
+    "hutId": 276,
+    "hutName": "Sesvennahütte"
+  },
+  {
+    "hutId": 277,
+    "hutName": "Cabane de l'A Neuve CAS"
+  },
+  {
+    "hutId": 278,
+    "hutName": "Cabane du Mountet CAS"
+  },
+  {
+    "hutId": 279,
+    "hutName": "Cabane d'Orny CAS"
+  },
+  {
+    "hutId": 280,
+    "hutName": "Cabane Rambert CAS"
+  },
+  {
+    "hutId": 281,
+    "hutName": "Cabane du Trient CAS"
+  },
+  {
+    "hutId": 282,
+    "hutName": "Haus und Hütte Hammer"
+  },
+  {
+    "hutId": 283,
+    "hutName": "Potsdamer Hütte"
+  },
+  {
+    "hutId": 284,
+    "hutName": "Schlernbödelehütte"
+  },
+  {
+    "hutId": 285,
+    "hutName": "Radlseehütte"
+  },
+  {
+    "hutId": 286,
+    "hutName": "Brunnenkopfhäuser"
+  },
+  {
+    "hutId": 287,
+    "hutName": "Soiernhaus"
+  },
+  {
+    "hutId": 288,
+    "hutName": "Bivouac de l'Envers des Dorées"
+  },
+  {
+    "hutId": 290,
+    "hutName": "Chamanna Georgy"
+  },
+  {
+    "hutId": 291,
+    "hutName": "Capanna Gorda - deaktiviert"
+  },
+  {
+    "hutId": 292,
+    "hutName": "Kürsinger-Hütte"
+  },
+  {
+    "hutId": 293,
+    "hutName": "Carl-von-Stahl-Haus"
+  },
+  {
+    "hutId": 294,
+    "hutName": "Sölden-Hütte"
+  },
+  {
+    "hutId": 295,
+    "hutName": "Zeppezauer-Haus"
+  },
+  {
+    "hutId": 296,
+    "hutName": "Edelweisshütte"
+  },
+  {
+    "hutId": 297,
+    "hutName": "Lindauer Hütte"
+  },
+  {
+    "hutId": 298,
+    "hutName": "Württembergerhaus"
+  },
+  {
+    "hutId": 299,
+    "hutName": "Sepp-Sollner-Hütte"
+  },
+  {
+    "hutId": 300,
+    "hutName": "Oberwalder-Hütte"
+  },
+  {
+    "hutId": 301,
+    "hutName": "Tiefrastenhütte"
+  },
+  {
+    "hutId": 302,
+    "hutName": "testhuette_elca"
+  },
+  {
+    "hutId": 303,
+    "hutName": "Alpenrose-Hütte Zillertal"
+  },
+  {
+    "hutId": 304,
+    "hutName": "Staldenmaadhütte"
+  },
+  {
+    "hutId": 305,
+    "hutName": "Tierberglihütte SAC"
+  },
+  {
+    "hutId": 306,
+    "hutName": "Hess-Hütte"
+  },
+  {
+    "hutId": 307,
+    "hutName": "Vorderkaiserfeldenhütte"
+  },
+  {
+    "hutId": 308,
+    "hutName": "Schönbielhütte SAC"
+  },
+  {
+    "hutId": 309,
+    "hutName": "Saarbrücker Hütte"
+  },
+  {
+    "hutId": 310,
+    "hutName": "Dreischusterhütte"
+  },
+  {
+    "hutId": 311,
+    "hutName": "Cabane du Mont d’Or"
+  },
+  {
+    "hutId": 312,
+    "hutName": "Gruebenhütte AACBs"
+  },
+  {
+    "hutId": 313,
+    "hutName": "Harpprechthaus"
+  },
+  {
+    "hutId": 314,
+    "hutName": "Murgseehütte"
+  },
+  {
+    "hutId": 316,
+    "hutName": "Fraganter Schutzhaus"
+  },
+  {
+    "hutId": 317,
+    "hutName": "Franz-Fischer-Hütte"
+  },
+  {
+    "hutId": 318,
+    "hutName": "Vermigel"
+  },
+  {
+    "hutId": 319,
+    "hutName": "Niedersachsenhaus"
+  },
+  {
+    "hutId": 320,
+    "hutName": "Innsbrucker Hütte"
+  },
+  {
+    "hutId": 322,
+    "hutName": "Capanna Pairolo"
+  },
+  {
+    "hutId": 323,
+    "hutName": "Erfurter Hütte"
+  },
+  {
+    "hutId": 324,
+    "hutName": "Traunsteiner Skihütte/ Winklmoosalm"
+  },
+  {
+    "hutId": 325,
+    "hutName": "Mittenwalder Hütte"
+  },
+  {
+    "hutId": 326,
+    "hutName": "Sunnehüsi"
+  },
+  {
+    "hutId": 327,
+    "hutName": "Schneibsteinhaus"
+  },
+  {
+    "hutId": 328,
+    "hutName": "Hochweißstein-Haus"
+  },
+  {
+    "hutId": 329,
+    "hutName": "Herrmann-von-Barth-Hütte"
+  },
+  {
+    "hutId": 330,
+    "hutName": "Clubhaus Metsch"
+  },
+  {
+    "hutId": 331,
+    "hutName": "Berggasthof Rofan"
+  },
+  {
+    "hutId": 332,
+    "hutName": "Medelserhütte SAC"
+  },
+  {
+    "hutId": 333,
+    "hutName": "Cabane du Fenestral"
+  },
+  {
+    "hutId": 334,
+    "hutName": "Rothornhütte SAC"
+  },
+  {
+    "hutId": 335,
+    "hutName": "Refuge Giacomini"
+  },
+  {
+    "hutId": 336,
+    "hutName": "Priel-Schutzhaus"
+  },
+  {
+    "hutId": 337,
+    "hutName": "Zsigmondyhütte (Rif. Comici)"
+  },
+  {
+    "hutId": 338,
+    "hutName": "Mittellegihütte"
+  },
+  {
+    "hutId": 339,
+    "hutName": "Alp Rohr Berggasthaus"
+  },
+  {
+    "hutId": 340,
+    "hutName": "Monte-Leone-Hütte SAC"
+  },
+  {
+    "hutId": 341,
+    "hutName": "Rifugio Saoseo CAS"
+  },
+  {
+    "hutId": 342,
+    "hutName": "Glorer Hütte"
+  },
+  {
+    "hutId": 343,
+    "hutName": "Hochlecken-Haus"
+  },
+  {
+    "hutId": 344,
+    "hutName": "Jugendbildungsstätte Winterraum"
+  },
+  {
+    "hutId": 346,
+    "hutName": "ZZZ TEST Monbijouhütte"
+  },
+  {
+    "hutId": 347,
+    "hutName": "Berghaus Alpenrösli"
+  },
+  {
+    "hutId": 348,
+    "hutName": "Schalijochbiwak SAC"
+  },
+  {
+    "hutId": 349,
+    "hutName": "Baltschiederklause SAC"
+  },
+  {
+    "hutId": 350,
+    "hutName": "Fromatthütte"
+  },
+  {
+    "hutId": 351,
+    "hutName": "Hotel Tiefenbach"
+  },
+  {
+    "hutId": 352,
+    "hutName": "Otto-Haus"
+  },
+  {
+    "hutId": 353,
+    "hutName": "Schneealpen-Haus"
+  },
+  {
+    "hutId": 354,
+    "hutName": "Falkenhütte"
+  },
+  {
+    "hutId": 355,
+    "hutName": "Ennstaler-Hütte"
+  },
+  {
+    "hutId": 356,
+    "hutName": "Hochschober-Hütte"
+  },
+  {
+    "hutId": 362,
+    "hutName": "Admonter Haus"
+  },
+  {
+    "hutId": 363,
+    "hutName": "Clubheim Fälensee"
+  },
+  {
+    "hutId": 365,
+    "hutName": "Langtalereckhütte"
+  },
+  {
+    "hutId": 366,
+    "hutName": "Braunschweiger Hütte"
+  },
+  {
+    "hutId": 367,
+    "hutName": "Chalet Rüeblihorn"
+  },
+  {
+    "hutId": 369,
+    "hutName": "Hildesheimer Hütte"
+  },
+  {
+    "hutId": 370,
+    "hutName": "Hochjoch Hospiz"
+  },
+  {
+    "hutId": 371,
+    "hutName": "Zapporthütte SAC"
+  },
+  {
+    "hutId": 372,
+    "hutName": "Wolfratshauser Hütte"
+  },
+  {
+    "hutId": 373,
+    "hutName": "Kreuzeckhaus"
+  },
+  {
+    "hutId": 374,
+    "hutName": "Hollandiahütte SAC"
+  },
+  {
+    "hutId": 375,
+    "hutName": "Ottokar-Kernstock-Haus"
+  },
+  {
+    "hutId": 376,
+    "hutName": "Berggasthaus Gitschenen"
+  },
+  {
+    "hutId": 377,
+    "hutName": "Hexenseehütte"
+  },
+  {
+    "hutId": 378,
+    "hutName": "Mischabeljochbiwak SAC"
+  },
+  {
+    "hutId": 379,
+    "hutName": "Cabane de Chanrion CAS"
+  },
+  {
+    "hutId": 380,
+    "hutName": "Leopold Wittmaier Hütte"
+  },
+  {
+    "hutId": 381,
+    "hutName": "Arbenbiwak SAC"
+  },
+  {
+    "hutId": 382,
+    "hutName": "Cabane de Saleinaz CAS"
+  },
+  {
+    "hutId": 383,
+    "hutName": "Feichtau-Hütte"
+  },
+  {
+    "hutId": 384,
+    "hutName": "Hochsengsbiwak"
+  },
+  {
+    "hutId": 385,
+    "hutName": "Neue Fürther Hütte"
+  },
+  {
+    "hutId": 386,
+    "hutName": "Chamanna Coaz CAS"
+  },
+  {
+    "hutId": 387,
+    "hutName": "Sylvan-Hütte"
+  },
+  {
+    "hutId": 388,
+    "hutName": "Hüfihütte SAC"
+  },
+  {
+    "hutId": 389,
+    "hutName": "Brixner Hütte"
+  },
+  {
+    "hutId": 390,
+    "hutName": "Rudolf Schober Hütte"
+  },
+  {
+    "hutId": 391,
+    "hutName": "Chamanna da Boval CAS"
+  },
+  {
+    "hutId": 392,
+    "hutName": "Kansteinhütte"
+  },
+  {
+    "hutId": 393,
+    "hutName": "Douglasshütte"
+  },
+  {
+    "hutId": 394,
+    "hutName": "Cabane d’Essertze"
+  },
+  {
+    "hutId": 395,
+    "hutName": "Anhalter Hütte"
+  },
+  {
+    "hutId": 396,
+    "hutName": "Valentinalm"
+  },
+  {
+    "hutId": 397,
+    "hutName": "Skihütte Obererbs"
+  },
+  {
+    "hutId": 398,
+    "hutName": "Etzlihütte SAC"
+  },
+  {
+    "hutId": 399,
+    "hutName": "Capanna Piansecco CAS"
+  },
+  {
+    "hutId": 400,
+    "hutName": "Cabane de Valsorey CAS"
+  },
+  {
+    "hutId": 401,
+    "hutName": "Badener Hütte"
+  },
+  {
+    "hutId": 402,
+    "hutName": "Preintalerhütte"
+  },
+  {
+    "hutId": 403,
+    "hutName": "Theodor-Körner-Hütte"
+  },
+  {
+    "hutId": 404,
+    "hutName": "Rotondohütte SAC"
+  },
+  {
+    "hutId": 405,
+    "hutName": "Skihütte Elm"
+  },
+  {
+    "hutId": 406,
+    "hutName": "Cabane du Carroz"
+  },
+  {
+    "hutId": 407,
+    "hutName": "Priener Hütte"
+  },
+  {
+    "hutId": 408,
+    "hutName": "Adolf-Noßberger-Hütte"
+  },
+  {
+    "hutId": 409,
+    "hutName": "Türnitzer Hütte"
+  },
+  {
+    "hutId": 410,
+    "hutName": "Gollinghütte"
+  },
+  {
+    "hutId": 411,
+    "hutName": "Alois-Günther-Haus"
+  },
+  {
+    "hutId": 412,
+    "hutName": "Rieserfernerhütte"
+  },
+  {
+    "hutId": 413,
+    "hutName": "Cabane Balavaux"
+  },
+  {
+    "hutId": 414,
+    "hutName": "ZZZ TEST"
+  },
+  {
+    "hutId": 415,
+    "hutName": "Kellerjoch-Hütte"
+  },
+  {
+    "hutId": 416,
+    "hutName": "Almtaler Haus"
+  },
+  {
+    "hutId": 417,
+    "hutName": "Ski- und Ferienhaus Obergestelen"
+  },
+  {
+    "hutId": 419,
+    "hutName": "Capanna Poncione di Braga"
+  },
+  {
+    "hutId": 420,
+    "hutName": "Mischabelhütte AACZ"
+  },
+  {
+    "hutId": 421,
+    "hutName": "Gloggnitzer Hütte"
+  },
+  {
+    "hutId": 422,
+    "hutName": "Goferhütte"
+  },
+  {
+    "hutId": 423,
+    "hutName": "Gruberscharten-Biwak"
+  },
+  {
+    "hutId": 424,
+    "hutName": "Habsburg-Haus"
+  },
+  {
+    "hutId": 425,
+    "hutName": "Hubertus-Haus"
+  },
+  {
+    "hutId": 426,
+    "hutName": "Hugo-Gerbers-Hütte"
+  },
+  {
+    "hutId": 427,
+    "hutName": "Kutatschhütte"
+  },
+  {
+    "hutId": 428,
+    "hutName": "Lilienfelder Hütte"
+  },
+  {
+    "hutId": 429,
+    "hutName": "Neunkirchner Hütte"
+  },
+  {
+    "hutId": 430,
+    "hutName": "Peilstein-Haus"
+  },
+  {
+    "hutId": 431,
+    "hutName": "Reisseckhütte"
+  },
+  {
+    "hutId": 432,
+    "hutName": "Rudolf-Proksch-Hütte"
+  },
+  {
+    "hutId": 433,
+    "hutName": "Schwarzenberghütte"
+  },
+  {
+    "hutId": 434,
+    "hutName": "Wetterkogler-Haus"
+  },
+  {
+    "hutId": 435,
+    "hutName": "Capanna Tomeo"
+  },
+  {
+    "hutId": 436,
+    "hutName": "Cabane de la Dent Blanche CAS"
+  },
+  {
+    "hutId": 437,
+    "hutName": "Lamsenjochhütte"
+  },
+  {
+    "hutId": 438,
+    "hutName": "Berghaus Kleinwalsertal"
+  },
+  {
+    "hutId": 439,
+    "hutName": "Haus Wäldele"
+  },
+  {
+    "hutId": 440,
+    "hutName": "Landshuter Europahütte"
+  },
+  {
+    "hutId": 441,
+    "hutName": "Goldeck-Hütte"
+  },
+  {
+    "hutId": 442,
+    "hutName": "Marteller Hütte"
+  },
+  {
+    "hutId": 443,
+    "hutName": "Jurahaus"
+  },
+  {
+    "hutId": 444,
+    "hutName": "Grialetsch-Hütte SAC"
+  },
+  {
+    "hutId": 445,
+    "hutName": "Cresta-Biwak SAC"
+  },
+  {
+    "hutId": 446,
+    "hutName": "Schilthornhütte"
+  },
+  {
+    "hutId": 447,
+    "hutName": "Capanna Alpe Sponda"
+  },
+  {
+    "hutId": 451,
+    "hutName": "Mooshütte"
+  },
+  {
+    "hutId": 452,
+    "hutName": "Neue Traunsteiner Hütte"
+  },
+  {
+    "hutId": 453,
+    "hutName": "Lämmerenhütte SAC"
+  },
+  {
+    "hutId": 454,
+    "hutName": "Fusshornbiwak"
+  },
+  {
+    "hutId": 455,
+    "hutName": "AV Testhütte"
+  },
+  {
+    "hutId": 456,
+    "hutName": "Heidelberger Hütte"
+  },
+  {
+    "hutId": 458,
+    "hutName": "Europa"
+  },
+  {
+    "hutId": 461,
+    "hutName": "Karl-Stein-Hütte"
+  },
+  {
+    "hutId": 462,
+    "hutName": "Firenze"
+  },
+  {
+    "hutId": 463,
+    "hutName": "Schlernhaus (Rif. Bolzano)"
+  },
+  {
+    "hutId": 464,
+    "hutName": "Rifugio Franz Kostner"
+  },
+  {
+    "hutId": 465,
+    "hutName": "Corno del Renon"
+  },
+  {
+    "hutId": 466,
+    "hutName": "Sillianer Hütte"
+  },
+  {
+    "hutId": 467,
+    "hutName": "Alpwirtschaft Tanzboden"
+  },
+  {
+    "hutId": 468,
+    "hutName": "Kelchalm (Bochumer Hütte)"
+  },
+  {
+    "hutId": 469,
+    "hutName": "Sonnschienhütte"
+  },
+  {
+    "hutId": 470,
+    "hutName": "Berggasthaus Wildspitz"
+  },
+  {
+    "hutId": 471,
+    "hutName": "Wolfsberger Hütte"
+  },
+  {
+    "hutId": 472,
+    "hutName": "Galmihornhütte"
+  },
+  {
+    "hutId": 473,
+    "hutName": "Cabane de Prafleuri"
+  },
+  {
+    "hutId": 474,
+    "hutName": "Burghütte"
+  },
+  {
+    "hutId": 475,
+    "hutName": "Berg- und Skiheim Brixen im Thale"
+  },
+  {
+    "hutId": 476,
+    "hutName": "Martin-Busch-Hütte"
+  },
+  {
+    "hutId": 477,
+    "hutName": "Capanna Alp da Canaa"
+  },
+  {
+    "hutId": 478,
+    "hutName": "Capanna Grossalp"
+  },
+  {
+    "hutId": 479,
+    "hutName": "Capanna Alpe Nimi"
+  },
+  {
+    "hutId": 480,
+    "hutName": "Rifugio Alpe Masnée"
+  },
+  {
+    "hutId": 481,
+    "hutName": "Rifugio Alpe Spluga"
+  },
+  {
+    "hutId": 482,
+    "hutName": "Ostello Fusio"
+  },
+  {
+    "hutId": 483,
+    "hutName": "Rifugio Ribia"
+  },
+  {
+    "hutId": 484,
+    "hutName": "Rifugio la Reggia"
+  },
+  {
+    "hutId": 485,
+    "hutName": "Bonn-Matreier Hütte"
+  },
+  {
+    "hutId": 486,
+    "hutName": "Sardonahütte SAC"
+  },
+  {
+    "hutId": 487,
+    "hutName": "Tschiervahütte SAC"
+  },
+  {
+    "hutId": 488,
+    "hutName": "E.-T.-Compton-Hütte"
+  },
+  {
+    "hutId": 489,
+    "hutName": "Filmoor-Standschützen-Hütte"
+  },
+  {
+    "hutId": 490,
+    "hutName": "Voisthaler-Hütte"
+  },
+  {
+    "hutId": 491,
+    "hutName": "Adamek-Hütte"
+  },
+  {
+    "hutId": 492,
+    "hutName": "Haindlkar-Hütte"
+  },
+  {
+    "hutId": 493,
+    "hutName": "Edelraute-Hütte"
+  },
+  {
+    "hutId": 494,
+    "hutName": "Cabane de Tracuit CAS"
+  },
+  {
+    "hutId": 495,
+    "hutName": "Talherberge Zwieselstein"
+  },
+  {
+    "hutId": 496,
+    "hutName": "Hinterbalmhütte"
+  },
+  {
+    "hutId": 497,
+    "hutName": "Steinsee-Hütte"
+  },
+  {
+    "hutId": 498,
+    "hutName": "Rottalhütte SAC"
+  },
+  {
+    "hutId": 499,
+    "hutName": "Chaveehut"
+  },
+  {
+    "hutId": 500,
+    "hutName": "Capanna Dötra"
+  },
+  {
+    "hutId": 502,
+    "hutName": "Konstanzer Hütte"
+  },
+  {
+    "hutId": 503,
+    "hutName": "Hofalm-Hütte"
+  },
+  {
+    "hutId": 504,
+    "hutName": "Hans Wödlhütte"
+  },
+  {
+    "hutId": 505,
+    "hutName": "Kistenpasshütte"
+  },
+  {
+    "hutId": 506,
+    "hutName": "Laghel"
+  },
+  {
+    "hutId": 507,
+    "hutName": "Taubensteinhaus"
+  },
+  {
+    "hutId": 508,
+    "hutName": "Welserhütte"
+  },
+  {
+    "hutId": 509,
+    "hutName": "Pühringer-Hütte"
+  },
+  {
+    "hutId": 510,
+    "hutName": "Capanna Arena"
+  },
+  {
+    "hutId": 511,
+    "hutName": "Cabane Arpitettaz CAS"
+  },
+  {
+    "hutId": 512,
+    "hutName": "DAV-Haus Obertauern"
+  },
+  {
+    "hutId": 513,
+    "hutName": "Bivouac au Col de la Dent Blanche CAS"
+  },
+  {
+    "hutId": 514,
+    "hutName": "Ringelspitzhütte SAC"
+  },
+  {
+    "hutId": 515,
+    "hutName": "Silberhornhütte SAC"
+  },
+  {
+    "hutId": 516,
+    "hutName": "Rifugio Pian di Crest"
+  },
+  {
+    "hutId": 517,
+    "hutName": "Rifugio Maria Luisa"
+  },
+  {
+    "hutId": 518,
+    "hutName": "Capanna Cimetta"
+  },
+  {
+    "hutId": 519,
+    "hutName": "Capanna lo Stallone"
+  },
+  {
+    "hutId": 520,
+    "hutName": "Würgauer Haus"
+  },
+  {
+    "hutId": 523,
+    "hutName": "Tappenkarseehütte"
+  },
+  {
+    "hutId": 525,
+    "hutName": "Sustlihütte SAC"
+  },
+  {
+    "hutId": 526,
+    "hutName": "Hüttenrunde Gipfelwege"
+  },
+  {
+    "hutId": 527,
+    "hutName": "Stockhornbiwak SAC"
+  },
+  {
+    "hutId": 528,
+    "hutName": "Fritz-Pflaum-Hütte"
+  },
+  {
+    "hutId": 529,
+    "hutName": "Willi-Merkl-Hütte"
+  },
+  {
+    "hutId": 530,
+    "hutName": "Turtmannhütte SAC"
+  },
+  {
+    "hutId": 531,
+    "hutName": "Berggasthaus Brüsti"
+  },
+  {
+    "hutId": 536,
+    "hutName": "Ostwandlager"
+  },
+  {
+    "hutId": 537,
+    "hutName": "Hanslberghütte"
+  },
+  {
+    "hutId": 538,
+    "hutName": "Berg- und Skiheim Brixen im Thale - Ferienwohnung"
+  },
+  {
+    "hutId": 539,
+    "hutName": "Rifugio Alpe Fontana"
+  },
+  {
+    "hutId": 540,
+    "hutName": "Capanna Gesero"
+  },
+  {
+    "hutId": 541,
+    "hutName": "Westfalenhaus"
+  },
+  {
+    "hutId": 543,
+    "hutName": "Munt la Reita"
+  },
+  {
+    "hutId": 544,
+    "hutName": "Sadnighaus"
+  },
+  {
+    "hutId": 545,
+    "hutName": "Neue Reichenberger Hütte"
+  },
+  {
+    "hutId": 546,
+    "hutName": "Ludwigsburger Hütte"
+  },
+  {
+    "hutId": 547,
+    "hutName": "Steinwaldhütte"
+  },
+  {
+    "hutId": 548,
+    "hutName": "Lonza Biwak"
+  },
+  {
+    "hutId": 549,
+    "hutName": "Berghütte Hohsaas"
+  },
+  {
+    "hutId": 550,
+    "hutName": "Agroturissem Alp d'Err"
+  },
+  {
+    "hutId": 551,
+    "hutName": "Cesa da Sett"
+  },
+  {
+    "hutId": 552,
+    "hutName": "Sägässähenki Jenisberg"
+  },
+  {
+    "hutId": 553,
+    "hutName": "Tigias Plang Faller"
+  },
+  {
+    "hutId": 554,
+    "hutName": "Chesa sut Baselgia, Stugl"
+  },
+  {
+    "hutId": 555,
+    "hutName": "Gamskarkogel-Hütte"
+  },
+  {
+    "hutId": 556,
+    "hutName": "Ischler Hütte"
+  },
+  {
+    "hutId": 557,
+    "hutName": "Schönfeldhütte"
+  },
+  {
+    "hutId": 558,
+    "hutName": "Lauteraarhütte SAC"
+  },
+  {
+    "hutId": 559,
+    "hutName": "Salbitschijenbiwak SAC"
+  },
+  {
+    "hutId": 561,
+    "hutName": "Karlsbader Hütte"
+  },
+  {
+    "hutId": 562,
+    "hutName": "Schwarzenberghütte (DAV)"
+  },
+  {
+    "hutId": 563,
+    "hutName": "Giessener Hütte"
+  },
+  {
+    "hutId": 564,
+    "hutName": "Hintergrathütte (Rif. Coston)"
+  },
+  {
+    "hutId": 565,
+    "hutName": "Capanna Brogoldone"
+  },
+  {
+    "hutId": 566,
+    "hutName": "Cabane de Sorniot"
+  },
+  {
+    "hutId": 567,
+    "hutName": "Grassenbiwak SAC"
+  },
+  {
+    "hutId": 568,
+    "hutName": "Clubhütte Grubenalp"
+  },
+  {
+    "hutId": 569,
+    "hutName": "Cabane de la Tourche"
+  },
+  {
+    "hutId": 570,
+    "hutName": "Müllerhütte - Rif. Cima Libera"
+  },
+  {
+    "hutId": 571,
+    "hutName": "Gauenhütte"
+  },
+  {
+    "hutId": 572,
+    "hutName": "Bielefelder Hütte"
+  },
+  {
+    "hutId": 573,
+    "hutName": "Cabane de Bounavaux"
+  },
+  {
+    "hutId": 574,
+    "hutName": "Cabane des Marindes"
+  },
+  {
+    "hutId": 575,
+    "hutName": "Cabane des Clés"
+  },
+  {
+    "hutId": 576,
+    "hutName": "Enzianhütte/Rhön"
+  },
+  {
+    "hutId": 577,
+    "hutName": "Ignaz-Mattis-Hütte"
+  },
+  {
+    "hutId": 578,
+    "hutName": "Lucknerhütte"
+  },
+  {
+    "hutId": 579,
+    "hutName": "Balmhornhütte SAC"
+  },
+  {
+    "hutId": 580,
+    "hutName": "Capanna Cava"
+  },
+  {
+    "hutId": 581,
+    "hutName": "Rifugio Giümela"
+  },
+  {
+    "hutId": 582,
+    "hutName": "Capanna Quarnei"
+  },
+  {
+    "hutId": 583,
+    "hutName": "Capanna Adula UTOE"
+  },
+  {
+    "hutId": 584,
+    "hutName": "Rifugio Scaradra"
+  },
+  {
+    "hutId": 585,
+    "hutName": "Ostello GiovaniBosco"
+  },
+  {
+    "hutId": 586,
+    "hutName": "Stubenberg-Haus"
+  },
+  {
+    "hutId": 587,
+    "hutName": "Testhütte Carolin"
+  },
+  {
+    "hutId": 588,
+    "hutName": "Donauland-Hütte"
+  },
+  {
+    "hutId": 589,
+    "hutName": "Äugstenhütte"
+  },
+  {
+    "hutId": 590,
+    "hutName": "Capanna Barone"
+  },
+  {
+    "hutId": 591,
+    "hutName": "Obere Maxlraineralm"
+  },
+  {
+    "hutId": 592,
+    "hutName": "Refuge du lac de Derborence"
+  },
+  {
+    "hutId": 593,
+    "hutName": "Rifugio Lago"
+  },
+  {
+    "hutId": 594,
+    "hutName": "Rifugio Biasagn"
+  },
+  {
+    "hutId": 595,
+    "hutName": "Rifugio Alpe Compiett"
+  },
+  {
+    "hutId": 596,
+    "hutName": "Bosruck-Hütte"
+  },
+  {
+    "hutId": 597,
+    "hutName": "Klagenfurter Hütte"
+  },
+  {
+    "hutId": 598,
+    "hutName": "Bivacco Piano della Parete"
+  },
+  {
+    "hutId": 599,
+    "hutName": "Buchacker Alm"
+  },
+  {
+    "hutId": 601,
+    "hutName": "Enzian-Hütte am Kieneck"
+  },
+  {
+    "hutId": 602,
+    "hutName": "Biwak - Enzianhütte Rhön"
+  },
+  {
+    "hutId": 603,
+    "hutName": "Aarbiwak SAC"
+  },
+  {
+    "hutId": 604,
+    "hutName": "Dobratsch-Gipfelhaus"
+  },
+  {
+    "hutId": 605,
+    "hutName": "Defreggerhaus"
+  },
+  {
+    "hutId": 606,
+    "hutName": "Kölner Haus"
+  },
+  {
+    "hutId": 607,
+    "hutName": "Prova"
+  },
+  {
+    "hutId": 608,
+    "hutName": "Boé"
+  },
+  {
+    "hutId": 609,
+    "hutName": "Monzoni \"Torquato Taramelli\""
+  },
+  {
+    "hutId": 610,
+    "hutName": "Haus Unken"
+  },
+  {
+    "hutId": 611,
+    "hutName": "Haus Don Bosco"
+  },
+  {
+    "hutId": 612,
+    "hutName": "Hohenzollernhaus"
+  },
+  {
+    "hutId": 613,
+    "hutName": "August-Schuster-Haus"
+  },
+  {
+    "hutId": 614,
+    "hutName": "Sidelenhütte"
+  },
+  {
+    "hutId": 615,
+    "hutName": "Martinsmadhütte SAC"
+  },
+  {
+    "hutId": 616,
+    "hutName": "Haldenseehaus"
+  },
+  {
+    "hutId": 617,
+    "hutName": "Ostpreussenhütte"
+  },
+  {
+    "hutId": 618,
+    "hutName": "Amstettner Hütte"
+  },
+  {
+    "hutId": 619,
+    "hutName": "Rosetta \"Giovanni Pedrotti\""
+  },
+  {
+    "hutId": 620,
+    "hutName": "Velo della Madonna"
+  },
+  {
+    "hutId": 621,
+    "hutName": "Antermoia"
+  },
+  {
+    "hutId": 622,
+    "hutName": "Vajolet"
+  },
+  {
+    "hutId": 623,
+    "hutName": "Ciampedié"
+  },
+  {
+    "hutId": 624,
+    "hutName": "Roda di Vael"
+  },
+  {
+    "hutId": 625,
+    "hutName": "Altissimo \"Damiano Chiesa\""
+  },
+  {
+    "hutId": 626,
+    "hutName": "Cima d'Asta \"Ottone Brentari\""
+  },
+  {
+    "hutId": 627,
+    "hutName": "Sette Selle"
+  },
+  {
+    "hutId": 628,
+    "hutName": "Casarota \"Livio Ciola\""
+  },
+  {
+    "hutId": 629,
+    "hutName": "Finonchio \"Fratelli Filzi\""
+  },
+  {
+    "hutId": 630,
+    "hutName": "Alpe Pozza \"Vincenzo Lancia\""
+  },
+  {
+    "hutId": 631,
+    "hutName": "Bocca di Trat \"Nino Pernici\""
+  },
+  {
+    "hutId": 632,
+    "hutName": "Stivo \"Prospero Marchetti\""
+  },
+  {
+    "hutId": 633,
+    "hutName": "Peller"
+  },
+  {
+    "hutId": 634,
+    "hutName": "Giorgio Graffer al Grosté"
+  },
+  {
+    "hutId": 635,
+    "hutName": "F.F. Tuckett e Q. Sella"
+  },
+  {
+    "hutId": 636,
+    "hutName": "Tosa \"Tommaso Pedrotti\""
+  },
+  {
+    "hutId": 637,
+    "hutName": "Val d'Ambiez \"Silvio Agostini\""
+  },
+  {
+    "hutId": 638,
+    "hutName": "XII Apostoli \"Fratelli Garbari\""
+  },
+  {
+    "hutId": 639,
+    "hutName": "Stavèl \"Francesco Denza\""
+  },
+  {
+    "hutId": 640,
+    "hutName": "Val d'Amola \"Giovanni Segantini\""
+  },
+  {
+    "hutId": 641,
+    "hutName": "Mandron \"Città di Trento\""
+  },
+  {
+    "hutId": 642,
+    "hutName": "Caré Alto \"Dante Ongari\""
+  },
+  {
+    "hutId": 643,
+    "hutName": "Val di Fumo"
+  },
+  {
+    "hutId": 644,
+    "hutName": "Vioz \"Mantova\""
+  },
+  {
+    "hutId": 645,
+    "hutName": "Cevedale \"Guido Larcher\""
+  },
+  {
+    "hutId": 646,
+    "hutName": "Saènt \"Silvio Dorigoni\""
+  },
+  {
+    "hutId": 647,
+    "hutName": "Monte Casale \"Don Zio Pisoni\""
+  },
+  {
+    "hutId": 648,
+    "hutName": "Sulzenauhütte"
+  },
+  {
+    "hutId": 649,
+    "hutName": "Berta-Hütte"
+  },
+  {
+    "hutId": 650,
+    "hutName": "Elberfelder Hütte"
+  },
+  {
+    "hutId": 651,
+    "hutName": "Monte Calino \"San Pietro\""
+  },
+  {
+    "hutId": 652,
+    "hutName": "Rifugio Alpe Caviano"
+  },
+  {
+    "hutId": 653,
+    "hutName": "Berggasthaus Alp Catrina - gekündigt"
+  },
+  {
+    "hutId": 654,
+    "hutName": "Mannheimer Hütte"
+  },
+  {
+    "hutId": 655,
+    "hutName": "Oberzalimhütte"
+  },
+  {
+    "hutId": 656,
+    "hutName": "Fluhseehütte"
+  },
+  {
+    "hutId": 657,
+    "hutName": "Antica Osteria Dazio"
+  },
+  {
+    "hutId": 658,
+    "hutName": "Malepartushütte"
+  },
+  {
+    "hutId": 659,
+    "hutName": "Berghotel Faulhorn"
+  },
+  {
+    "hutId": 660,
+    "hutName": "Gwechenberg-Hütte"
+  },
+  {
+    "hutId": 661,
+    "hutName": "Berghaus Splügenpass"
+  },
+  {
+    "hutId": 662,
+    "hutName": "Rotgüldensee-Hütte"
+  },
+  {
+    "hutId": 663,
+    "hutName": "Berghaus Bäregg"
+  },
+  {
+    "hutId": 664,
+    "hutName": "Berggasthaus Dürrboden"
+  },
+  {
+    "hutId": 665,
+    "hutName": "Guggihütte SAC"
+  },
+  {
+    "hutId": 666,
+    "hutName": "Reichenhaller Haus"
+  },
+  {
+    "hutId": 667,
+    "hutName": "Wormser Hütte"
+  },
+  {
+    "hutId": 668,
+    "hutName": "Cabane de la Barmaz"
+  },
+  {
+    "hutId": 669,
+    "hutName": "Keinprecht-Hütte"
+  },
+  {
+    "hutId": 670,
+    "hutName": "Alpe Rompiago - deaktiviert"
+  },
+  {
+    "hutId": 671,
+    "hutName": "Voldertalhütte"
+  },
+  {
+    "hutId": 672,
+    "hutName": "Weisshornhütte SAC"
+  },
+  {
+    "hutId": 673,
+    "hutName": "Bergrestaurant Längfluh"
+  },
+  {
+    "hutId": 674,
+    "hutName": "Capanna Gambarogno"
+  },
+  {
+    "hutId": 675,
+    "hutName": "Franz-Senn-Hütte"
+  },
+  {
+    "hutId": 676,
+    "hutName": "Tannheimer Hütte"
+  },
+  {
+    "hutId": 677,
+    "hutName": "Kaufbeurer Haus"
+  },
+  {
+    "hutId": 679,
+    "hutName": "Berghaus Alpiglen"
+  },
+  {
+    "hutId": 680,
+    "hutName": "Chalet La Source"
+  },
+  {
+    "hutId": 681,
+    "hutName": "Cabane Bertol CAS"
+  },
+  {
+    "hutId": 682,
+    "hutName": "Spitzmeilenhütte SAC"
+  },
+  {
+    "hutId": 683,
+    "hutName": "Wangenitzsee-Hütte"
+  },
+  {
+    "hutId": 684,
+    "hutName": "Lienzer Hütte"
+  },
+  {
+    "hutId": 685,
+    "hutName": "Schwarzensteinhütte (Rif. al Sasso Nero)"
+  },
+  {
+    "hutId": 686,
+    "hutName": "Frederic-Simms-Hütte"
+  },
+  {
+    "hutId": 687,
+    "hutName": "Julius Payer Hütte (Rif. Julius Payer)"
+  },
+  {
+    "hutId": 688,
+    "hutName": "Treschhütte SAC"
+  },
+  {
+    "hutId": 689,
+    "hutName": "Läntahütte SAC"
+  },
+  {
+    "hutId": 690,
+    "hutName": "Cabane des Audannes"
+  },
+  {
+    "hutId": 691,
+    "hutName": "Stickler-Hütte"
+  },
+  {
+    "hutId": 692,
+    "hutName": "Dresdner Hütte"
+  },
+  {
+    "hutId": 693,
+    "hutName": "Starkenburger Hütte"
+  },
+  {
+    "hutId": 694,
+    "hutName": "Cavardirashütte SAC"
+  },
+  {
+    "hutId": 695,
+    "hutName": "Zittel-Haus"
+  },
+  {
+    "hutId": 696,
+    "hutName": "AVS Testhütte"
+  },
+  {
+    "hutId": 697,
+    "hutName": "Domhütte SAC"
+  },
+  {
+    "hutId": 698,
+    "hutName": "Rifugio Garzonera"
+  },
+  {
+    "hutId": 699,
+    "hutName": "Gosauer Brückl-Haus"
+  },
+  {
+    "hutId": 700,
+    "hutName": "Sattelbergalm"
+  },
+  {
+    "hutId": 702,
+    "hutName": "Liezener Hütte"
+  },
+  {
+    "hutId": 703,
+    "hutName": "Hochstubaihütte"
+  }
+]
