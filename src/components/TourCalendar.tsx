@@ -13,7 +13,7 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
     'July', 'August', 'September', 'October', 'November', 'December'
   ]
 
-  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   const today = new Date()
   const months = []
   for (let i = 0; i < 4; i++) {
@@ -27,7 +27,7 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
     const firstDay = new Date(year, month, 1)
     const lastDay = new Date(year, month + 1, 0)
     const daysInMonth = lastDay.getDate()
-    const startingDayOfWeek = firstDay.getDay()
+    const startingDayOfWeek = (firstDay.getDay() + 6) % 7
     const days = []
 
     for (let i = 0; i < startingDayOfWeek; i++) {
@@ -64,7 +64,7 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
     <div className="space-y-8">
       <h2 className="text-xl font-semibold">Available Tour Dates</h2>
       
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {months.map((month, monthIndex) => (
           <div key={monthIndex} className="bg-card border border-border rounded-lg p-4">
             <h3 className="text-lg font-medium mb-4 text-center">
