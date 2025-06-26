@@ -7,11 +7,14 @@ import { useHutAvailability } from './hooks/useHutAvailability'
 import { TourPlannerService } from './services/tourPlanner'
 import type { Hut, TourDate } from './types'
 import { Users } from 'lucide-react'
+import { getStateFromUrl, updateUrlState } from './lib/urlState'
+import hutData from '@/hut_ids.json'
 
 function App() {
   const [selectedHuts, setSelectedHuts] = useState<Hut[]>([])
   const [groupSize, setGroupSize] = useState<number>(2)
   const [error, setError] = useState<string | null>(null)
+  const [isInitialized, setIsInitialized] = useState(false)
 
   const hutIds = useMemo(() => selectedHuts.map(hut => hut.hutId), [selectedHuts])
   const { data: availabilityData, isLoading, isError, errors } = useHutAvailability(hutIds)
@@ -47,8 +50,34 @@ function App() {
     }
   }, [selectedHuts.length, groupSize, isError, errors])
 
+  // Initialize state from URL on component mount
+  useEffect(() => {
+    const urlState = getStateFromUrl()
+    
+    if (urlState.hutIds.length > 0) {
+      const huts = urlState.hutIds
+        .map(id => hutData.find(hut => hut.hutId === id))
+        .filter((hut): hut is Hut => hut !== undefined)
+      setSelectedHuts(huts)
+    }
+    
+    setGroupSize(urlState.groupSize)
+    setIsInitialized(true)
+  }, [])
+
+  // Update URL when state changes
+  useEffect(() => {
+    if (isInitialized) {
+      updateUrlState(groupSize, selectedHuts)
+    }
+  }, [groupSize, selectedHuts, isInitialized])
+
   const handleHutsChange = (huts: Hut[]) => {
     setSelectedHuts(huts.filter(Boolean))
+  }
+
+  const handleGroupSizeChange = (size: number) => {
+    setGroupSize(size)
   }
 
   return (
@@ -79,7 +108,7 @@ function App() {
                     min="1"
                     max="50"
                     value={groupSize}
-                    onChange={(e) => setGroupSize(parseInt(e.target.value) || 1)}
+                    onChange={(e) => handleGroupSizeChange(parseInt(e.target.value) || 1)}
                     placeholder="Number of people"
                     className="w-32"
                   />
