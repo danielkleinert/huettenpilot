@@ -1,125 +1,176 @@
 import { useState, useMemo } from 'react'
 import { Input } from './ui/input'
-import { Button } from './ui/button'
-import { Plus, X } from 'lucide-react'
+import { X, GripVertical } from 'lucide-react'
 import hutData from '@/hut_ids.json'
 import type { Hut } from '@/types'
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core'
+import type { DragEndEvent } from '@dnd-kit/core'
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable'
+import {
+  useSortable,
+} from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
 
 interface HutSelectorProps {
   selectedHuts: Hut[]
   onHutsChange: (huts: Hut[]) => void
 }
 
-export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
-  const [searchTerms, setSearchTerms] = useState<string[]>([''])
+interface SortableHutItemProps {
+  hut: Hut
+  index: number
+  onRemove: (index: number) => void
+}
 
-  const filteredHuts = useMemo(() => {
-    return searchTerms.map(term => 
-      hutData.filter(hut => 
-        hut.hutName.toLowerCase().includes(term.toLowerCase()) &&
-        !selectedHuts.some(selected => selected.hutId === hut.hutId)
-      ).slice(0, 10)
-    )
-  }, [searchTerms, selectedHuts])
+function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: hut.hutId })
 
-  const addHutSelector = () => {
-    setSearchTerms([...searchTerms, ''])
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
   }
 
-  const removeHutSelector = (index: number) => {
-    const newTerms = searchTerms.filter((_, i) => i !== index)
-    setSearchTerms(newTerms.length === 0 ? [''] : newTerms)
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className={`p-3 bg-success/10 border border-success/20 rounded-md flex items-center gap-3 ${
+        isDragging ? 'opacity-50' : ''
+      }`}
+    >
+      <div
+        {...attributes}
+        {...listeners}
+        className="cursor-grab active:cursor-grabbing text-muted-foreground hover:text-foreground"
+      >
+        <GripVertical className="h-4 w-4" />
+      </div>
+      
+      <div className="flex-1">
+        <div className="font-medium text-success">
+          Day {index + 1}: {hut.hutName}
+        </div>
+        <div className="text-sm text-success">
+          Hut ID: {hut.hutId}
+        </div>
+      </div>
+      
+      <button
+        onClick={() => onRemove(index)}
+        className="text-muted-foreground hover:text-destructive p-1 rounded-md hover:bg-destructive/10"
+      >
+        <X className="h-4 w-4" />
+      </button>
+    </div>
+  )
+}
+
+export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  )
+
+  const filteredHuts = useMemo(() => {
+    if (!searchTerm) return []
     
-    if (selectedHuts[index]) {
-      const newHuts = selectedHuts.filter((_, i) => i !== index)
-      onHutsChange(newHuts)
+    return hutData
+      .filter(hut => 
+        hut.hutName.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !selectedHuts.some(selected => selected.hutId === hut.hutId)
+      )
+      .slice(0, 10)
+  }, [searchTerm, selectedHuts])
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event
+
+    if (over && active.id !== over.id) {
+      const oldIndex = selectedHuts.findIndex(hut => hut.hutId === active.id)
+      const newIndex = selectedHuts.findIndex(hut => hut.hutId === over.id)
+
+      onHutsChange(arrayMove(selectedHuts, oldIndex, newIndex))
     }
   }
 
-  const selectHut = (hut: Hut, index: number) => {
-    const newHuts = [...selectedHuts]
-    newHuts[index] = hut
-    onHutsChange(newHuts)
-    
-    const newTerms = [...searchTerms]
-    newTerms[index] = ''
-    setSearchTerms(newTerms)
+  const selectHut = (hut: Hut) => {
+    onHutsChange([...selectedHuts, hut])
+    setSearchTerm('')
   }
 
-  const updateSearchTerm = (value: string, index: number) => {
-    const newTerms = [...searchTerms]
-    newTerms[index] = value
-    setSearchTerms(newTerms)
+  const removeHut = (index: number) => {
+    const newHuts = selectedHuts.filter((_, i) => i !== index)
+    onHutsChange(newHuts)
   }
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Select Huts for Your Tour</h2>
-        <Button onClick={addHutSelector} size="sm" variant="outline">
-          <Plus className="h-4 w-4 mr-2" />
-          Add Hut
-        </Button>
-      </div>
-
-      {searchTerms.map((term, index) => (
-        <div key={index} className="relative">
-          <div className="flex gap-2 items-center">
-            <div className="flex-1 relative">
-              <Input
-                placeholder={`Search for hut ${index + 1}...`}
-                value={selectedHuts[index]?.hutName || term}
-                onChange={(e) => updateSearchTerm(e.target.value, index)}
-                className="w-full"
-              />
-              {term && filteredHuts[index] && filteredHuts[index].length > 0 && (
-                <div className="absolute top-full left-0 right-0 z-10 bg-card border border-border rounded-md shadow-lg mt-1 max-h-60 overflow-y-auto backdrop-blur-sm">
-                  {filteredHuts[index].map((hut) => (
-                    <button
-                      key={hut.hutId}
-                      className="w-full text-left px-4 py-2 hover:bg-muted border-b border-border last:border-b-0"
-                      onClick={() => selectHut(hut, index)}
-                    >
-                      <div className="font-medium">{hut.hutName}</div>
-                      <div className="text-sm text-muted-foreground">ID: {hut.hutId}</div>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            {searchTerms.length > 1 && (
-              <Button 
-                onClick={() => removeHutSelector(index)} 
-                size="sm" 
-                variant="outline"
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            )}
-          </div>
-          
-          {selectedHuts[index] && (
-            <div className="mt-2 p-3 bg-success/10 border border-success/20 rounded-md">
-              <div className="font-medium text-success">
-                Day {index + 1}: {selectedHuts[index].hutName}
-              </div>
-              <div className="text-sm text-success">
-                Hut ID: {selectedHuts[index].hutId}
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
+      <h2 className="text-xl font-semibold">Select Huts for Your Tour</h2>
       
-      {selectedHuts.length > 0 && (
-        <div className="mt-6 p-4 bg-info/10 border border-info/20 rounded-md">
-          <h3 className="font-medium text-info mb-2">Tour Summary</h3>
-          <div className="text-sm text-info">
-            {selectedHuts.length} hut{selectedHuts.length !== 1 ? 's' : ''} selected for your {selectedHuts.length}-day tour
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
+      >
+        <SortableContext items={selectedHuts.map(hut => hut.hutId)} strategy={verticalListSortingStrategy}>
+          <div className="space-y-2">
+            {selectedHuts.map((hut, index) => (
+              <SortableHutItem
+                key={hut.hutId}
+                hut={hut}
+                index={index}
+                onRemove={removeHut}
+              />
+            ))}
           </div>
-        </div>
-      )}
+        </SortableContext>
+      </DndContext>
+
+      <div className="relative">
+        <Input
+          placeholder="Search and add huts..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full"
+        />
+        {searchTerm && filteredHuts.length > 0 && (
+          <div className="absolute top-full left-0 right-0 z-10 bg-card border border-border rounded-md shadow-lg mt-1 max-h-60 overflow-y-auto backdrop-blur-sm">
+            {filteredHuts.map((hut) => (
+              <button
+                key={hut.hutId}
+                className="w-full text-left px-4 py-2 hover:bg-muted border-b border-border last:border-b-0"
+                onClick={() => selectHut(hut)}
+              >
+                <div className="font-medium">{hut.hutName}</div>
+                <div className="text-sm text-muted-foreground">ID: {hut.hutId}</div>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
