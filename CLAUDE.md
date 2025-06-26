@@ -41,7 +41,7 @@ src/
 
 - **Frontend**: React 19.1.0 with TypeScript 5.8.3
 - **Build Tool**: Vite 6.3.5 with SWC plugin and Tailwind CSS v4 integration
-- **Styling**: Tailwind CSS v4 via @tailwindcss/vite plugin
+- **Styling**: Tailwind CSS v4 via @tailwindcss/vite plugin with shadcn/ui color system
 - **Data Fetching**: @tanstack/react-query for caching and state management
 - **UI Components**: Custom shadcn/ui-inspired components with Tailwind
 - **Icons**: Lucide React
@@ -74,6 +74,7 @@ src/
 - **Tour Planning**: Finds consecutive dates where all selected huts have enough beds
 - **Calendar Display**: 4-month view with hover tooltips showing availability details
 - **Responsive Design**: Works on desktop and mobile
+- **Dark Mode**: Automatic OS preference detection with semantic color system
 
 ## Data Structure
 
@@ -116,9 +117,16 @@ interface HutAvailability {
 - Custom hooks in `src/hooks/`
 - Keep components focused and composable
 
+### Styling Guidelines
+- Use semantic color names (bg-card, text-foreground, etc.) instead of hardcoded colors
+- Color system defined in `src/index.css` with OKLCH values for better color accuracy
+- Automatic dark mode via `@media (prefers-color-scheme: dark)`
+- All semantic colors automatically mapped to Tailwind classes via `tailwind.config.js`
+- Never hardcode colors like `bg-white` or `text-gray-500` - use semantic equivalents
+
 ### Common Tasks
 1. Run `yarn lint` to catch unused code before committing
 2. Use `yarn build` to verify changes work correctly
 3. New API endpoints go in `src/services/`
 4. New types go in `src/types/index.ts`
-5. UI components should use Tailwind CSS classes
+5. UI components should use semantic Tailwind color classes (bg-card, text-foreground, etc.)

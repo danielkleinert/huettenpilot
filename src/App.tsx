@@ -51,23 +51,23 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
             Alpine Hut Tour Planner
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Plan your multi-day hut tour in the Alps. Find consecutive dates with available beds across your selected huts.
           </p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="bg-card rounded-lg shadow-sm border border-border p-6">
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-card-foreground mb-2">
                     <Users className="inline h-4 w-4 mr-1" />
                     Group Size
                   </label>
@@ -87,33 +87,33 @@ function App() {
                 />
 
                 {selectedHuts.length > 0 && (
-                  <div className="flex items-center justify-center p-3 bg-gray-50 rounded-md">
+                  <div className="flex items-center justify-center p-3 bg-muted rounded-md">
                     {isLoading ? (
                       <>
-                        <Search className="h-4 w-4 mr-2 animate-spin text-blue-500" />
-                        <span className="text-sm text-gray-600">Searching...</span>
+                        <Search className="h-4 w-4 mr-2 animate-spin text-info" />
+                        <span className="text-sm text-muted-foreground">Searching...</span>
                       </>
                     ) : (
                       <>
-                        <Search className="h-4 w-4 mr-2 text-green-500" />
-                        <span className="text-sm text-gray-600">Search complete</span>
+                        <Search className="h-4 w-4 mr-2 text-success" />
+                        <span className="text-sm text-muted-foreground">Search complete</span>
                       </>
                     )}
                   </div>
                 )}
 
                 {error && (
-                  <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-                    <p className="text-red-700 text-sm">{error}</p>
+                  <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-md">
+                    <p className="text-destructive text-sm">{error}</p>
                   </div>
                 )}
 
                 {tourDates.length > 0 && !isLoading && (
-                  <div className="p-3 bg-green-50 border border-green-200 rounded-md">
-                    <p className="text-green-700 text-sm font-medium">
+                  <div className="p-3 bg-success/10 border border-success/20 rounded-md">
+                    <p className="text-success text-sm font-medium">
                       Found {tourDates.length} available tour dates
                     </p>
-                    <p className="text-green-600 text-xs mt-1">
+                    <p className="text-success text-xs mt-1">
                       {selectedHuts.length}-day tour for {groupSize} people
                     </p>
                   </div>
@@ -123,12 +123,12 @@ function App() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="bg-card rounded-lg shadow-sm border border-border p-6">
               {isLoading ? (
                 <div className="flex items-center justify-center py-12">
                   <div className="text-center">
-                    <Search className="h-8 w-8 animate-spin mx-auto mb-4 text-gray-400" />
-                    <p className="text-gray-500">Searching for available dates...</p>
+                    <Search className="h-8 w-8 animate-spin mx-auto mb-4 text-muted-foreground" />
+                    <p className="text-muted-foreground">Searching for available dates...</p>
                   </div>
                 </div>
               ) : (
@@ -138,14 +138,14 @@ function App() {
           </div>
         </div>
 
-        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h3 className="font-medium text-blue-800 mb-2">How it works</h3>
-          <div className="text-sm text-blue-700 space-y-1">
+        <div className="mt-8 bg-info/10 border border-info/20 rounded-lg p-6">
+          <h3 className="font-medium text-info mb-2">How it works</h3>
+          <div className="text-sm text-info space-y-1">
             <p>1. Select the huts you want to visit in order (Day 1, Day 2, etc.)</p>
             <p>2. Enter your group size to check bed availability</p>
             <p>3. View available start dates in the 4-month calendar</p>
             <p>4. Hover over green dots to see availability details for each hut</p>
-            <p className="text-blue-600 text-xs pt-2">
+            <p className="text-info text-xs pt-2">
               ℹ️ Availability data is automatically cached by React Query
             </p>
           </div>

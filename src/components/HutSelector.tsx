@@ -73,15 +73,15 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
                 className="w-full"
               />
               {term && filteredHuts[index] && filteredHuts[index].length > 0 && (
-                <div className="absolute top-full left-0 right-0 z-10 bg-white border border-gray-200 rounded-md shadow-lg mt-1 max-h-60 overflow-y-auto">
+                <div className="absolute top-full left-0 right-0 z-10 bg-card border border-border rounded-md shadow-lg mt-1 max-h-60 overflow-y-auto backdrop-blur-sm">
                   {filteredHuts[index].map((hut) => (
                     <button
                       key={hut.hutId}
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 border-b border-gray-100 last:border-b-0"
+                      className="w-full text-left px-4 py-2 hover:bg-muted border-b border-border last:border-b-0"
                       onClick={() => selectHut(hut, index)}
                     >
                       <div className="font-medium">{hut.hutName}</div>
-                      <div className="text-sm text-gray-500">ID: {hut.hutId}</div>
+                      <div className="text-sm text-muted-foreground">ID: {hut.hutId}</div>
                     </button>
                   ))}
                 </div>
@@ -100,11 +100,11 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
           </div>
           
           {selectedHuts[index] && (
-            <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-md">
-              <div className="font-medium text-green-800">
+            <div className="mt-2 p-3 bg-success/10 border border-success/20 rounded-md">
+              <div className="font-medium text-success">
                 Day {index + 1}: {selectedHuts[index].hutName}
               </div>
-              <div className="text-sm text-green-600">
+              <div className="text-sm text-success">
                 Hut ID: {selectedHuts[index].hutId}
               </div>
             </div>
@@ -113,9 +113,9 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
       ))}
       
       {selectedHuts.length > 0 && (
-        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
-          <h3 className="font-medium text-blue-800 mb-2">Tour Summary</h3>
-          <div className="text-sm text-blue-700">
+        <div className="mt-6 p-4 bg-info/10 border border-info/20 rounded-md">
+          <h3 className="font-medium text-info mb-2">Tour Summary</h3>
+          <div className="text-sm text-info">
             {selectedHuts.length} hut{selectedHuts.length !== 1 ? 's' : ''} selected for your {selectedHuts.length}-day tour
           </div>
         </div>

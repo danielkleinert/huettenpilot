@@ -66,13 +66,13 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
       
       <div className="grid grid-cols-2 gap-8">
         {months.map((month, monthIndex) => (
-          <div key={monthIndex} className="bg-white border border-gray-200 rounded-lg p-4">
+          <div key={monthIndex} className="bg-card border border-border rounded-lg p-4">
             <h3 className="text-lg font-medium mb-4 text-center">
               {monthNames[month.getMonth()]} {month.getFullYear()}
             </h3>
             <div className="grid grid-cols-7 gap-1 mb-2">
               {dayNames.map(day => (
-                <div key={day} className="text-center text-sm font-medium text-gray-500 p-2">
+                <div key={day} className="text-center text-sm font-medium text-muted-foreground p-2">
                   {day}
                 </div>
               ))}
@@ -92,20 +92,15 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
                     key={dayIndex}
                     className={`
                       relative h-12 flex items-center justify-center text-sm cursor-pointer
-                      ${day ? 'hover:bg-gray-50' : ''}
-                      ${isToday ? 'bg-blue-100 font-semibold' : ''}
-                      ${hasAvailability ? 'text-green-700' : 'text-gray-700'}
+                      ${day ? 'hover:bg-muted' : ''}
+                      ${isToday ? 'bg-blue-100 dark:bg-blue-900/30 font-semibold text-blue-800 dark:text-blue-200' : ''}
+                      ${hasAvailability ? 'text-green-700 dark:text-green-400 font-medium' : 'text-card-foreground'}
                     `}
                     onMouseEnter={() => setHoveredDate(tourDate)}
                     onMouseLeave={() => setHoveredDate(null)}
                   >
                     {day && (
-                      <>
-                        <span>{day.getDate()}</span>
-                        {hasAvailability && (
-                          <div className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full"></div>
-                        )}
-                      </>
+                      <span>{day.getDate()}</span>
                     )}
                   </div>
                 )
@@ -115,7 +110,7 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
         ))}
       </div>
       {hoveredDate && (
-        <div className="fixed bottom-4 right-4 bg-black text-white p-4 rounded-lg shadow-lg max-w-sm z-50">
+        <div className="fixed bottom-4 right-4 bg-card border border-border text-card-foreground p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm">
           <div className="font-semibold mb-2">
             Tour starting {formatDate(hoveredDate.startDate)}
           </div>
@@ -125,7 +120,7 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
                 <div className="font-medium">
                   Day {index + 1}: {hut.hutName}
                 </div>
-                <div className="text-gray-300">
+                <div className="text-muted-foreground">
                   {availability.freeBeds} free beds available
                 </div>
               </div>
@@ -136,17 +131,17 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
 
       <div className="flex items-center gap-4 text-sm">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+          <span className="text-green-700 dark:text-green-400 font-medium">●</span>
           <span>Available tour start date</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-blue-500 dark:bg-blue-400 rounded-full"></div>
           <span>Today</span>
         </div>
       </div>
 
       {tourDates.length === 0 && (
-        <div className="text-center py-8 text-gray-500">
+        <div className="text-center py-8 text-muted-foreground">
           No available tour dates found. Try adjusting your hut selection or group size.
         </div>
       )}
