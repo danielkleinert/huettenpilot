@@ -2,10 +2,11 @@ import { useState, useEffect, useMemo } from 'react'
 import { HutSelector } from './components/HutSelector'
 import { TourCalendar } from './components/TourCalendar'
 import { Input } from './components/ui/input'
+import { LoadingBar } from './components/ui/LoadingBar'
 import { useHutAvailability } from './hooks/useHutAvailability'
 import { TourPlannerService } from './services/tourPlanner'
 import type { Hut, TourDate } from './types'
-import { Search, Users } from 'lucide-react'
+import { Users } from 'lucide-react'
 
 function App() {
   const [selectedHuts, setSelectedHuts] = useState<Hut[]>([])
@@ -51,8 +52,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+    <>
+      <LoadingBar isLoading={isLoading} />
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-8">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
             Alpine Hut Tour Planner
@@ -66,9 +69,9 @@ function App() {
           <div className="lg:col-span-1 space-y-6">
             <div className="bg-card rounded-lg shadow-sm border border-border p-6">
               <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-card-foreground mb-2">
-                    <Users className="inline h-4 w-4 mr-1" />
+                <div className="flex items-center gap-3">
+                  <label className="text-sm font-medium text-card-foreground flex items-center">
+                    <Users className="h-4 w-4 mr-1" />
                     Group Size
                   </label>
                   <Input
@@ -78,6 +81,7 @@ function App() {
                     value={groupSize}
                     onChange={(e) => setGroupSize(parseInt(e.target.value) || 1)}
                     placeholder="Number of people"
+                    className="w-32"
                   />
                 </div>
 
@@ -85,22 +89,6 @@ function App() {
                   selectedHuts={selectedHuts}
                   onHutsChange={handleHutsChange}
                 />
-
-                {selectedHuts.length > 0 && (
-                  <div className="flex items-center justify-center p-3 bg-muted rounded-md">
-                    {isLoading ? (
-                      <>
-                        <Search className="h-4 w-4 mr-2 animate-spin text-info" />
-                        <span className="text-sm text-muted-foreground">Searching...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Search className="h-4 w-4 mr-2 text-success" />
-                        <span className="text-sm text-muted-foreground">Search complete</span>
-                      </>
-                    )}
-                  </div>
-                )}
 
                 {error && (
                   <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-md">
@@ -124,16 +112,7 @@ function App() {
 
           <div className="lg:col-span-2">
             <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-              {isLoading ? (
-                <div className="flex items-center justify-center py-12">
-                  <div className="text-center">
-                    <Search className="h-8 w-8 animate-spin mx-auto mb-4 text-muted-foreground" />
-                    <p className="text-muted-foreground">Searching for available dates...</p>
-                  </div>
-                </div>
-              ) : (
-                <TourCalendar tourDates={tourDates} />
-              )}
+              <TourCalendar tourDates={tourDates} />
             </div>
           </div>
         </div>
@@ -150,8 +129,9 @@ function App() {
             </p>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
