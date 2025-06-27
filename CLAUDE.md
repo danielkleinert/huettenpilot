@@ -12,6 +12,8 @@ Hüttenplan is a React + TypeScript + Vite application for planning multi-day Al
 - `yarn build` - Build for production (runs TypeScript compilation then Vite build)
 - `yarn lint` - Run ESLint with enhanced rules for unused code detection
 - `yarn preview` - Preview production build locally
+- `yarn test` - Run tests in watch mode with Vitest
+- `yarn test:run` - Run tests once and exit
 
 ## Project Structure
 
@@ -47,6 +49,7 @@ src/
 - **Icons**: Lucide React
 - **Package Manager**: Yarn 4.9.1
 - **Linting**: ESLint with enhanced rules for catching unused code
+- **Testing**: Vitest with jsdom environment and React Testing Library
 - **Dev Environment**: Modern ESM-based setup with API proxy
 
 ## Architecture
@@ -124,9 +127,18 @@ interface HutAvailability {
 - All semantic colors automatically mapped to Tailwind classes via `tailwind.config.js`
 - Never hardcode colors like `bg-white` or `text-gray-500` - use semantic equivalents
 
+### Testing Guidelines
+- Use Vitest for unit and integration tests
+- React Testing Library for component testing
+- Test files should be co-located with components (e.g., `Component.test.tsx`)
+- Focus on testing user interactions and business logic
+- Use `yarn test` for watch mode during development
+- Use `yarn test:run` in CI/CD pipelines
+
 ### Common Tasks
 1. Run `yarn lint` to catch unused code before committing
 2. Use `yarn build` to verify changes work correctly
-3. New API endpoints go in `src/services/`
-4. New types go in `src/types/index.ts`
-5. UI components should use semantic Tailwind color classes (bg-card, text-foreground, etc.)
+3. Run `yarn test:run` to verify tests pass before committing
+4. New API endpoints go in `src/services/`
+5. New types go in `src/types/index.ts`
+6. UI components should use semantic Tailwind color classes (bg-card, text-foreground, etc.)

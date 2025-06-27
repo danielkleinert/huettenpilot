@@ -3,10 +3,11 @@ import type { TourDate } from '@/types'
 
 interface TourCalendarProps {
   tourDates: TourDate[]
+  groupSize: number
 }
 
-export function TourCalendar({ tourDates }: TourCalendarProps) {
-  const [hoveredDate, setHoveredDate] = useState<TourDate | null>(null)
+export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
+  const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
 
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -51,6 +52,7 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
     }) || null
   }
 
+
   const formatDate = (date: Date): string => {
     return date.toLocaleDateString('en-US', {
       weekday: 'short',
@@ -58,6 +60,15 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
       month: 'short',
       day: 'numeric'
     })
+  }
+
+  const getAvailabilityColor = (availableBeds: number, groupSize: number) => {
+    const hasGoodAvailability = availableBeds >= groupSize && (availableBeds - groupSize) >= 5
+    const hasLimitedAvailability = availableBeds >= groupSize && (availableBeds - groupSize) < 5
+    
+    if (hasGoodAvailability) return 'text-green-700 dark:text-green-400'
+    if (hasLimitedAvailability) return 'text-orange-600 dark:text-orange-400'
+    return 'text-card-foreground'
   }
 
   return (
@@ -81,7 +92,8 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
             <div className="grid grid-cols-7 gap-1">
               {getDaysInMonth(month).map((day, dayIndex) => {
                 const tourDate = getTourDateForDay(day)
-                const hasAvailability = !!tourDate
+                const availabilityColor = getAvailabilityColor(tourDate?.minAvailableBeds ?? 0, groupSize)
+                
                 const isToday = day && 
                   day.getFullYear() === today.getFullYear() &&
                   day.getMonth() === today.getMonth() &&
@@ -94,9 +106,9 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
                       relative h-12 flex items-center justify-center text-sm cursor-pointer
                       ${day ? 'hover:bg-muted' : ''}
                       ${isToday ? 'bg-blue-100 dark:bg-blue-900/30 font-semibold text-blue-800 dark:text-blue-200' : ''}
-                      ${hasAvailability ? 'text-green-700 dark:text-green-400 font-medium' : 'text-card-foreground'}
+                      ${availabilityColor} ${tourDate?.minAvailableBeds && tourDate.minAvailableBeds >= groupSize ? 'font-medium' : ''}
                     `}
-                    onMouseEnter={() => setHoveredDate(tourDate)}
+                    onMouseEnter={() => setHoveredDate(day)}
                     onMouseLeave={() => setHoveredDate(null)}
                   >
                     {day && (
@@ -109,40 +121,57 @@ export function TourCalendar({ tourDates }: TourCalendarProps) {
           </div>
         ))}
       </div>
-      {hoveredDate && (
-        <div className="fixed bottom-4 right-4 bg-card border border-border text-card-foreground p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm">
-          <div className="font-semibold mb-2">
-            Tour starting {formatDate(hoveredDate.startDate)}
-          </div>
-          <div className="space-y-2">
-            {hoveredDate.hutAvailabilities.map(({ hut, availability }, index) => (
-              <div key={hut.hutId} className="text-sm">
-                <div className="font-medium">
-                  Day {index + 1}: {hut.hutName}
+      {hoveredDate && (() => {
+        const tourDate = getTourDateForDay(hoveredDate)
+        
+        if (!tourDate) return null
+        
+        return (
+          <div className="fixed bottom-4 right-4 bg-card border border-border text-card-foreground p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm">
+            <div className="font-semibold mb-2">
+              {tourDate && tourDate.minAvailableBeds >= groupSize ? `Tour starting ${formatDate(hoveredDate)}` : `Availability for ${formatDate(hoveredDate)}`}
+            </div>
+            <div className="space-y-2">
+              {tourDate.hutAvailabilities.map(({ hut, availability }, index) => (
+                <div key={hut.hutId} className="text-sm">
+                  <div className="font-medium">
+                    Day {index + 1}: {hut.hutName}
+                  </div>
+                  <div className={`text-sm ${
+                    availability 
+                      ? getAvailabilityColor(availability.freeBeds, groupSize)
+                      : 'text-muted-foreground'
+                  }`}>
+                    {availability 
+                      ? `${availability.freeBeds} beds available`
+                      : 'No availability data'
+                    }
+                  </div>
                 </div>
-                <div className="text-muted-foreground">
-                  {availability.freeBeds} free beds available
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
 
       <div className="flex items-center gap-4 text-sm">
         <div className="flex items-center gap-2">
-          <span className="text-green-700 dark:text-green-400 font-medium">●</span>
-          <span>Available tour start date</span>
+          <span className={getAvailabilityColor(groupSize + 5, groupSize)}>●</span>
+          <span>Available (5+ beds to spare)</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-blue-500 dark:bg-blue-400 rounded-full"></div>
-          <span>Today</span>
+          <span className={getAvailabilityColor(groupSize + 2, groupSize)}>●</span>
+          <span>Limited (less than 5 beds to spare)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className={getAvailabilityColor(groupSize - 1, groupSize)}>●</span>
+          <span>No availability</span>
         </div>
       </div>
 
       {tourDates.length === 0 && (
         <div className="text-center py-8 text-muted-foreground">
-          No available tour dates found. Try adjusting your hut selection or group size.
+          No dates with availability data found.
         </div>
       )}
     </div>

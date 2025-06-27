@@ -3,42 +3,38 @@ import type { Hut, HutAvailability, TourDate } from '@/types'
 export class TourPlannerService {
   static findAvailableTourDates(
     huts: Hut[],
-    availabilityData: Record<number, HutAvailability[]>,
-    requiredBeds: number
+    availabilityData: Record<number, HutAvailability[]>
   ): TourDate[] {
     if (huts.length === 0) return []
 
-    const availableDates: TourDate[] = []
+    const allDates: TourDate[] = []
     const firstHutAvailability = availabilityData[huts[0].hutId] || []
+    
     for (const startDay of firstHutAvailability) {
-      if (!this.hasEnoughBeds(startDay, requiredBeds)) continue
-      
       const startDate = new Date(startDay.date)
-      const tourDateResult = this.checkConsecutiveAvailability(
+      const tourDateResult = this.getAvailabilityForAllHuts(
         huts,
         availabilityData,
-        startDate,
-        requiredBeds
+        startDate
       )
       
-      if (tourDateResult) {
-        availableDates.push(tourDateResult)
-      }
+      allDates.push(tourDateResult)
     }
     
-    return availableDates.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+    return allDates.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
   }
 
-  private static checkConsecutiveAvailability(
+  private static getAvailabilityForAllHuts(
     huts: Hut[],
     availabilityData: Record<number, HutAvailability[]>,
-    startDate: Date,
-    requiredBeds: number
-  ): TourDate | null {
+    startDate: Date
+  ): TourDate {
     const hutAvailabilities: Array<{
       hut: Hut
-      availability: HutAvailability
+      availability: HutAvailability | null
     }> = []
+
+    let minAvailableBeds = Infinity
 
     for (let i = 0; i < huts.length; i++) {
       const hut = huts[i]
@@ -46,37 +42,51 @@ export class TourPlannerService {
       targetDate.setDate(startDate.getDate() + i)
       
       const hutAvailability = availabilityData[hut.hutId] || []
-      const dayAvailability = hutAvailability.find(day => {
-        const dayDate = new Date(day.date)
-        return this.isSameDay(dayDate, targetDate)
-      })
+      const dayAvailability = this.findAvailabilityForDate(hutAvailability, targetDate)
       
-      if (!dayAvailability || !this.hasEnoughBeds(dayAvailability, requiredBeds)) {
-        return null
+      if (!dayAvailability) {
+        minAvailableBeds = 0
+        hutAvailabilities.push({
+          hut,
+          availability: null
+        })
+      } else {
+        const availableBeds = this.getAvailableBeds(dayAvailability)
+        minAvailableBeds = Math.min(minAvailableBeds, availableBeds)
+        hutAvailabilities.push({
+          hut,
+          availability: dayAvailability
+        })
       }
-      
-      hutAvailabilities.push({
-        hut,
-        availability: dayAvailability
-      })
     }
     
     return {
       startDate,
-      hutAvailabilities
+      hutAvailabilities,
+      minAvailableBeds: minAvailableBeds === Infinity ? 0 : minAvailableBeds
     }
   }
 
-  private static hasEnoughBeds(availability: HutAvailability, requiredBeds: number): boolean {
-    return availability.freeBeds >= requiredBeds && 
-           availability.hutStatus === 'SERVICED' &&
-           availability.percentage !== 'FULL'
+  private static findAvailabilityForDate(
+    availabilities: HutAvailability[], 
+    targetDate: Date
+  ): HutAvailability | null {
+    const year = targetDate.getFullYear()
+    const month = String(targetDate.getMonth() + 1).padStart(2, '0')
+    const dayOfMonth = String(targetDate.getDate()).padStart(2, '0')
+    const targetDateStr = `${year}-${month}-${dayOfMonth}`
+    
+    return availabilities.find(availability => {
+      const apiDate = availability.date.split('T')[0]
+      return apiDate === targetDateStr
+    }) || null
   }
 
-  private static isSameDay(date1: Date, date2: Date): boolean {
-    return date1.getFullYear() === date2.getFullYear() &&
-           date1.getMonth() === date2.getMonth() &&
-           date1.getDate() === date2.getDate()
+  private static getAvailableBeds(availability: HutAvailability): number {
+    if (availability.hutStatus !== 'SERVICED' || availability.percentage === 'FULL') {
+      return 0
+    }
+    return availability.freeBeds
   }
 
 }

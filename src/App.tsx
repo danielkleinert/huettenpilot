@@ -33,8 +33,7 @@ function App() {
 
     return TourPlannerService.findAvailableTourDates(
       selectedHuts,
-      availabilityData,
-      groupSize
+      availabilityData
     )
   }, [selectedHuts, availabilityData, groupSize, isLoading])
 
@@ -124,40 +123,17 @@ function App() {
                     <p className="text-destructive text-sm">{error}</p>
                   </div>
                 )}
-
-                {tourDates.length > 0 && !isLoading && (
-                  <div className="p-3 bg-success/10 border border-success/20 rounded-md">
-                    <p className="text-success text-sm font-medium">
-                      Found {tourDates.length} available tour dates
-                    </p>
-                    <p className="text-success text-xs mt-1">
-                      {selectedHuts.length}-day tour for {groupSize} people
-                    </p>
-                  </div>
-                )}
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-2">
             <div className="bg-card rounded-lg shadow-sm border border-border p-6">
-              <TourCalendar tourDates={tourDates} />
+              <TourCalendar tourDates={tourDates} groupSize={groupSize}/>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 bg-info/10 border border-info/20 rounded-lg p-6">
-          <h3 className="font-medium text-info mb-2">How it works</h3>
-          <div className="text-sm text-info space-y-1">
-            <p>1. Select the huts you want to visit in order (Day 1, Day 2, etc.)</p>
-            <p>2. Enter your group size to check bed availability</p>
-            <p>3. View available start dates in the 4-month calendar</p>
-            <p>4. Hover over green dots to see availability details for each hut</p>
-            <p className="text-info text-xs pt-2">
-              ℹ️ Availability data is automatically cached by React Query
-            </p>
-          </div>
-        </div>
         </div>
       </div>
     </>

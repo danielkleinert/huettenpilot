@@ -10,13 +10,14 @@ export interface HutAvailability {
   date: string
   dateFormatted: string
   totalSleepingPlaces: number
-  percentage: 'AVAILABLE' | 'FULL' | 'LIMITED'
+  percentage: 'AVAILABLE' | 'FULL' | 'NEARLY FULL'
 }
 
 export interface TourDate {
   startDate: Date
   hutAvailabilities: Array<{
     hut: Hut
-    availability: HutAvailability
+    availability: HutAvailability | null
   }>
+  minAvailableBeds: number
 }
