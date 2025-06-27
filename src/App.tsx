@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { HutSelector } from './components/HutSelector'
 import { TourCalendar } from './components/TourCalendar'
+import TourMap from './components/TourMap'
 import { Input } from './components/ui/input'
 import { LoadingBar } from './components/ui/LoadingBar'
 import { useHutAvailability } from './hooks/useHutAvailability'
@@ -95,6 +96,8 @@ function App() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
+            <TourMap selectedHuts={selectedHuts} />
+            
             <div className="bg-card rounded-lg shadow-sm border border-border p-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
