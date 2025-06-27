@@ -87,7 +87,7 @@ function App() {
         <div className="container mx-auto px-4 py-8">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            Alpine Hut Tour Planner
+            Hüttenpilot
           </h1>
           <p className="text-muted-foreground">
             Plan your multi-day hut tour in the Alps. Find consecutive dates with available beds across your selected huts.
