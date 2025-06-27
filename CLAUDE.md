@@ -8,11 +8,11 @@ Hüttenplan is a React + TypeScript + Vite application for planning multi-day Al
 
 ## Development Commands
 
-- `yarn dev` - Start development server with hot reload
+- `yarn dev` - Start development server with hot reload (NEVER run this in Claude Code as it won't return control)
 - `yarn build` - Build for production (runs TypeScript compilation then Vite build)
 - `yarn lint` - Run ESLint with enhanced rules for unused code detection
 - `yarn preview` - Preview production build locally
-- `yarn test` - Run tests in watch mode with Vitest
+- `yarn test` - Run tests in watch mode with Vitest (NEVER run this in Claude Code as it won't return control)
 - `yarn test:run` - Run tests once and exit
 
 ## Project Structure
@@ -50,7 +50,7 @@ src/
 - **Package Manager**: Yarn 4.9.1
 - **Linting**: ESLint with enhanced rules for catching unused code
 - **Testing**: Vitest with jsdom environment and React Testing Library
-- **Dev Environment**: Modern ESM-based setup with API proxy
+- **Dev Environment**: Modern ESM-based setup with Netlify Edge Functions
 
 ## Architecture
 
@@ -61,7 +61,8 @@ src/
 4. **TourCalendar** - Displays results in 4-month view
 
 ### API Integration
-- Proxied through Vite dev server (`/api` → `https://www.hut-reservation.org`)
+- Netlify Edge Function at `netlify/edge-functions/api.ts` proxies `/api/*` to `https://www.hut-reservation.org`
+- Same-origin policy enforced (no CORS headers) for security
 - React Query handles caching (5min stale time), retries, and error states
 - Clean separation: `hutApi.ts` only handles HTTP, React Query handles caching
 
