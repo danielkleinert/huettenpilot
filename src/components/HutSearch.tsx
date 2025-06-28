@@ -4,11 +4,10 @@ import hutData from '@/hut_ids.json'
 import type { Hut } from '@/types'
 
 interface HutSearchProps {
-  selectedHuts: Hut[]
   onSelectHut: (hut: Hut) => void
 }
 
-export function HutSearch({ selectedHuts, onSelectHut }: HutSearchProps) {
+export function HutSearch({ onSelectHut }: HutSearchProps) {
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredHuts = useMemo(() => {
@@ -16,11 +15,10 @@ export function HutSearch({ selectedHuts, onSelectHut }: HutSearchProps) {
     
     return hutData
       .filter(hut => 
-        hut.hutName.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        !selectedHuts.some(selected => selected.hutId === hut.hutId)
+        hut.hutName.toLowerCase().includes(searchTerm.toLowerCase())
       )
       .slice(0, 10)
-  }, [searchTerm, selectedHuts])
+  }, [searchTerm])
 
   const selectHut = (hut: Hut) => {
     onSelectHut(hut)

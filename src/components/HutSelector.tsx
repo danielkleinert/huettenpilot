@@ -81,7 +81,6 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
       </DndContext>
 
       <HutSearch
-        selectedHuts={selectedHuts}
         onSelectHut={selectHut}
       />
     </div>
