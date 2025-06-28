@@ -98,7 +98,7 @@ function App() {
           <div className="lg:col-span-1 space-y-6">
             <TourMap selectedHuts={selectedHuts} />
             
-            <div className="sm:bg-card rounded-lg shadow-sm sm:border border-border sm:p-6">
+            <div className="sm:bg-card rounded-lg sm:shadow-sm sm:border border-border sm:p-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <label className="text-sm font-medium text-card-foreground flex items-center">
@@ -131,7 +131,7 @@ function App() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="sm:bg-card rounded-lg shadow-sm sm:border border-border sm:p-6">
+            <div className="sm:bg-card rounded-lg sm:shadow-sm sm:border border-border sm:p-6">
               <TourCalendar tourDates={tourDates} groupSize={groupSize}/>
             </div>
           </div>

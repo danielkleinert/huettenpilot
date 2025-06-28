@@ -93,14 +93,14 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
         ref={setNodeRef}
         style={style}
         className={`@container p-4 bg-success/10 bg-card border border-success/20 rounded-md ${
-            isDragging ? 'opacity-50' : ''
+            isDragging ? 'opacity-50 select-none' : ''
         }`}
     >
       <div className="flex items-start gap-4">
         <div
             {...attributes}
             {...listeners}
-            className="cursor-grab active:cursor-grabbing text-muted-foreground hover:text-foreground mt-1"
+            className="cursor-grab active:cursor-grabbing text-muted-foreground hover:text-foreground mt-1 touch-none"
         >
           <GripVertical className="h-4 w-4"/>
         </div>
