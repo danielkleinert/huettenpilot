@@ -13,6 +13,9 @@ Born from the pure frustration of manually checking dozens of hut websites for t
 - **Smart Tour Planning**: Finds consecutive dates where all selected huts have enough beds
 - **Real-time Availability**: Fetches current availability from hut-reservation.org
 - **Smart Hut Discovery**: Search bar finds huts nearest to your last selected hut for easy route planning
+- **Mini Map**: Visual tour overview showing your route through the Alps
+- **Drag & Drop Reordering**: Easily rearrange huts to optimize your route
+- **Detailed Availability View**: See exact bed counts available at each hut for your tour dates
 - **400+ Alpine Huts**: Comprehensive database with accurate coordinates
 - **Multi-language Support**: German, English, Italian, and French
 - **Responsive Design**: Works on desktop and mobile
