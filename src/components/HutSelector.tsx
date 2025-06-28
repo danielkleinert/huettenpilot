@@ -82,6 +82,7 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
 
       <HutSearch
         onSelectHut={selectHut}
+        selectedHuts={selectedHuts}
       />
     </div>
   )
