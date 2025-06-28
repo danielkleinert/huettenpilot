@@ -103,7 +103,7 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
                   <div
                     key={dayIndex}
                     className={`
-                      relative h-12 flex items-center justify-center text-sm cursor-pointer
+                      relative aspect-square flex items-center justify-center text-sm cursor-pointer
                       ${day ? 'hover:bg-muted' : ''}
                       ${isToday ? 'bg-blue-100 dark:bg-blue-900/30 font-semibold text-blue-800 dark:text-blue-200' : ''}
                       ${availabilityColor} ${tourDate?.minAvailableBeds && tourDate.minAvailableBeds >= groupSize ? 'font-medium' : ''}
@@ -154,7 +154,7 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
         )
       })()}
 
-      <div className="flex items-center gap-4 text-sm">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-4 text-sm">
         <div className="flex items-center gap-2">
           <span className={getAvailabilityColor(groupSize + 5, groupSize)}>●</span>
           <span>Available (5+ beds to spare)</span>
