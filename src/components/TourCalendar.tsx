@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { TourDate } from '@/types'
 
 interface TourCalendarProps {
@@ -7,6 +8,7 @@ interface TourCalendarProps {
 }
 
 export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
+  const { t } = useTranslation()
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
 
@@ -23,11 +25,16 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
   }, [])
 
   const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    t('calendar.months.january'), t('calendar.months.february'), t('calendar.months.march'), 
+    t('calendar.months.april'), t('calendar.months.may'), t('calendar.months.june'),
+    t('calendar.months.july'), t('calendar.months.august'), t('calendar.months.september'), 
+    t('calendar.months.october'), t('calendar.months.november'), t('calendar.months.december')
   ]
 
-  const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  const dayNames = [
+    t('calendar.days.monday'), t('calendar.days.tuesday'), t('calendar.days.wednesday'), 
+    t('calendar.days.thursday'), t('calendar.days.friday'), t('calendar.days.saturday'), t('calendar.days.sunday')
+  ]
   const today = new Date()
   const months = []
   for (let i = 0; i < 4; i++) {
@@ -100,7 +107,7 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-xl font-semibold">Available Tour Dates</h2>
+      <h2 className="text-xl font-semibold">{t('calendar.title')}</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {months.map((month, monthIndex) => (
@@ -175,13 +182,16 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="font-semibold mb-2">
-              {tourDate && tourDate.minAvailableBeds >= groupSize ? `Tour starting ${formatDate(selectedDate)}` : `Availability for ${formatDate(selectedDate)}`}
+              {tourDate && tourDate.minAvailableBeds >= groupSize 
+                ? t('calendar.tourStarting', { date: formatDate(selectedDate) })
+                : t('calendar.availabilityFor', { date: formatDate(selectedDate) })
+              }
             </div>
             <div className="space-y-2">
               {tourDate.hutAvailabilities.map(({ hut, availability }, index) => (
                 <div key={hut.hutId} className="text-sm">
                   <div className="font-medium">
-                    Day {index + 1}: {hut.hutName}
+                    {t('calendar.day', { number: index + 1 })}: {hut.hutName}
                   </div>
                   <div className={`text-sm ${
                     availability 
@@ -190,9 +200,9 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
                   }`}>
                     {availability 
                       ? availability.hutStatus === 'CLOSED'
-                        ? 'CLOSED'
-                        : `${availability.freeBeds} beds available`
-                      : 'No availability data'
+                        ? t('calendar.closed')
+                        : t('calendar.bedsAvailable', { count: availability.freeBeds || 0 })
+                      : t('calendar.noAvailabilityData')
                     }
                   </div>
                 </div>
@@ -205,21 +215,21 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
       <div className="flex flex-col lg:flex-row lg:items-center gap-4 text-sm">
         <div className="flex items-center gap-2">
           <span className={getAvailabilityColor(groupSize + 5, groupSize)}>●</span>
-          <span>Available (5+ beds to spare)</span>
+          <span>{t('calendar.legend.available')}</span>
         </div>
         <div className="flex items-center gap-2">
           <span className={getAvailabilityColor(groupSize + 2, groupSize)}>●</span>
-          <span>Limited (less than 5 beds to spare)</span>
+          <span>{t('calendar.legend.limited')}</span>
         </div>
         <div className="flex items-center gap-2">
           <span className={getAvailabilityColor(groupSize - 1, groupSize)}>●</span>
-          <span>No availability</span>
+          <span>{t('calendar.legend.noAvailability')}</span>
         </div>
       </div>
 
       {tourDates.length === 0 && (
         <div className="text-center py-8 text-muted-foreground">
-          No dates with availability data found.
+          {t('calendar.noDateFound')}
         </div>
       )}
     </div>

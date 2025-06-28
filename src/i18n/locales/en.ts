@@ -1,0 +1,62 @@
+export default {
+  app: {
+    title: "Hüttenpilot",
+    description: "Plan your multi-day hut tour in the Alps. Find consecutive dates with available beds across your selected huts."
+  },
+  hutSelector: {
+    title: "Select Huts for Your Tour",
+    groupSize: "Group Size",
+    groupSizePlaceholder: "Number of people",
+    searchPlaceholder: "Search and add huts..."
+  },
+  calendar: {
+    title: "Available Tour Dates",
+    tourStarting: "Tour starting {{date}}",
+    availabilityFor: "Availability for {{date}}",
+    day: "Day {{number}}",
+    bedsAvailable_zero: "No beds available",
+    bedsAvailable_one: "{{count}} bed available",
+    bedsAvailable_other: "{{count}} beds available",
+    closed: "CLOSED",
+    noAvailabilityData: "No availability data",
+    noDateFound: "No dates with availability data found.",
+    legend: {
+      available: "Available (5+ beds to spare)",
+      limited: "Limited (less than 5 beds to spare)",
+      noAvailability: "No availability"
+    },
+    months: {
+      january: "January",
+      february: "February",
+      march: "March",
+      april: "April",
+      may: "May",
+      june: "June",
+      july: "July",
+      august: "August",
+      september: "September",
+      october: "October",
+      november: "November",
+      december: "December"
+    },
+    days: {
+      monday: "Mon",
+      tuesday: "Tue",
+      wednesday: "Wed",
+      thursday: "Thu",
+      friday: "Fri",
+      saturday: "Sat",
+      sunday: "Sun"
+    }
+  },
+  errors: {
+    groupSizeInvalid: "Group size must be between 1 and 50 people",
+    fetchFailed: "Failed to fetch hut availability. Please try again."
+  },
+  languages: {
+    de: "Deutsch",
+    en: "English",
+    it: "Italiano",
+    fr: "Français"
+  }
+}

@@ -1,9 +1,11 @@
 import { useState, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { HutSelector } from './components/HutSelector'
 import { TourCalendar } from './components/TourCalendar'
 import TourMap from './components/TourMap'
 import { Input } from './components/ui/input'
 import { LoadingBar } from './components/ui/LoadingBar'
+import { LanguageSelector } from './components/LanguageSelector'
 import { useHutAvailability } from './hooks/useHutAvailability'
 import { TourPlannerService } from './services/tourPlanner'
 import type { Hut, TourDate } from './types'
@@ -12,6 +14,7 @@ import { getStateFromUrl, updateUrlState } from './lib/urlState'
 import hutData from '@/hut_ids.json'
 
 function App() {
+  const { t } = useTranslation()
   const [selectedHuts, setSelectedHuts] = useState<Hut[]>([])
   const [groupSize, setGroupSize] = useState<number>(2)
   const [error, setError] = useState<string | null>(null)
@@ -42,13 +45,13 @@ function App() {
     if (selectedHuts.length === 0) {
       setError(null)
     } else if (groupSize < 1 || groupSize > 50) {
-      setError('Group size must be between 1 and 50 people')
+      setError(t('errors.groupSizeInvalid'))
     } else if (isError && errors.length > 0) {
-      setError('Failed to fetch hut availability. Please try again.')
+      setError(t('errors.fetchFailed'))
     } else {
       setError(null)
     }
-  }, [selectedHuts.length, groupSize, isError, errors])
+  }, [selectedHuts.length, groupSize, isError, errors, t])
 
   // Initialize state from URL on component mount
   useEffect(() => {
@@ -87,10 +90,10 @@ function App() {
         <div className="container mx-auto px-4 py-8">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            Hüttenpilot
+            {t('app.title')}
           </h1>
           <p className="text-muted-foreground">
-            Plan your multi-day hut tour in the Alps. Find consecutive dates with available beds across your selected huts.
+            {t('app.description')}
           </p>
         </header>
 
@@ -103,7 +106,7 @@ function App() {
                 <div className="flex items-center gap-3">
                   <label className="text-sm font-medium text-card-foreground flex items-center">
                     <Users className="h-4 w-4 mr-1" />
-                    Group Size
+                    {t('hutSelector.groupSize')}
                   </label>
                   <Input
                     type="number"
@@ -111,7 +114,7 @@ function App() {
                     max="50"
                     value={groupSize}
                     onChange={(e) => handleGroupSizeChange(parseInt(e.target.value) || 1)}
-                    placeholder="Number of people"
+                    placeholder={t('hutSelector.groupSizePlaceholder')}
                     className="w-32"
                   />
                 </div>
@@ -136,6 +139,12 @@ function App() {
             </div>
           </div>
         </div>
+
+        <footer className="mt-16 pt-8 border-t border-border">
+          <div className="flex justify-center">
+            <LanguageSelector />
+          </div>
+        </footer>
 
         </div>
       </div>

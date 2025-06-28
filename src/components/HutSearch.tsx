@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Input } from './ui/input'
 import hutData from '@/hut_ids.json'
 import type { Hut } from '@/types'
@@ -10,6 +11,7 @@ interface HutSearchProps {
 }
 
 export function HutSearch({ onSelectHut, selectedHuts }: HutSearchProps) {
+  const { t } = useTranslation()
   const [searchTerm, setSearchTerm] = useState('')
   const [isFocused, setIsFocused] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(-1)
@@ -71,7 +73,7 @@ export function HutSearch({ onSelectHut, selectedHuts }: HutSearchProps) {
   return (
     <div className="relative">
       <Input
-        placeholder="Search and add huts..."
+        placeholder={t('hutSelector.searchPlaceholder')}
         value={searchTerm}
         onChange={(e) => {
           setSearchTerm(e.target.value)

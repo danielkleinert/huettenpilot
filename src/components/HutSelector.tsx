@@ -1,4 +1,5 @@
 import type { Hut } from '@/types'
+import { useTranslation } from 'react-i18next'
 import { SortableHutItem } from './SortableHutItem'
 import { HutSearch } from './HutSearch'
 import {
@@ -24,6 +25,7 @@ interface HutSelectorProps {
 }
 
 export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
+  const { t } = useTranslation()
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(TouchSensor, {
@@ -59,7 +61,7 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-semibold">Select Huts for Your Tour</h2>
+      <h2 className="text-xl font-semibold">{t('hutSelector.title')}</h2>
       
       <DndContext
         sensors={sensors}

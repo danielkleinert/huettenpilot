@@ -23,10 +23,12 @@ Hüttenplan is a React + TypeScript + Vite application for planning multi-day Al
 ```
 src/
 ├── App.tsx              # Main application with tour planning logic
-├── main.tsx             # React app entry point with React Query setup
+├── main.tsx             # React app entry point with React Query setup and i18n
 ├── components/          # React components
 │   ├── HutSelector.tsx  # Filterable hut selection with search
+│   ├── HutSearch.tsx    # Search input component for adding huts
 │   ├── TourCalendar.tsx # 4-month calendar display
+│   ├── LanguageSelector.tsx # Language switcher component (footer)
 │   └── ui/              # Reusable UI components (Button, Input, Select)
 ├── hooks/               # Custom React hooks
 │   └── useHutAvailability.ts # React Query hook for hut data fetching
@@ -37,6 +39,13 @@ src/
 │   └── index.ts         # Shared types (Hut, HutAvailability, TourDate)
 ├── lib/                 # Utility libraries
 │   └── utils.ts         # Tailwind utility functions
+├── i18n/                # Internationalization
+│   ├── index.ts         # i18n configuration with lazy loading
+│   └── locales/         # Translation files
+│       ├── de.ts        # German translations (default, casual tone)
+│       ├── en.ts        # English translations
+│       ├── it.ts        # Italian translations (casual tone)
+│       └── fr.ts        # French translations (casual tone)
 ├── assets/              # Static assets
 ├── index.css            # Tailwind CSS imports
 └── hut_ids.json         # Static data with 400+ mountain hut definitions and OSM coordinates
@@ -53,6 +62,7 @@ scripts/
 - **Build Tool**: Vite 6.3.5 with SWC plugin and Tailwind CSS v4 integration
 - **Styling**: Tailwind CSS v4 via @tailwindcss/vite plugin with shadcn/ui color system
 - **Data Fetching**: @tanstack/react-query for caching and state management
+- **Internationalization**: react-i18next with lazy loading, browser language detection
 - **UI Components**: Custom shadcn/ui-inspired components with Tailwind
 - **Icons**: Lucide React
 - **Package Manager**: Yarn 4.9.1
@@ -87,6 +97,8 @@ scripts/
 - **Calendar Display**: 4-month view with hover tooltips showing availability details
 - **Responsive Design**: Works on desktop and mobile
 - **Dark Mode**: Automatic OS preference detection with semantic color system
+- **Internationalization**: Multi-language support (German, English, Italian, French) with lazy loading
+- **Language Detection**: Automatic browser language detection with localStorage persistence
 
 ## Development Guidelines
 
@@ -113,6 +125,15 @@ scripts/
 - All semantic colors automatically mapped to Tailwind classes via `tailwind.config.js`
 - Never hardcode colors like `bg-white` or `text-gray-500` - use semantic equivalents
 
+### Internationalization Guidelines
+- All user-facing text must use translation keys via `useTranslation()` hook
+- Translation files located in `src/i18n/locales/` as TypeScript modules
+- Use casual, friendly tone in German, Italian, and French (Du/tu form, not Sie/vous)
+- German is the default fallback language (appropriate for Alpine context)
+- Use proper pluralization forms: `_zero`, `_one`, `_other` for count-based translations
+- Languages are lazy-loaded automatically when selected
+- Language preference stored in localStorage
+
 ### Testing Guidelines
 - Use Vitest for unit and integration tests
 - React Testing Library for component testing
@@ -135,3 +156,5 @@ scripts/
 5. New types go in `src/types/index.ts`
 6. UI components should use semantic Tailwind color classes (bg-card, text-foreground, etc.)
 7. Data maintenance scripts are in `scripts/` directory
+8. All new UI text must be translatable - add keys to all language files in `src/i18n/locales/`
+9. Language selector is located in the footer for easy access
