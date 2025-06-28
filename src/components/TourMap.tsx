@@ -7,8 +7,10 @@ import VectorSource from 'ol/source/Vector'
 import { Feature } from 'ol'
 import { Point, LineString } from 'ol/geom'
 import { Style, Icon, Stroke } from 'ol/style'
-import { fromLonLat } from 'ol/proj'
+import { fromLonLat, transform } from 'ol/proj'
 import { Attribution } from 'ol/control'
+import { register } from 'ol/proj/proj4'
+import proj4 from 'proj4'
 import { useQuery } from '@tanstack/react-query'
 import { hutApi } from '@/services/hutApi'
 import type { Hut, HutInfo } from '@/types'
@@ -19,10 +21,32 @@ interface TourMapProps {
   selectedHuts: Hut[]
 }
 
+// Register Swiss coordinate systems with OpenLayers
+proj4.defs('EPSG:21781', '+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs +type=crs')
+register(proj4)
+
 function parseCoordinates(coordinatesString: string): [number, number] | null {
   const coords = coordinatesString.split(/[,/]/).map(s => parseFloat(s.trim()))
   if (coords.length === 2 && !isNaN(coords[0]) && !isNaN(coords[1])) {
-    return [coords[1], coords[0]]
+    const [first, second] = coords
+    
+    // Check if coordinates are in standard longitude/latitude range
+    if (first >= -180 && first <= 180 && second >= -90 && second <= 90) {
+      return [second, first] // [lon, lat]
+    }
+    
+    // Check if coordinates are in Swiss CH1903 decimal format (e.g., 581.300 / 134.310)
+    if (first >= 480 && first <= 840 && second >= 70 && second <= 300) {
+      try {
+        // Scale up to proper CH1903 format and convert using OpenLayers
+        const [lon, lat] = transform([first * 1000, second * 1000], 'EPSG:21781', 'EPSG:4326')
+        return [lon, lat]
+      } catch {
+        return null
+      }
+    }
+    
+    return null
   }
   return null
 }
@@ -161,10 +185,12 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
 
     if (validHuts.length > 0) {
       const extent = vectorSource.getExtent()
-      mapInstanceRef.current.getView().fit(extent, {
-        padding: [50, 50, 50, 50],
-        maxZoom: 12
-      })
+      if (extent.every(coord => coord !== Infinity && coord !== -Infinity)) {
+        mapInstanceRef.current.getView().fit(extent, {
+          padding: [50, 50, 50, 50],
+          maxZoom: 12
+        })
+      }
     }
   }, [hutInfos])
 
@@ -239,10 +265,12 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
 
     if (validHuts.length > 0) {
       const extent = vectorSource.getExtent()
-      fullscreenMapInstanceRef.current.getView().fit(extent, {
-        padding: [50, 50, 50, 50],
-        maxZoom: 12
-      })
+      if (extent.every(coord => coord !== Infinity && coord !== -Infinity)) {
+        fullscreenMapInstanceRef.current.getView().fit(extent, {
+          padding: [50, 50, 50, 50],
+          maxZoom: 12
+        })
+      }
     }
   }
 
