@@ -2,20 +2,10 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
-const loadTranslation = async (lng: string) => {
-  switch (lng) {
-    case 'de':
-      return (await import('./locales/de')).default
-    case 'en':
-      return (await import('./locales/en')).default
-    case 'it':
-      return (await import('./locales/it')).default
-    case 'fr':
-      return (await import('./locales/fr')).default
-    default:
-      return (await import('./locales/de')).default
-  }
-}
+import de from './locales/de.json'
+import en from './locales/en.json'
+import it from './locales/it.json'
+import fr from './locales/fr.json'
 
 i18n
   .use(LanguageDetector)
@@ -24,33 +14,21 @@ i18n
     fallbackLng: 'de',
     debug: false,
     
-    resources: {},
+    resources: {
+      de: { translation: de },
+      en: { translation: en },
+      it: { translation: it },
+      fr: { translation: fr }
+    },
 
     interpolation: {
       escapeValue: false
     },
 
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage']
+      order: ['navigator'],
+      caches: []
     }
   })
-
-i18n.services.resourceStore.on('added', (lng: string) => {
-  console.log(`Loaded translations for: ${lng}`)
-})
-
-const loadLanguageAsync = async (lng: string) => {
-  if (!i18n.hasResourceBundle(lng, 'translation')) {
-    const translation = await loadTranslation(lng)
-    i18n.addResourceBundle(lng, 'translation', translation)
-  }
-}
-
-i18n.on('languageChanged', async (lng: string) => {
-  await loadLanguageAsync(lng)
-})
-
-loadLanguageAsync(i18n.language || 'de')
 
 export default i18n

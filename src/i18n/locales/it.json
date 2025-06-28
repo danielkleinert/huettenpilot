@@ -1,0 +1,62 @@
+{
+  "app": {
+    "title": "Hüttenpilot",
+    "description": "Pianifica il tuo tour di più giorni tra i rifugi alpini. Trova date consecutive con posti letto disponibili nei tuoi rifugi selezionati."
+  },
+  "hutSelector": {
+    "title": "Seleziona i rifugi per il tuo tour",
+    "groupSize": "Dimensione del gruppo",
+    "groupSizePlaceholder": "Numero di persone",
+    "searchPlaceholder": "Cerca e aggiungi rifugi..."
+  },
+  "calendar": {
+    "title": "Date Tour Disponibili",
+    "tourStarting": "Tour che inizia il {{date}}",
+    "availabilityFor": "Disponibilità per {{date}}",
+    "day": "Giorno {{number}}",
+    "bedsAvailable_zero": "Nessun posto letto disponibile",
+    "bedsAvailable_one": "{{count}} posto letto disponibile",
+    "bedsAvailable_other": "{{count}} posti letto disponibili",
+    "closed": "CHIUSO",
+    "noAvailabilityData": "Nessun dato di disponibilità",
+    "noDateFound": "Nessuna data con dati di disponibilità trovata.",
+    "legend": {
+      "available": "Disponibile (5+ posti di riserva)",
+      "limited": "Limitato (meno di 5 posti di riserva)",
+      "noAvailability": "Non disponibile"
+    },
+    "months": {
+      "january": "Gennaio",
+      "february": "Febbraio",
+      "march": "Marzo",
+      "april": "Aprile",
+      "may": "Maggio",
+      "june": "Giugno",
+      "july": "Luglio",
+      "august": "Agosto",
+      "september": "Settembre",
+      "october": "Ottobre",
+      "november": "Novembre",
+      "december": "Dicembre"
+    },
+    "days": {
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mer",
+      "thursday": "Gio",
+      "friday": "Ven",
+      "saturday": "Sab",
+      "sunday": "Dom"
+    }
+  },
+  "errors": {
+    "groupSizeInvalid": "La dimensione del gruppo deve essere tra 1 e 50 persone",
+    "fetchFailed": "Impossibile recuperare la disponibilità dei rifugi. Riprova."
+  },
+  "languages": {
+    "de": "Deutsch",
+    "en": "English",
+    "it": "Italiano",
+    "fr": "Français"
+  }
+}
