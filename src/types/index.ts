@@ -5,12 +5,12 @@ export interface Hut {
 
 export interface HutAvailability {
   freeBedsPerCategory: Record<string, number>
-  freeBeds: number
+  freeBeds: number | null
   hutStatus: 'SERVICED' | 'NOT_SERVICED' | 'CLOSED'
   date: string
   dateFormatted: string
   totalSleepingPlaces: number
-  percentage: 'AVAILABLE' | 'FULL' | 'NEARLY FULL'
+  percentage: 'AVAILABLE' | 'FULL' | 'NEARLY FULL' | 'CLOSED'
 }
 
 export interface HutInfo {

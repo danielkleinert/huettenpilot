@@ -74,7 +74,9 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
     })
   }
 
-  const getAvailabilityColor = (availableBeds: number, groupSize: number) => {
+  const getAvailabilityColor = (availableBeds: number | null, groupSize: number) => {
+    if (availableBeds === null) return 'text-card-foreground'
+    
     const hasGoodAvailability = availableBeds >= groupSize && (availableBeds - groupSize) >= 5
     const hasLimitedAvailability = availableBeds >= groupSize && (availableBeds - groupSize) < 5
     
@@ -162,7 +164,9 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
                       : 'text-muted-foreground'
                   }`}>
                     {availability 
-                      ? `${availability.freeBeds} beds available`
+                      ? availability.hutStatus === 'CLOSED'
+                        ? 'CLOSED'
+                        : `${availability.freeBeds} beds available`
                       : 'No availability data'
                     }
                   </div>
