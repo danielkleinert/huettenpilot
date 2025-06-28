@@ -30,4 +30,5 @@ dist-ssr
 .netlify
 
 # Generated data files
-hut_data.json
+hut_reservation_info.json
+osm_alpine_huts.json

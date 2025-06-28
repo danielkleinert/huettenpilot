@@ -38,8 +38,8 @@ async function fetchHutInfo(): Promise<void> {
 
   console.log(`\nFetching complete. Total huts fetched: ${huts.length}`)
 
-  await fs.writeFile('hut_data.json', JSON.stringify(huts, null, 2))
-  console.log('Hut data has been written to hut_data.json')
+  await fs.writeFile('hut_reservation_info.json', JSON.stringify(huts, null, 2))
+  console.log('Hut data has been written to hut_reservation_info.json')
 }
 
 fetchHutInfo().catch(console.error)

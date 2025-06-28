@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "fetch-huts": "tsx scripts/fetch-hut-info.ts",
+    "fetch-hut-reservation-info": "tsx scripts/fetch-hut-reservation-info.ts",
+    "fetch-osm-huts": "tsx scripts/fetch-all-osm-huts.ts",
     "generate-hut-list": "tsx scripts/generate-hut-list.ts"
   },
   "dependencies": {

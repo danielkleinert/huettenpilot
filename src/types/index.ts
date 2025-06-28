@@ -1,6 +1,7 @@
 export interface Hut {
   hutId: number
   hutName: string
+  coordinates: [number, number] | null
 }
 
 export interface HutAvailability {

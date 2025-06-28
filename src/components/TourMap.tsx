@@ -7,48 +7,14 @@ import VectorSource from 'ol/source/Vector'
 import { Feature } from 'ol'
 import { Point, LineString } from 'ol/geom'
 import { Style, Icon, Stroke } from 'ol/style'
-import { fromLonLat, transform } from 'ol/proj'
+import { fromLonLat } from 'ol/proj'
 import { Attribution } from 'ol/control'
-import { register } from 'ol/proj/proj4'
-import proj4 from 'proj4'
-import { useQueries } from '@tanstack/react-query'
-import { hutApi } from '@/services/hutApi'
-import type { Hut, HutInfo } from '@/types'
+import type { Hut } from '@/types'
 import { Maximize2, X } from 'lucide-react'
 import 'ol/ol.css'
 
 interface TourMapProps {
   selectedHuts: Hut[]
-}
-
-// Register Swiss coordinate systems with OpenLayers
-proj4.defs('EPSG:21781', '+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs +type=crs')
-register(proj4)
-
-function parseCoordinates(coordinatesString: string): [number, number] | null {
-  const coords = coordinatesString.split(/[,/]/).map(s => parseFloat(s.trim()))
-  if (coords.length === 2 && !isNaN(coords[0]) && !isNaN(coords[1])) {
-    const [first, second] = coords
-    
-    // Check if coordinates are in standard longitude/latitude range
-    if (first >= -180 && first <= 180 && second >= -90 && second <= 90) {
-      return [second, first] // [lon, lat]
-    }
-    
-    // Check if coordinates are in Swiss CH1903 decimal format (e.g., 581.300 / 134.310)
-    if (first >= 480 && first <= 840 && second >= 70 && second <= 300) {
-      try {
-        // Scale up to proper CH1903 format and convert using OpenLayers
-        const [lon, lat] = transform([first * 1000, second * 1000], 'EPSG:21781', 'EPSG:4326')
-        return [lon, lat]
-      } catch {
-        return null
-      }
-    }
-    
-    return null
-  }
-  return null
 }
 
 function createNumberedMarkerStyle(number: number): Style {
@@ -73,21 +39,7 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
   const fullscreenMapInstanceRef = useRef<Map | null>(null)
   const [isFullscreen, setIsFullscreen] = useState(false)
 
-  const hutInfoQueries = useQueries({
-    queries: selectedHuts.map(hut => ({
-      queryKey: ['hutInfo', hut.hutId],
-      queryFn: () => hutApi.fetchHutInfo(hut.hutId),
-      staleTime: 24 * 60 * 60 * 1000,
-      gcTime: 24 * 60 * 60 * 1000
-    }))
-  })
-
-  const hutInfos = selectedHuts
-    .map((hut, index) => ({
-      hut,
-      info: hutInfoQueries[index]?.data
-    }))
-    .filter(item => item.info !== null && item.info !== undefined) as Array<{ hut: Hut; info: HutInfo }>
+  const hutsWithCoordinates = selectedHuts.filter(hut => hut.coordinates !== null)
 
   useEffect(() => {
     if (!mapRef.current) return
@@ -133,25 +85,17 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
     })
 
     // If no huts selected, show Alps region
-    if (!hutInfos || hutInfos.length === 0) {
+    if (!hutsWithCoordinates || hutsWithCoordinates.length === 0) {
       mapInstanceRef.current.getView().setCenter(fromLonLat([10.5, 46.5]))
       mapInstanceRef.current.getView().setZoom(6)
       return
     }
 
-    const validHuts = hutInfos
-      .map(({ hut, info }, index) => {
-        const coordinates = parseCoordinates(info.coordinates)
-        return coordinates ? { hut, info, coordinates, index } : null
-      })
-      .filter(Boolean) as Array<{ hut: Hut; info: HutInfo; coordinates: [number, number]; index: number }>
-
-    if (validHuts.length === 0) return
-
     const vectorSource = new VectorSource()
 
-    validHuts.forEach(({ hut, coordinates, index }) => {
-      const transformedCoords = fromLonLat(coordinates)
+    hutsWithCoordinates.forEach((hut, index) => {
+      const [lat, lon] = hut.coordinates!
+      const transformedCoords = fromLonLat([lon, lat])
       const point = new Point(transformedCoords)
       const feature = new Feature({
         geometry: point,
@@ -161,8 +105,11 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
       vectorSource.addFeature(feature)
     })
 
-    if (validHuts.length > 1) {
-      const lineCoordinates = validHuts.map(({ coordinates }) => fromLonLat(coordinates))
+    if (hutsWithCoordinates.length > 1) {
+      const lineCoordinates = hutsWithCoordinates.map(hut => {
+        const [lat, lon] = hut.coordinates!
+        return fromLonLat([lon, lat])
+      })
       const lineString = new LineString(lineCoordinates)
       const lineFeature = new Feature({
         geometry: lineString
@@ -182,7 +129,7 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
 
     mapInstanceRef.current.addLayer(vectorLayer)
 
-    if (validHuts.length > 0) {
+    if (hutsWithCoordinates.length > 0) {
       const extent = vectorSource.getExtent()
       if (extent.every(coord => coord !== Infinity && coord !== -Infinity)) {
         mapInstanceRef.current.getView().fit(extent, {
@@ -191,7 +138,7 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
         })
       }
     }
-  }, [hutInfos])
+  }, [hutsWithCoordinates])
 
   const createFullscreenMap = () => {
     if (!fullscreenMapRef.current) return
@@ -215,23 +162,15 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
     })
 
     // If no huts selected, show Alps region only
-    if (!hutInfos || hutInfos.length === 0) {
+    if (!hutsWithCoordinates || hutsWithCoordinates.length === 0) {
       return
     }
 
-    const validHuts = hutInfos
-      .map(({ hut, info }, index) => {
-        const coordinates = parseCoordinates(info.coordinates)
-        return coordinates ? { hut, info, coordinates, index } : null
-      })
-      .filter(Boolean) as Array<{ hut: Hut; info: HutInfo; coordinates: [number, number]; index: number }>
-
-    if (validHuts.length === 0) return
-
     const vectorSource = new VectorSource()
 
-    validHuts.forEach(({ hut, coordinates, index }) => {
-      const transformedCoords = fromLonLat(coordinates)
+    hutsWithCoordinates.forEach((hut, index) => {
+      const [lat, lon] = hut.coordinates!
+      const transformedCoords = fromLonLat([lon, lat])
       const point = new Point(transformedCoords)
       const feature = new Feature({
         geometry: point,
@@ -241,8 +180,11 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
       vectorSource.addFeature(feature)
     })
 
-    if (validHuts.length > 1) {
-      const lineCoordinates = validHuts.map(({ coordinates }) => fromLonLat(coordinates))
+    if (hutsWithCoordinates.length > 1) {
+      const lineCoordinates = hutsWithCoordinates.map(hut => {
+        const [lat, lon] = hut.coordinates!
+        return fromLonLat([lon, lat])
+      })
       const lineString = new LineString(lineCoordinates)
       const lineFeature = new Feature({
         geometry: lineString
@@ -262,7 +204,7 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
 
     fullscreenMapInstanceRef.current.addLayer(vectorLayer)
 
-    if (validHuts.length > 0) {
+    if (hutsWithCoordinates.length > 0) {
       const extent = vectorSource.getExtent()
       if (extent.every(coord => coord !== Infinity && coord !== -Infinity)) {
         fullscreenMapInstanceRef.current.getView().fit(extent, {

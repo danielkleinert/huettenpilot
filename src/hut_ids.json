@@ -1,2638 +1,5058 @@
 [
   {
     "hutId": 1,
-    "hutName": "Blüemlisalphütte SAC"
+    "hutName": "Blüemlisalphütte SAC",
+    "coordinates": [
+      46.5101555,
+      7.7716385
+    ]
   },
   {
     "hutId": 2,
-    "hutName": "Glecksteinhütte SAC"
+    "hutName": "Glecksteinhütte SAC",
+    "coordinates": [
+      46.62511585714286,
+      8.096499971428571
+    ]
   },
   {
     "hutId": 3,
-    "hutName": "Capanna da l'Albigna CAS"
+    "hutName": "Capanna da l'Albigna CAS",
+    "coordinates": [
+      46.32996633636364,
+      9.655179681818181
+    ]
   },
   {
     "hutId": 4,
-    "hutName": "Kesch-Hütte SAC"
+    "hutName": "Kesch-Hütte SAC",
+    "coordinates": [
+      46.64517756,
+      9.87517146
+    ]
   },
   {
     "hutId": 5,
-    "hutName": "Lidernenhütte SAC"
+    "hutName": "Lidernenhütte SAC",
+    "coordinates": [
+      46.935175414285716,
+      8.692605814285715
+    ]
   },
   {
     "hutId": 6,
-    "hutName": "Monte Rosa Hütte SAC"
+    "hutName": "Monte Rosa Hütte SAC",
+    "coordinates": [
+      45.9569267,
+      7.814568
+    ]
   },
   {
     "hutId": 7,
-    "hutName": "Capanna di Sciora CAS"
+    "hutName": "Capanna di Sciora CAS",
+    "coordinates": [
+      46.3124626,
+      9.61106732
+    ]
   },
   {
     "hutId": 8,
-    "hutName": "Capanna Basòdino (Robiei) CAS"
+    "hutName": "Capanna Basòdino (Robiei) CAS",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 9,
-    "hutName": "Britanniahütte SAC"
+    "hutName": "Britanniahütte SAC",
+    "coordinates": [
+      46.0600605,
+      7.9350236
+    ]
   },
   {
     "hutId": 10,
-    "hutName": "Cabane des Dix CAS"
+    "hutName": "Cabane des Dix CAS",
+    "coordinates": [
+      46.01111605714285,
+      7.417581514285715
+    ]
   },
   {
     "hutId": 11,
-    "hutName": "Doldenhornhütte SAC"
+    "hutName": "Doldenhornhütte SAC",
+    "coordinates": [
+      46.486913066666666,
+      7.6974013222222215
+    ]
   },
   {
     "hutId": 12,
-    "hutName": "Konkordiahütte SAC"
+    "hutName": "Konkordiahütte SAC",
+    "coordinates": [
+      46.500476879999994,
+      8.053183180000001
+    ]
   },
   {
     "hutId": 13,
-    "hutName": "Leglerhütte SAC"
+    "hutName": "Leglerhütte SAC",
+    "coordinates": [
+      46.927415021052646,
+      9.08018122631579
+    ]
   },
   {
     "hutId": 14,
-    "hutName": "Mutthornhütte SAC"
+    "hutName": "Mutthornhütte SAC",
+    "coordinates": [
+      46.4862557,
+      7.8301446
+    ]
   },
   {
     "hutId": 15,
-    "hutName": "Oberaarjochhütte SAC"
+    "hutName": "Oberaarjochhütte SAC",
+    "coordinates": [
+      46.5260682,
+      8.1730617
+    ]
   },
   {
     "hutId": 16,
-    "hutName": "Terrihütte SAC"
+    "hutName": "Terrihütte SAC",
+    "coordinates": [
+      46.634590175,
+      9.005067866666666
+    ]
   },
   {
     "hutId": 17,
-    "hutName": "Geltenhütte SAC"
+    "hutName": "Geltenhütte SAC",
+    "coordinates": [
+      46.369587090909086,
+      7.339077336363638
+    ]
   },
   {
     "hutId": 18,
-    "hutName": "Capanna del Forno CAS"
+    "hutName": "Capanna del Forno CAS",
+    "coordinates": [
+      46.33188998999999,
+      9.709358309999999
+    ]
   },
   {
     "hutId": 19,
-    "hutName": "Fründenhütte SAC"
+    "hutName": "Fründenhütte SAC",
+    "coordinates": [
+      46.48363639999999,
+      7.741851242857143
+    ]
   },
   {
     "hutId": 20,
-    "hutName": "Capanna Cristallina CAS"
+    "hutName": "Capanna Cristallina CAS",
+    "coordinates": [
+      46.471833866666664,
+      8.52623535
+    ]
   },
   {
     "hutId": 21,
-    "hutName": "Badushütte"
+    "hutName": "Badushütte",
+    "coordinates": [
+      46.636555380000004,
+      8.66841716
+    ]
   },
   {
     "hutId": 22,
-    "hutName": "Cabane des Diablerets CAS"
+    "hutName": "Cabane des Diablerets CAS",
+    "coordinates": [
+      46.3386913,
+      7.2154746
+    ]
   },
   {
     "hutId": 23,
-    "hutName": "Bächlitalhütte SAC"
+    "hutName": "Bächlitalhütte SAC",
+    "coordinates": [
+      46.58697625833333,
+      8.282616500000001
+    ]
   },
   {
     "hutId": 24,
-    "hutName": "Hohganthütte"
+    "hutName": "Hohganthütte",
+    "coordinates": null
   },
   {
     "hutId": 25,
-    "hutName": "Chamanna d'Es-cha CAS"
+    "hutName": "Chamanna d'Es-cha CAS",
+    "coordinates": [
+      46.61145864444445,
+      9.902867355555555
+    ]
   },
   {
     "hutId": 26,
-    "hutName": "Camona da Maighels CAS"
+    "hutName": "Camona da Maighels CAS",
+    "coordinates": [
+      46.6253633,
+      8.6901242
+    ]
   },
   {
     "hutId": 27,
-    "hutName": "Gaulihütte SAC"
+    "hutName": "Gaulihütte SAC",
+    "coordinates": [
+      46.62382364705882,
+      8.216668552941178
+    ]
   },
   {
     "hutId": 28,
-    "hutName": "Trifthütte SAC"
+    "hutName": "Trifthütte SAC",
+    "coordinates": [
+      47.10095986,
+      8.7447168
+    ]
   },
   {
     "hutId": 29,
-    "hutName": "Tällihütte"
+    "hutName": "Tällihütte",
+    "coordinates": null
   },
   {
     "hutId": 30,
-    "hutName": "Zwinglipasshütte"
+    "hutName": "Zwinglipasshütte",
+    "coordinates": [
+      47.23324173636363,
+      9.376151127272728
+    ]
   },
   {
     "hutId": 31,
-    "hutName": "Dossenhütte SAC"
+    "hutName": "Dossenhütte SAC",
+    "coordinates": [
+      46.65511406923077,
+      8.169525184615384
+    ]
   },
   {
     "hutId": 32,
-    "hutName": "Hundsteinhütte SAC"
+    "hutName": "Hundsteinhütte SAC",
+    "coordinates": [
+      47.254827842857146,
+      9.422227371428573
+    ]
   },
   {
     "hutId": 33,
-    "hutName": "Chamonna Tuoi CAS"
+    "hutName": "Chamonna Tuoi CAS",
+    "coordinates": [
+      46.8307354,
+      10.1324884
+    ]
   },
   {
     "hutId": 34,
-    "hutName": "Capanna Cadlimo CAS"
+    "hutName": "Capanna Cadlimo CAS",
+    "coordinates": [
+      46.571636,
+      8.6952501
+    ]
   },
   {
     "hutId": 35,
-    "hutName": "Hörnlihütte - Matterhorn Base Camp"
+    "hutName": "Hörnlihütte - Matterhorn Base Camp",
+    "coordinates": [
+      45.9821974,
+      7.6770109
+    ]
   },
   {
     "hutId": 36,
-    "hutName": "Capanna Campo Tencia CAS"
+    "hutName": "Capanna Campo Tencia CAS",
+    "coordinates": [
+      46.4442266,
+      8.7326694
+    ]
   },
   {
     "hutId": 37,
-    "hutName": "Brunnihütte"
+    "hutName": "Brunnihütte",
+    "coordinates": [
+      46.840877944444436,
+      8.410608133333334
+    ]
   },
   {
     "hutId": 38,
-    "hutName": "Capanna Sasc Furä CAS"
+    "hutName": "Capanna Sasc Furä CAS",
+    "coordinates": [
+      46.31533682,
+      9.58240718
+    ]
   },
   {
     "hutId": 39,
-    "hutName": "Glattalphütte SAC"
+    "hutName": "Glattalphütte SAC",
+    "coordinates": [
+      46.9168403,
+      8.8750058
+    ]
   },
   {
     "hutId": 40,
-    "hutName": "Bärgbeizli Underbärgli"
+    "hutName": "Bärgbeizli Underbärgli",
+    "coordinates": null
   },
   {
     "hutId": 41,
-    "hutName": "Rugghubelhütte SAC"
+    "hutName": "Rugghubelhütte SAC",
+    "coordinates": [
+      46.84620221428572,
+      8.462777342857143
+    ]
   },
   {
     "hutId": 42,
-    "hutName": "Capanna Adula CAS"
+    "hutName": "Capanna Adula CAS",
+    "coordinates": [
+      46.4991698,
+      8.9956287
+    ]
   },
   {
     "hutId": 43,
-    "hutName": "Cabane du Vélan CAS"
+    "hutName": "Cabane du Vélan CAS",
+    "coordinates": [
+      45.9169357,
+      7.2454615
+    ]
   },
   {
     "hutId": 44,
-    "hutName": "Gspaltenhornhütte SAC"
+    "hutName": "Gspaltenhornhütte SAC",
+    "coordinates": [
+      46.5126918,
+      7.8102627
+    ]
   },
   {
     "hutId": 45,
-    "hutName": "Windgällenhütte AACZ"
+    "hutName": "Windgällenhütte AACZ",
+    "coordinates": [
+      46.7902015,
+      8.7557266
+    ]
   },
   {
     "hutId": 46,
-    "hutName": "Carschinahütte SAC"
+    "hutName": "Carschinahütte SAC",
+    "coordinates": [
+      47.00708406363637,
+      9.827377336363636
+    ]
   },
   {
     "hutId": 47,
-    "hutName": "Oberaletschhütte SAC"
+    "hutName": "Oberaletschhütte SAC",
+    "coordinates": [
+      46.4249383,
+      7.9738084
+    ]
   },
   {
     "hutId": 48,
-    "hutName": "Cabane des Violettes CAS"
+    "hutName": "Cabane des Violettes CAS",
+    "coordinates": [
+      46.3423835,
+      7.5000486
+    ]
   },
   {
     "hutId": 49,
-    "hutName": "Capanna Bovarina"
+    "hutName": "Capanna Bovarina",
+    "coordinates": [
+      46.56005068,
+      8.888592740000002
+    ]
   },
   {
     "hutId": 50,
-    "hutName": "Chamanna Cluozza"
+    "hutName": "Chamanna Cluozza",
+    "coordinates": [
+      46.66288816153846,
+      10.117615984615384
+    ]
   },
   {
     "hutId": 51,
-    "hutName": "Täschhütte SAC"
+    "hutName": "Täschhütte SAC",
+    "coordinates": [
+      46.0515706,
+      7.8300141
+    ]
   },
   {
     "hutId": 52,
-    "hutName": "Berghaus Männdlenen"
+    "hutName": "Berghaus Männdlenen",
+    "coordinates": [
+      46.890785,
+      13.1309312
+    ]
   },
   {
     "hutId": 53,
-    "hutName": "Igloo des Pantalons Blancs"
+    "hutName": "Igloo des Pantalons Blancs",
+    "coordinates": [
+      46.0405376,
+      7.3685212
+    ]
   },
   {
     "hutId": 54,
-    "hutName": "Grathaus Moron"
+    "hutName": "Grathaus Moron",
+    "coordinates": null
   },
   {
     "hutId": 55,
-    "hutName": "Chelenalphütte SAC"
+    "hutName": "Chelenalphütte SAC",
+    "coordinates": [
+      46.67170994,
+      8.43993418
+    ]
   },
   {
     "hutId": 57,
-    "hutName": "Spitzsteinhaus"
+    "hutName": "Spitzsteinhaus",
+    "coordinates": [
+      47.70445723333333,
+      12.243227283333335
+    ]
   },
   {
     "hutId": 58,
-    "hutName": "Neue Prager Hütte"
+    "hutName": "Neue Prager Hütte",
+    "coordinates": [
+      47.123126559999996,
+      12.392352773333336
+    ]
   },
   {
     "hutId": 60,
-    "hutName": "Chalet de Roseyres"
+    "hutName": "Chalet de Roseyres",
+    "coordinates": [
+      46.4588242,
+      6.0674427
+    ]
   },
   {
     "hutId": 61,
-    "hutName": "Dümlerhütte ÖAV"
+    "hutName": "Dümlerhütte ÖAV",
+    "coordinates": [
+      47.673381590909095,
+      14.277579945454544
+    ]
   },
   {
     "hutId": 62,
-    "hutName": "Glungezer-Hütte"
+    "hutName": "Glungezer-Hütte",
+    "coordinates": [
+      47.20975601176471,
+      11.526829111764702
+    ]
   },
   {
     "hutId": 63,
-    "hutName": "Ascher Hütte"
+    "hutName": "Ascher Hütte",
+    "coordinates": [
+      47.065747460000004,
+      10.50480952
+    ]
   },
   {
     "hutId": 64,
-    "hutName": "La Borbuintze"
+    "hutName": "La Borbuintze",
+    "coordinates": null
   },
   {
     "hutId": 65,
-    "hutName": "Wildstrubelhütte SAC"
+    "hutName": "Wildstrubelhütte SAC",
+    "coordinates": [
+      46.3830189,
+      7.4676662
+    ]
   },
   {
     "hutId": 66,
-    "hutName": "Gelmerhütte SAC"
+    "hutName": "Gelmerhütte SAC",
+    "coordinates": [
+      46.63127693333334,
+      8.342792955555556
+    ]
   },
   {
     "hutId": 67,
-    "hutName": "Cabane Barraud"
+    "hutName": "Cabane Barraud",
+    "coordinates": [
+      46.28430452,
+      7.16305678
+    ]
   },
   {
     "hutId": 68,
-    "hutName": "Chalet Lacombe"
+    "hutName": "Chalet Lacombe",
+    "coordinates": [
+      46.4588242,
+      6.0674427
+    ]
   },
   {
     "hutId": 69,
-    "hutName": "Rotstockhütte"
+    "hutName": "Rotstockhütte",
+    "coordinates": [
+      46.5451558,
+      7.8383217
+    ]
   },
   {
     "hutId": 72,
-    "hutName": "Bettelwurf-Hütte"
+    "hutName": "Bettelwurf-Hütte",
+    "coordinates": [
+      47.338631007692314,
+      11.507455507692308
+    ]
   },
   {
     "hutId": 73,
-    "hutName": "Höllentalangerhütte"
+    "hutName": "Höllentalangerhütte",
+    "coordinates": [
+      47.43798343846153,
+      11.025127792307691
+    ]
   },
   {
     "hutId": 74,
-    "hutName": "Cabane du Petit Mountet"
+    "hutName": "Cabane du Petit Mountet",
+    "coordinates": [
+      46.09228044,
+      7.6333041999999995
+    ]
   },
   {
     "hutId": 75,
-    "hutName": "Schesaplana Hütte"
+    "hutName": "Schesaplana Hütte",
+    "coordinates": [
+      47.04406017142857,
+      9.683712842857144
+    ]
   },
   {
     "hutId": 76,
-    "hutName": "Refuge des Petoudes"
+    "hutName": "Refuge des Petoudes",
+    "coordinates": [
+      48.24302392,
+      7.293157339999999
+    ]
   },
   {
     "hutId": 77,
-    "hutName": "Mönchsjochhütte"
+    "hutName": "Mönchsjochhütte",
+    "coordinates": [
+      46.55469322,
+      8.00568504
+    ]
   },
   {
     "hutId": 78,
-    "hutName": "Chamonna Lischana CAS"
+    "hutName": "Chamonna Lischana CAS",
+    "coordinates": [
+      46.765596875,
+      10.3345808125
+    ]
   },
   {
     "hutId": 79,
-    "hutName": "Klostertaler Umwelthütte"
+    "hutName": "Klostertaler Umwelthütte",
+    "coordinates": [
+      46.88110432727273,
+      10.066048181818182
+    ]
   },
   {
     "hutId": 80,
-    "hutName": "Silvrettahütte SAC"
+    "hutName": "Silvrettahütte SAC",
+    "coordinates": [
+      46.85452098181818,
+      10.041445736363634
+    ]
   },
   {
     "hutId": 81,
-    "hutName": "Blaueishütte"
+    "hutName": "Blaueishütte",
+    "coordinates": [
+      47.58688601428572,
+      12.869501671428571
+    ]
   },
   {
     "hutId": 82,
-    "hutName": "Hallerangerhaus"
+    "hutName": "Hallerangerhaus",
+    "coordinates": [
+      47.35475102307692,
+      11.477189153846155
+    ]
   },
   {
     "hutId": 83,
-    "hutName": "Fritz-Putz Hütte"
+    "hutName": "Fritz-Putz Hütte",
+    "coordinates": null
   },
   {
     "hutId": 84,
-    "hutName": "Stöhrhaus"
+    "hutName": "Stöhrhaus",
+    "coordinates": [
+      47.69313055714286,
+      12.980624800000001
+    ]
   },
   {
     "hutId": 85,
-    "hutName": "Staufner Haus"
+    "hutName": "Staufner Haus",
+    "coordinates": [
+      47.4916168625,
+      10.0691842875
+    ]
   },
   {
     "hutId": 86,
-    "hutName": "Frassen-Hütte"
+    "hutName": "Frassen-Hütte",
+    "coordinates": [
+      47.18978866249999,
+      9.8274505
+    ]
   },
   {
     "hutId": 87,
-    "hutName": "Karwendelhaus"
+    "hutName": "Karwendelhaus",
+    "coordinates": [
+      47.427231410000005,
+      11.421655529999999
+    ]
   },
   {
     "hutId": 88,
-    "hutName": "Sarotla-Hütte"
+    "hutName": "Sarotla-Hütte",
+    "coordinates": [
+      47.1040525,
+      9.78653994
+    ]
   },
   {
     "hutId": 89,
-    "hutName": "Heinrich-Hueter-Hütte"
+    "hutName": "Heinrich-Hueter-Hütte",
+    "coordinates": [
+      47.078841849999996,
+      9.783745725000001
+    ]
   },
   {
     "hutId": 90,
-    "hutName": "Freschen-Haus"
+    "hutName": "Freschen-Haus",
+    "coordinates": [
+      47.2980042,
+      9.777919242857141
+    ]
   },
   {
     "hutId": 91,
-    "hutName": "Tilisuna-Hütte"
+    "hutName": "Tilisuna-Hütte",
+    "coordinates": [
+      47.02472383076924,
+      9.872521615384615
+    ]
   },
   {
     "hutId": 92,
-    "hutName": "Totalp-Hütte"
+    "hutName": "Totalp-Hütte",
+    "coordinates": [
+      47.052690644444446,
+      9.727034444444445
+    ]
   },
   {
     "hutId": 93,
-    "hutName": "Peter-Anich-Hütte"
+    "hutName": "Peter-Anich-Hütte",
+    "coordinates": [
+      47.26622166,
+      11.055196579999999
+    ]
   },
   {
     "hutId": 94,
-    "hutName": "Klinkehütte"
+    "hutName": "Klinkehütte",
+    "coordinates": null
   },
   {
     "hutId": 95,
-    "hutName": "Kaltenberghütte"
+    "hutName": "Kaltenberghütte",
+    "coordinates": [
+      47.119183777777785,
+      10.143191677777777
+    ]
   },
   {
     "hutId": 96,
-    "hutName": "Neue Reutlinger Hütte"
+    "hutName": "Neue Reutlinger Hütte",
+    "coordinates": [
+      47.07534113636363,
+      10.115637981818182
+    ]
   },
   {
     "hutId": 97,
-    "hutName": "Freiburgerhütte"
+    "hutName": "Freiburgerhütte",
+    "coordinates": [
+      47.16268554615385,
+      9.990574130769232
+    ]
   },
   {
     "hutId": 98,
-    "hutName": "Edmund-Graf-Hütte"
+    "hutName": "Edmund-Graf-Hütte",
+    "coordinates": [
+      47.106037446666654,
+      10.355853553333334
+    ]
   },
   {
     "hutId": 99,
-    "hutName": "Bergheim Au"
+    "hutName": "Bergheim Au",
+    "coordinates": [
+      47.55548019999999,
+      12.795750000000002
+    ]
   },
   {
     "hutId": 100,
-    "hutName": "Gaudeamushütte"
+    "hutName": "Gaudeamushütte",
+    "coordinates": [
+      47.549229941666674,
+      12.324504225
+    ]
   },
   {
     "hutId": 101,
-    "hutName": "Saupsdorfer Hütte"
+    "hutName": "Saupsdorfer Hütte",
+    "coordinates": null
   },
   {
     "hutId": 103,
-    "hutName": "Neue Heilbronner Hütte"
+    "hutName": "Neue Heilbronner Hütte",
+    "coordinates": [
+      47.00722479090909,
+      10.138903945454546
+    ]
   },
   {
     "hutId": 104,
-    "hutName": "Rotwandhaus"
+    "hutName": "Rotwandhaus",
+    "coordinates": [
+      47.646126433333336,
+      11.935144155555555
+    ]
   },
   {
     "hutId": 105,
-    "hutName": "Berliner Hütte"
+    "hutName": "Berliner Hütte",
+    "coordinates": [
+      47.0245254,
+      11.8129045
+    ]
   },
   {
     "hutId": 106,
-    "hutName": "Goiserer Hütte"
+    "hutName": "Goiserer Hütte",
+    "coordinates": [
+      47.620813076923085,
+      13.561469976923075
+    ]
   },
   {
     "hutId": 107,
-    "hutName": "Bergsteigerunterkunft Lauschige Ecke"
+    "hutName": "Bergsteigerunterkunft Lauschige Ecke",
+    "coordinates": null
   },
   {
     "hutId": 108,
-    "hutName": "Gablonzer Hütte"
+    "hutName": "Gablonzer Hütte",
+    "coordinates": [
+      47.533081742857135,
+      13.479707814285714
+    ]
   },
   {
     "hutId": 109,
-    "hutName": "Zollnersee-Hütte"
+    "hutName": "Zollnersee-Hütte",
+    "coordinates": [
+      46.6054663125,
+      13.070763075
+    ]
   },
   {
     "hutId": 110,
-    "hutName": "Geraerhütte"
+    "hutName": "Geraerhütte",
+    "coordinates": [
+      47.04339533846155,
+      11.628046469230771
+    ]
   },
   {
     "hutId": 111,
-    "hutName": "Hofpürgl-Hütte"
+    "hutName": "Hofpürgl-Hütte",
+    "coordinates": [
+      47.48221329090909,
+      13.519052545454544
+    ]
   },
   {
     "hutId": 112,
-    "hutName": "Linzerhaus / Wurzeralm"
+    "hutName": "Linzerhaus / Wurzeralm",
+    "coordinates": [
+      47.64792137142857,
+      14.287356628571427
+    ]
   },
   {
     "hutId": 113,
-    "hutName": "Linzer Tauplitz-Haus"
+    "hutName": "Linzer Tauplitz-Haus",
+    "coordinates": [
+      47.59483212727273,
+      14.010694709090906
+    ]
   },
   {
     "hutId": 114,
-    "hutName": "Alpenrosenhütte im Brixental"
+    "hutName": "Alpenrosenhütte im Brixental",
+    "coordinates": [
+      47.419999092307684,
+      12.23764323846154
+    ]
   },
   {
     "hutId": 115,
-    "hutName": "Rüsselsheimer Hütte"
+    "hutName": "Rüsselsheimer Hütte",
+    "coordinates": [
+      46.9941236,
+      10.88811084
+    ]
   },
   {
     "hutId": 116,
-    "hutName": "Neue Bamberger Hütte"
+    "hutName": "Neue Bamberger Hütte",
+    "coordinates": [
+      47.3089134,
+      12.15055576
+    ]
   },
   {
     "hutId": 117,
-    "hutName": "Mödlinger Hütte"
+    "hutName": "Mödlinger Hütte",
+    "coordinates": [
+      47.52910021428571,
+      14.552967114285712
+    ]
   },
   {
     "hutId": 118,
-    "hutName": "Nebelsteinhütte"
+    "hutName": "Nebelsteinhütte",
+    "coordinates": null
   },
   {
     "hutId": 119,
-    "hutName": "Olpererhütte"
+    "hutName": "Olpererhütte",
+    "coordinates": [
+      47.04202472857143,
+      11.68832047142857
+    ]
   },
   {
     "hutId": 121,
-    "hutName": "Hannoverhaus"
+    "hutName": "Hannoverhaus",
+    "coordinates": [
+      47.04062456875001,
+      13.2155222125
+    ]
   },
   {
     "hutId": 122,
-    "hutName": "Greizer Hütte"
+    "hutName": "Greizer Hütte",
+    "coordinates": [
+      47.04334935833333,
+      11.885687500000001
+    ]
   },
   {
     "hutId": 123,
-    "hutName": "Lizumer Hütte"
+    "hutName": "Lizumer Hütte",
+    "coordinates": [
+      47.16673594117647,
+      11.640485082352944
+    ]
   },
   {
     "hutId": 124,
-    "hutName": "Nürnberger Hütte"
+    "hutName": "Nürnberger Hütte",
+    "coordinates": [
+      46.99369433636364,
+      11.217808190909093
+    ]
   },
   {
     "hutId": 125,
-    "hutName": "Edelweiss-Hütte am Schneeberg"
+    "hutName": "Edelweiss-Hütte am Schneeberg",
+    "coordinates": [
+      47.791781490909095,
+      15.814890609090911
+    ]
   },
   {
     "hutId": 126,
-    "hutName": "Meraner Hütte"
+    "hutName": "Meraner Hütte",
+    "coordinates": [
+      46.683293139999996,
+      11.28193044
+    ]
   },
   {
     "hutId": 127,
-    "hutName": "Dortmunder Hütte"
+    "hutName": "Dortmunder Hütte",
+    "coordinates": [
+      47.211776314285714,
+      11.008180442857142
+    ]
   },
   {
     "hutId": 128,
-    "hutName": "Reintalangerhütte"
+    "hutName": "Reintalangerhütte",
+    "coordinates": [
+      47.405340718181826,
+      11.03571439090909
+    ]
   },
   {
     "hutId": 129,
-    "hutName": "Neue Magdeburger Hütte"
+    "hutName": "Neue Magdeburger Hütte",
+    "coordinates": [
+      47.28901814,
+      11.296578479999999
+    ]
   },
   {
     "hutId": 130,
-    "hutName": "Hochrieshütte"
+    "hutName": "Hochrieshütte",
+    "coordinates": [
+      47.74734283333333,
+      12.249060744444444
+    ]
   },
   {
     "hutId": 131,
-    "hutName": "Dessauer Hütte"
+    "hutName": "Dessauer Hütte",
+    "coordinates": null
   },
   {
     "hutId": 132,
-    "hutName": "Clarahütte"
+    "hutName": "Clarahütte",
+    "coordinates": [
+      47.01593348571429,
+      12.245836657142856
+    ]
   },
   {
     "hutId": 133,
-    "hutName": "Essener und Rostocker Hütte"
+    "hutName": "Essener und Rostocker Hütte",
+    "coordinates": [
+      47.50884618333333,
+      10.615854516666667
+    ]
   },
   {
     "hutId": 135,
-    "hutName": "Capanna Scaletta"
+    "hutName": "Capanna Scaletta",
+    "coordinates": [
+      46.60774673750001,
+      8.9402947375
+    ]
   },
   {
     "hutId": 136,
-    "hutName": "Richterhütte"
+    "hutName": "Richterhütte",
+    "coordinates": [
+      47.1241408,
+      12.134004033333333
+    ]
   },
   {
     "hutId": 138,
-    "hutName": "Oberlandhütte"
+    "hutName": "Oberlandhütte",
+    "coordinates": [
+      47.3796165,
+      12.30759448
+    ]
   },
   {
     "hutId": 139,
-    "hutName": "Lenggrieser Hütte"
+    "hutName": "Lenggrieser Hütte",
+    "coordinates": [
+      47.6518874,
+      11.631100879999998
+    ]
   },
   {
     "hutId": 140,
-    "hutName": "Memminger Hütte"
+    "hutName": "Memminger Hütte",
+    "coordinates": [
+      47.200572771428575,
+      10.478572035714285
+    ]
   },
   {
     "hutId": 141,
-    "hutName": "Peter-Wiechenthaler-Hütte"
+    "hutName": "Peter-Wiechenthaler-Hütte",
+    "coordinates": [
+      47.4636723,
+      12.8753428
+    ]
   },
   {
     "hutId": 142,
-    "hutName": "Hinteralm-Haus"
+    "hutName": "Hinteralm-Haus",
+    "coordinates": [
+      47.72201627647059,
+      15.51564105882353
+    ]
   },
   {
     "hutId": 143,
-    "hutName": "Bremer Hütte"
+    "hutName": "Bremer Hütte",
+    "coordinates": [
+      46.994915822222225,
+      11.26331447777778
+    ]
   },
   {
     "hutId": 144,
-    "hutName": "Ingolstädter Haus"
+    "hutName": "Ingolstädter Haus",
+    "coordinates": [
+      47.501650028571426,
+      12.887078800000001
+    ]
   },
   {
     "hutId": 145,
-    "hutName": "Riemannhaus"
+    "hutName": "Riemannhaus",
+    "coordinates": [
+      47.457980728571435,
+      12.914481885714284
+    ]
   },
   {
     "hutId": 146,
-    "hutName": "Annaberger Haus"
+    "hutName": "Annaberger Haus",
+    "coordinates": [
+      47.873553120000004,
+      15.4212456
+    ]
   },
   {
     "hutId": 147,
-    "hutName": "Julius-Seitner-Hütte"
+    "hutName": "Julius-Seitner-Hütte",
+    "coordinates": [
+      47.95998983076923,
+      15.440986099999996
+    ]
   },
   {
     "hutId": 148,
-    "hutName": "Gufferthütte"
+    "hutName": "Gufferthütte",
+    "coordinates": [
+      47.58157222,
+      11.79942266
+    ]
   },
   {
     "hutId": 149,
-    "hutName": "Knorrhütte"
+    "hutName": "Knorrhütte",
+    "coordinates": [
+      47.4100105,
+      11.012732
+    ]
   },
   {
     "hutId": 150,
-    "hutName": "Münchner Haus"
+    "hutName": "Münchner Haus",
+    "coordinates": [
+      47.42108939999999,
+      10.984892477777779
+    ]
   },
   {
     "hutId": 151,
-    "hutName": "Watzmannhaus"
+    "hutName": "Watzmannhaus",
+    "coordinates": [
+      47.571270863636364,
+      12.9338764
+    ]
   },
   {
     "hutId": 152,
-    "hutName": "Heinrich-Schwaiger-Haus"
+    "hutName": "Heinrich-Schwaiger-Haus",
+    "coordinates": [
+      47.162659492857145,
+      12.738848914285713
+    ]
   },
   {
     "hutId": 153,
-    "hutName": "Schweinfurter Hütte"
+    "hutName": "Schweinfurter Hütte",
+    "coordinates": [
+      47.15819072000001,
+      11.01999094
+    ]
   },
   {
     "hutId": 154,
-    "hutName": "Gruttenhütte"
+    "hutName": "Gruttenhütte",
+    "coordinates": [
+      47.55353386666667,
+      12.311058583333335
+    ]
   },
   {
     "hutId": 155,
-    "hutName": "DAV Edelweisshaus"
+    "hutName": "DAV Edelweisshaus",
+    "coordinates": [
+      47.21596878333333,
+      10.301027983333332
+    ]
   },
   {
     "hutId": 156,
-    "hutName": "Bordierhütte SAC"
+    "hutName": "Bordierhütte SAC",
+    "coordinates": null
   },
   {
     "hutId": 157,
-    "hutName": "Chamanna Jenatsch CAS"
+    "hutName": "Chamanna Jenatsch CAS",
+    "coordinates": [
+      46.529354284615394,
+      9.724402723076922
+    ]
   },
   {
     "hutId": 158,
-    "hutName": "Grünburger Hütte"
+    "hutName": "Grünburger Hütte",
+    "coordinates": [
+      47.92120272857143,
+      14.284617185714284
+    ]
   },
   {
     "hutId": 159,
-    "hutName": "Salm-Hütte"
+    "hutName": "Salm-Hütte",
+    "coordinates": [
+      47.046985199999995,
+      12.72059402
+    ]
   },
   {
     "hutId": 160,
-    "hutName": "Muttekopf-Hütte"
+    "hutName": "Muttekopf-Hütte",
+    "coordinates": [
+      47.2624562,
+      10.669759
+    ]
   },
   {
     "hutId": 161,
-    "hutName": "Berglihütte SAC"
+    "hutName": "Berglihütte SAC",
+    "coordinates": [
+      46.566789240000006,
+      8.020528859999999
+    ]
   },
   {
     "hutId": 162,
-    "hutName": "Neue Bonner Hütte"
+    "hutName": "Neue Bonner Hütte",
+    "coordinates": [
+      47.03716487692308,
+      13.679892576923075
+    ]
   },
   {
     "hutId": 163,
-    "hutName": "Tölzer Hütte am Schafreuter"
+    "hutName": "Tölzer Hütte am Schafreuter",
+    "coordinates": [
+      47.504126061538464,
+      11.492611669230769
+    ]
   },
   {
     "hutId": 164,
-    "hutName": "Wildhornhütte SAC"
+    "hutName": "Wildhornhütte SAC",
+    "coordinates": [
+      46.3792241,
+      7.3879994
+    ]
   },
   {
     "hutId": 165,
-    "hutName": "Cufercalhütte SAC"
+    "hutName": "Cufercalhütte SAC",
+    "coordinates": [
+      46.593363333333336,
+      9.35902017777778
+    ]
   },
   {
     "hutId": 166,
-    "hutName": "Topalihütte SAC"
+    "hutName": "Topalihütte SAC",
+    "coordinates": [
+      46.15689378,
+      7.7620054
+    ]
   },
   {
     "hutId": 167,
-    "hutName": "Chamanna dal Linard CAS"
+    "hutName": "Chamanna dal Linard CAS",
+    "coordinates": [
+      46.77942095714286,
+      10.0829644
+    ]
   },
   {
     "hutId": 168,
-    "hutName": "Capanna Monte Bar"
+    "hutName": "Capanna Monte Bar",
+    "coordinates": [
+      46.10002049999999,
+      9.013985600000002
+    ]
   },
   {
     "hutId": 169,
-    "hutName": "Gamshütte"
+    "hutName": "Gamshütte",
+    "coordinates": [
+      47.12976466,
+      11.795571260000001
+    ]
   },
   {
     "hutId": 170,
-    "hutName": "Friesenberghaus"
+    "hutName": "Friesenberghaus",
+    "coordinates": [
+      47.06763603636364,
+      11.702071354545454
+    ]
   },
   {
     "hutId": 171,
-    "hutName": "Riffelseehütte"
+    "hutName": "Riffelseehütte",
+    "coordinates": [
+      46.961230746666665,
+      10.857484626666666
+    ]
   },
   {
     "hutId": 172,
-    "hutName": "Anton-Karg-Haus"
+    "hutName": "Anton-Karg-Haus",
+    "coordinates": [
+      47.58000420000001,
+      12.277302794117645
+    ]
   },
   {
     "hutId": 173,
-    "hutName": "Gepatschhaus"
+    "hutName": "Gepatschhaus",
+    "coordinates": [
+      46.901559742857145,
+      10.737742514285713
+    ]
   },
   {
     "hutId": 174,
-    "hutName": "Bad Kissinger Hütte"
+    "hutName": "Bad Kissinger Hütte",
+    "coordinates": [
+      47.534454227272725,
+      10.562662354545456
+    ]
   },
   {
     "hutId": 175,
-    "hutName": "Bietschhornhütte AACB"
+    "hutName": "Bietschhornhütte AACB",
+    "coordinates": [
+      46.3950143,
+      7.8170258200000005
+    ]
   },
   {
     "hutId": 176,
-    "hutName": "Calandahütte SAC"
+    "hutName": "Calandahütte SAC",
+    "coordinates": [
+      46.88302252222221,
+      9.482184544444445
+    ]
   },
   {
     "hutId": 177,
-    "hutName": "Kampthaler-Hütte"
+    "hutName": "Kampthaler-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 178,
-    "hutName": "Kasseler Hütte (im Zillertal)"
+    "hutName": "Kasseler Hütte (im Zillertal)",
+    "coordinates": [
+      47.05941085714286,
+      11.948595800000001
+    ]
   },
   {
     "hutId": 179,
-    "hutName": "Pfeis-Hütte"
+    "hutName": "Pfeis-Hütte",
+    "coordinates": [
+      47.329987687499994,
+      11.4255672625
+    ]
   },
   {
     "hutId": 180,
-    "hutName": "Furtschaglhaus"
+    "hutName": "Furtschaglhaus",
+    "coordinates": [
+      47.000979236363634,
+      11.747346027272727
+    ]
   },
   {
     "hutId": 181,
-    "hutName": "Brandenburger Haus"
+    "hutName": "Brandenburger Haus",
+    "coordinates": [
+      46.84440303636363,
+      10.77798119090909
+    ]
   },
   {
     "hutId": 182,
-    "hutName": "Chamonas d'Ela CAS"
+    "hutName": "Chamonas d'Ela CAS",
+    "coordinates": [
+      46.618762280000006,
+      9.691899920000001
+    ]
   },
   {
     "hutId": 183,
-    "hutName": "Göppinger Hütte"
+    "hutName": "Göppinger Hütte",
+    "coordinates": [
+      47.21479201666667,
+      10.045880266666664
+    ]
   },
   {
     "hutId": 184,
-    "hutName": "Stripsenjoch-Haus"
+    "hutName": "Stripsenjoch-Haus",
+    "coordinates": [
+      47.5770397125,
+      12.310564750000001
+    ]
   },
   {
     "hutId": 185,
-    "hutName": "Porze-Hütte"
+    "hutName": "Porze-Hütte",
+    "coordinates": [
+      46.65968961,
+      12.58226918
+    ]
   },
   {
     "hutId": 186,
-    "hutName": "Südwiener Hütte"
+    "hutName": "Südwiener Hütte",
+    "coordinates": null
   },
   {
     "hutId": 187,
-    "hutName": "Rottenmanner Hütte"
+    "hutName": "Rottenmanner Hütte",
+    "coordinates": [
+      47.490086412500006,
+      14.37579213125
+    ]
   },
   {
     "hutId": 188,
-    "hutName": "Barmer Hütte"
+    "hutName": "Barmer Hütte",
+    "coordinates": [
+      46.91716415,
+      12.168916683333334
+    ]
   },
   {
     "hutId": 189,
-    "hutName": "Schwarzwasserhütte"
+    "hutName": "Schwarzwasserhütte",
+    "coordinates": [
+      47.331201358333324,
+      10.087134716666666
+    ]
   },
   {
     "hutId": 190,
-    "hutName": "Sudetendeutsche Hütte"
+    "hutName": "Sudetendeutsche Hütte",
+    "coordinates": [
+      47.0493723,
+      12.5762715
+    ]
   },
   {
     "hutId": 191,
-    "hutName": "Jamtalhütte"
+    "hutName": "Jamtalhütte",
+    "coordinates": [
+      46.8864132,
+      10.176440291666665
+    ]
   },
   {
     "hutId": 192,
-    "hutName": "Stuttgarter Hütte"
+    "hutName": "Stuttgarter Hütte",
+    "coordinates": [
+      47.18034100999999,
+      10.20470624
+    ]
   },
   {
     "hutId": 193,
-    "hutName": "Werkmannhaus"
+    "hutName": "Werkmannhaus",
+    "coordinates": null
   },
   {
     "hutId": 194,
-    "hutName": "Schwabenhaus"
+    "hutName": "Schwabenhaus",
+    "coordinates": [
+      47.14831119999999,
+      9.760075135294116
+    ]
   },
   {
     "hutId": 195,
-    "hutName": "Kärlingerhaus"
+    "hutName": "Kärlingerhaus",
+    "coordinates": [
+      47.495471,
+      12.9371264
+    ]
   },
   {
     "hutId": 196,
-    "hutName": "Grubenberghütte"
+    "hutName": "Grubenberghütte",
+    "coordinates": [
+      46.54931852,
+      7.2520435800000005
+    ]
   },
   {
     "hutId": 197,
-    "hutName": "Capanna Corno-Gries CAS"
+    "hutName": "Capanna Corno-Gries CAS",
+    "coordinates": [
+      46.4670761,
+      8.4100474
+    ]
   },
   {
     "hutId": 198,
-    "hutName": "Capanna d'Alzasca CAS"
+    "hutName": "Capanna d'Alzasca CAS",
+    "coordinates": [
+      46.2712887,
+      8.5892916
+    ]
   },
   {
     "hutId": 200,
-    "hutName": "Straubinger Haus"
+    "hutName": "Straubinger Haus",
+    "coordinates": [
+      47.620338730769234,
+      12.499521746153844
+    ]
   },
   {
     "hutId": 201,
-    "hutName": "Bayreuther Hütte"
+    "hutName": "Bayreuther Hütte",
+    "coordinates": [
+      47.4451229,
+      11.8208008
+    ]
   },
   {
     "hutId": 202,
-    "hutName": "Nördlinger Hütte"
+    "hutName": "Nördlinger Hütte",
+    "coordinates": [
+      47.32008630769231,
+      11.236786453846152
+    ]
   },
   {
     "hutId": 203,
-    "hutName": "Karl-von-Edel-Hütte"
+    "hutName": "Karl-von-Edel-Hütte",
+    "coordinates": [
+      47.130524539999996,
+      11.897443899999999
+    ]
   },
   {
     "hutId": 204,
-    "hutName": "Schreckhornhütte SAC"
+    "hutName": "Schreckhornhütte SAC",
+    "coordinates": [
+      46.58185238,
+      8.098708519999999
+    ]
   },
   {
     "hutId": 205,
-    "hutName": "Rastkogelhütte"
+    "hutName": "Rastkogelhütte",
+    "coordinates": [
+      47.232153440000005,
+      11.788454930000002
+    ]
   },
   {
     "hutId": 206,
-    "hutName": "Brochhütte"
+    "hutName": "Brochhütte",
+    "coordinates": [
+      46.6805125,
+      8.138963166666668
+    ]
   },
   {
     "hutId": 207,
-    "hutName": "Plauener Hütte"
+    "hutName": "Plauener Hütte",
+    "coordinates": [
+      47.118330040000004,
+      12.09620327
+    ]
   },
   {
     "hutId": 208,
-    "hutName": "Almagellerhütte SAC"
+    "hutName": "Almagellerhütte SAC",
+    "coordinates": [
+      46.107604460000005,
+      8.00772494
+    ]
   },
   {
     "hutId": 209,
-    "hutName": "Weissmieshütten SAC"
+    "hutName": "Weissmieshütten SAC",
+    "coordinates": [
+      46.14376608571429,
+      7.977855271428572
+    ]
   },
   {
     "hutId": 210,
-    "hutName": "Brünnsteinhaus"
+    "hutName": "Brünnsteinhaus",
+    "coordinates": [
+      47.644692227272714,
+      12.09840687272727
+    ]
   },
   {
     "hutId": 211,
-    "hutName": "Zeller-Hütte"
+    "hutName": "Zeller-Hütte",
+    "coordinates": [
+      47.67836358,
+      14.22672487333333
+    ]
   },
   {
     "hutId": 212,
-    "hutName": "Tutzinger Hütte"
+    "hutName": "Tutzinger Hütte",
+    "coordinates": [
+      47.65772989,
+      11.462444600000001
+    ]
   },
   {
     "hutId": 213,
-    "hutName": "Finsteraarhornhütte SAC"
+    "hutName": "Finsteraarhornhütte SAC",
+    "coordinates": [
+      46.5219762,
+      8.1144702
+    ]
   },
   {
     "hutId": 214,
-    "hutName": "Windegghütte SAC"
+    "hutName": "Windegghütte SAC",
+    "coordinates": [
+      46.69499982000001,
+      8.348036220000001
+    ]
   },
   {
     "hutId": 215,
-    "hutName": "Landsberger Hütte"
+    "hutName": "Landsberger Hütte",
+    "coordinates": [
+      47.44414933333333,
+      10.514471455555556
+    ]
   },
   {
     "hutId": 216,
-    "hutName": "Weidener Hütte"
+    "hutName": "Weidener Hütte",
+    "coordinates": [
+      47.22369510000001,
+      11.708544955555558
+    ]
   },
   {
     "hutId": 217,
-    "hutName": "Friedrichshafener Hütte"
+    "hutName": "Friedrichshafener Hütte",
+    "coordinates": [
+      46.99480463571428,
+      10.215671135714285
+    ]
   },
   {
     "hutId": 218,
-    "hutName": "Bodenschneidhaus"
+    "hutName": "Bodenschneidhaus",
+    "coordinates": [
+      47.677695672727275,
+      11.839073490909094
+    ]
   },
   {
     "hutId": 219,
-    "hutName": "Simony-Hütte"
+    "hutName": "Simony-Hütte",
+    "coordinates": [
+      47.50079596896551,
+      13.623800162068964
+    ]
   },
   {
     "hutId": 220,
-    "hutName": "Stüdlhütte"
+    "hutName": "Stüdlhütte",
+    "coordinates": [
+      47.05482575999999,
+      12.68112618
+    ]
   },
   {
     "hutId": 221,
-    "hutName": "Capanna Motterascio CAS"
+    "hutName": "Capanna Motterascio CAS",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 222,
-    "hutName": "Biberacher Hütte"
+    "hutName": "Biberacher Hütte",
+    "coordinates": [
+      47.2576487,
+      10.0285062
+    ]
   },
   {
     "hutId": 223,
-    "hutName": "Gleiwitzer Hütte"
+    "hutName": "Gleiwitzer Hütte",
+    "coordinates": [
+      47.21826894166667,
+      12.769023175
+    ]
   },
   {
     "hutId": 224,
-    "hutName": "Wanderheim Kreuzmoos"
+    "hutName": "Wanderheim Kreuzmoos",
+    "coordinates": [
+      48.189654542857134,
+      7.976813428571428
+    ]
   },
   {
     "hutId": 226,
-    "hutName": "Cabane des Vignettes CAS"
+    "hutName": "Cabane des Vignettes CAS",
+    "coordinates": [
+      45.9897933,
+      7.4757407
+    ]
   },
   {
     "hutId": 227,
-    "hutName": "Salbithütte SAC"
+    "hutName": "Salbithütte SAC",
+    "coordinates": [
+      46.67648796666666,
+      8.55181295
+    ]
   },
   {
     "hutId": 228,
-    "hutName": "Dammahütte SAC"
+    "hutName": "Dammahütte SAC",
+    "coordinates": [
+      46.6448663,
+      8.4577823
+    ]
   },
   {
     "hutId": 229,
-    "hutName": "Muttseehütte SAC"
+    "hutName": "Muttseehütte SAC",
+    "coordinates": [
+      46.85747338823529,
+      9.018780729411764
+    ]
   },
   {
     "hutId": 230,
-    "hutName": "Oberetteshütte"
+    "hutName": "Oberetteshütte",
+    "coordinates": [
+      46.764804979999994,
+      10.7111746
+    ]
   },
   {
     "hutId": 231,
-    "hutName": "Taschachhaus"
+    "hutName": "Taschachhaus",
+    "coordinates": [
+      46.90963276470588,
+      10.817560252941178
+    ]
   },
   {
     "hutId": 232,
-    "hutName": "Passauer Hütte"
+    "hutName": "Passauer Hütte",
+    "coordinates": [
+      47.4741855,
+      12.750349391666665
+    ]
   },
   {
     "hutId": 233,
-    "hutName": "Reuttener Hütte"
+    "hutName": "Reuttener Hütte",
+    "coordinates": [
+      47.4049352,
+      10.6910962
+    ]
   },
   {
     "hutId": 234,
-    "hutName": "Wiesbadener Hütte"
+    "hutName": "Wiesbadener Hütte",
+    "coordinates": [
+      46.868234395,
+      10.116302615000002
+    ]
   },
   {
     "hutId": 235,
-    "hutName": "Augsburger Hütte"
+    "hutName": "Augsburger Hütte",
+    "coordinates": [
+      47.1663660125,
+      10.493636443749999
+    ]
   },
   {
     "hutId": 236,
-    "hutName": "Tübinger Hütte"
+    "hutName": "Tübinger Hütte",
+    "coordinates": [
+      46.91167974545454,
+      10.003444981818182
+    ]
   },
   {
     "hutId": 237,
-    "hutName": "Neue Thüringer Hütte"
+    "hutName": "Neue Thüringer Hütte",
+    "coordinates": [
+      47.1727531,
+      12.3832205
+    ]
   },
   {
     "hutId": 238,
-    "hutName": "Vernagthütte"
+    "hutName": "Vernagthütte",
+    "coordinates": [
+      46.853631975,
+      10.82401441875
+    ]
   },
   {
     "hutId": 239,
-    "hutName": "Pforzheimer Hütte"
+    "hutName": "Pforzheimer Hütte",
+    "coordinates": [
+      47.1547169,
+      11.072605271428571
+    ]
   },
   {
     "hutId": 240,
-    "hutName": "Camona da Punteglias CAS"
+    "hutName": "Camona da Punteglias CAS",
+    "coordinates": [
+      46.7772891,
+      8.9560326
+    ]
   },
   {
     "hutId": 241,
-    "hutName": "Fergenhütte SAC"
+    "hutName": "Fergenhütte SAC",
+    "coordinates": [
+      46.8689693875,
+      9.9647731375
+    ]
   },
   {
     "hutId": 242,
-    "hutName": "Seetalhütte SAC"
+    "hutName": "Seetalhütte SAC",
+    "coordinates": null
   },
   {
     "hutId": 243,
-    "hutName": "Lobhornhütte"
+    "hutName": "Lobhornhütte",
+    "coordinates": [
+      46.6184883,
+      7.8689998
+    ]
   },
   {
     "hutId": 244,
-    "hutName": "Spannorthütte SAC"
+    "hutName": "Spannorthütte SAC",
+    "coordinates": [
+      46.799813825,
+      8.509760316666666
+    ]
   },
   {
     "hutId": 246,
-    "hutName": "Ramozhütte SAC"
+    "hutName": "Ramozhütte SAC",
+    "coordinates": [
+      46.73088896,
+      9.64373422
+    ]
   },
   {
     "hutId": 248,
-    "hutName": "Rieder Hütte"
+    "hutName": "Rieder Hütte",
+    "coordinates": [
+      47.80405755,
+      13.676633183333335
+    ]
   },
   {
     "hutId": 249,
-    "hutName": "Glocknerhaus"
+    "hutName": "Glocknerhaus",
+    "coordinates": [
+      47.06967206111112,
+      12.768248505555556
+    ]
   },
   {
     "hutId": 250,
-    "hutName": "Berggasthaus Alpenblick"
+    "hutName": "Berggasthaus Alpenblick",
+    "coordinates": [
+      47.16253685,
+      11.712077975000001
+    ]
   },
   {
     "hutId": 252,
-    "hutName": "Salzkofelhütte"
+    "hutName": "Salzkofelhütte",
+    "coordinates": [
+      46.83851908888889,
+      13.257303422222222
+    ]
   },
   {
     "hutId": 253,
-    "hutName": "Ybbstaler-Hütte"
+    "hutName": "Ybbstaler-Hütte",
+    "coordinates": [
+      47.807607909999994,
+      15.025117000000003
+    ]
   },
   {
     "hutId": 254,
-    "hutName": "Bifertenhütte AACB"
+    "hutName": "Bifertenhütte AACB",
+    "coordinates": [
+      46.81448506428571,
+      9.026471564285714
+    ]
   },
   {
     "hutId": 255,
-    "hutName": "Chalet du Hohberg"
+    "hutName": "Chalet du Hohberg",
+    "coordinates": [
+      46.4588242,
+      6.0674427
+    ]
   },
   {
     "hutId": 256,
-    "hutName": "DAV-Haus-Spitzingsee"
+    "hutName": "DAV-Haus-Spitzingsee",
+    "coordinates": null
   },
   {
     "hutId": 257,
-    "hutName": "Hochfeilerhütte"
+    "hutName": "Hochfeilerhütte",
+    "coordinates": [
+      46.9621798,
+      11.7084663
+    ]
   },
   {
     "hutId": 258,
-    "hutName": "Jonsdorfer Hütte"
+    "hutName": "Jonsdorfer Hütte",
+    "coordinates": null
   },
   {
     "hutId": 259,
-    "hutName": "Voralphütte SAC"
+    "hutName": "Voralphütte SAC",
+    "coordinates": [
+      46.69053508,
+      8.487727119999999
+    ]
   },
   {
     "hutId": 260,
-    "hutName": "Guttenberg-Haus"
+    "hutName": "Guttenberg-Haus",
+    "coordinates": [
+      47.45091061428571,
+      13.683710671428571
+    ]
   },
   {
     "hutId": 261,
-    "hutName": "Seethalerhütte"
+    "hutName": "Seethalerhütte",
+    "coordinates": [
+      47.47363726,
+      13.612781660000001
+    ]
   },
   {
     "hutId": 262,
-    "hutName": "Austria-Hütte"
+    "hutName": "Austria-Hütte",
+    "coordinates": [
+      47.44310908888889,
+      13.619280455555556
+    ]
   },
   {
     "hutId": 263,
-    "hutName": "Winteregghütte"
+    "hutName": "Winteregghütte",
+    "coordinates": [
+      46.4604067,
+      7.6499369
+    ]
   },
   {
     "hutId": 264,
-    "hutName": "Binntalhütte SAC"
+    "hutName": "Binntalhütte SAC",
+    "coordinates": [
+      46.3747091,
+      8.2918141
+    ]
   },
   {
     "hutId": 265,
-    "hutName": "Haus Schattwald"
+    "hutName": "Haus Schattwald",
+    "coordinates": [
+      47.51408543333333,
+      10.465253200000001
+    ]
   },
   {
     "hutId": 266,
-    "hutName": "Zittauer Hütte"
+    "hutName": "Zittauer Hütte",
+    "coordinates": [
+      47.16278078461539,
+      12.124257769230768
+    ]
   },
   {
     "hutId": 267,
-    "hutName": "Wolayersee-Hütte"
+    "hutName": "Wolayersee-Hütte",
+    "coordinates": [
+      46.612361955555556,
+      12.867087466666666
+    ]
   },
   {
     "hutId": 268,
-    "hutName": "Obstansersee-Hütte"
+    "hutName": "Obstansersee-Hütte",
+    "coordinates": [
+      46.68433878,
+      12.49386236
+    ]
   },
   {
     "hutId": 269,
-    "hutName": "Sewenhütte SAC"
+    "hutName": "Sewenhütte SAC",
+    "coordinates": [
+      46.7466293,
+      8.5210697
+    ]
   },
   {
     "hutId": 270,
-    "hutName": "Prinz-Luitpoldhaus"
+    "hutName": "Prinz-Luitpoldhaus",
+    "coordinates": [
+      47.39243959,
+      10.419999280000003
+    ]
   },
   {
     "hutId": 271,
-    "hutName": "Kaunergrathütte"
+    "hutName": "Kaunergrathütte",
+    "coordinates": [
+      46.993926550000005,
+      10.807011914285713
+    ]
   },
   {
     "hutId": 272,
-    "hutName": "Otto- Mayr-Hütte"
+    "hutName": "Otto- Mayr-Hütte",
+    "coordinates": [
+      47.5093352,
+      10.6187302125
+    ]
   },
   {
     "hutId": 273,
-    "hutName": "Millstätter Hütte"
+    "hutName": "Millstätter Hütte",
+    "coordinates": [
+      46.84824445714286,
+      13.594241414285715
+    ]
   },
   {
     "hutId": 274,
-    "hutName": "Kröntenhütte SAC"
+    "hutName": "Kröntenhütte SAC",
+    "coordinates": [
+      46.800082780000004,
+      8.57537262
+    ]
   },
   {
     "hutId": 275,
-    "hutName": "Neue Regensburger Hütte"
+    "hutName": "Neue Regensburger Hütte",
+    "coordinates": [
+      47.054712415384614,
+      11.198313946153847
+    ]
   },
   {
     "hutId": 276,
-    "hutName": "Sesvennahütte"
+    "hutName": "Sesvennahütte",
+    "coordinates": [
+      46.7345894,
+      10.43536944
+    ]
   },
   {
     "hutId": 277,
-    "hutName": "Cabane de l'A Neuve CAS"
+    "hutName": "Cabane de l'A Neuve CAS",
+    "coordinates": [
+      45.94879288,
+      7.066868080000001
+    ]
   },
   {
     "hutId": 278,
-    "hutName": "Cabane du Mountet CAS"
+    "hutName": "Cabane du Mountet CAS",
+    "coordinates": [
+      46.0600459,
+      7.6535412
+    ]
   },
   {
     "hutId": 279,
-    "hutName": "Cabane d'Orny CAS"
+    "hutName": "Cabane d'Orny CAS",
+    "coordinates": [
+      46.0019128,
+      7.0628122
+    ]
   },
   {
     "hutId": 280,
-    "hutName": "Cabane Rambert CAS"
+    "hutName": "Cabane Rambert CAS",
+    "coordinates": [
+      46.230225644444445,
+      7.134234388888888
+    ]
   },
   {
     "hutId": 281,
-    "hutName": "Cabane du Trient CAS"
+    "hutName": "Cabane du Trient CAS",
+    "coordinates": [
+      45.9995963,
+      7.0436489
+    ]
   },
   {
     "hutId": 282,
-    "hutName": "Haus und Hütte Hammer"
+    "hutName": "Haus und Hütte Hammer",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 283,
-    "hutName": "Potsdamer Hütte"
+    "hutName": "Potsdamer Hütte",
+    "coordinates": [
+      47.14301874000001,
+      11.20872958
+    ]
   },
   {
     "hutId": 284,
-    "hutName": "Schlernbödelehütte"
+    "hutName": "Schlernbödelehütte",
+    "coordinates": [
+      46.522139700000004,
+      11.5836634
+    ]
   },
   {
     "hutId": 285,
-    "hutName": "Radlseehütte"
+    "hutName": "Radlseehütte",
+    "coordinates": null
   },
   {
     "hutId": 286,
-    "hutName": "Brunnenkopfhäuser"
+    "hutName": "Brunnenkopfhäuser",
+    "coordinates": null
   },
   {
     "hutId": 287,
-    "hutName": "Soiernhaus"
+    "hutName": "Soiernhaus",
+    "coordinates": [
+      47.493731042857135,
+      11.34857557142857
+    ]
   },
   {
     "hutId": 288,
-    "hutName": "Bivouac de l'Envers des Dorées"
+    "hutName": "Bivouac de l'Envers des Dorées",
+    "coordinates": [
+      45.927265340000005,
+      7.068999000000001
+    ]
   },
   {
     "hutId": 290,
-    "hutName": "Chamanna Georgy"
+    "hutName": "Chamanna Georgy",
+    "coordinates": [
+      46.48715095833334,
+      9.955848041666666
+    ]
   },
   {
     "hutId": 291,
-    "hutName": "Capanna Gorda - deaktiviert"
+    "hutName": "Capanna Gorda - deaktiviert",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 292,
-    "hutName": "Kürsinger-Hütte"
+    "hutName": "Kürsinger-Hütte",
+    "coordinates": [
+      47.12275646428571,
+      12.299906735714286
+    ]
   },
   {
     "hutId": 293,
-    "hutName": "Carl-von-Stahl-Haus"
+    "hutName": "Carl-von-Stahl-Haus",
+    "coordinates": [
+      47.57467586666667,
+      13.042548275
+    ]
   },
   {
     "hutId": 294,
-    "hutName": "Sölden-Hütte"
+    "hutName": "Sölden-Hütte",
+    "coordinates": [
+      47.484129175,
+      13.290326225000001
+    ]
   },
   {
     "hutId": 295,
-    "hutName": "Zeppezauer-Haus"
+    "hutName": "Zeppezauer-Haus",
+    "coordinates": [
+      47.72448856363637,
+      13.007185499999999
+    ]
   },
   {
     "hutId": 296,
-    "hutName": "Edelweisshütte"
+    "hutName": "Edelweisshütte",
+    "coordinates": [
+      47.791781490909095,
+      15.814890609090911
+    ]
   },
   {
     "hutId": 297,
-    "hutName": "Lindauer Hütte"
+    "hutName": "Lindauer Hütte",
+    "coordinates": [
+      47.03442323888889,
+      9.835659905555554
+    ]
   },
   {
     "hutId": 298,
-    "hutName": "Württembergerhaus"
+    "hutName": "Württembergerhaus",
+    "coordinates": [
+      47.21035813636363,
+      10.535434636363634
+    ]
   },
   {
     "hutId": 299,
-    "hutName": "Sepp-Sollner-Hütte"
+    "hutName": "Sepp-Sollner-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 300,
-    "hutName": "Oberwalder-Hütte"
+    "hutName": "Oberwalder-Hütte",
+    "coordinates": [
+      46.7765495,
+      13.8338544
+    ]
   },
   {
     "hutId": 301,
-    "hutName": "Tiefrastenhütte"
+    "hutName": "Tiefrastenhütte",
+    "coordinates": [
+      46.8762798,
+      11.7816488
+    ]
   },
   {
     "hutId": 302,
-    "hutName": "testhuette_elca"
+    "hutName": "testhuette_elca",
+    "coordinates": null
   },
   {
     "hutId": 303,
-    "hutName": "Alpenrose-Hütte Zillertal"
+    "hutName": "Alpenrose-Hütte Zillertal",
+    "coordinates": [
+      47.419999092307684,
+      12.23764323846154
+    ]
   },
   {
     "hutId": 304,
-    "hutName": "Staldenmaadhütte"
+    "hutName": "Staldenmaadhütte",
+    "coordinates": [
+      46.596001300000005,
+      7.499634057142857
+    ]
   },
   {
     "hutId": 305,
-    "hutName": "Tierberglihütte SAC"
+    "hutName": "Tierberglihütte SAC",
+    "coordinates": [
+      46.70208535555555,
+      8.414242899999998
+    ]
   },
   {
     "hutId": 306,
-    "hutName": "Hess-Hütte"
+    "hutName": "Hess-Hütte",
+    "coordinates": [
+      47.56133677058823,
+      14.651967088235295
+    ]
   },
   {
     "hutId": 307,
-    "hutName": "Vorderkaiserfeldenhütte"
+    "hutName": "Vorderkaiserfeldenhütte",
+    "coordinates": [
+      47.606074115789475,
+      12.239383289473684
+    ]
   },
   {
     "hutId": 308,
-    "hutName": "Schönbielhütte SAC"
+    "hutName": "Schönbielhütte SAC",
+    "coordinates": [
+      46.00198,
+      7.6289566
+    ]
   },
   {
     "hutId": 309,
-    "hutName": "Saarbrücker Hütte"
+    "hutName": "Saarbrücker Hütte",
+    "coordinates": [
+      46.89843333333333,
+      10.036898999999996
+    ]
   },
   {
     "hutId": 310,
-    "hutName": "Dreischusterhütte"
+    "hutName": "Dreischusterhütte",
+    "coordinates": [
+      46.67454531666666,
+      12.297225383333332
+    ]
   },
   {
     "hutId": 311,
-    "hutName": "Cabane du Mont d’Or"
+    "hutName": "Cabane du Mont d’Or",
+    "coordinates": [
+      46.7227667,
+      6.360522640000001
+    ]
   },
   {
     "hutId": 312,
-    "hutName": "Gruebenhütte AACBs"
+    "hutName": "Gruebenhütte AACBs",
+    "coordinates": [
+      46.6058833,
+      8.2593064
+    ]
   },
   {
     "hutId": 313,
-    "hutName": "Harpprechthaus"
+    "hutName": "Harpprechthaus",
+    "coordinates": null
   },
   {
     "hutId": 314,
-    "hutName": "Murgseehütte"
+    "hutName": "Murgseehütte",
+    "coordinates": [
+      47.03900482222222,
+      9.157297322222224
+    ]
   },
   {
     "hutId": 316,
-    "hutName": "Fraganter Schutzhaus"
+    "hutName": "Fraganter Schutzhaus",
+    "coordinates": [
+      46.9509306,
+      13.0277762
+    ]
   },
   {
     "hutId": 317,
-    "hutName": "Franz-Fischer-Hütte"
+    "hutName": "Franz-Fischer-Hütte",
+    "coordinates": [
+      47.19864615714285,
+      13.364227642857141
+    ]
   },
   {
     "hutId": 318,
-    "hutName": "Vermigel"
+    "hutName": "Vermigel",
+    "coordinates": [
+      46.59456665555555,
+      8.657943944444446
+    ]
   },
   {
     "hutId": 319,
-    "hutName": "Niedersachsenhaus"
+    "hutName": "Niedersachsenhaus",
+    "coordinates": [
+      47.06050198,
+      13.010140419999999
+    ]
   },
   {
     "hutId": 320,
-    "hutName": "Innsbrucker Hütte"
+    "hutName": "Innsbrucker Hütte",
+    "coordinates": [
+      47.04323696,
+      11.3108256
+    ]
   },
   {
     "hutId": 322,
-    "hutName": "Capanna Pairolo"
+    "hutName": "Capanna Pairolo",
+    "coordinates": [
+      46.0628319,
+      9.044859
+    ]
   },
   {
     "hutId": 323,
-    "hutName": "Erfurter Hütte"
+    "hutName": "Erfurter Hütte",
+    "coordinates": [
+      47.44166286666666,
+      11.762940333333333
+    ]
   },
   {
     "hutId": 324,
-    "hutName": "Traunsteiner Skihütte/ Winklmoosalm"
+    "hutName": "Traunsteiner Skihütte/ Winklmoosalm",
+    "coordinates": [
+      47.40045766,
+      13.40848814
+    ]
   },
   {
     "hutId": 325,
-    "hutName": "Mittenwalder Hütte"
+    "hutName": "Mittenwalder Hütte",
+    "coordinates": [
+      47.4338329,
+      11.2823729
+    ]
   },
   {
     "hutId": 326,
-    "hutName": "Sunnehüsi"
+    "hutName": "Sunnehüsi",
+    "coordinates": null
   },
   {
     "hutId": 327,
-    "hutName": "Schneibsteinhaus"
+    "hutName": "Schneibsteinhaus",
+    "coordinates": [
+      47.5721554375,
+      13.039242849999999
+    ]
   },
   {
     "hutId": 328,
-    "hutName": "Hochweißstein-Haus"
+    "hutName": "Hochweißstein-Haus",
+    "coordinates": [
+      46.643081736363634,
+      12.74024717272727
+    ]
   },
   {
     "hutId": 329,
-    "hutName": "Herrmann-von-Barth-Hütte"
+    "hutName": "Herrmann-von-Barth-Hütte",
+    "coordinates": [
+      47.30925558666667,
+      10.398741386666666
+    ]
   },
   {
     "hutId": 330,
-    "hutName": "Clubhaus Metsch"
+    "hutName": "Clubhaus Metsch",
+    "coordinates": [
+      47.06611004,
+      8.66490752
+    ]
   },
   {
     "hutId": 331,
-    "hutName": "Berggasthof Rofan"
+    "hutName": "Berggasthof Rofan",
+    "coordinates": [
+      47.422061863636365,
+      12.793285427272725
+    ]
   },
   {
     "hutId": 332,
-    "hutName": "Medelserhütte SAC"
+    "hutName": "Medelserhütte SAC",
+    "coordinates": null
   },
   {
     "hutId": 333,
-    "hutName": "Cabane du Fenestral"
+    "hutName": "Cabane du Fenestral",
+    "coordinates": [
+      46.18897136,
+      7.1006288799999995
+    ]
   },
   {
     "hutId": 334,
-    "hutName": "Rothornhütte SAC"
+    "hutName": "Rothornhütte SAC",
+    "coordinates": [
+      46.0481778,
+      7.697260633333333
+    ]
   },
   {
     "hutId": 335,
-    "hutName": "Refuge Giacomini"
+    "hutName": "Refuge Giacomini",
+    "coordinates": [
+      46.28817243846153,
+      7.162104346153847
+    ]
   },
   {
     "hutId": 336,
-    "hutName": "Priel-Schutzhaus"
+    "hutName": "Priel-Schutzhaus",
+    "coordinates": [
+      47.70489214285715,
+      14.081997985714287
+    ]
   },
   {
     "hutId": 337,
-    "hutName": "Zsigmondyhütte (Rif. Comici)"
+    "hutName": "Zsigmondyhütte (Rif. Comici)",
+    "coordinates": [
+      46.628455540000004,
+      12.35795854
+    ]
   },
   {
     "hutId": 338,
-    "hutName": "Mittellegihütte"
+    "hutName": "Mittellegihütte",
+    "coordinates": [
+      46.58338442,
+      8.02251936
+    ]
   },
   {
     "hutId": 339,
-    "hutName": "Alp Rohr Berggasthaus"
+    "hutName": "Alp Rohr Berggasthaus",
+    "coordinates": [
+      47.41217014,
+      9.979449160000001
+    ]
   },
   {
     "hutId": 340,
-    "hutName": "Monte-Leone-Hütte SAC"
+    "hutName": "Monte-Leone-Hütte SAC",
+    "coordinates": [
+      46.2607415,
+      8.0803184
+    ]
   },
   {
     "hutId": 341,
-    "hutName": "Rifugio Saoseo CAS"
+    "hutName": "Rifugio Saoseo CAS",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 342,
-    "hutName": "Glorer Hütte"
+    "hutName": "Glorer Hütte",
+    "coordinates": [
+      47.03102248181818,
+      12.71553663636364
+    ]
   },
   {
     "hutId": 343,
-    "hutName": "Hochlecken-Haus"
+    "hutName": "Hochlecken-Haus",
+    "coordinates": [
+      47.82897688461538,
+      13.605451930769231
+    ]
   },
   {
     "hutId": 344,
-    "hutName": "Jugendbildungsstätte Winterraum"
+    "hutName": "Jugendbildungsstätte Winterraum",
+    "coordinates": null
   },
   {
     "hutId": 346,
-    "hutName": "ZZZ TEST Monbijouhütte"
+    "hutName": "ZZZ TEST Monbijouhütte",
+    "coordinates": null
   },
   {
     "hutId": 347,
-    "hutName": "Berghaus Alpenrösli"
+    "hutName": "Berghaus Alpenrösli",
+    "coordinates": [
+      46.890785,
+      13.1309312
+    ]
   },
   {
     "hutId": 348,
-    "hutName": "Schalijochbiwak SAC"
+    "hutName": "Schalijochbiwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 349,
-    "hutName": "Baltschiederklause SAC"
+    "hutName": "Baltschiederklause SAC",
+    "coordinates": [
+      46.3949826,
+      7.8897949
+    ]
   },
   {
     "hutId": 350,
-    "hutName": "Fromatthütte"
+    "hutName": "Fromatthütte",
+    "coordinates": [
+      46.5457263,
+      7.432787
+    ]
   },
   {
     "hutId": 351,
-    "hutName": "Hotel Tiefenbach"
+    "hutName": "Hotel Tiefenbach",
+    "coordinates": [
+      46.5181558,
+      7.88549
+    ]
   },
   {
     "hutId": 352,
-    "hutName": "Otto-Haus"
+    "hutName": "Otto-Haus",
+    "coordinates": [
+      47.71321479444445,
+      15.762135111111112
+    ]
   },
   {
     "hutId": 353,
-    "hutName": "Schneealpen-Haus"
+    "hutName": "Schneealpen-Haus",
+    "coordinates": [
+      47.69631675555555,
+      15.609600777777779
+    ]
   },
   {
     "hutId": 354,
-    "hutName": "Falkenhütte"
+    "hutName": "Falkenhütte",
+    "coordinates": [
+      47.39966495714286,
+      11.498887685714285
+    ]
   },
   {
     "hutId": 355,
-    "hutName": "Ennstaler-Hütte"
+    "hutName": "Ennstaler-Hütte",
+    "coordinates": [
+      47.61930462307692,
+      14.676287930769233
+    ]
   },
   {
     "hutId": 356,
-    "hutName": "Hochschober-Hütte"
+    "hutName": "Hochschober-Hütte",
+    "coordinates": [
+      46.92517696,
+      12.699454939999999
+    ]
   },
   {
     "hutId": 362,
-    "hutName": "Admonter Haus"
+    "hutName": "Admonter Haus",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 363,
-    "hutName": "Clubheim Fälensee"
+    "hutName": "Clubheim Fälensee",
+    "coordinates": [
+      47.254342599999994,
+      9.425498057142857
+    ]
   },
   {
     "hutId": 365,
-    "hutName": "Langtalereckhütte"
+    "hutName": "Langtalereckhütte",
+    "coordinates": [
+      46.82864815,
+      10.991886499999998
+    ]
   },
   {
     "hutId": 366,
-    "hutName": "Braunschweiger Hütte"
+    "hutName": "Braunschweiger Hütte",
+    "coordinates": [
+      46.93523115384616,
+      10.909162038461538
+    ]
   },
   {
     "hutId": 367,
-    "hutName": "Chalet Rüeblihorn"
+    "hutName": "Chalet Rüeblihorn",
+    "coordinates": [
+      46.4588242,
+      6.0674427
+    ]
   },
   {
     "hutId": 369,
-    "hutName": "Hildesheimer Hütte"
+    "hutName": "Hildesheimer Hütte",
+    "coordinates": [
+      46.96610396250001,
+      11.119002075000001
+    ]
   },
   {
     "hutId": 370,
-    "hutName": "Hochjoch Hospiz"
+    "hutName": "Hochjoch Hospiz",
+    "coordinates": [
+      46.82519735000001,
+      10.833911900000002
+    ]
   },
   {
     "hutId": 371,
-    "hutName": "Zapporthütte SAC"
+    "hutName": "Zapporthütte SAC",
+    "coordinates": null
   },
   {
     "hutId": 372,
-    "hutName": "Wolfratshauser Hütte"
+    "hutName": "Wolfratshauser Hütte",
+    "coordinates": [
+      47.39113905333333,
+      10.848779066666667
+    ]
   },
   {
     "hutId": 373,
-    "hutName": "Kreuzeckhaus"
+    "hutName": "Kreuzeckhaus",
+    "coordinates": [
+      47.452152752941174,
+      11.06616307647059
+    ]
   },
   {
     "hutId": 374,
-    "hutName": "Hollandiahütte SAC"
+    "hutName": "Hollandiahütte SAC",
+    "coordinates": [
+      46.4752668,
+      7.9601696
+    ]
   },
   {
     "hutId": 375,
-    "hutName": "Ottokar-Kernstock-Haus"
+    "hutName": "Ottokar-Kernstock-Haus",
+    "coordinates": [
+      47.40555779090909,
+      15.359492699999999
+    ]
   },
   {
     "hutId": 376,
-    "hutName": "Berggasthaus Gitschenen"
+    "hutName": "Berggasthaus Gitschenen",
+    "coordinates": [
+      47.16253685,
+      11.712077975000001
+    ]
   },
   {
     "hutId": 377,
-    "hutName": "Hexenseehütte"
+    "hutName": "Hexenseehütte",
+    "coordinates": [
+      47.01877086666667,
+      10.481068416666666
+    ]
   },
   {
     "hutId": 378,
-    "hutName": "Mischabeljochbiwak SAC"
+    "hutName": "Mischabeljochbiwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 379,
-    "hutName": "Cabane de Chanrion CAS"
+    "hutName": "Cabane de Chanrion CAS",
+    "coordinates": [
+      45.93919098461539,
+      7.380975546153847
+    ]
   },
   {
     "hutId": 380,
-    "hutName": "Leopold Wittmaier Hütte"
+    "hutName": "Leopold Wittmaier Hütte",
+    "coordinates": [
+      47.49535845999999,
+      15.53231268
+    ]
   },
   {
     "hutId": 381,
-    "hutName": "Arbenbiwak SAC"
+    "hutName": "Arbenbiwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 382,
-    "hutName": "Cabane de Saleinaz CAS"
+    "hutName": "Cabane de Saleinaz CAS",
+    "coordinates": [
+      45.9764385,
+      7.0703669
+    ]
   },
   {
     "hutId": 383,
-    "hutName": "Feichtau-Hütte"
+    "hutName": "Feichtau-Hütte",
+    "coordinates": [
+      47.80152063333334,
+      14.3174595
+    ]
   },
   {
     "hutId": 384,
-    "hutName": "Hochsengsbiwak"
+    "hutName": "Hochsengsbiwak",
+    "coordinates": null
   },
   {
     "hutId": 385,
-    "hutName": "Neue Fürther Hütte"
+    "hutName": "Neue Fürther Hütte",
+    "coordinates": [
+      47.16536365454545,
+      12.424461963636363
+    ]
   },
   {
     "hutId": 386,
-    "hutName": "Chamanna Coaz CAS"
+    "hutName": "Chamanna Coaz CAS",
+    "coordinates": [
+      46.383695726315786,
+      9.835439063157894
+    ]
   },
   {
     "hutId": 387,
-    "hutName": "Sylvan-Hütte"
+    "hutName": "Sylvan-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 388,
-    "hutName": "Hüfihütte SAC"
+    "hutName": "Hüfihütte SAC",
+    "coordinates": [
+      46.8018251,
+      8.8189945
+    ]
   },
   {
     "hutId": 389,
-    "hutName": "Brixner Hütte"
+    "hutName": "Brixner Hütte",
+    "coordinates": [
+      46.9129491,
+      11.6204098
+    ]
   },
   {
     "hutId": 390,
-    "hutName": "Rudolf Schober Hütte"
+    "hutName": "Rudolf Schober Hütte",
+    "coordinates": [
+      47.251859062499996,
+      13.9739129625
+    ]
   },
   {
     "hutId": 391,
-    "hutName": "Chamanna da Boval CAS"
+    "hutName": "Chamanna da Boval CAS",
+    "coordinates": [
+      46.41521268571428,
+      9.925081557142857
+    ]
   },
   {
     "hutId": 392,
-    "hutName": "Kansteinhütte"
+    "hutName": "Kansteinhütte",
+    "coordinates": null
   },
   {
     "hutId": 393,
-    "hutName": "Douglasshütte"
+    "hutName": "Douglasshütte",
+    "coordinates": [
+      47.05963370909091,
+      9.754662181818183
+    ]
   },
   {
     "hutId": 394,
-    "hutName": "Cabane d’Essertze"
+    "hutName": "Cabane d’Essertze",
+    "coordinates": [
+      46.7227667,
+      6.360522640000001
+    ]
   },
   {
     "hutId": 395,
-    "hutName": "Anhalter Hütte"
+    "hutName": "Anhalter Hütte",
+    "coordinates": [
+      47.3012754,
+      10.6678361
+    ]
   },
   {
     "hutId": 396,
-    "hutName": "Valentinalm"
+    "hutName": "Valentinalm",
+    "coordinates": null
   },
   {
     "hutId": 397,
-    "hutName": "Skihütte Obererbs"
+    "hutName": "Skihütte Obererbs",
+    "coordinates": [
+      46.89975336153846,
+      9.112880507692307
+    ]
   },
   {
     "hutId": 398,
-    "hutName": "Etzlihütte SAC"
+    "hutName": "Etzlihütte SAC",
+    "coordinates": [
+      46.7181822,
+      8.720629
+    ]
   },
   {
     "hutId": 399,
-    "hutName": "Capanna Piansecco CAS"
+    "hutName": "Capanna Piansecco CAS",
+    "coordinates": [
+      46.4944255,
+      8.4714617
+    ]
   },
   {
     "hutId": 400,
-    "hutName": "Cabane de Valsorey CAS"
+    "hutName": "Cabane de Valsorey CAS",
+    "coordinates": [
+      45.9303685,
+      7.2717577
+    ]
   },
   {
     "hutId": 401,
-    "hutName": "Badener Hütte"
+    "hutName": "Badener Hütte",
+    "coordinates": [
+      47.081137440000006,
+      12.42560266
+    ]
   },
   {
     "hutId": 402,
-    "hutName": "Preintalerhütte"
+    "hutName": "Preintalerhütte",
+    "coordinates": [
+      47.3131012,
+      13.8132502
+    ]
   },
   {
     "hutId": 403,
-    "hutName": "Theodor-Körner-Hütte"
+    "hutName": "Theodor-Körner-Hütte",
+    "coordinates": [
+      47.50554484,
+      13.47827046
+    ]
   },
   {
     "hutId": 404,
-    "hutName": "Rotondohütte SAC"
+    "hutName": "Rotondohütte SAC",
+    "coordinates": [
+      46.544908,
+      8.4843821
+    ]
   },
   {
     "hutId": 405,
-    "hutName": "Skihütte Elm"
+    "hutName": "Skihütte Elm",
+    "coordinates": [
+      48.29565852857143,
+      9.002121628571429
+    ]
   },
   {
     "hutId": 406,
-    "hutName": "Cabane du Carroz"
+    "hutName": "Cabane du Carroz",
+    "coordinates": [
+      46.7227667,
+      6.360522640000001
+    ]
   },
   {
     "hutId": 407,
-    "hutName": "Priener Hütte"
+    "hutName": "Priener Hütte",
+    "coordinates": [
+      47.701992877777776,
+      12.327811744444443
+    ]
   },
   {
     "hutId": 408,
-    "hutName": "Adolf-Noßberger-Hütte"
+    "hutName": "Adolf-Noßberger-Hütte",
+    "coordinates": [
+      46.9540045,
+      12.7810076
+    ]
   },
   {
     "hutId": 409,
-    "hutName": "Türnitzer Hütte"
+    "hutName": "Türnitzer Hütte",
+    "coordinates": [
+      47.919383120000006,
+      15.55655188
+    ]
   },
   {
     "hutId": 410,
-    "hutName": "Gollinghütte"
+    "hutName": "Gollinghütte",
+    "coordinates": [
+      47.2864733,
+      13.7693946
+    ]
   },
   {
     "hutId": 411,
-    "hutName": "Alois-Günther-Haus"
+    "hutName": "Alois-Günther-Haus",
+    "coordinates": [
+      47.5741972,
+      15.79071103
+    ]
   },
   {
     "hutId": 412,
-    "hutName": "Rieserfernerhütte"
+    "hutName": "Rieserfernerhütte",
+    "coordinates": [
+      46.8899977,
+      12.0795047
+    ]
   },
   {
     "hutId": 413,
-    "hutName": "Cabane Balavaux"
+    "hutName": "Cabane Balavaux",
+    "coordinates": [
+      46.7227667,
+      6.360522640000001
+    ]
   },
   {
     "hutId": 414,
-    "hutName": "ZZZ TEST"
+    "hutName": "ZZZ TEST",
+    "coordinates": null
   },
   {
     "hutId": 415,
-    "hutName": "Kellerjoch-Hütte"
+    "hutName": "Kellerjoch-Hütte",
+    "coordinates": [
+      47.3165443,
+      11.7648008
+    ]
   },
   {
     "hutId": 416,
-    "hutName": "Almtaler Haus"
+    "hutName": "Almtaler Haus",
+    "coordinates": [
+      47.75488131875,
+      14.0179501375
+    ]
   },
   {
     "hutId": 417,
-    "hutName": "Ski- und Ferienhaus Obergestelen"
+    "hutName": "Ski- und Ferienhaus Obergestelen",
+    "coordinates": [
+      46.58630465714286,
+      7.432298128571429
+    ]
   },
   {
     "hutId": 419,
-    "hutName": "Capanna Poncione di Braga"
+    "hutName": "Capanna Poncione di Braga",
+    "coordinates": [
+      46.42881151111111,
+      8.572320455555555
+    ]
   },
   {
     "hutId": 420,
-    "hutName": "Mischabelhütte AACZ"
+    "hutName": "Mischabelhütte AACZ",
+    "coordinates": [
+      46.1094153,
+      7.8888023
+    ]
   },
   {
     "hutId": 421,
-    "hutName": "Gloggnitzer Hütte"
+    "hutName": "Gloggnitzer Hütte",
+    "coordinates": [
+      47.7296843,
+      15.729029363636363
+    ]
   },
   {
     "hutId": 422,
-    "hutName": "Goferhütte"
+    "hutName": "Goferhütte",
+    "coordinates": [
+      47.5651711,
+      14.55478986
+    ]
   },
   {
     "hutId": 423,
-    "hutName": "Gruberscharten-Biwak"
+    "hutName": "Gruberscharten-Biwak",
+    "coordinates": null
   },
   {
     "hutId": 424,
-    "hutName": "Habsburg-Haus"
+    "hutName": "Habsburg-Haus",
+    "coordinates": [
+      47.71340717692307,
+      15.698643415384616
+    ]
   },
   {
     "hutId": 425,
-    "hutName": "Hubertus-Haus"
+    "hutName": "Hubertus-Haus",
+    "coordinates": [
+      47.81180553333333,
+      16.025165133333335
+    ]
   },
   {
     "hutId": 426,
-    "hutName": "Hugo-Gerbers-Hütte"
+    "hutName": "Hugo-Gerbers-Hütte",
+    "coordinates": [
+      46.81666096666667,
+      13.029395933333333
+    ]
   },
   {
     "hutId": 427,
-    "hutName": "Kutatschhütte"
+    "hutName": "Kutatschhütte",
+    "coordinates": null
   },
   {
     "hutId": 428,
-    "hutName": "Lilienfelder Hütte"
+    "hutName": "Lilienfelder Hütte",
+    "coordinates": [
+      47.98960078,
+      15.590084933333333
+    ]
   },
   {
     "hutId": 429,
-    "hutName": "Neunkirchner Hütte"
+    "hutName": "Neunkirchner Hütte",
+    "coordinates": [
+      47.74767682,
+      16.00137044
+    ]
   },
   {
     "hutId": 430,
-    "hutName": "Peilstein-Haus"
+    "hutName": "Peilstein-Haus",
+    "coordinates": [
+      48.01486476666667,
+      16.05191653333333
+    ]
   },
   {
     "hutId": 431,
-    "hutName": "Reisseckhütte"
+    "hutName": "Reisseckhütte",
+    "coordinates": [
+      46.91553400769231,
+      13.374037392307693
+    ]
   },
   {
     "hutId": 432,
-    "hutName": "Rudolf-Proksch-Hütte"
+    "hutName": "Rudolf-Proksch-Hütte",
+    "coordinates": [
+      48.03149808,
+      16.23829431
+    ]
   },
   {
     "hutId": 433,
-    "hutName": "Schwarzenberghütte"
+    "hutName": "Schwarzenberghütte",
+    "coordinates": [
+      47.13556218,
+      12.76418397
+    ]
   },
   {
     "hutId": 434,
-    "hutName": "Wetterkogler-Haus"
+    "hutName": "Wetterkogler-Haus",
+    "coordinates": [
+      47.53042311428572,
+      15.914534799999998
+    ]
   },
   {
     "hutId": 435,
-    "hutName": "Capanna Tomeo"
+    "hutName": "Capanna Tomeo",
+    "coordinates": [
+      46.3661038,
+      8.6888105
+    ]
   },
   {
     "hutId": 436,
-    "hutName": "Cabane de la Dent Blanche CAS"
+    "hutName": "Cabane de la Dent Blanche CAS",
+    "coordinates": [
+      46.02024636,
+      7.6008926
+    ]
   },
   {
     "hutId": 437,
-    "hutName": "Lamsenjochhütte"
+    "hutName": "Lamsenjochhütte",
+    "coordinates": [
+      47.380074216666664,
+      11.603550666666669
+    ]
   },
   {
     "hutId": 438,
-    "hutName": "Berghaus Kleinwalsertal"
+    "hutName": "Berghaus Kleinwalsertal",
+    "coordinates": [
+      47.348790585714276,
+      10.145734385714288
+    ]
   },
   {
     "hutId": 439,
-    "hutName": "Haus Wäldele"
+    "hutName": "Haus Wäldele",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 440,
-    "hutName": "Landshuter Europahütte"
+    "hutName": "Landshuter Europahütte",
+    "coordinates": [
+      46.10566742000001,
+      7.80593648
+    ]
   },
   {
     "hutId": 441,
-    "hutName": "Goldeck-Hütte"
+    "hutName": "Goldeck-Hütte",
+    "coordinates": [
+      46.76109023333333,
+      13.4693629
+    ]
   },
   {
     "hutId": 442,
-    "hutName": "Marteller Hütte"
+    "hutName": "Marteller Hütte",
+    "coordinates": [
+      46.4696416,
+      10.6730592
+    ]
   },
   {
     "hutId": 443,
-    "hutName": "Jurahaus"
+    "hutName": "Jurahaus",
+    "coordinates": [
+      47.16072628888888,
+      7.157883833333334
+    ]
   },
   {
     "hutId": 444,
-    "hutName": "Grialetsch-Hütte SAC"
+    "hutName": "Grialetsch-Hütte SAC",
+    "coordinates": [
+      46.71010114285714,
+      9.960566785714287
+    ]
   },
   {
     "hutId": 445,
-    "hutName": "Cresta-Biwak SAC"
+    "hutName": "Cresta-Biwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 446,
-    "hutName": "Schilthornhütte"
+    "hutName": "Schilthornhütte",
+    "coordinates": null
   },
   {
     "hutId": 447,
-    "hutName": "Capanna Alpe Sponda"
+    "hutName": "Capanna Alpe Sponda",
+    "coordinates": [
+      46.41745228888889,
+      8.786009533333333
+    ]
   },
   {
     "hutId": 451,
-    "hutName": "Mooshütte"
+    "hutName": "Mooshütte",
+    "coordinates": null
   },
   {
     "hutId": 452,
-    "hutName": "Neue Traunsteiner Hütte"
+    "hutName": "Neue Traunsteiner Hütte",
+    "coordinates": [
+      47.6281797,
+      12.800943955555555
+    ]
   },
   {
     "hutId": 453,
-    "hutName": "Lämmerenhütte SAC"
+    "hutName": "Lämmerenhütte SAC",
+    "coordinates": [
+      46.400309400000005,
+      7.574483939999999
+    ]
   },
   {
     "hutId": 454,
-    "hutName": "Fusshornbiwak"
+    "hutName": "Fusshornbiwak",
+    "coordinates": null
   },
   {
     "hutId": 455,
-    "hutName": "AV Testhütte"
+    "hutName": "AV Testhütte",
+    "coordinates": null
   },
   {
     "hutId": 456,
-    "hutName": "Heidelberger Hütte"
+    "hutName": "Heidelberger Hütte",
+    "coordinates": [
+      46.9097487,
+      10.2596463
+    ]
   },
   {
     "hutId": 458,
-    "hutName": "Europa"
+    "hutName": "Europa",
+    "coordinates": [
+      46.10566742000001,
+      7.80593648
+    ]
   },
   {
     "hutId": 461,
-    "hutName": "Karl-Stein-Hütte"
+    "hutName": "Karl-Stein-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 462,
-    "hutName": "Firenze"
+    "hutName": "Firenze",
+    "coordinates": [
+      46.58749811111112,
+      11.7583141
+    ]
   },
   {
     "hutId": 463,
-    "hutName": "Schlernhaus (Rif. Bolzano)"
+    "hutName": "Schlernhaus (Rif. Bolzano)",
+    "coordinates": [
+      46.50735260416667,
+      11.5746842875
+    ]
   },
   {
     "hutId": 464,
-    "hutName": "Rifugio Franz Kostner"
+    "hutName": "Rifugio Franz Kostner",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 465,
-    "hutName": "Corno del Renon"
+    "hutName": "Corno del Renon",
+    "coordinates": [
+      46.7784387,
+      12.2748049
+    ]
   },
   {
     "hutId": 466,
-    "hutName": "Sillianer Hütte"
+    "hutName": "Sillianer Hütte",
+    "coordinates": [
+      46.7060782,
+      12.406409100000001
+    ]
   },
   {
     "hutId": 467,
-    "hutName": "Alpwirtschaft Tanzboden"
+    "hutName": "Alpwirtschaft Tanzboden",
+    "coordinates": [
+      47.220557544444446,
+      9.261240233333334
+    ]
   },
   {
     "hutId": 468,
-    "hutName": "Kelchalm (Bochumer Hütte)"
+    "hutName": "Kelchalm (Bochumer Hütte)",
+    "coordinates": [
+      47.3865515,
+      12.464668
+    ]
   },
   {
     "hutId": 469,
-    "hutName": "Sonnschienhütte"
+    "hutName": "Sonnschienhütte",
+    "coordinates": [
+      47.58658351666667,
+      15.039153550000002
+    ]
   },
   {
     "hutId": 470,
-    "hutName": "Berggasthaus Wildspitz"
+    "hutName": "Berggasthaus Wildspitz",
+    "coordinates": [
+      47.16253685,
+      11.712077975000001
+    ]
   },
   {
     "hutId": 471,
-    "hutName": "Wolfsberger Hütte"
+    "hutName": "Wolfsberger Hütte",
+    "coordinates": [
+      46.83410215,
+      14.659193183333334
+    ]
   },
   {
     "hutId": 472,
-    "hutName": "Galmihornhütte"
+    "hutName": "Galmihornhütte",
+    "coordinates": [
+      46.4892737,
+      8.2428863
+    ]
   },
   {
     "hutId": 473,
-    "hutName": "Cabane de Prafleuri"
+    "hutName": "Cabane de Prafleuri",
+    "coordinates": [
+      46.07492817142857,
+      7.378805100000001
+    ]
   },
   {
     "hutId": 474,
-    "hutName": "Burghütte"
+    "hutName": "Burghütte",
+    "coordinates": [
+      46.45100794,
+      8.13532666
+    ]
   },
   {
     "hutId": 475,
-    "hutName": "Berg- und Skiheim Brixen im Thale"
+    "hutName": "Berg- und Skiheim Brixen im Thale",
+    "coordinates": [
+      47.042228,
+      11.0741754
+    ]
   },
   {
     "hutId": 476,
-    "hutName": "Martin-Busch-Hütte"
+    "hutName": "Martin-Busch-Hütte",
+    "coordinates": [
+      46.80110294,
+      10.887083959999998
+    ]
   },
   {
     "hutId": 477,
-    "hutName": "Capanna Alp da Canaa"
+    "hutName": "Capanna Alp da Canaa",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 478,
-    "hutName": "Capanna Grossalp"
+    "hutName": "Capanna Grossalp",
+    "coordinates": [
+      46.316514,
+      8.4712184
+    ]
   },
   {
     "hutId": 479,
-    "hutName": "Capanna Alpe Nimi"
+    "hutName": "Capanna Alpe Nimi",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 480,
-    "hutName": "Rifugio Alpe Masnée"
+    "hutName": "Rifugio Alpe Masnée",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 481,
-    "hutName": "Rifugio Alpe Spluga"
+    "hutName": "Rifugio Alpe Spluga",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 482,
-    "hutName": "Ostello Fusio"
+    "hutName": "Ostello Fusio",
+    "coordinates": [
+      46.040877428571434,
+      8.835367114285715
+    ]
   },
   {
     "hutId": 483,
-    "hutName": "Rifugio Ribia"
+    "hutName": "Rifugio Ribia",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 484,
-    "hutName": "Rifugio la Reggia"
+    "hutName": "Rifugio la Reggia",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 485,
-    "hutName": "Bonn-Matreier Hütte"
+    "hutName": "Bonn-Matreier Hütte",
+    "coordinates": [
+      47.0389946,
+      12.4275225
+    ]
   },
   {
     "hutId": 486,
-    "hutName": "Sardonahütte SAC"
+    "hutName": "Sardonahütte SAC",
+    "coordinates": [
+      46.91548547142856,
+      9.275390228571428
+    ]
   },
   {
     "hutId": 487,
-    "hutName": "Tschiervahütte SAC"
+    "hutName": "Tschiervahütte SAC",
+    "coordinates": [
+      46.40388252727272,
+      9.880059872727273
+    ]
   },
   {
     "hutId": 488,
-    "hutName": "E.-T.-Compton-Hütte"
+    "hutName": "E.-T.-Compton-Hütte",
+    "coordinates": [
+      46.696417,
+      13.157283
+    ]
   },
   {
     "hutId": 489,
-    "hutName": "Filmoor-Standschützen-Hütte"
+    "hutName": "Filmoor-Standschützen-Hütte",
+    "coordinates": [
+      46.67067338,
+      12.53437402
+    ]
   },
   {
     "hutId": 490,
-    "hutName": "Voisthaler-Hütte"
+    "hutName": "Voisthaler-Hütte",
+    "coordinates": [
+      47.61225037999999,
+      15.18098354
+    ]
   },
   {
     "hutId": 491,
-    "hutName": "Adamek-Hütte"
+    "hutName": "Adamek-Hütte",
+    "coordinates": [
+      47.492274,
+      13.583830381818181
+    ]
   },
   {
     "hutId": 492,
-    "hutName": "Haindlkar-Hütte"
+    "hutName": "Haindlkar-Hütte",
+    "coordinates": [
+      47.5670897,
+      14.611873733333335
+    ]
   },
   {
     "hutId": 493,
-    "hutName": "Edelraute-Hütte"
+    "hutName": "Edelraute-Hütte",
+    "coordinates": [
+      47.4391404,
+      14.4328057
+    ]
   },
   {
     "hutId": 494,
-    "hutName": "Cabane de Tracuit CAS"
+    "hutName": "Cabane de Tracuit CAS",
+    "coordinates": [
+      46.1303227375,
+      7.679424375
+    ]
   },
   {
     "hutId": 495,
-    "hutName": "Talherberge Zwieselstein"
+    "hutName": "Talherberge Zwieselstein",
+    "coordinates": null
   },
   {
     "hutId": 496,
-    "hutName": "Hinterbalmhütte"
+    "hutName": "Hinterbalmhütte",
+    "coordinates": [
+      46.7795427,
+      8.7984837
+    ]
   },
   {
     "hutId": 497,
-    "hutName": "Steinsee-Hütte"
+    "hutName": "Steinsee-Hütte",
+    "coordinates": [
+      47.2262142,
+      10.58718389
+    ]
   },
   {
     "hutId": 498,
-    "hutName": "Rottalhütte SAC"
+    "hutName": "Rottalhütte SAC",
+    "coordinates": [
+      46.526123520000006,
+      7.9447369199999995
+    ]
   },
   {
     "hutId": 499,
-    "hutName": "Chaveehut"
+    "hutName": "Chaveehut",
+    "coordinates": null
   },
   {
     "hutId": 500,
-    "hutName": "Capanna Dötra"
+    "hutName": "Capanna Dötra",
+    "coordinates": [
+      46.5316836,
+      8.8796428
+    ]
   },
   {
     "hutId": 502,
-    "hutName": "Konstanzer Hütte"
+    "hutName": "Konstanzer Hütte",
+    "coordinates": [
+      47.069482828571424,
+      10.188962478571428
+    ]
   },
   {
     "hutId": 503,
-    "hutName": "Hofalm-Hütte"
+    "hutName": "Hofalm-Hütte",
+    "coordinates": [
+      47.64981102,
+      14.371315139999998
+    ]
   },
   {
     "hutId": 504,
-    "hutName": "Hans Wödlhütte"
+    "hutName": "Hans Wödlhütte",
+    "coordinates": [
+      47.577536694117654,
+      12.285196188235295
+    ]
   },
   {
     "hutId": 505,
-    "hutName": "Kistenpasshütte"
+    "hutName": "Kistenpasshütte",
+    "coordinates": [
+      46.840399257142856,
+      9.02933622857143
+    ]
   },
   {
     "hutId": 506,
-    "hutName": "Laghel"
+    "hutName": "Laghel",
+    "coordinates": null
   },
   {
     "hutId": 507,
-    "hutName": "Taubensteinhaus"
+    "hutName": "Taubensteinhaus",
+    "coordinates": [
+      47.66080113333333,
+      11.92551762
+    ]
   },
   {
     "hutId": 508,
-    "hutName": "Welserhütte"
+    "hutName": "Welserhütte",
+    "coordinates": [
+      47.653330739999994,
+      13.431013660000001
+    ]
   },
   {
     "hutId": 509,
-    "hutName": "Pühringer-Hütte"
+    "hutName": "Pühringer-Hütte",
+    "coordinates": [
+      47.687193799999996,
+      13.966529399999999
+    ]
   },
   {
     "hutId": 510,
-    "hutName": "Capanna Arena"
+    "hutName": "Capanna Arena",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 511,
-    "hutName": "Cabane Arpitettaz CAS"
+    "hutName": "Cabane Arpitettaz CAS",
+    "coordinates": [
+      46.1008939,
+      7.6793646
+    ]
   },
   {
     "hutId": 512,
-    "hutName": "DAV-Haus Obertauern"
+    "hutName": "DAV-Haus Obertauern",
+    "coordinates": null
   },
   {
     "hutId": 513,
-    "hutName": "Bivouac au Col de la Dent Blanche CAS"
+    "hutName": "Bivouac au Col de la Dent Blanche CAS",
+    "coordinates": [
+      45.927265340000005,
+      7.068999000000001
+    ]
   },
   {
     "hutId": 514,
-    "hutName": "Ringelspitzhütte SAC"
+    "hutName": "Ringelspitzhütte SAC",
+    "coordinates": [
+      46.8657966,
+      9.3807114
+    ]
   },
   {
     "hutId": 515,
-    "hutName": "Silberhornhütte SAC"
+    "hutName": "Silberhornhütte SAC",
+    "coordinates": [
+      46.54904724,
+      7.93356062
+    ]
   },
   {
     "hutId": 516,
-    "hutName": "Rifugio Pian di Crest"
+    "hutName": "Rifugio Pian di Crest",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 517,
-    "hutName": "Rifugio Maria Luisa"
+    "hutName": "Rifugio Maria Luisa",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 518,
-    "hutName": "Capanna Cimetta"
+    "hutName": "Capanna Cimetta",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 519,
-    "hutName": "Capanna lo Stallone"
+    "hutName": "Capanna lo Stallone",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 520,
-    "hutName": "Würgauer Haus"
+    "hutName": "Würgauer Haus",
+    "coordinates": null
   },
   {
     "hutId": 523,
-    "hutName": "Tappenkarseehütte"
+    "hutName": "Tappenkarseehütte",
+    "coordinates": [
+      47.1845884,
+      13.316162311111109
+    ]
   },
   {
     "hutId": 525,
-    "hutName": "Sustlihütte SAC"
+    "hutName": "Sustlihütte SAC",
+    "coordinates": [
+      46.7517064,
+      8.4707938
+    ]
   },
   {
     "hutId": 526,
-    "hutName": "Hüttenrunde Gipfelwege"
+    "hutName": "Hüttenrunde Gipfelwege",
+    "coordinates": null
   },
   {
     "hutId": 527,
-    "hutName": "Stockhornbiwak SAC"
+    "hutName": "Stockhornbiwak SAC",
+    "coordinates": [
+      46.4643652,
+      7.6559866
+    ]
   },
   {
     "hutId": 528,
-    "hutName": "Fritz-Pflaum-Hütte"
+    "hutName": "Fritz-Pflaum-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 529,
-    "hutName": "Willi-Merkl-Hütte"
+    "hutName": "Willi-Merkl-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 530,
-    "hutName": "Turtmannhütte SAC"
+    "hutName": "Turtmannhütte SAC",
+    "coordinates": [
+      46.16013666,
+      7.69946438
+    ]
   },
   {
     "hutId": 531,
-    "hutName": "Berggasthaus Brüsti"
+    "hutName": "Berggasthaus Brüsti",
+    "coordinates": [
+      47.16253685,
+      11.712077975000001
+    ]
   },
   {
     "hutId": 536,
-    "hutName": "Ostwandlager"
+    "hutName": "Ostwandlager",
+    "coordinates": null
   },
   {
     "hutId": 537,
-    "hutName": "Hanslberghütte"
+    "hutName": "Hanslberghütte",
+    "coordinates": null
   },
   {
     "hutId": 538,
-    "hutName": "Berg- und Skiheim Brixen im Thale - Ferienwohnung"
+    "hutName": "Berg- und Skiheim Brixen im Thale - Ferienwohnung",
+    "coordinates": [
+      47.042228,
+      11.0741754
+    ]
   },
   {
     "hutId": 539,
-    "hutName": "Rifugio Alpe Fontana"
+    "hutName": "Rifugio Alpe Fontana",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 540,
-    "hutName": "Capanna Gesero"
+    "hutName": "Capanna Gesero",
+    "coordinates": [
+      46.1814054,
+      9.120836
+    ]
   },
   {
     "hutId": 541,
-    "hutName": "Westfalenhaus"
+    "hutName": "Westfalenhaus",
+    "coordinates": [
+      47.10791442,
+      11.100090920000001
+    ]
   },
   {
     "hutId": 543,
-    "hutName": "Munt la Reita"
+    "hutName": "Munt la Reita",
+    "coordinates": [
+      46.658878040000005,
+      12.048750819999999
+    ]
   },
   {
     "hutId": 544,
-    "hutName": "Sadnighaus"
+    "hutName": "Sadnighaus",
+    "coordinates": [
+      46.95493464285715,
+      12.960979742857145
+    ]
   },
   {
     "hutId": 545,
-    "hutName": "Neue Reichenberger Hütte"
+    "hutName": "Neue Reichenberger Hütte",
+    "coordinates": [
+      46.97133946666666,
+      12.2793982
+    ]
   },
   {
     "hutId": 546,
-    "hutName": "Ludwigsburger Hütte"
+    "hutName": "Ludwigsburger Hütte",
+    "coordinates": [
+      47.1146905375,
+      10.823533387500001
+    ]
   },
   {
     "hutId": 547,
-    "hutName": "Steinwaldhütte"
+    "hutName": "Steinwaldhütte",
+    "coordinates": [
+      47.38166004,
+      13.53239736
+    ]
   },
   {
     "hutId": 548,
-    "hutName": "Lonza Biwak"
+    "hutName": "Lonza Biwak",
+    "coordinates": null
   },
   {
     "hutId": 549,
-    "hutName": "Berghütte Hohsaas"
+    "hutName": "Berghütte Hohsaas",
+    "coordinates": [
+      46.52684702857143,
+      10.5139691
+    ]
   },
   {
     "hutId": 550,
-    "hutName": "Agroturissem Alp d'Err"
+    "hutName": "Agroturissem Alp d'Err",
+    "coordinates": null
   },
   {
     "hutId": 551,
-    "hutName": "Cesa da Sett"
+    "hutName": "Cesa da Sett",
+    "coordinates": [
+      46.021378920000004,
+      9.56193736
+    ]
   },
   {
     "hutId": 552,
-    "hutName": "Sägässähenki Jenisberg"
+    "hutName": "Sägässähenki Jenisberg",
+    "coordinates": null
   },
   {
     "hutId": 553,
-    "hutName": "Tigias Plang Faller"
+    "hutName": "Tigias Plang Faller",
+    "coordinates": null
   },
   {
     "hutId": 554,
-    "hutName": "Chesa sut Baselgia, Stugl"
+    "hutName": "Chesa sut Baselgia, Stugl",
+    "coordinates": [
+      47.04406017142857,
+      9.683712842857144
+    ]
   },
   {
     "hutId": 555,
-    "hutName": "Gamskarkogel-Hütte"
+    "hutName": "Gamskarkogel-Hütte",
+    "coordinates": [
+      47.1610163,
+      13.1584159
+    ]
   },
   {
     "hutId": 556,
-    "hutName": "Ischler Hütte"
+    "hutName": "Ischler Hütte",
+    "coordinates": [
+      47.6998793,
+      13.760642333333331
+    ]
   },
   {
     "hutId": 557,
-    "hutName": "Schönfeldhütte"
+    "hutName": "Schönfeldhütte",
+    "coordinates": [
+      47.66510122,
+      11.90610664
+    ]
   },
   {
     "hutId": 558,
-    "hutName": "Lauteraarhütte SAC"
+    "hutName": "Lauteraarhütte SAC",
+    "coordinates": [
+      46.5700751,
+      8.2221825
+    ]
   },
   {
     "hutId": 559,
-    "hutName": "Salbitschijenbiwak SAC"
+    "hutName": "Salbitschijenbiwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 561,
-    "hutName": "Karlsbader Hütte"
+    "hutName": "Karlsbader Hütte",
+    "coordinates": [
+      46.76308042000001,
+      12.801119420000001
+    ]
   },
   {
     "hutId": 562,
-    "hutName": "Schwarzenberghütte (DAV)"
+    "hutName": "Schwarzenberghütte (DAV)",
+    "coordinates": [
+      47.13556218,
+      12.76418397
+    ]
   },
   {
     "hutId": 563,
-    "hutName": "Giessener Hütte"
+    "hutName": "Giessener Hütte",
+    "coordinates": [
+      46.9924873,
+      13.328866163636365
+    ]
   },
   {
     "hutId": 564,
-    "hutName": "Hintergrathütte (Rif. Coston)"
+    "hutName": "Hintergrathütte (Rif. Coston)",
+    "coordinates": [
+      46.50159588,
+      10.58335808
+    ]
   },
   {
     "hutId": 565,
-    "hutName": "Capanna Brogoldone"
+    "hutName": "Capanna Brogoldone",
+    "coordinates": [
+      46.2628804,
+      9.0633216
+    ]
   },
   {
     "hutId": 566,
-    "hutName": "Cabane de Sorniot"
+    "hutName": "Cabane de Sorniot",
+    "coordinates": [
+      46.1693151,
+      7.0949146
+    ]
   },
   {
     "hutId": 567,
-    "hutName": "Grassenbiwak SAC"
+    "hutName": "Grassenbiwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 568,
-    "hutName": "Clubhütte Grubenalp"
+    "hutName": "Clubhütte Grubenalp",
+    "coordinates": null
   },
   {
     "hutId": 569,
-    "hutName": "Cabane de la Tourche"
+    "hutName": "Cabane de la Tourche",
+    "coordinates": [
+      46.21446568,
+      7.06171014
+    ]
   },
   {
     "hutId": 570,
-    "hutName": "Müllerhütte - Rif. Cima Libera"
+    "hutName": "Müllerhütte - Rif. Cima Libera",
+    "coordinates": [
+      46.9631376,
+      11.177806479999997
+    ]
   },
   {
     "hutId": 571,
-    "hutName": "Gauenhütte"
+    "hutName": "Gauenhütte",
+    "coordinates": [
+      47.059314742857154,
+      9.86438242857143
+    ]
   },
   {
     "hutId": 572,
-    "hutName": "Bielefelder Hütte"
+    "hutName": "Bielefelder Hütte",
+    "coordinates": [
+      47.207275779999996,
+      10.9329413
+    ]
   },
   {
     "hutId": 573,
-    "hutName": "Cabane de Bounavaux"
+    "hutName": "Cabane de Bounavaux",
+    "coordinates": [
+      46.533057819999996,
+      7.132361260000001
+    ]
   },
   {
     "hutId": 574,
-    "hutName": "Cabane des Marindes"
+    "hutName": "Cabane des Marindes",
+    "coordinates": [
+      46.7227667,
+      6.360522640000001
+    ]
   },
   {
     "hutId": 575,
-    "hutName": "Cabane des Clés"
+    "hutName": "Cabane des Clés",
+    "coordinates": [
+      46.567833359999995,
+      7.02485856
+    ]
   },
   {
     "hutId": 576,
-    "hutName": "Enzianhütte/Rhön"
+    "hutName": "Enzianhütte/Rhön",
+    "coordinates": [
+      47.20906697777778,
+      12.3473802
+    ]
   },
   {
     "hutId": 577,
-    "hutName": "Ignaz-Mattis-Hütte"
+    "hutName": "Ignaz-Mattis-Hütte",
+    "coordinates": [
+      47.2848356,
+      13.6485881
+    ]
   },
   {
     "hutId": 578,
-    "hutName": "Lucknerhütte"
+    "hutName": "Lucknerhütte",
+    "coordinates": [
+      47.03964234117648,
+      12.690543152941174
+    ]
   },
   {
     "hutId": 579,
-    "hutName": "Balmhornhütte SAC"
+    "hutName": "Balmhornhütte SAC",
+    "coordinates": [
+      46.45120602,
+      7.689607740000001
+    ]
   },
   {
     "hutId": 580,
-    "hutName": "Capanna Cava"
+    "hutName": "Capanna Cava",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 581,
-    "hutName": "Rifugio Giümela"
+    "hutName": "Rifugio Giümela",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 582,
-    "hutName": "Capanna Quarnei"
+    "hutName": "Capanna Quarnei",
+    "coordinates": [
+      46.473108,
+      9.0236542
+    ]
   },
   {
     "hutId": 583,
-    "hutName": "Capanna Adula UTOE"
+    "hutName": "Capanna Adula UTOE",
+    "coordinates": [
+      46.4953103,
+      9.0076299
+    ]
   },
   {
     "hutId": 584,
-    "hutName": "Rifugio Scaradra"
+    "hutName": "Rifugio Scaradra",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 585,
-    "hutName": "Ostello GiovaniBosco"
+    "hutName": "Ostello GiovaniBosco",
+    "coordinates": [
+      46.040877428571434,
+      8.835367114285715
+    ]
   },
   {
     "hutId": 586,
-    "hutName": "Stubenberg-Haus"
+    "hutName": "Stubenberg-Haus",
+    "coordinates": [
+      46.890785,
+      13.1309312
+    ]
   },
   {
     "hutId": 587,
-    "hutName": "Testhütte Carolin"
+    "hutName": "Testhütte Carolin",
+    "coordinates": null
   },
   {
     "hutId": 588,
-    "hutName": "Donauland-Hütte"
+    "hutName": "Donauland-Hütte",
+    "coordinates": [
+      47.722222714285714,
+      15.514686814285714
+    ]
   },
   {
     "hutId": 589,
-    "hutName": "Äugstenhütte"
+    "hutName": "Äugstenhütte",
+    "coordinates": null
   },
   {
     "hutId": 590,
-    "hutName": "Capanna Barone"
+    "hutName": "Capanna Barone",
+    "coordinates": [
+      46.3957467,
+      8.7487565
+    ]
   },
   {
     "hutId": 591,
-    "hutName": "Obere Maxlraineralm"
+    "hutName": "Obere Maxlraineralm",
+    "coordinates": [
+      47.65782345,
+      11.91639963
+    ]
   },
   {
     "hutId": 592,
-    "hutName": "Refuge du lac de Derborence"
+    "hutName": "Refuge du lac de Derborence",
+    "coordinates": [
+      48.24302392,
+      7.293157339999999
+    ]
   },
   {
     "hutId": 593,
-    "hutName": "Rifugio Lago"
+    "hutName": "Rifugio Lago",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 594,
-    "hutName": "Rifugio Biasagn"
+    "hutName": "Rifugio Biasagn",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 595,
-    "hutName": "Rifugio Alpe Compiett"
+    "hutName": "Rifugio Alpe Compiett",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 596,
-    "hutName": "Bosruck-Hütte"
+    "hutName": "Bosruck-Hütte",
+    "coordinates": [
+      47.63937116000001,
+      14.36638656
+    ]
   },
   {
     "hutId": 597,
-    "hutName": "Klagenfurter Hütte"
+    "hutName": "Klagenfurter Hütte",
+    "coordinates": [
+      46.4468626,
+      14.1830532
+    ]
   },
   {
     "hutId": 598,
-    "hutName": "Bivacco Piano della Parete"
+    "hutName": "Bivacco Piano della Parete",
+    "coordinates": [
+      45.0038444,
+      7.244291
+    ]
   },
   {
     "hutId": 599,
-    "hutName": "Buchacker Alm"
+    "hutName": "Buchacker Alm",
+    "coordinates": [
+      47.533232,
+      12.0188688
+    ]
   },
   {
     "hutId": 601,
-    "hutName": "Enzian-Hütte am Kieneck"
+    "hutName": "Enzian-Hütte am Kieneck",
+    "coordinates": [
+      47.20906697777778,
+      12.3473802
+    ]
   },
   {
     "hutId": 602,
-    "hutName": "Biwak - Enzianhütte Rhön"
+    "hutName": "Biwak - Enzianhütte Rhön",
+    "coordinates": [
+      47.20906697777778,
+      12.3473802
+    ]
   },
   {
     "hutId": 603,
-    "hutName": "Aarbiwak SAC"
+    "hutName": "Aarbiwak SAC",
+    "coordinates": null
   },
   {
     "hutId": 604,
-    "hutName": "Dobratsch-Gipfelhaus"
+    "hutName": "Dobratsch-Gipfelhaus",
+    "coordinates": [
+      46.60325452000001,
+      13.6719752
+    ]
   },
   {
     "hutId": 605,
-    "hutName": "Defreggerhaus"
+    "hutName": "Defreggerhaus",
+    "coordinates": [
+      47.083667909090906,
+      12.362211527272727
+    ]
   },
   {
     "hutId": 606,
-    "hutName": "Kölner Haus"
+    "hutName": "Kölner Haus",
+    "coordinates": [
+      47.039306462499994,
+      10.563226137500001
+    ]
   },
   {
     "hutId": 607,
-    "hutName": "Prova"
+    "hutName": "Prova",
+    "coordinates": null
   },
   {
     "hutId": 608,
-    "hutName": "Boé"
+    "hutName": "Boé",
+    "coordinates": [
+      47.37511694545455,
+      11.951167209090908
+    ]
   },
   {
     "hutId": 609,
-    "hutName": "Monzoni \"Torquato Taramelli\""
+    "hutName": "Monzoni \"Torquato Taramelli\"",
+    "coordinates": null
   },
   {
     "hutId": 610,
-    "hutName": "Haus Unken"
+    "hutName": "Haus Unken",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 611,
-    "hutName": "Haus Don Bosco"
+    "hutName": "Haus Don Bosco",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 612,
-    "hutName": "Hohenzollernhaus"
+    "hutName": "Hohenzollernhaus",
+    "coordinates": [
+      46.9020017,
+      10.6347837
+    ]
   },
   {
     "hutId": 613,
-    "hutName": "August-Schuster-Haus"
+    "hutName": "August-Schuster-Haus",
+    "coordinates": [
+      47.58376676,
+      10.992408000000001
+    ]
   },
   {
     "hutId": 614,
-    "hutName": "Sidelenhütte"
+    "hutName": "Sidelenhütte",
+    "coordinates": [
+      46.5974645,
+      8.4267493
+    ]
   },
   {
     "hutId": 615,
-    "hutName": "Martinsmadhütte SAC"
+    "hutName": "Martinsmadhütte SAC",
+    "coordinates": [
+      46.8925555,
+      9.1883141
+    ]
   },
   {
     "hutId": 616,
-    "hutName": "Haldenseehaus"
+    "hutName": "Haldenseehaus",
+    "coordinates": [
+      47.48765610000001,
+      10.597983746153847
+    ]
   },
   {
     "hutId": 617,
-    "hutName": "Ostpreussenhütte"
+    "hutName": "Ostpreussenhütte",
+    "coordinates": [
+      47.460215271428574,
+      13.116071871428572
+    ]
   },
   {
     "hutId": 618,
-    "hutName": "Amstettner Hütte"
+    "hutName": "Amstettner Hütte",
+    "coordinates": [
+      47.88639605555555,
+      14.77070781111111
+    ]
   },
   {
     "hutId": 619,
-    "hutName": "Rosetta \"Giovanni Pedrotti\""
+    "hutName": "Rosetta \"Giovanni Pedrotti\"",
+    "coordinates": [
+      46.19441824,
+      12.4195116
+    ]
   },
   {
     "hutId": 620,
-    "hutName": "Velo della Madonna"
+    "hutName": "Velo della Madonna",
+    "coordinates": [
+      46.231357319999994,
+      11.8427385
+    ]
   },
   {
     "hutId": 621,
-    "hutName": "Antermoia"
+    "hutName": "Antermoia",
+    "coordinates": [
+      46.47704246666667,
+      11.663937266666666
+    ]
   },
   {
     "hutId": 622,
-    "hutName": "Vajolet"
+    "hutName": "Vajolet",
+    "coordinates": [
+      46.458564287499996,
+      11.632698887500002
+    ]
   },
   {
     "hutId": 623,
-    "hutName": "Ciampedié"
+    "hutName": "Ciampedié",
+    "coordinates": [
+      46.433873219999995,
+      11.664276560000001
+    ]
   },
   {
     "hutId": 624,
-    "hutName": "Roda di Vael"
+    "hutName": "Roda di Vael",
+    "coordinates": [
+      46.486516936363635,
+      12.105782145454544
+    ]
   },
   {
     "hutId": 625,
-    "hutName": "Altissimo \"Damiano Chiesa\""
+    "hutName": "Altissimo \"Damiano Chiesa\"",
+    "coordinates": [
+      45.914433,
+      10.173640180000001
+    ]
   },
   {
     "hutId": 626,
-    "hutName": "Cima d'Asta \"Ottone Brentari\""
+    "hutName": "Cima d'Asta \"Ottone Brentari\"",
+    "coordinates": [
+      46.9631376,
+      11.177806479999997
+    ]
   },
   {
     "hutId": 627,
-    "hutName": "Sette Selle"
+    "hutName": "Sette Selle",
+    "coordinates": [
+      46.65357166,
+      7.196376459999999
+    ]
   },
   {
     "hutId": 628,
-    "hutName": "Casarota \"Livio Ciola\""
+    "hutName": "Casarota \"Livio Ciola\"",
+    "coordinates": [
+      45.95444366666666,
+      11.195487222222225
+    ]
   },
   {
     "hutId": 629,
-    "hutName": "Finonchio \"Fratelli Filzi\""
+    "hutName": "Finonchio \"Fratelli Filzi\"",
+    "coordinates": [
+      45.90045468333333,
+      11.114803049999999
+    ]
   },
   {
     "hutId": 630,
-    "hutName": "Alpe Pozza \"Vincenzo Lancia\""
+    "hutName": "Alpe Pozza \"Vincenzo Lancia\"",
+    "coordinates": [
+      47.41217014,
+      9.979449160000001
+    ]
   },
   {
     "hutId": 631,
-    "hutName": "Bocca di Trat \"Nino Pernici\""
+    "hutName": "Bocca di Trat \"Nino Pernici\"",
+    "coordinates": [
+      45.9266339,
+      10.768660050000001
+    ]
   },
   {
     "hutId": 632,
-    "hutName": "Stivo \"Prospero Marchetti\""
+    "hutName": "Stivo \"Prospero Marchetti\"",
+    "coordinates": [
+      45.92116273333333,
+      10.961889922222221
+    ]
   },
   {
     "hutId": 633,
-    "hutName": "Peller"
+    "hutName": "Peller",
+    "coordinates": [
+      47.268032,
+      12.997214920000001
+    ]
   },
   {
     "hutId": 634,
-    "hutName": "Giorgio Graffer al Grosté"
+    "hutName": "Giorgio Graffer al Grosté",
+    "coordinates": [
+      45.80883333571428,
+      6.9780684
+    ]
   },
   {
     "hutId": 635,
-    "hutName": "F.F. Tuckett e Q. Sella"
+    "hutName": "F.F. Tuckett e Q. Sella",
+    "coordinates": [
+      47.58157222,
+      11.79942266
+    ]
   },
   {
     "hutId": 636,
-    "hutName": "Tosa \"Tommaso Pedrotti\""
+    "hutName": "Tosa \"Tommaso Pedrotti\"",
+    "coordinates": [
+      45.09526968666667,
+      7.190584113333334
+    ]
   },
   {
     "hutId": 637,
-    "hutName": "Val d'Ambiez \"Silvio Agostini\""
+    "hutName": "Val d'Ambiez \"Silvio Agostini\"",
+    "coordinates": [
+      46.3870389,
+      10.48008227692308
+    ]
   },
   {
     "hutId": 638,
-    "hutName": "XII Apostoli \"Fratelli Garbari\""
+    "hutName": "XII Apostoli \"Fratelli Garbari\"",
+    "coordinates": [
+      46.15068971111111,
+      10.847360188888889
+    ]
   },
   {
     "hutId": 639,
-    "hutName": "Stavèl \"Francesco Denza\""
+    "hutName": "Stavèl \"Francesco Denza\"",
+    "coordinates": [
+      46.07588158571429,
+      9.512869185714285
+    ]
   },
   {
     "hutId": 640,
-    "hutName": "Val d'Amola \"Giovanni Segantini\""
+    "hutName": "Val d'Amola \"Giovanni Segantini\"",
+    "coordinates": [
+      46.3870389,
+      10.48008227692308
+    ]
   },
   {
     "hutId": 641,
-    "hutName": "Mandron \"Città di Trento\""
+    "hutName": "Mandron \"Città di Trento\"",
+    "coordinates": [
+      46.20256156,
+      10.5712011
+    ]
   },
   {
     "hutId": 642,
-    "hutName": "Caré Alto \"Dante Ongari\""
+    "hutName": "Caré Alto \"Dante Ongari\"",
+    "coordinates": [
+      46.32141248,
+      12.070459
+    ]
   },
   {
     "hutId": 643,
-    "hutName": "Val di Fumo"
+    "hutName": "Val di Fumo",
+    "coordinates": [
+      46.3870389,
+      10.48008227692308
+    ]
   },
   {
     "hutId": 644,
-    "hutName": "Vioz \"Mantova\""
+    "hutName": "Vioz \"Mantova\"",
+    "coordinates": [
+      46.399178559999996,
+      10.63576934
+    ]
   },
   {
     "hutId": 645,
-    "hutName": "Cevedale \"Guido Larcher\""
+    "hutName": "Cevedale \"Guido Larcher\"",
+    "coordinates": [
+      46.436926111111106,
+      10.665978455555555
+    ]
   },
   {
     "hutId": 646,
-    "hutName": "Saènt \"Silvio Dorigoni\""
+    "hutName": "Saènt \"Silvio Dorigoni\"",
+    "coordinates": [
+      47.2495835,
+      9.344259066666668
+    ]
   },
   {
     "hutId": 647,
-    "hutName": "Monte Casale \"Don Zio Pisoni\""
+    "hutName": "Monte Casale \"Don Zio Pisoni\"",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 648,
-    "hutName": "Sulzenauhütte"
+    "hutName": "Sulzenauhütte",
+    "coordinates": [
+      46.995874891666666,
+      11.181897383333334
+    ]
   },
   {
     "hutId": 649,
-    "hutName": "Berta-Hütte"
+    "hutName": "Berta-Hütte",
+    "coordinates": [
+      46.518264200000004,
+      13.96049118888889
+    ]
   },
   {
     "hutId": 650,
-    "hutName": "Elberfelder Hütte"
+    "hutName": "Elberfelder Hütte",
+    "coordinates": [
+      46.977887,
+      12.7604244
+    ]
   },
   {
     "hutId": 651,
-    "hutName": "Monte Calino \"San Pietro\""
+    "hutName": "Monte Calino \"San Pietro\"",
+    "coordinates": [
+      47.631811513333325,
+      14.491356186666668
+    ]
   },
   {
     "hutId": 652,
-    "hutName": "Rifugio Alpe Caviano"
+    "hutName": "Rifugio Alpe Caviano",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 653,
-    "hutName": "Berggasthaus Alp Catrina - gekündigt"
+    "hutName": "Berggasthaus Alp Catrina - gekündigt",
+    "coordinates": [
+      47.16253685,
+      11.712077975000001
+    ]
   },
   {
     "hutId": 654,
-    "hutName": "Mannheimer Hütte"
+    "hutName": "Mannheimer Hütte",
+    "coordinates": [
+      47.06563944285715,
+      9.693574485714285
+    ]
   },
   {
     "hutId": 655,
-    "hutName": "Oberzalimhütte"
+    "hutName": "Oberzalimhütte",
+    "coordinates": [
+      47.079949660000004,
+      9.693360380000001
+    ]
   },
   {
     "hutId": 656,
-    "hutName": "Fluhseehütte"
+    "hutName": "Fluhseehütte",
+    "coordinates": null
   },
   {
     "hutId": 657,
-    "hutName": "Antica Osteria Dazio"
+    "hutName": "Antica Osteria Dazio",
+    "coordinates": null
   },
   {
     "hutId": 658,
-    "hutName": "Malepartushütte"
+    "hutName": "Malepartushütte",
+    "coordinates": null
   },
   {
     "hutId": 659,
-    "hutName": "Berghotel Faulhorn"
+    "hutName": "Berghotel Faulhorn",
+    "coordinates": [
+      46.5181558,
+      7.88549
+    ]
   },
   {
     "hutId": 660,
-    "hutName": "Gwechenberg-Hütte"
+    "hutName": "Gwechenberg-Hütte",
+    "coordinates": null
   },
   {
     "hutId": 661,
-    "hutName": "Berghaus Splügenpass"
+    "hutName": "Berghaus Splügenpass",
+    "coordinates": [
+      46.890785,
+      13.1309312
+    ]
   },
   {
     "hutId": 662,
-    "hutName": "Rotgüldensee-Hütte"
+    "hutName": "Rotgüldensee-Hütte",
+    "coordinates": [
+      47.101015200000006,
+      13.412066438461538
+    ]
   },
   {
     "hutId": 663,
-    "hutName": "Berghaus Bäregg"
+    "hutName": "Berghaus Bäregg",
+    "coordinates": [
+      46.890785,
+      13.1309312
+    ]
   },
   {
     "hutId": 664,
-    "hutName": "Berggasthaus Dürrboden"
+    "hutName": "Berggasthaus Dürrboden",
+    "coordinates": [
+      46.72087364,
+      9.921798919999999
+    ]
   },
   {
     "hutId": 665,
-    "hutName": "Guggihütte SAC"
+    "hutName": "Guggihütte SAC",
+    "coordinates": [
+      46.5627465,
+      7.9743995
+    ]
   },
   {
     "hutId": 666,
-    "hutName": "Reichenhaller Haus"
+    "hutName": "Reichenhaller Haus",
+    "coordinates": [
+      47.75511598571428,
+      12.849570099999998
+    ]
   },
   {
     "hutId": 667,
-    "hutName": "Wormser Hütte"
+    "hutName": "Wormser Hütte",
+    "coordinates": [
+      47.06374766666667,
+      9.974709866666666
+    ]
   },
   {
     "hutId": 668,
-    "hutName": "Cabane de la Barmaz"
+    "hutName": "Cabane de la Barmaz",
+    "coordinates": [
+      46.061405900000004,
+      7.3860597
+    ]
   },
   {
     "hutId": 669,
-    "hutName": "Keinprecht-Hütte"
+    "hutName": "Keinprecht-Hütte",
+    "coordinates": [
+      47.2746236,
+      13.6931161
+    ]
   },
   {
     "hutId": 670,
-    "hutName": "Alpe Rompiago - deaktiviert"
+    "hutName": "Alpe Rompiago - deaktiviert",
+    "coordinates": [
+      47.41217014,
+      9.979449160000001
+    ]
   },
   {
     "hutId": 671,
-    "hutName": "Voldertalhütte"
+    "hutName": "Voldertalhütte",
+    "coordinates": [
+      47.2246960625,
+      11.550947525
+    ]
   },
   {
     "hutId": 672,
-    "hutName": "Weisshornhütte SAC"
+    "hutName": "Weisshornhütte SAC",
+    "coordinates": [
+      46.0859641,
+      7.7435851
+    ]
   },
   {
     "hutId": 673,
-    "hutName": "Bergrestaurant Längfluh"
+    "hutName": "Bergrestaurant Längfluh",
+    "coordinates": [
+      47.71596628,
+      13.253807560000002
+    ]
   },
   {
     "hutId": 674,
-    "hutName": "Capanna Gambarogno"
+    "hutName": "Capanna Gambarogno",
+    "coordinates": [
+      46.0864279375,
+      9.0891162625
+    ]
   },
   {
     "hutId": 675,
-    "hutName": "Franz-Senn-Hütte"
+    "hutName": "Franz-Senn-Hütte",
+    "coordinates": [
+      47.085137033333325,
+      11.168713773333334
+    ]
   },
   {
     "hutId": 676,
-    "hutName": "Tannheimer Hütte"
+    "hutName": "Tannheimer Hütte",
+    "coordinates": [
+      47.49566404,
+      10.61965214
+    ]
   },
   {
     "hutId": 677,
-    "hutName": "Kaufbeurer Haus"
+    "hutName": "Kaufbeurer Haus",
+    "coordinates": [
+      47.34178245,
+      10.45703131
+    ]
   },
   {
     "hutId": 679,
-    "hutName": "Berghaus Alpiglen"
+    "hutName": "Berghaus Alpiglen",
+    "coordinates": [
+      46.890785,
+      13.1309312
+    ]
   },
   {
     "hutId": 680,
-    "hutName": "Chalet La Source"
+    "hutName": "Chalet La Source",
+    "coordinates": [
+      46.4588242,
+      6.0674427
+    ]
   },
   {
     "hutId": 681,
-    "hutName": "Cabane Bertol CAS"
+    "hutName": "Cabane Bertol CAS",
+    "coordinates": [
+      46.7227667,
+      6.360522640000001
+    ]
   },
   {
     "hutId": 682,
-    "hutName": "Spitzmeilenhütte SAC"
+    "hutName": "Spitzmeilenhütte SAC",
+    "coordinates": [
+      47.03422990909091,
+      9.250575609090909
+    ]
   },
   {
     "hutId": 683,
-    "hutName": "Wangenitzsee-Hütte"
+    "hutName": "Wangenitzsee-Hütte",
+    "coordinates": [
+      46.930442539999994,
+      12.79983801
+    ]
   },
   {
     "hutId": 684,
-    "hutName": "Lienzer Hütte"
+    "hutName": "Lienzer Hütte",
+    "coordinates": [
+      46.9348077,
+      12.7465478
+    ]
   },
   {
     "hutId": 685,
-    "hutName": "Schwarzensteinhütte (Rif. al Sasso Nero)"
+    "hutName": "Schwarzensteinhütte (Rif. al Sasso Nero)",
+    "coordinates": [
+      47.0129173,
+      11.8856637
+    ]
   },
   {
     "hutId": 686,
-    "hutName": "Frederic-Simms-Hütte"
+    "hutName": "Frederic-Simms-Hütte",
+    "coordinates": [
+      47.21031075454545,
+      10.355619027272729
+    ]
   },
   {
     "hutId": 687,
-    "hutName": "Julius Payer Hütte (Rif. Julius Payer)"
+    "hutName": "Julius Payer Hütte (Rif. Julius Payer)",
+    "coordinates": [
+      47.95998983076923,
+      15.440986099999996
+    ]
   },
   {
     "hutId": 688,
-    "hutName": "Treschhütte SAC"
+    "hutName": "Treschhütte SAC",
+    "coordinates": [
+      46.7185828,
+      8.6494662
+    ]
   },
   {
     "hutId": 689,
-    "hutName": "Läntahütte SAC"
+    "hutName": "Läntahütte SAC",
+    "coordinates": [
+      46.54158392000001,
+      9.0417694
+    ]
   },
   {
     "hutId": 690,
-    "hutName": "Cabane des Audannes"
+    "hutName": "Cabane des Audannes",
+    "coordinates": [
+      46.3434549,
+      7.3840844
+    ]
   },
   {
     "hutId": 691,
-    "hutName": "Stickler-Hütte"
+    "hutName": "Stickler-Hütte",
+    "coordinates": [
+      47.14841667777778,
+      13.378064644444443
+    ]
   },
   {
     "hutId": 692,
-    "hutName": "Dresdner Hütte"
+    "hutName": "Dresdner Hütte",
+    "coordinates": [
+      46.998124233333336,
+      11.139463433333333
+    ]
   },
   {
     "hutId": 693,
-    "hutName": "Starkenburger Hütte"
+    "hutName": "Starkenburger Hütte",
+    "coordinates": [
+      47.126848833333334,
+      11.27958982222222
+    ]
   },
   {
     "hutId": 694,
-    "hutName": "Cavardirashütte SAC"
+    "hutName": "Cavardirashütte SAC",
+    "coordinates": [
+      46.742437,
+      8.8142692
+    ]
   },
   {
     "hutId": 695,
-    "hutName": "Zittel-Haus"
+    "hutName": "Zittel-Haus",
+    "coordinates": [
+      47.05405131875,
+      12.9573718125
+    ]
   },
   {
     "hutId": 696,
-    "hutName": "AVS Testhütte"
+    "hutName": "AVS Testhütte",
+    "coordinates": [
+      46.318780933333336,
+      13.779046122222224
+    ]
   },
   {
     "hutId": 697,
-    "hutName": "Domhütte SAC"
+    "hutName": "Domhütte SAC",
+    "coordinates": [
+      46.10277652307692,
+      7.817634946153846
+    ]
   },
   {
     "hutId": 698,
-    "hutName": "Rifugio Garzonera"
+    "hutName": "Rifugio Garzonera",
+    "coordinates": [
+      46.476540979999996,
+      10.060370299999999
+    ]
   },
   {
     "hutId": 699,
-    "hutName": "Gosauer Brückl-Haus"
+    "hutName": "Gosauer Brückl-Haus",
+    "coordinates": null
   },
   {
     "hutId": 700,
-    "hutName": "Sattelbergalm"
+    "hutName": "Sattelbergalm",
+    "coordinates": [
+      47.0203869,
+      11.4932708
+    ]
   },
   {
     "hutId": 702,
-    "hutName": "Liezener Hütte"
+    "hutName": "Liezener Hütte",
+    "coordinates": null
   },
   {
     "hutId": 703,
-    "hutName": "Hochstubaihütte"
+    "hutName": "Hochstubaihütte",
+    "coordinates": [
+      46.98167792499999,
+      11.064658125
+    ]
   }
 ]

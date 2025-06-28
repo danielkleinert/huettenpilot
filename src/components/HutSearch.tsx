@@ -13,7 +13,7 @@ export function HutSearch({ onSelectHut }: HutSearchProps) {
   const filteredHuts = useMemo(() => {
     if (!searchTerm) return []
     
-    return hutData
+    return (hutData as Hut[])
       .filter(hut => 
         hut.hutName.toLowerCase().includes(searchTerm.toLowerCase())
       )
