@@ -8,6 +8,7 @@ interface TourCalendarProps {
 
 export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
 
   useEffect(() => {
     const handleClickOutside = (e: Event) => {
@@ -64,6 +65,18 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
     }) || null
   }
 
+  const shouldHighlightDate = (day: Date | null): boolean => {
+    if (!day || !hoveredDate) return false
+    
+    const hoveredTourDate = getTourDateForDay(hoveredDate)
+    if (!hoveredTourDate) return false
+    
+    const tourDurationDays = hoveredTourDate.hutAvailabilities.length
+    const daysDiff = Math.floor((day.getTime() - hoveredDate.getTime()) / (1000 * 60 * 60 * 24))
+    
+    return daysDiff >= 0 && daysDiff < tourDurationDays
+  }
+
 
   const formatDate = (date: Date): string => {
     return date.toLocaleDateString('en-US', {
@@ -113,20 +126,32 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
                   day.getMonth() === today.getMonth() &&
                   day.getDate() === today.getDate()
 
+                const isPastDate = day && day < today && !isToday
+                const isHighlighted = shouldHighlightDate(day)
+                
                 return (
                   <div
                     key={dayIndex}
                     className={`
                       calendar-date relative aspect-square flex items-center justify-center text-sm cursor-pointer
-                      ${day ? 'hover:bg-muted' : ''}
                       ${isToday ? 'bg-blue-100 dark:bg-blue-900/30 font-semibold text-blue-800 dark:text-blue-200' : ''}
-                      ${availabilityColor} ${tourDate?.minAvailableBeds && tourDate.minAvailableBeds >= groupSize ? 'font-medium' : ''}
+                      ${isHighlighted ? 'bg-muted' : ''}
+                      ${isPastDate ? 'text-muted-foreground' : availabilityColor} 
+                      ${tourDate?.minAvailableBeds && tourDate.minAvailableBeds >= groupSize ? 'font-medium' : ''}
                     `}
                     onClick={(e) => {
                       e.stopPropagation()
                       if (day) {
                         setSelectedDate(selectedDate === day ? null : day)
                       }
+                    }}
+                    onMouseEnter={() => {
+                      if (day && tourDate) {
+                        setHoveredDate(day)
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredDate(null)
                     }}
                   >
                     {day && (
