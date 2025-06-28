@@ -86,7 +86,7 @@ export class TourPlannerService {
     if (availability.hutStatus !== 'SERVICED' || availability.percentage === 'FULL') {
       return 0
     }
-    return availability.freeBeds
+    return availability.freeBeds ?? 0
   }
 
 }

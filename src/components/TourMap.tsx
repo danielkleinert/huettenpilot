@@ -11,7 +11,7 @@ import { fromLonLat, transform } from 'ol/proj'
 import { Attribution } from 'ol/control'
 import { register } from 'ol/proj/proj4'
 import proj4 from 'proj4'
-import { useQuery } from '@tanstack/react-query'
+import { useQueries } from '@tanstack/react-query'
 import { hutApi } from '@/services/hutApi'
 import type { Hut, HutInfo } from '@/types'
 import { Maximize2, X } from 'lucide-react'
@@ -73,22 +73,21 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
   const fullscreenMapInstanceRef = useRef<Map | null>(null)
   const [isFullscreen, setIsFullscreen] = useState(false)
 
-  const { data: hutInfos } = useQuery({
-    queryKey: ['hutInfos', selectedHuts.map(h => h.hutId)],
-    queryFn: async () => {
-      const results = await Promise.allSettled(
-        selectedHuts.map(hut => hutApi.fetchHutInfo(hut.hutId))
-      )
-      return results
-        .map((result, index) => ({
-          hut: selectedHuts[index],
-          info: result.status === 'fulfilled' ? result.value : null
-        }))
-        .filter(item => item.info !== null) as Array<{ hut: Hut; info: HutInfo }>
-    },
-    enabled: selectedHuts.length > 0,
-    staleTime: 5 * 60 * 1000
+  const hutInfoQueries = useQueries({
+    queries: selectedHuts.map(hut => ({
+      queryKey: ['hutInfo', hut.hutId],
+      queryFn: () => hutApi.fetchHutInfo(hut.hutId),
+      staleTime: 24 * 60 * 60 * 1000,
+      gcTime: 24 * 60 * 60 * 1000
+    }))
   })
+
+  const hutInfos = selectedHuts
+    .map((hut, index) => ({
+      hut,
+      info: hutInfoQueries[index]?.data
+    }))
+    .filter(item => item.info !== null && item.info !== undefined) as Array<{ hut: Hut; info: HutInfo }>
 
   useEffect(() => {
     if (!mapRef.current) return
