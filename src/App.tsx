@@ -6,10 +6,13 @@ import TourMap from './components/TourMap'
 import { Input } from './components/ui/input'
 import { LoadingBar } from './components/ui/LoadingBar'
 import { LanguageSelector } from './components/LanguageSelector'
+import Impressum from './components/Impressum'
+import Datenschutz from './components/Datenschutz'
 import { useHutAvailability } from './hooks/useHutAvailability'
 import { TourPlannerService } from './services/tourPlanner'
 import type { Hut, TourDate } from './types'
 import { Users } from 'lucide-react'
+import { siGithub } from 'simple-icons'
 import { getStateFromUrl, updateUrlState } from './lib/urlState'
 import hutData from '@/hut_ids.json'
 
@@ -19,6 +22,7 @@ function App() {
   const [groupSize, setGroupSize] = useState<number>(2)
   const [error, setError] = useState<string | null>(null)
   const [isInitialized, setIsInitialized] = useState(false)
+  const [currentPage, setCurrentPage] = useState<'main' | 'impressum' | 'datenschutz'>('main')
 
   const hutIds = useMemo(() => selectedHuts.map(hut => hut.hutId), [selectedHuts])
   const { data: availabilityData, isLoading, isError, errors } = useHutAvailability(hutIds)
@@ -83,6 +87,71 @@ function App() {
     setGroupSize(size)
   }
 
+  const renderFooter = () => (
+    <footer className="mt-16 pt-8 border-t border-border">
+      <div className="flex justify-center items-center space-x-6">
+        <button 
+          onClick={() => setCurrentPage('impressum')}
+          className="text-muted-foreground hover:text-foreground underline text-sm"
+        >
+          Impressum
+        </button>
+        <button 
+          onClick={() => setCurrentPage('datenschutz')}
+          className="text-muted-foreground hover:text-foreground underline text-sm"
+        >
+          Datenschutz
+        </button>
+        <a 
+          href="https://github.com/danielkleinert/huettenpilot"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-sm"
+        >
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d={siGithub.path} />
+          </svg>
+
+        </a>
+        <LanguageSelector />
+      </div>
+    </footer>
+  )
+
+  if (currentPage === 'impressum') {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-8">
+          <button 
+            onClick={() => setCurrentPage('main')}
+            className="mb-4 text-primary hover:underline"
+          >
+            ← Zurück zur Hauptseite
+          </button>
+          <Impressum />
+          {renderFooter()}
+        </div>
+      </div>
+    )
+  }
+
+  if (currentPage === 'datenschutz') {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-8">
+          <button 
+            onClick={() => setCurrentPage('main')}
+            className="mb-4 text-primary hover:underline"
+          >
+            ← Zurück zur Hauptseite
+          </button>
+          <Datenschutz />
+          {renderFooter()}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       <LoadingBar isLoading={isLoading} />
@@ -140,11 +209,7 @@ function App() {
           </div>
         </div>
 
-        <footer className="mt-16 pt-8 border-t border-border">
-          <div className="flex justify-center">
-            <LanguageSelector />
-          </div>
-        </footer>
+        {renderFooter()}
 
         </div>
       </div>

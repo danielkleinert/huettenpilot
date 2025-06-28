@@ -29,6 +29,8 @@ src/
 │   ├── HutSearch.tsx    # Search input component for adding huts
 │   ├── TourCalendar.tsx # 4-month calendar display
 │   ├── LanguageSelector.tsx # Language switcher component (footer)
+│   ├── Impressum.tsx    # German legal notice page
+│   ├── Datenschutz.tsx  # German privacy policy page
 │   └── ui/              # Reusable UI components (Button, Input, Select)
 ├── hooks/               # Custom React hooks
 │   └── useHutAvailability.ts # React Query hook for hut data fetching
@@ -64,7 +66,7 @@ scripts/
 - **Data Fetching**: @tanstack/react-query for caching and state management
 - **Internationalization**: react-i18next with lazy loading, browser language detection
 - **UI Components**: Custom shadcn/ui-inspired components with Tailwind
-- **Icons**: Lucide React
+- **Icons**: Lucide React + Simple Icons (for brand icons like GitHub)
 - **Package Manager**: Yarn 4.9.1
 - **Linting**: ESLint with enhanced rules for catching unused code
 - **Testing**: Vitest with jsdom environment and React Testing Library
@@ -87,6 +89,7 @@ scripts/
 ### State Management
 - React Query for server state (hut availability data)
 - Local component state for UI interactions
+- Simple page routing for legal pages (Impressum/Datenschutz)
 - No global state management needed
 
 ## Key Features
@@ -98,7 +101,8 @@ scripts/
 - **Responsive Design**: Works on desktop and mobile
 - **Dark Mode**: Automatic OS preference detection with semantic color system
 - **Internationalization**: Multi-language support (German, English, Italian, French) with lazy loading
-- **Language Detection**: Automatic browser language detection with localStorage persistence
+- **Language Detection**: Automatic browser language detection
+- **Legal Compliance**: German Impressum and Datenschutz pages with proper GDPR disclosures
 
 ## Development Guidelines
 
@@ -132,7 +136,7 @@ scripts/
 - German is the default fallback language (appropriate for Alpine context)
 - Use proper pluralization forms: `_zero`, `_one`, `_other` for count-based translations
 - Languages are lazy-loaded automatically when selected
-- Language preference stored in localStorage
+- Language detection based on browser settings
 
 ### Testing Guidelines
 - Use Vitest for unit and integration tests
