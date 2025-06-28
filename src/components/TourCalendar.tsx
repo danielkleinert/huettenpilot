@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { TourDate } from '@/types'
 
 interface TourCalendarProps {
@@ -7,7 +7,19 @@ interface TourCalendarProps {
 }
 
 export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
-  const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e: Event) => {
+      const target = e.target as Element
+      if (!target.closest('.calendar-date') && !target.closest('.date-popup')) {
+        setSelectedDate(null)
+      }
+    }
+    
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [])
 
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -103,13 +115,17 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
                   <div
                     key={dayIndex}
                     className={`
-                      relative aspect-square flex items-center justify-center text-sm cursor-pointer
+                      calendar-date relative aspect-square flex items-center justify-center text-sm cursor-pointer
                       ${day ? 'hover:bg-muted' : ''}
                       ${isToday ? 'bg-blue-100 dark:bg-blue-900/30 font-semibold text-blue-800 dark:text-blue-200' : ''}
                       ${availabilityColor} ${tourDate?.minAvailableBeds && tourDate.minAvailableBeds >= groupSize ? 'font-medium' : ''}
                     `}
-                    onMouseEnter={() => setHoveredDate(day)}
-                    onMouseLeave={() => setHoveredDate(null)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      if (day) {
+                        setSelectedDate(selectedDate === day ? null : day)
+                      }
+                    }}
                   >
                     {day && (
                       <span>{day.getDate()}</span>
@@ -121,15 +137,18 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
           </div>
         ))}
       </div>
-      {hoveredDate && (() => {
-        const tourDate = getTourDateForDay(hoveredDate)
+      {selectedDate && (() => {
+        const tourDate = getTourDateForDay(selectedDate)
         
         if (!tourDate) return null
         
         return (
-          <div className="fixed bottom-4 right-4 bg-card border border-border text-card-foreground p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm">
+          <div 
+            className="date-popup fixed bottom-4 right-4 bg-card border border-border text-card-foreground p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="font-semibold mb-2">
-              {tourDate && tourDate.minAvailableBeds >= groupSize ? `Tour starting ${formatDate(hoveredDate)}` : `Availability for ${formatDate(hoveredDate)}`}
+              {tourDate && tourDate.minAvailableBeds >= groupSize ? `Tour starting ${formatDate(selectedDate)}` : `Availability for ${formatDate(selectedDate)}`}
             </div>
             <div className="space-y-2">
               {tourDate.hutAvailabilities.map(({ hut, availability }, index) => (
