@@ -1,54 +1,27 @@
-# React + TypeScript + Vite
+# Hüttenplan 🏔️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ever tried booking a multi-day Alpine hut tour during peak season? It's like playing Tetris with mountain reservations - you need consecutive nights across multiple huts, but availability is scattered and constantly changing. Hüttenplan solves this by intelligently finding date ranges where all your selected huts have beds available.
 
-Currently, two official plugins are available:
+## Background
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Born from the pure frustration of manually checking dozens of hut websites for that perfect week in July, this project became an experiment in AI-driven development. How far could Claude Code take us? Turns out, pretty far - from concept to a fully functional app with 400+ huts, real-time availability, and multi-language support.
 
-## Expanding the ESLint configuration
+⚠️ **Fair warning**: I haven't looked at every line of generated slop, so this could fall apart any second now. Use at your own risk for actual hut bookings!
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Smart Tour Planning**: Finds consecutive dates where all selected huts have enough beds
+- **Real-time Availability**: Fetches current availability from hut-reservation.org
+- **Smart Hut Discovery**: Search bar finds huts nearest to your last selected hut for easy route planning
+- **400+ Alpine Huts**: Comprehensive database with accurate coordinates
+- **Multi-language Support**: German, English, Italian, and French
+- **Responsive Design**: Works on desktop and mobile
+- **Dark Mode**: Automatic OS preference detection
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technology Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+See [CLAUDE.md](./CLAUDE.md) for detailed information about the technology stack, architecture, and development guidelines.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## License
+
+MIT License - see [LICENSE](./LICENSE) file for details.
