@@ -1,8 +1,9 @@
-import {Bed, ExternalLink, GripVertical, Mountain, Ticket, X} from 'lucide-react'
+import {Bed, ExternalLink, GripVertical, Mountain, Ticket, TriangleAlert, X} from 'lucide-react'
 import {useSortable} from '@dnd-kit/sortable'
 import {CSS} from '@dnd-kit/utilities'
 import type {Hut} from '@/types'
 import {useHutInfo} from '@/hooks/useHutInfo'
+import {Tooltip} from '@/components/ui/Tooltip'
 
 interface SortableHutItemProps {
   hut: Hut
@@ -31,6 +32,10 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
     if (!hutInfo?.hutBedCategories) return hutInfo?.totalBedsInfo || 'N/A'
     const total = hutInfo.hutBedCategories.reduce((sum, category) => sum + category.totalSleepingPlaces, 0)
     return total > 0 ? total.toString() : hutInfo.totalBedsInfo || 'N/A'
+  }
+
+  const hasBookableRooms = () => {
+    return hutInfo?.hutBedCategories?.some(category => category.isLinkedToReservation) || false
   }
 
   const formatWebsite = (website: string) => {
@@ -72,16 +77,29 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
                   </a>
               )}
 
-              <a
-                  href={`https://www.hut-reservation.org/reservation/book-hut/${hut.hutId}/wizard`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-green-600 p-1 rounded-md hover:bg-green-600/10"
-                  onClick={(e) => e.stopPropagation()}
-                  title="Book this hut"
-              >
-                <Ticket className="h-4 w-4"/>
-              </a>
+              {hasBookableRooms() ? (
+                  <a
+                      href={`https://www.hut-reservation.org/reservation/book-hut/${hut.hutId}/wizard`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-green-600 p-1 rounded-md hover:bg-green-600/10"
+                      onClick={(e) => e.stopPropagation()}
+                      title="Book this hut"
+                  >
+                    <Ticket className="h-4 w-4"/>
+                  </a>
+              ) : (
+                  <Tooltip content="This hut is not available in the reservation system">
+                    <div
+                        className="text-yellow-500 hover:text-yellow-600 p-1 rounded-md hover:bg-yellow-600/10 cursor-pointer"
+                        tabIndex={0}
+                        role="button"
+                        aria-label="Information about booking availability"
+                    >
+                      <TriangleAlert className="h-4 w-4"/>
+                    </div>
+                  </Tooltip>
+              )}
             </div>
           </div>
       )}
