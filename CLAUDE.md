@@ -10,7 +10,7 @@ Hüttenplan is a React + TypeScript + Vite application for planning multi-day Al
 
 - `yarn dev` - Start development server with hot reload (NEVER run this in Claude Code as it won't return control)
 - `yarn build` - Build for production (runs TypeScript compilation then Vite build)
-- `yarn lint` - Run ESLint with enhanced rules for unused code detection
+- `yarn lint` - Run ESLint with standard recommended rules
 - `yarn preview` - Preview production build locally
 - `yarn test` - Run tests in watch mode with Vitest (NEVER run this in Claude Code as it won't return control)
 - `yarn test:run` - Run tests once and exit
@@ -42,12 +42,12 @@ src/
 ├── lib/                 # Utility libraries
 │   └── utils.ts         # Tailwind utility functions
 ├── i18n/                # Internationalization
-│   ├── index.ts         # i18n configuration with lazy loading
+│   ├── index.ts         # i18n configuration
 │   └── locales/         # Translation files
-│       ├── de.ts        # German translations (default, casual tone)
-│       ├── en.ts        # English translations
-│       ├── it.ts        # Italian translations (casual tone)
-│       └── fr.ts        # French translations (casual tone)
+│       ├── de.json      # German translations (default)
+│       ├── en.json      # English translations
+│       ├── it.json      # Italian translations
+│       └── fr.json      # French translations
 ├── assets/              # Static assets
 ├── index.css            # Tailwind CSS imports
 └── hut_ids.json         # Static data with 400+ mountain hut definitions and OSM coordinates
@@ -64,11 +64,11 @@ scripts/
 - **Build Tool**: Vite 6.3.5 with SWC plugin and Tailwind CSS v4 integration
 - **Styling**: Tailwind CSS v4 via @tailwindcss/vite plugin with shadcn/ui color system
 - **Data Fetching**: @tanstack/react-query for caching and state management
-- **Internationalization**: react-i18next with lazy loading, browser language detection
+- **Internationalization**: react-i18next with browser language detection
 - **UI Components**: Custom shadcn/ui-inspired components with Tailwind
 - **Icons**: Lucide React + Simple Icons (for brand icons like GitHub)
 - **Package Manager**: Yarn 4.9.1
-- **Linting**: ESLint with enhanced rules for catching unused code
+- **Linting**: ESLint with standard recommended rules
 - **Testing**: Vitest with jsdom environment and React Testing Library
 - **Dev Environment**: Modern ESM-based setup with Netlify Edge Functions
 
@@ -83,7 +83,7 @@ scripts/
 ### API Integration
 - Netlify Edge Function at `netlify/edge-functions/api.ts` proxies `/api/*` to `https://www.hut-reservation.org`
 - Same-origin policy enforced (no CORS headers) for security
-- React Query handles caching (5min stale time), retries, and error states
+- React Query handles caching (5min for availability, 24h for hut info), retries, and error states
 - Clean separation: `hutApi.ts` only handles HTTP, React Query handles caching
 
 ### State Management
@@ -100,7 +100,7 @@ scripts/
 - **Calendar Display**: 4-month view with hover tooltips showing availability details
 - **Responsive Design**: Works on desktop and mobile
 - **Dark Mode**: Automatic OS preference detection with semantic color system
-- **Internationalization**: Multi-language support (German, English, Italian, French) with lazy loading
+- **Internationalization**: Multi-language support (German, English, Italian, French)
 - **Language Detection**: Automatic browser language detection
 - **Legal Compliance**: German Impressum and Datenschutz pages with proper GDPR disclosures
 
@@ -114,7 +114,7 @@ scripts/
 ### Data Fetching
 - Use React Query for all API calls
 - API services should be pure functions without caching logic
-- 5-minute cache duration
+- Multiple cache durations: 5 minutes for availability data, 24 hours for hut info
 
 ### Component Organization
 - Place reusable UI components in `src/components/ui/`
@@ -126,16 +126,15 @@ scripts/
 - Use semantic color names (bg-card, text-foreground, etc.) instead of hardcoded colors
 - Color system defined in `src/index.css` with OKLCH values for better color accuracy
 - Automatic dark mode via `@media (prefers-color-scheme: dark)`
-- All semantic colors automatically mapped to Tailwind classes via `tailwind.config.js`
+- All semantic colors automatically mapped to Tailwind classes via Tailwind v4 CSS configuration
 - Never hardcode colors like `bg-white` or `text-gray-500` - use semantic equivalents
 
 ### Internationalization Guidelines
 - All user-facing text must use translation keys via `useTranslation()` hook
 - Translation files located in `src/i18n/locales/` as TypeScript modules
-- Use casual, friendly tone in German, Italian, and French (Du/tu form, not Sie/vous)
+- Use casual, friendly tone in all languages (Du/tu form, not Sie/vous for German/French)
 - German is the default fallback language (appropriate for Alpine context)
 - Use proper pluralization forms: `_zero`, `_one`, `_other` for count-based translations
-- Languages are lazy-loaded automatically when selected
 - Language detection based on browser settings
 
 ### Testing Guidelines
@@ -153,7 +152,7 @@ scripts/
 - To update the search list: run `yarn fetch-hut-reservation-info` and `yarn fetch-osm-huts` followed by `yarn generate-hut-list`
 
 ### Common Tasks
-1. Run `yarn lint` to catch unused code before committing
+1. Run `yarn lint` to check code quality before committing
 2. Use `yarn build` to verify changes work correctly
 3. Run `yarn test:run` to verify tests pass before committing
 4. New API endpoints go in `src/services/`
