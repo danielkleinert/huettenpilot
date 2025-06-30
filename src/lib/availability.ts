@@ -18,12 +18,12 @@ export function getAvailabilityStatus(availableBeds: number | null, groupSize: n
 export function getAvailabilityColorClass(status: AvailabilityStatus): string {
   switch (status) {
     case AvailabilityStatus.GOOD:
-      return 'text-green-700 dark:text-green-400'
+      return 'text-green-500 font-semibold dark:text-green-400 dark:font-normal'
     case AvailabilityStatus.LIMITED:
-      return 'text-orange-600 dark:text-orange-400'
+      return 'text-orange-400 font-semibold dark:text-orange-400 dark:font-normal'
     case AvailabilityStatus.NONE:
     default:
-      return 'text-card-foreground'
+      return 'text-gray-300 dark:text-gray-700'
   }
 }
 

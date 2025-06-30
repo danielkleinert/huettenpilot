@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import type { TourOption } from '@/types'
-import { getAvailabilityColorClassForBeds } from '@/lib/availability'
+import { getAvailabilityColorClassForBeds, getAvailabilityColorClass, AvailabilityStatus } from '@/lib/availability'
 
 interface CalendarMonthProps {
   month: Date
@@ -82,7 +82,6 @@ export function CalendarMonth({
       <div className="grid grid-cols-7 gap-1">
         {getDaysInMonth(month).map((day, dayIndex) => {
           const tourDate = getTourOptionForDay(day)
-          const availabilityColor = getAvailabilityColorClassForBeds(tourDate?.minAvailableBeds ?? null, groupSize)
           
           const isToday = day && 
             day.getFullYear() === today.getFullYear() &&
@@ -90,6 +89,9 @@ export function CalendarMonth({
             day.getDate() === today.getDate()
 
           const isPastDate = day && day < today && !isToday
+          const textColor = isPastDate
+            ? getAvailabilityColorClass(AvailabilityStatus.NONE)
+            : getAvailabilityColorClassForBeds(tourDate?.minAvailableBeds ?? null, groupSize)
           const isHighlighted = shouldHighlightDate(day)
           
           return (
@@ -99,7 +101,7 @@ export function CalendarMonth({
                 calendar-date relative aspect-square flex items-center justify-center text-sm cursor-pointer
                 ${isToday ? 'bg-blue-100 dark:bg-blue-900/30 font-semibold text-blue-800 dark:text-blue-200' : ''}
                 ${isHighlighted ? 'bg-muted' : ''}
-                ${isPastDate ? 'text-muted-foreground' : availabilityColor} 
+                ${textColor} 
                 ${tourDate?.minAvailableBeds && tourDate.minAvailableBeds >= groupSize ? 'font-medium' : ''}
               `}
               onClick={(e) => {
