@@ -72,7 +72,7 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
           <div className="space-y-2">
             {selectedHuts.map((hut, index) => (
               <SortableHutItem
-                key={index}
+                key={`${hut.hutId}-${index}`}
                 hut={hut}
                 index={index}
                 onRemove={removeHut}
