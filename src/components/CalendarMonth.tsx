@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import type { TourDate } from '@/types'
+import type { TourOption } from '@/types'
 import { getAvailabilityColorClassForBeds } from '@/lib/availability'
 
 interface CalendarMonthProps {
@@ -8,7 +8,7 @@ interface CalendarMonthProps {
   hoveredDate: Date | null
   onDateClick: (date: Date) => void
   onDateHover: (date: Date | null) => void
-  getTourDateForDay: (day: Date | null) => TourDate | null
+  getTourOptionForDay: (day: Date | null) => TourOption | null
 }
 
 export function CalendarMonth({
@@ -17,7 +17,7 @@ export function CalendarMonth({
   hoveredDate,
   onDateClick,
   onDateHover,
-  getTourDateForDay
+  getTourOptionForDay
 }: CalendarMonthProps) {
   const { t } = useTranslation()
 
@@ -55,10 +55,10 @@ export function CalendarMonth({
   const shouldHighlightDate = (day: Date | null): boolean => {
     if (!day || !hoveredDate) return false
     
-    const hoveredTourDate = getTourDateForDay(hoveredDate)
-    if (!hoveredTourDate) return false
+    const hoveredTourOption = getTourOptionForDay(hoveredDate)
+    if (!hoveredTourOption) return false
     
-    const tourDurationDays = hoveredTourDate.hutAvailabilities.length
+    const tourDurationDays = hoveredTourOption.hutAvailabilities.length
     const daysDiff = Math.floor((day.getTime() - hoveredDate.getTime()) / (1000 * 60 * 60 * 24))
     
     return daysDiff >= 0 && daysDiff < tourDurationDays
@@ -81,7 +81,7 @@ export function CalendarMonth({
       
       <div className="grid grid-cols-7 gap-1">
         {getDaysInMonth(month).map((day, dayIndex) => {
-          const tourDate = getTourDateForDay(day)
+          const tourDate = getTourOptionForDay(day)
           const availabilityColor = getAvailabilityColorClassForBeds(tourDate?.minAvailableBeds ?? null, groupSize)
           
           const isToday = day && 

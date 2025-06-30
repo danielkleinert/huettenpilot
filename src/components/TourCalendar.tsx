@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import type { TourDate } from '@/types'
+import type { TourOption } from '@/types'
 import { CalendarMonth } from './CalendarMonth'
 import { DatePopup } from './DatePopup'
 import { CalendarLegend } from './CalendarLegend'
 import { useCalendarUtils } from '@/hooks/useCalendarUtils'
 
 interface TourCalendarProps {
-  tourDates: TourDate[]
+  tourDates: TourOption[]
   groupSize: number
 }
 
@@ -15,7 +15,7 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
   const { t } = useTranslation()
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
-  const { getTourDateForDay } = useCalendarUtils(tourDates)
+  const { getTourOptionForDay } = useCalendarUtils(tourDates)
 
   useEffect(() => {
     const handleClickOutside = (e: Event) => {
@@ -57,13 +57,13 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
             hoveredDate={hoveredDate}
             onDateClick={handleDateClick}
             onDateHover={handleDateHover}
-            getTourDateForDay={getTourDateForDay}
+            getTourOptionForDay={getTourOptionForDay}
           />
         ))}
       </div>
 
       {selectedDate && (() => {
-        const tourDate = getTourDateForDay(selectedDate)
+        const tourDate = getTourOptionForDay(selectedDate)
         
         if (!tourDate) return null
         

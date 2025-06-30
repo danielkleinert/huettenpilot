@@ -59,7 +59,7 @@ export interface HutInfo {
   waitingListEnabled: boolean
 }
 
-export interface TourDate {
+export interface TourOption {
   startDate: Date
   hutAvailabilities: Array<{
     hut: Hut

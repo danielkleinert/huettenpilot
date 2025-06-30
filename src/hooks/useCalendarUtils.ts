@@ -1,7 +1,7 @@
-import type { TourDate } from '@/types'
+import type { TourOption } from '@/types'
 
-export function useCalendarUtils(tourDates: TourDate[]) {
-  const getTourDateForDay = (day: Date | null): TourDate | null => {
+export function useCalendarUtils(tourDates: TourOption[]) {
+  const getTourOptionForDay = (day: Date | null): TourOption | null => {
     if (!day) return null
     
     return tourDates.find(tourDate => {
@@ -13,6 +13,6 @@ export function useCalendarUtils(tourDates: TourDate[]) {
   }
 
   return {
-    getTourDateForDay
+    getTourOptionForDay
   }
 }

@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { screen } from '@testing-library/react'
 import { render } from '@/test/test-utils'
 import { TourCalendar } from './TourCalendar'
-import type { TourDate, Hut, HutAvailability } from '@/types'
+import type { TourOption, Hut, HutAvailability } from '@/types'
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -33,7 +33,7 @@ describe('TourCalendar', () => {
     percentage: 'AVAILABLE'
   }
 
-  const mockTourDate: TourDate = {
+  const mockTourOption: TourOption = {
     startDate: new Date(2025, 6, 15), // July 15, 2025
     minAvailableBeds: 8,
     hutAvailabilities: [
@@ -42,7 +42,7 @@ describe('TourCalendar', () => {
   }
 
   const defaultProps = {
-    tourDates: [mockTourDate],
+    tourDates: [mockTourOption],
     groupSize: 4
   }
 
@@ -252,8 +252,8 @@ describe('TourCalendar', () => {
     })
 
     it('handles multiple tour dates', () => {
-      const multipleTourDates = [
-        mockTourDate,
+      const multipleTourOptions = [
+        mockTourOption,
         {
           startDate: new Date(2025, 7, 20),
           minAvailableBeds: 12,
@@ -266,7 +266,7 @@ describe('TourCalendar', () => {
         }
       ]
       
-      render(<TourCalendar {...defaultProps} tourDates={multipleTourDates} />)
+      render(<TourCalendar {...defaultProps} tourDates={multipleTourOptions} />)
       
       expect(screen.getByText('Tour Calendar')).toBeInTheDocument()
       expect(screen.queryByText('No available dates found for your tour')).not.toBeInTheDocument()
@@ -279,7 +279,7 @@ describe('TourCalendar', () => {
         coordinates: [47.5, 11.5]
       }
       
-      const tourDateWithDifferentHut: TourDate = {
+      const tourDateWithDifferentHut: TourOption = {
         startDate: new Date(2025, 6, 20),
         minAvailableBeds: 5,
         hutAvailabilities: [
@@ -358,11 +358,11 @@ describe('TourCalendar', () => {
 
   describe('Performance considerations', () => {
     it('handles large numbers of tour dates efficiently', () => {
-      const largeTourDatesArray: TourDate[] = []
+      const largeTourOptionsArray: TourOption[] = []
       
       // Create 50 tour dates (reduced for faster testing)
       for (let i = 0; i < 50; i++) {
-        largeTourDatesArray.push({
+        largeTourOptionsArray.push({
           startDate: new Date(2025, 6, i + 1),
           minAvailableBeds: i % 10 + 1,
           hutAvailabilities: [
@@ -372,7 +372,7 @@ describe('TourCalendar', () => {
       }
       
       const startTime = performance.now()
-      render(<TourCalendar {...defaultProps} tourDates={largeTourDatesArray} />)
+      render(<TourCalendar {...defaultProps} tourDates={largeTourOptionsArray} />)
       const endTime = performance.now()
       
       expect(screen.getByText('Tour Calendar')).toBeInTheDocument()

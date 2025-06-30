@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { screen, fireEvent } from '@testing-library/react'
 import { render } from '@/test/test-utils'
 import { CalendarMonth } from './CalendarMonth'
-import type { TourDate, Hut, HutAvailability } from '@/types'
+import type { TourOption, Hut, HutAvailability } from '@/types'
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -50,7 +50,7 @@ describe('CalendarMonth', () => {
     percentage: 'AVAILABLE'
   }
 
-  const mockTourDate: TourDate = {
+  const mockTourOption: TourOption = {
     startDate: new Date(2025, 6, 15), // July 15, 2025 (future date)
     minAvailableBeds: 8,
     hutAvailabilities: [
@@ -58,7 +58,7 @@ describe('CalendarMonth', () => {
     ]
   }
 
-  const mockGetTourDateForDay = vi.fn()
+  const mockGetTourOptionForDay = vi.fn()
   const mockOnDateClick = vi.fn()
   const mockOnDateHover = vi.fn()
 
@@ -68,12 +68,12 @@ describe('CalendarMonth', () => {
     hoveredDate: null as Date | null,
     onDateClick: mockOnDateClick,
     onDateHover: mockOnDateHover,
-    getTourDateForDay: mockGetTourDateForDay
+    getTourOptionForDay: mockGetTourOptionForDay
   }
 
   beforeEach(() => {
     vi.clearAllMocks()
-    mockGetTourDateForDay.mockReturnValue(null)
+    mockGetTourOptionForDay.mockReturnValue(null)
   })
 
   describe('Basic rendering', () => {
@@ -126,7 +126,7 @@ describe('CalendarMonth', () => {
     })
 
     it('calls onDateHover when hovering over a date with tour data', () => {
-      mockGetTourDateForDay.mockReturnValue(mockTourDate)
+      mockGetTourOptionForDay.mockReturnValue(mockTourOption)
       
       render(<CalendarMonth {...defaultProps} />)
       const dateElement = screen.getByText('15')
@@ -136,7 +136,7 @@ describe('CalendarMonth', () => {
     })
 
     it('does not call onDateHover when hovering over date without tour data', () => {
-      mockGetTourDateForDay.mockReturnValue(null)
+      mockGetTourOptionForDay.mockReturnValue(null)
       
       render(<CalendarMonth {...defaultProps} />)
       const dateElement = screen.getByText('15')
@@ -191,7 +191,7 @@ describe('CalendarMonth', () => {
     })
 
     it('applies availability color for dates with tour data', () => {
-      mockGetTourDateForDay.mockReturnValue(mockTourDate)
+      mockGetTourOptionForDay.mockReturnValue(mockTourOption)
       
       render(<CalendarMonth {...defaultProps} />)
       
@@ -202,10 +202,10 @@ describe('CalendarMonth', () => {
 
     it('applies font-medium for dates with sufficient availability', () => {
       const tourDateWithGoodAvailability = {
-        ...mockTourDate,
+        ...mockTourOption,
         minAvailableBeds: 10 // More than groupSize (4)
       }
-      mockGetTourDateForDay.mockReturnValue(tourDateWithGoodAvailability)
+      mockGetTourOptionForDay.mockReturnValue(tourDateWithGoodAvailability)
       
       render(<CalendarMonth {...defaultProps} />)
       
@@ -216,14 +216,14 @@ describe('CalendarMonth', () => {
     it('highlights dates in tour duration when date is hovered', () => {
       const hoveredDate = new Date(2025, 6, 15)
       const tourDate = {
-        ...mockTourDate,
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut, availability: mockAvailability },
           { hut: mockHut, availability: { ...mockAvailability, date: '2025-07-16' } }
         ]
       }
       
-      mockGetTourDateForDay.mockImplementation((date) => {
+      mockGetTourOptionForDay.mockImplementation((date) => {
         if (date && date.getDate() === 15) return tourDate
         return null
       })
@@ -261,20 +261,20 @@ describe('CalendarMonth', () => {
   })
 
   describe('Utility function calls', () => {
-    it('calls getTourDateForDay for each rendered date', () => {
+    it('calls getTourOptionForDay for each rendered date', () => {
       render(<CalendarMonth {...defaultProps} />)
       
       // Should be called for each day in July (31 days) plus some empty cells
-      expect(mockGetTourDateForDay).toHaveBeenCalled()
+      expect(mockGetTourOptionForDay).toHaveBeenCalled()
       
       // Verify it's called with actual dates
-      expect(mockGetTourDateForDay).toHaveBeenCalledWith(new Date(2025, 6, 1))
-      expect(mockGetTourDateForDay).toHaveBeenCalledWith(new Date(2025, 6, 15))
-      expect(mockGetTourDateForDay).toHaveBeenCalledWith(new Date(2025, 6, 31))
+      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(2025, 6, 1))
+      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(2025, 6, 15))
+      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(2025, 6, 31))
     })
 
     it('applies correct styling based on availability status', () => {
-      mockGetTourDateForDay.mockReturnValue(mockTourDate)
+      mockGetTourOptionForDay.mockReturnValue(mockTourOption)
       
       render(<CalendarMonth {...defaultProps} />)
       
@@ -298,7 +298,7 @@ describe('CalendarMonth', () => {
     })
 
     it('handles different group sizes', () => {
-      mockGetTourDateForDay.mockReturnValue(mockTourDate)
+      mockGetTourOptionForDay.mockReturnValue(mockTourOption)
       
       render(<CalendarMonth {...defaultProps} groupSize={8} />)
       
@@ -316,10 +316,10 @@ describe('CalendarMonth', () => {
 
     it('handles tour dates with no availability data', () => {
       const tourDateWithoutAvailability = {
-        ...mockTourDate,
+        ...mockTourOption,
         minAvailableBeds: undefined as unknown as number
       }
-      mockGetTourDateForDay.mockReturnValue(tourDateWithoutAvailability)
+      mockGetTourOptionForDay.mockReturnValue(tourDateWithoutAvailability)
       
       render(<CalendarMonth {...defaultProps} />)
       

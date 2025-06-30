@@ -1,13 +1,13 @@
-import type { Hut, HutAvailability, TourDate } from '@/types'
+import type { Hut, HutAvailability, TourOption } from '@/types'
 
 export class TourPlannerService {
   static findAvailableTourDates(
     huts: Hut[],
     availabilityData: Record<number, HutAvailability[]>
-  ): TourDate[] {
+  ): TourOption[] {
     if (huts.length === 0) return []
 
-    const allDates: TourDate[] = []
+    const allDates: TourOption[] = []
     const firstHutAvailability = availabilityData[huts[0].hutId] || []
     
     for (const startDay of firstHutAvailability) {
@@ -28,7 +28,7 @@ export class TourPlannerService {
     huts: Hut[],
     availabilityData: Record<number, HutAvailability[]>,
     startDate: Date
-  ): TourDate {
+  ): TourOption {
     const hutAvailabilities: Array<{
       hut: Hut
       availability: HutAvailability | null

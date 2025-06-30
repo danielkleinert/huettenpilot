@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { screen, fireEvent } from '@testing-library/react'
 import { render } from '@/test/test-utils'
 import { DatePopup } from './DatePopup'
-import type { TourDate, Hut, HutAvailability } from '@/types'
+import type { TourOption, Hut, HutAvailability } from '@/types'
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -53,7 +53,7 @@ describe('DatePopup', () => {
     percentage: 'NEARLY FULL'
   }
 
-  const mockTourDate: TourDate = {
+  const mockTourOption: TourOption = {
     startDate: new Date(2024, 6, 15), // July 15, 2024
     minAvailableBeds: 3,
     hutAvailabilities: [
@@ -64,18 +64,18 @@ describe('DatePopup', () => {
 
   const defaultProps = {
     selectedDate: new Date(2024, 6, 15),
-    tourDate: mockTourDate,
+    tourDate: mockTourOption,
     groupSize: 4
   }
 
   describe('Basic rendering', () => {
     it('renders popup with correct date header for sufficient availability', () => {
-      const sufficientTourDate = {
-        ...mockTourDate,
+      const sufficientTourOption = {
+        ...mockTourOption,
         minAvailableBeds: 5
       }
       
-      render(<DatePopup {...defaultProps} tourDate={sufficientTourDate} />)
+      render(<DatePopup {...defaultProps} tourDate={sufficientTourOption} />)
       
       expect(screen.getByText(/Tour starting on/)).toBeInTheDocument()
       expect(screen.getByText(/Mon, Jul 15, 2024/)).toBeInTheDocument()
@@ -111,8 +111,8 @@ describe('DatePopup', () => {
         freeBeds: 0
       }
       
-      const tourDateWithClosedHut: TourDate = {
-        ...mockTourDate,
+      const tourDateWithClosedHut: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: closedAvailability }
         ]
@@ -124,8 +124,8 @@ describe('DatePopup', () => {
     })
 
     it('displays no availability data message', () => {
-      const tourDateWithNoAvailability: TourDate = {
-        ...mockTourDate,
+      const tourDateWithNoAvailability: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: null }
         ]
@@ -142,8 +142,8 @@ describe('DatePopup', () => {
         freeBeds: 0
       }
       
-      const tourDateWithZeroBeds: TourDate = {
-        ...mockTourDate,
+      const tourDateWithZeroBeds: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: zeroBedsAvailability }
         ]
@@ -160,8 +160,8 @@ describe('DatePopup', () => {
         freeBeds: null
       }
       
-      const tourDateWithNullBeds: TourDate = {
-        ...mockTourDate,
+      const tourDateWithNullBeds: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: nullBedsAvailability }
         ]
@@ -180,8 +180,8 @@ describe('DatePopup', () => {
         freeBeds: 15 // More than groupSize (4) + 5
       }
       
-      const tourDateWithHighAvailability: TourDate = {
-        ...mockTourDate,
+      const tourDateWithHighAvailability: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: highAvailability }
         ]
@@ -199,8 +199,8 @@ describe('DatePopup', () => {
         freeBeds: 6 // groupSize (4) + 2, less than 5 extra
       }
       
-      const tourDateWithLimitedAvailability: TourDate = {
-        ...mockTourDate,
+      const tourDateWithLimitedAvailability: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: limitedAvailability }
         ]
@@ -218,8 +218,8 @@ describe('DatePopup', () => {
         freeBeds: 2 // Less than groupSize (4)
       }
       
-      const tourDateWithInsufficientAvailability: TourDate = {
-        ...mockTourDate,
+      const tourDateWithInsufficientAvailability: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: insufficientAvailability }
         ]
@@ -232,8 +232,8 @@ describe('DatePopup', () => {
     })
 
     it('applies muted color for null availability', () => {
-      const tourDateWithNullAvailability: TourDate = {
-        ...mockTourDate,
+      const tourDateWithNullAvailability: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: null }
         ]
@@ -265,23 +265,23 @@ describe('DatePopup', () => {
 
   describe('Tour determination', () => {
     it('shows tour starting message when minimum beds meet group size', () => {
-      const sufficientTourDate: TourDate = {
-        ...mockTourDate,
+      const sufficientTourOption: TourOption = {
+        ...mockTourOption,
         minAvailableBeds: 4 // Exactly matches groupSize
       }
       
-      render(<DatePopup {...defaultProps} tourDate={sufficientTourDate} />)
+      render(<DatePopup {...defaultProps} tourDate={sufficientTourOption} />)
       
       expect(screen.getByText(/Tour starting on/)).toBeInTheDocument()
     })
 
     it('shows availability message when minimum beds are insufficient', () => {
-      const insufficientTourDate: TourDate = {
-        ...mockTourDate,
+      const insufficientTourOption: TourOption = {
+        ...mockTourOption,
         minAvailableBeds: 3 // Less than groupSize (4)
       }
       
-      render(<DatePopup {...defaultProps} tourDate={insufficientTourDate} />)
+      render(<DatePopup {...defaultProps} tourDate={insufficientTourOption} />)
       
       expect(screen.getByText(/Availability for/)).toBeInTheDocument()
     })
@@ -289,8 +289,8 @@ describe('DatePopup', () => {
 
   describe('Multi-day tours', () => {
     it('renders correct day numbers for multi-day tour', () => {
-      const threeDayTour: TourDate = {
-        ...mockTourDate,
+      const threeDayTour: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: mockAvailability1 },
           { hut: mockHut2, availability: mockAvailability2 },
@@ -306,8 +306,8 @@ describe('DatePopup', () => {
     })
 
     it('handles single day tour', () => {
-      const singleDayTour: TourDate = {
-        ...mockTourDate,
+      const singleDayTour: TourOption = {
+        ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut1, availability: mockAvailability1 }
         ]

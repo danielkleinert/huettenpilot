@@ -10,7 +10,7 @@ import Impressum from './components/Impressum'
 import Datenschutz from './components/Datenschutz'
 import { useHutAvailability } from './hooks/useHutAvailability'
 import { TourPlannerService } from './services/tourPlanner'
-import type { Hut, TourDate } from './types'
+import type { Hut, TourOption } from './types'
 import { Users } from 'lucide-react'
 import { siGithub } from 'simple-icons'
 import { getStateFromUrl, updateUrlState } from './lib/urlState'
@@ -26,7 +26,7 @@ function App() {
 
   const hutIds = useMemo(() => selectedHuts.map(hut => hut.hutId), [selectedHuts])
   const { data: availabilityData, isLoading, isError, errors } = useHutAvailability(hutIds)
-  const tourDates: TourDate[] = useMemo(() => {
+  const tourDates: TourOption[] = useMemo(() => {
     if (selectedHuts.length === 0 || isLoading) {
       return []
     }

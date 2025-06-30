@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
-import type { TourDate } from '@/types'
+import type { TourOption } from '@/types'
 import { getAvailabilityColorClassForBeds } from '@/lib/availability'
 
 interface DatePopupProps {
   selectedDate: Date
-  tourDate: TourDate
+  tourDate: TourOption
   groupSize: number
 }
 
