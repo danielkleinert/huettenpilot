@@ -32,3 +32,6 @@ dist-ssr
 # Generated data files
 hut_reservation_info.json
 osm_alpine_huts.json
+
+# Local Claude instructions
+CLAUDE.local.md
