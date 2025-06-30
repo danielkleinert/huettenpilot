@@ -53,7 +53,6 @@
     "groupSizeInvalid": "Ungültige Gruppengröße",
     "fetchFailed": "Abrufen der Hüttenverfügbarkeit fehlgeschlagen. Bitte versuche es erneut."
   },
-  "hutNotAvailableInSystem": "Diese Hütte ist nicht im Buchungssystem verfügbar",
   "languages": {
     "de": "Deutsch",
     "en": "English",

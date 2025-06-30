@@ -6,16 +6,6 @@ import type { Hut, HutInfo } from '@/types'
 import type { UseQueryResult } from '@tanstack/react-query'
 
 // Mock the external dependencies
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        'hutNotAvailableInSystem': 'This hut is not available in the booking system'
-      }
-      return translations[key] || key
-    }
-  })
-}))
 
 vi.mock('@dnd-kit/sortable', () => ({
   useSortable: vi.fn(() => ({
@@ -37,13 +27,6 @@ vi.mock('@dnd-kit/utilities', () => ({
 }))
 
 vi.mock('@/hooks/useHutInfo')
-vi.mock('@/components/ui/Tooltip', () => ({
-  Tooltip: ({ content, children }: { content: string; children: React.ReactNode }) => (
-    <div data-testid="tooltip" title={content}>
-      {children}
-    </div>
-  )
-}))
 
 const mockUseHutInfo = vi.mocked(await import('@/hooks/useHutInfo')).useHutInfo
 
@@ -332,7 +315,7 @@ describe('SortableHutItem', () => {
   })
 
   describe('Booking functionality', () => {
-    it('shows booking link when hut has bookable rooms', () => {
+    it('shows booking link for all huts', () => {
       mockUseHutInfo.mockReturnValue(createMockQueryResult({
         data: mockHutInfo,
         isLoading: false,
@@ -349,32 +332,6 @@ describe('SortableHutItem', () => {
       expect(bookingLinks[0]).toHaveAttribute(
         'href', 
         'https://www.hut-reservation.org/reservation/book-hut/123/wizard'
-      )
-    })
-
-    it('shows warning tooltip when hut has no bookable rooms', () => {
-      const hutInfoNoBooking = {
-        ...mockHutInfo,
-        hutBedCategories: mockHutInfo.hutBedCategories.map(cat => ({
-          ...cat,
-          isLinkedToReservation: false
-        }))
-      }
-      mockUseHutInfo.mockReturnValue(createMockQueryResult({
-        data: hutInfoNoBooking,
-        isLoading: false,
-        error: null,
-        isError: false,
-        isSuccess: true
-      }))
-
-      render(<SortableHutItem hut={mockHut} index={0} onRemove={mockOnRemove} />)
-      
-      const tooltips = screen.getAllByTestId('tooltip')
-      expect(tooltips).toHaveLength(2) // Desktop and mobile
-      expect(tooltips[0]).toHaveAttribute(
-        'title', 
-        'This hut is not available in the booking system'
       )
     })
 
@@ -550,30 +507,6 @@ describe('SortableHutItem', () => {
   })
 
   describe('Accessibility', () => {
-    it('has proper ARIA label for warning tooltip', () => {
-      const hutInfoNoBooking = {
-        ...mockHutInfo,
-        hutBedCategories: mockHutInfo.hutBedCategories.map(cat => ({
-          ...cat,
-          isLinkedToReservation: false
-        }))
-      }
-      mockUseHutInfo.mockReturnValue(createMockQueryResult({
-        data: hutInfoNoBooking,
-        isLoading: false,
-        error: null,
-        isError: false,
-        isSuccess: true
-      }))
-
-      render(<SortableHutItem hut={mockHut} index={0} onRemove={mockOnRemove} />)
-      
-      const warningElements = screen.getAllByRole('button', { name: 'Information about booking availability' })
-      expect(warningElements).toHaveLength(2) // Desktop and mobile
-      expect(warningElements[0]).toBeInTheDocument()
-      expect(warningElements[0]).toHaveAttribute('tabIndex', '0')
-    })
-
     it('has proper alt text for hut image', () => {
       mockUseHutInfo.mockReturnValue(createMockQueryResult({
         data: mockHutInfo,

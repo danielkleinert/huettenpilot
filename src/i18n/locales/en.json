@@ -53,7 +53,6 @@
     "groupSizeInvalid": "Invalid group size",
     "fetchFailed": "Failed to fetch hut availability. Please try again."
   },
-  "hutNotAvailableInSystem": "This hut is not available in the reservation system",
   "languages": {
     "de": "Deutsch",
     "en": "English",

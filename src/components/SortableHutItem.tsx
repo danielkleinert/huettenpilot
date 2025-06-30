@@ -1,10 +1,8 @@
-import {Bed, ExternalLink, GripVertical, Mountain, Ticket, TriangleAlert, X} from 'lucide-react'
+import {Bed, ExternalLink, GripVertical, Mountain, Ticket, X} from 'lucide-react'
 import {useSortable} from '@dnd-kit/sortable'
 import {CSS} from '@dnd-kit/utilities'
-import {useTranslation} from 'react-i18next'
 import type {Hut} from '@/types'
 import {useHutInfo} from '@/hooks/useHutInfo'
-import {Tooltip} from '@/components/ui/Tooltip'
 
 interface SortableHutItemProps {
   hut: Hut
@@ -23,7 +21,6 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
   } = useSortable({ id: hut.hutId })
 
   const { data: hutInfo, isLoading } = useHutInfo(hut.hutId)
-  const { t } = useTranslation()
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -36,9 +33,6 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
     return total > 0 ? total.toString() : hutInfo.totalBedsInfo || 'N/A'
   }
 
-  const hasBookableRooms = () => {
-    return hutInfo?.hutBedCategories?.some(category => category.isLinkedToReservation) || false
-  }
 
   const formatWebsite = (website: string) => {
     if (!website) return undefined
@@ -79,29 +73,16 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
                   </a>
               )}
 
-              {hasBookableRooms() ? (
-                  <a
-                      href={`https://www.hut-reservation.org/reservation/book-hut/${hut.hutId}/wizard`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-green-600 p-1 rounded-md hover:bg-green-600/10"
-                      onClick={(e) => e.stopPropagation()}
-                      title="Book this hut"
-                  >
-                    <Ticket className="h-4 w-4"/>
-                  </a>
-              ) : (
-                  <Tooltip content={t('hutNotAvailableInSystem')}>
-                    <div
-                        className="text-yellow-500 hover:text-yellow-600 p-1 rounded-md hover:bg-yellow-600/10 cursor-pointer"
-                        tabIndex={0}
-                        role="button"
-                        aria-label="Information about booking availability"
-                    >
-                      <TriangleAlert className="h-4 w-4"/>
-                    </div>
-                  </Tooltip>
-              )}
+              <a
+                  href={`https://www.hut-reservation.org/reservation/book-hut/${hut.hutId}/wizard`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-green-600 p-1 rounded-md hover:bg-green-600/10"
+                  onClick={(e) => e.stopPropagation()}
+                  title="Book this hut"
+              >
+                <Ticket className="h-4 w-4"/>
+              </a>
             </div>
           </div>
       )}
