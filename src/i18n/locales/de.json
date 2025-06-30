@@ -50,7 +50,7 @@
     }
   },
   "errors": {
-    "groupSizeInvalid": "Gruppengröße muss zwischen 1 und 50 Personen liegen",
+    "groupSizeInvalid": "Ungültige Gruppengröße",
     "fetchFailed": "Abrufen der Hüttenverfügbarkeit fehlgeschlagen. Bitte versuche es erneut."
   },
   "languages": {

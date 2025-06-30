@@ -31,7 +31,7 @@ function App() {
       return []
     }
 
-    if (groupSize < 1 || groupSize > 50) {
+    if (groupSize < 1) {
       return []
     }
 
@@ -48,7 +48,7 @@ function App() {
   useEffect(() => {
     if (selectedHuts.length === 0) {
       setError(null)
-    } else if (groupSize < 1 || groupSize > 50) {
+    } else if (groupSize < 1) {
       setError(t('errors.groupSizeInvalid'))
     } else if (isError && errors.length > 0) {
       setError(t('errors.fetchFailed'))
@@ -81,10 +81,6 @@ function App() {
 
   const handleHutsChange = (huts: Hut[]) => {
     setSelectedHuts(huts.filter(Boolean))
-  }
-
-  const handleGroupSizeChange = (size: number) => {
-    setGroupSize(size)
   }
 
   const renderFooter = () => (
@@ -180,9 +176,8 @@ function App() {
                   <Input
                     type="number"
                     min="1"
-                    max="50"
-                    value={groupSize}
-                    onChange={(e) => handleGroupSizeChange(parseInt(e.target.value) || 1)}
+                    value={groupSize || ''}
+                    onChange={(e) => setGroupSize(parseInt(e.target.value) || 0)}
                     placeholder={t('hutSelector.groupSizePlaceholder')}
                     className="w-32"
                   />

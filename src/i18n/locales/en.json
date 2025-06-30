@@ -50,7 +50,7 @@
     }
   },
   "errors": {
-    "groupSizeInvalid": "Group size must be between 1 and 50 people",
+    "groupSizeInvalid": "Invalid group size",
     "fetchFailed": "Failed to fetch hut availability. Please try again."
   },
   "languages": {

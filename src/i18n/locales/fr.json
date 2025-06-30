@@ -50,7 +50,7 @@
     }
   },
   "errors": {
-    "groupSizeInvalid": "La taille du groupe doit être entre 1 et 50 personnes",
+    "groupSizeInvalid": "Taille du groupe invalide",
     "fetchFailed": "Échec de la récupération de la disponibilité des refuges. Réessaie s'il te plaît."
   },
   "languages": {

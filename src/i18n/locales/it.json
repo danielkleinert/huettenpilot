@@ -50,7 +50,7 @@
     }
   },
   "errors": {
-    "groupSizeInvalid": "La dimensione del gruppo deve essere tra 1 e 50 persone",
+    "groupSizeInvalid": "Dimensione del gruppo non valida",
     "fetchFailed": "Impossibile recuperare la disponibilità dei rifugi. Riprova."
   },
   "languages": {
