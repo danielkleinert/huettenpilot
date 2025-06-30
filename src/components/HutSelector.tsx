@@ -43,8 +43,8 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
     const { active, over } = event
 
     if (over && active.id !== over.id) {
-      const oldIndex = selectedHuts.findIndex(hut => hut.hutId === active.id)
-      const newIndex = selectedHuts.findIndex(hut => hut.hutId === over.id)
+      const oldIndex = parseInt(active.id as string)
+      const newIndex = parseInt(over.id as string)
 
       onHutsChange(arrayMove(selectedHuts, oldIndex, newIndex))
     }
@@ -68,11 +68,11 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <SortableContext items={selectedHuts.map(hut => hut.hutId)} strategy={verticalListSortingStrategy}>
+        <SortableContext items={selectedHuts.map((_, index) => `${index}`)} strategy={verticalListSortingStrategy}>
           <div className="space-y-2">
             {selectedHuts.map((hut, index) => (
               <SortableHutItem
-                key={hut.hutId}
+                key={index}
                 hut={hut}
                 index={index}
                 onRemove={removeHut}

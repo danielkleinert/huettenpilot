@@ -18,7 +18,7 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
     transform,
     transition,
     isDragging,
-  } = useSortable({ id: hut.hutId })
+  } = useSortable({ id: `${index}` })
 
   const { data: hutInfo, isLoading } = useHutInfo(hut.hutId)
 
