@@ -18,6 +18,10 @@ Hüttenplan is a React + TypeScript + Vite application for planning multi-day Al
 - `yarn fetch-osm-huts` - Fetch all Alpine huts from OpenStreetMap to osm_alpine_huts.json (for coordinate data)
 - `yarn generate-hut-list` - Generate src/hut_ids.json with accurate OSM coordinates using intelligent name matching
 
+## Claude Code Slash Commands
+
+- `/project:validate` - Runs full validation (build + lint + tests) to ensure code quality before committing
+
 ## Project Structure
 
 ```
