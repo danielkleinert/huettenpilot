@@ -53,6 +53,7 @@
     "groupSizeInvalid": "Dimensione del gruppo non valida",
     "fetchFailed": "Impossibile recuperare la disponibilità dei rifugi. Riprova."
   },
+  "hutNotAvailableInSystem": "Questo rifugio non è disponibile nel sistema di prenotazione",
   "languages": {
     "de": "Deutsch",
     "en": "English",

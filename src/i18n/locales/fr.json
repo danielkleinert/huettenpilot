@@ -53,6 +53,7 @@
     "groupSizeInvalid": "Taille du groupe invalide",
     "fetchFailed": "Échec de la récupération de la disponibilité des refuges. Réessaie s'il te plaît."
   },
+  "hutNotAvailableInSystem": "Ce refuge n'est pas disponible dans le système de réservation",
   "languages": {
     "de": "Deutsch",
     "en": "English",

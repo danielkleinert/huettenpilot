@@ -16,11 +16,13 @@ export function LanguageSelector() {
     await i18n.changeLanguage(e.target.value)
   }
 
+  const currentLanguage = i18n.language.split('-')[0]
+
   return (
     <div className="flex items-center gap-2">
       <Globe className="h-4 w-4 text-muted-foreground" />
       <Select
-        value={i18n.language}
+        value={currentLanguage}
         onChange={handleLanguageChange}
         className="w-32"
       >

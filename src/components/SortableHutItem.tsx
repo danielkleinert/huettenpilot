@@ -1,6 +1,7 @@
 import {Bed, ExternalLink, GripVertical, Mountain, Ticket, TriangleAlert, X} from 'lucide-react'
 import {useSortable} from '@dnd-kit/sortable'
 import {CSS} from '@dnd-kit/utilities'
+import {useTranslation} from 'react-i18next'
 import type {Hut} from '@/types'
 import {useHutInfo} from '@/hooks/useHutInfo'
 import {Tooltip} from '@/components/ui/Tooltip'
@@ -22,6 +23,7 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
   } = useSortable({ id: hut.hutId })
 
   const { data: hutInfo, isLoading } = useHutInfo(hut.hutId)
+  const { t } = useTranslation()
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -89,7 +91,7 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
                     <Ticket className="h-4 w-4"/>
                   </a>
               ) : (
-                  <Tooltip content="This hut is not available in the reservation system">
+                  <Tooltip content={t('hutNotAvailableInSystem')}>
                     <div
                         className="text-yellow-500 hover:text-yellow-600 p-1 rounded-md hover:bg-yellow-600/10 cursor-pointer"
                         tabIndex={0}
