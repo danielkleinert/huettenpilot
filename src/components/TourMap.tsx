@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { Map, View } from 'ol'
 import TileLayer from 'ol/layer/Tile'
 import XYZ from 'ol/source/XYZ'
@@ -6,11 +6,13 @@ import VectorLayer from 'ol/layer/Vector'
 import VectorSource from 'ol/source/Vector'
 import { Feature } from 'ol'
 import { Point, LineString } from 'ol/geom'
-import { Style, Icon, Stroke } from 'ol/style'
+import { Style, Icon, Stroke, Circle, Fill } from 'ol/style'
 import { fromLonLat } from 'ol/proj'
 import { Attribution } from 'ol/control'
+import Overlay from 'ol/Overlay'
 import type { Hut } from '@/types'
 import { Maximize2, X } from 'lucide-react'
+import hutIds from '@/hut_ids.json'
 import 'ol/ol.css'
 
 interface TourMapProps {
@@ -32,37 +34,172 @@ function createNumberedMarkerStyle(number: number): Style {
   })
 }
 
+function createHutMarkerStyle(): Style {
+  return new Style({
+    image: new Circle({
+      radius: 6,
+      fill: new Fill({
+        color: '#ef4444'
+      }),
+      stroke: new Stroke({
+        color: 'white',
+        width: 2
+      })
+    })
+  })
+}
+
+function createOpenTopoMapLayer(): TileLayer<XYZ> {
+  return new TileLayer({
+    source: new XYZ({
+      url: 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
+      attributions: [
+        'Map data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: © <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+      ]
+    })
+  })
+}
+
+function createVectorLayerWithHuts(selectedHuts: Hut[]): VectorLayer<VectorSource> {
+  const vectorSource = new VectorSource()
+
+  // Add all huts from hut_ids.json
+  hutIds.forEach((hut) => {
+    if (hut.coordinates) {
+      const [lat, lon] = hut.coordinates
+      const transformedCoords = fromLonLat([lon, lat])
+      const point = new Point(transformedCoords)
+      const feature = new Feature({
+        geometry: point,
+        hutName: hut.hutName,
+        hutId: hut.hutId
+      })
+      feature.setStyle(createHutMarkerStyle())
+      vectorSource.addFeature(feature)
+    }
+  })
+
+  // Add selected huts with numbered markers and connecting line
+  const hutsWithCoordinates = selectedHuts.filter(hut => hut.coordinates !== null)
+  if (hutsWithCoordinates.length > 0) {
+    hutsWithCoordinates.forEach((hut, index) => {
+      const [lat, lon] = hut.coordinates!
+      const transformedCoords = fromLonLat([lon, lat])
+      const point = new Point(transformedCoords)
+      const feature = new Feature({
+        geometry: point,
+        hutName: hut.hutName,
+        hutId: hut.hutId,
+        isSelected: true
+      })
+      feature.setStyle(createNumberedMarkerStyle(index + 1))
+      vectorSource.addFeature(feature)
+    })
+
+    // Add connecting line for selected huts
+    if (hutsWithCoordinates.length > 1) {
+      const lineCoordinates = hutsWithCoordinates.map(hut => {
+        const [lat, lon] = hut.coordinates!
+        return fromLonLat([lon, lat])
+      })
+      const lineString = new LineString(lineCoordinates)
+      const lineFeature = new Feature({
+        geometry: lineString
+      })
+      lineFeature.setStyle(new Style({
+        stroke: new Stroke({
+          color: '#3b82f6',
+          width: 3
+        })
+      }))
+      vectorSource.addFeature(lineFeature)
+    }
+  }
+
+  return new VectorLayer({
+    source: vectorSource
+  })
+}
+
 export default function TourMap({ selectedHuts }: TourMapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
-  const fullscreenMapRef = useRef<HTMLDivElement>(null)
+  const popupRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<Map | null>(null)
-  const fullscreenMapInstanceRef = useRef<Map | null>(null)
+  const overlayRef = useRef<Overlay | null>(null)
+  const lastSelectedHutIds = useRef<string>('')
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [popupHut, setPopupHut] = useState<string | null>(null)
 
   const hutsWithCoordinates = selectedHuts.filter(hut => hut.coordinates !== null)
+  const selectedHutIds = selectedHuts.map(hut => hut.hutId).sort().join(',')
+
+  const fitViewToSelection = useCallback(() => {
+    if (!mapInstanceRef.current) return
+
+    if (hutsWithCoordinates.length > 0) {
+      const vectorLayer = mapInstanceRef.current.getLayers().getArray()
+        .find(layer => layer instanceof VectorLayer) as VectorLayer<VectorSource>
+      
+      if (vectorLayer) {
+        const selectedHutExtent = vectorLayer.getSource()!.getFeatures()
+          .filter(f => f.get('isSelected'))
+          .map(f => f.getGeometry()!.getExtent())
+          .reduce((acc, extent) => {
+            return [
+              Math.min(acc[0], extent[0]),
+              Math.min(acc[1], extent[1]),
+              Math.max(acc[2], extent[2]),
+              Math.max(acc[3], extent[3])
+            ]
+          }, [Infinity, Infinity, -Infinity, -Infinity])
+
+        if (selectedHutExtent.every(coord => coord !== Infinity && coord !== -Infinity)) {
+          mapInstanceRef.current.getView().fit(selectedHutExtent, {
+            padding: [50, 50, 50, 50],
+            maxZoom: 12
+          })
+        }
+      }
+    } else {
+      // Show Alps region when no huts are selected
+      mapInstanceRef.current.getView().setCenter(fromLonLat([10.5, 46.5]))
+      mapInstanceRef.current.getView().setZoom(6)
+    }
+  }, [hutsWithCoordinates])
 
   useEffect(() => {
-    if (!mapRef.current) return
+    if (!mapRef.current || !popupRef.current) return
 
     if (!mapInstanceRef.current) {
-      const openTopoMapLayer = new TileLayer({
-        source: new XYZ({
-          url: 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
-          attributions: [
-            'Map data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: © <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-          ]
-        })
+      overlayRef.current = new Overlay({
+        element: popupRef.current,
+        autoPan: {
+          animation: {
+            duration: 250,
+          },
+        },
       })
 
       mapInstanceRef.current = new Map({
         target: mapRef.current,
-        layers: [openTopoMapLayer],
+        layers: [createOpenTopoMapLayer()],
         view: new View({
-          center: fromLonLat([8.5, 46.8]),
-          zoom: 8
+          center: fromLonLat([10.5, 46.5]),
+          zoom: 4
         }),
-        interactions: [],
+        overlays: [overlayRef.current],
         controls: [new Attribution()]
+      })
+
+      mapInstanceRef.current.on('click', (evt) => {
+        const feature = mapInstanceRef.current!.forEachFeatureAtPixel(evt.pixel, (feature) => feature)
+        if (feature && feature.get('hutName')) {
+          setPopupHut(feature.get('hutName'))
+          overlayRef.current!.setPosition(evt.coordinate)
+        } else {
+          setPopupHut(null)
+          overlayRef.current!.setPosition(undefined)
+        }
       })
     }
 
@@ -71,11 +208,19 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
         mapInstanceRef.current.setTarget(undefined)
         mapInstanceRef.current = null
       }
+      if (overlayRef.current) {
+        overlayRef.current = null
+      }
     }
   }, [])
 
+  // Update vector layers and fit view only when hut selection actually changes
   useEffect(() => {
     if (!mapInstanceRef.current) return
+
+    // Only update if the selection actually changed
+    if (selectedHutIds === lastSelectedHutIds.current) return
+    lastSelectedHutIds.current = selectedHutIds
 
     // Clear existing vector layers
     const existingVectorLayers = mapInstanceRef.current.getLayers().getArray()
@@ -84,182 +229,72 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
       mapInstanceRef.current!.removeLayer(layer)
     })
 
-    // If no huts selected, show Alps region
-    if (!hutsWithCoordinates || hutsWithCoordinates.length === 0) {
-      mapInstanceRef.current.getView().setCenter(fromLonLat([10.5, 46.5]))
-      mapInstanceRef.current.getView().setZoom(6)
-      return
-    }
-
-    const vectorSource = new VectorSource()
-
-    hutsWithCoordinates.forEach((hut, index) => {
-      const [lat, lon] = hut.coordinates!
-      const transformedCoords = fromLonLat([lon, lat])
-      const point = new Point(transformedCoords)
-      const feature = new Feature({
-        geometry: point,
-        name: hut.hutName
-      })
-      feature.setStyle(createNumberedMarkerStyle(index + 1))
-      vectorSource.addFeature(feature)
-    })
-
-    if (hutsWithCoordinates.length > 1) {
-      const lineCoordinates = hutsWithCoordinates.map(hut => {
-        const [lat, lon] = hut.coordinates!
-        return fromLonLat([lon, lat])
-      })
-      const lineString = new LineString(lineCoordinates)
-      const lineFeature = new Feature({
-        geometry: lineString
-      })
-      lineFeature.setStyle(new Style({
-        stroke: new Stroke({
-          color: '#3b82f6',
-          width: 3
-        })
-      }))
-      vectorSource.addFeature(lineFeature)
-    }
-
-    const vectorLayer = new VectorLayer({
-      source: vectorSource
-    })
-
+    const vectorLayer = createVectorLayerWithHuts(selectedHuts)
     mapInstanceRef.current.addLayer(vectorLayer)
 
-    if (hutsWithCoordinates.length > 0) {
-      const extent = vectorSource.getExtent()
-      if (extent.every(coord => coord !== Infinity && coord !== -Infinity)) {
-        mapInstanceRef.current.getView().fit(extent, {
-          padding: [50, 50, 50, 50],
-          maxZoom: 12
-        })
+    // Fit view to selected huts
+    fitViewToSelection()
+  }, [selectedHuts, selectedHutIds, hutsWithCoordinates, fitViewToSelection])
+
+  const toggleFullscreen = () => {
+    const wasFullscreen = isFullscreen
+    setIsFullscreen(!isFullscreen)
+    setPopupHut(null)
+    
+    // Update map size after state change
+    setTimeout(() => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.updateSize()
+        
+        // If exiting fullscreen, fit view to selected huts
+        if (wasFullscreen) {
+          fitViewToSelection()
+        }
       }
-    }
-  }, [hutsWithCoordinates])
-
-  const createFullscreenMap = () => {
-    if (!fullscreenMapRef.current) return
-
-    const openTopoMapLayer = new TileLayer({
-      source: new XYZ({
-        url: 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
-        attributions: [
-          'Map data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: © <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-        ]
-      })
-    })
-
-    fullscreenMapInstanceRef.current = new Map({
-      target: fullscreenMapRef.current,
-      layers: [openTopoMapLayer],
-      view: new View({
-        center: fromLonLat([10.5, 46.5]),
-        zoom: 6
-      })
-    })
-
-    // If no huts selected, show Alps region only
-    if (!hutsWithCoordinates || hutsWithCoordinates.length === 0) {
-      return
-    }
-
-    const vectorSource = new VectorSource()
-
-    hutsWithCoordinates.forEach((hut, index) => {
-      const [lat, lon] = hut.coordinates!
-      const transformedCoords = fromLonLat([lon, lat])
-      const point = new Point(transformedCoords)
-      const feature = new Feature({
-        geometry: point,
-        name: hut.hutName
-      })
-      feature.setStyle(createNumberedMarkerStyle(index + 1))
-      vectorSource.addFeature(feature)
-    })
-
-    if (hutsWithCoordinates.length > 1) {
-      const lineCoordinates = hutsWithCoordinates.map(hut => {
-        const [lat, lon] = hut.coordinates!
-        return fromLonLat([lon, lat])
-      })
-      const lineString = new LineString(lineCoordinates)
-      const lineFeature = new Feature({
-        geometry: lineString
-      })
-      lineFeature.setStyle(new Style({
-        stroke: new Stroke({
-          color: '#3b82f6',
-          width: 3
-        })
-      }))
-      vectorSource.addFeature(lineFeature)
-    }
-
-    const vectorLayer = new VectorLayer({
-      source: vectorSource
-    })
-
-    fullscreenMapInstanceRef.current.addLayer(vectorLayer)
-
-    if (hutsWithCoordinates.length > 0) {
-      const extent = vectorSource.getExtent()
-      if (extent.every(coord => coord !== Infinity && coord !== -Infinity)) {
-        fullscreenMapInstanceRef.current.getView().fit(extent, {
-          padding: [50, 50, 50, 50],
-          maxZoom: 12
-        })
-      }
-    }
-  }
-
-  const openFullscreen = () => {
-    setIsFullscreen(true)
-    setTimeout(createFullscreenMap, 100)
-  }
-
-  const closeFullscreen = () => {
-    if (fullscreenMapInstanceRef.current) {
-      fullscreenMapInstanceRef.current.setTarget(undefined)
-      fullscreenMapInstanceRef.current = null
-    }
-    setIsFullscreen(false)
+    }, 50)
   }
 
   return (
     <>
-      <div className="mb-6">
-        <div className="relative">
+      <div className={`mb-6 ${isFullscreen ? 'h-64' : ''}`}>
+        <div 
+          className={
+            isFullscreen 
+              ? "fixed inset-0 z-50 bg-background"
+              : "relative w-full h-64 rounded-lg border border-border overflow-hidden"
+          }
+        >
           <div 
             ref={mapRef} 
-            className="w-full h-64 rounded-lg border border-border overflow-hidden"
+            className={`${
+              isFullscreen 
+                ? "w-screen h-screen" 
+                : "w-full h-full pointer-events-none"
+            }`}
           />
           <button
-            onClick={openFullscreen}
-            className="absolute top-2 right-2 z-10 p-2 rounded-lg border border-border bg-card hover:bg-accent transition-colors shadow-lg"
-            title="View fullscreen"
+            onClick={toggleFullscreen}
+            className={`absolute z-10 p-2 rounded-lg border border-border bg-card hover:bg-accent transition-colors shadow-lg ${
+              isFullscreen ? "top-4 right-4" : "top-2 right-2"
+            }`}
+            title={isFullscreen ? "Exit fullscreen" : "View fullscreen"}
           >
-            <Maximize2 className="h-4 w-4" />
+            {isFullscreen ? <X className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
           </button>
         </div>
       </div>
 
-      {isFullscreen && (
-        <div className="fixed inset-0 z-50 bg-background !m-0">
-          <div className="absolute top-4 right-4 z-10">
-            <button
-              onClick={closeFullscreen}
-              className="p-2 rounded-lg border border-border bg-card hover:bg-accent transition-colors shadow-lg"
-              title="Close fullscreen"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
-          <div ref={fullscreenMapRef} className="w-full h-full" />
+      <div
+        ref={popupRef}
+        className={`${
+          popupHut ? 'block' : 'hidden'
+        } absolute z-[60] p-2 bg-card border border-border rounded-lg shadow-lg min-w-max`}
+      >
+        <div className="text-sm font-medium text-foreground">{popupHut}</div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
+          <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-border"></div>
         </div>
-      )}
+      </div>
     </>
   )
 }
