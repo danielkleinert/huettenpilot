@@ -4470,6 +4470,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^12.20.3":
+  version: 12.20.3
+  resolution: "framer-motion@npm:12.20.3"
+  dependencies:
+    motion-dom: "npm:^12.20.3"
+    motion-utils: "npm:^12.19.0"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10/2c276acad5474f8b21cb363a8c16104d72a3588fa3cbcfaed4290d3796ab9d56d9a4ddc9b947c5633d4fc2300ca181fd9dfdb57fdab2233b97371307c04fa929
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^3.0.0":
   version: 3.0.3
   resolution: "fs-minipass@npm:3.0.3"
@@ -4817,6 +4839,7 @@ __metadata:
     eslint: "npm:^9.25.0"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-refresh: "npm:^0.4.19"
+    framer-motion: "npm:^12.20.3"
     globals: "npm:^16.0.0"
     i18next: "npm:^25.2.1"
     i18next-browser-languagedetector: "npm:^8.2.0"
@@ -6006,6 +6029,22 @@ __metadata:
   bin:
     module-definition: bin/cli.js
   checksum: 10/a61280434289b9c2209a0075e3754731c797dce1816f164995e8a94ba57d3b0cffd6ca5d719b26cdef31c5fb41176676d54f2dc83cc62f7e61576369a05bef7c
+  languageName: node
+  linkType: hard
+
+"motion-dom@npm:^12.20.3":
+  version: 12.20.3
+  resolution: "motion-dom@npm:12.20.3"
+  dependencies:
+    motion-utils: "npm:^12.19.0"
+  checksum: 10/3cd1c2a2bd48a28242481912d3ac42dc937037a6ef9d388d292ffc264ed00020662fda30abfac31d02acf2b95846671fde27682a78733f178bf64735bae51fc9
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.19.0":
+  version: 12.19.0
+  resolution: "motion-utils@npm:12.19.0"
+  checksum: 10/a6fe6b329bf4e2070bb95788218f36f0d7ea6cc3098e6ea2646ed68d5be88d25fa30e55284463ace78d19a5e19714875a7b70055bd86ae6e52a5fdee08438470
   languageName: node
   linkType: hard
 
