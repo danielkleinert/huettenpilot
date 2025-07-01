@@ -55,7 +55,7 @@ describe('CalendarLegend', () => {
       const goodAvailabilityItem = screen.getByText('Good availability').closest('div')
       const indicator = goodAvailabilityItem?.querySelector('span')
       
-      expect(indicator).toHaveClass('text-green-700', 'dark:text-green-400')
+      expect(indicator).toHaveClass('text-green-500', 'font-semibold', 'dark:text-green-400', 'dark:font-normal')
     })
 
     it('displays limited availability indicator with correct color', () => {
@@ -64,7 +64,7 @@ describe('CalendarLegend', () => {
       const limitedAvailabilityItem = screen.getByText('Limited availability').closest('div')
       const indicator = limitedAvailabilityItem?.querySelector('span')
       
-      expect(indicator).toHaveClass('text-orange-600', 'dark:text-orange-400')
+      expect(indicator).toHaveClass('text-orange-400', 'font-semibold', 'dark:text-orange-400', 'dark:font-normal')
     })
 
     it('displays no availability indicator with correct color', () => {
@@ -73,7 +73,7 @@ describe('CalendarLegend', () => {
       const noAvailabilityItem = screen.getByText('No availability').closest('div')
       const indicator = noAvailabilityItem?.querySelector('span')
       
-      expect(indicator).toHaveClass('text-card-foreground')
+      expect(indicator).toHaveClass('text-gray-300', 'dark:text-gray-700')
     })
   })
 
@@ -148,9 +148,9 @@ describe('CalendarLegend', () => {
       const limitedIndicator = screen.getByText('Limited availability').previousElementSibling
       const noneIndicator = screen.getByText('No availability').previousElementSibling
       
-      expect(goodIndicator).toHaveClass('text-green-700')
-      expect(limitedIndicator).toHaveClass('text-orange-600')
-      expect(noneIndicator).toHaveClass('text-card-foreground')
+      expect(goodIndicator).toHaveClass('text-green-500')
+      expect(limitedIndicator).toHaveClass('text-orange-400')
+      expect(noneIndicator).toHaveClass('text-gray-300')
     })
   })
 })

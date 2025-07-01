@@ -84,53 +84,53 @@ describe('availability utilities', () => {
   describe('getAvailabilityColorClass', () => {
     it('returns correct color for GOOD status', () => {
       const color = getAvailabilityColorClass(AvailabilityStatus.GOOD)
-      expect(color).toBe('text-green-700 dark:text-green-400')
+      expect(color).toBe('text-green-500 font-semibold dark:text-green-400 dark:font-normal')
     })
 
     it('returns correct color for LIMITED status', () => {
       const color = getAvailabilityColorClass(AvailabilityStatus.LIMITED)
-      expect(color).toBe('text-orange-600 dark:text-orange-400')
+      expect(color).toBe('text-orange-400 font-semibold dark:text-orange-400 dark:font-normal')
     })
 
     it('returns correct color for NONE status', () => {
       const color = getAvailabilityColorClass(AvailabilityStatus.NONE)
-      expect(color).toBe('text-card-foreground')
+      expect(color).toBe('text-gray-300 dark:text-gray-700')
     })
 
     it('returns default color for unknown status', () => {
       const color = getAvailabilityColorClass('unknown' as unknown as AvailabilityStatus)
-      expect(color).toBe('text-card-foreground')
+      expect(color).toBe('text-gray-300 dark:text-gray-700')
     })
   })
 
   describe('getAvailabilityColorClassForBeds', () => {
     it('returns correct color for good availability scenario', () => {
       const color = getAvailabilityColorClassForBeds(10, 4) // 6 extra beds
-      expect(color).toBe('text-green-700 dark:text-green-400')
+      expect(color).toBe('text-green-500 font-semibold dark:text-green-400 dark:font-normal')
     })
 
     it('returns correct color for limited availability scenario', () => {
       const color = getAvailabilityColorClassForBeds(6, 4) // 2 extra beds
-      expect(color).toBe('text-orange-600 dark:text-orange-400')
+      expect(color).toBe('text-orange-400 font-semibold dark:text-orange-400 dark:font-normal')
     })
 
     it('returns correct color for no availability scenario', () => {
       const color = getAvailabilityColorClassForBeds(2, 4) // insufficient beds
-      expect(color).toBe('text-card-foreground')
+      expect(color).toBe('text-gray-300 dark:text-gray-700')
     })
 
     it('returns correct color for null beds', () => {
       const color = getAvailabilityColorClassForBeds(null, 4)
-      expect(color).toBe('text-card-foreground')
+      expect(color).toBe('text-gray-300 dark:text-gray-700')
     })
 
     it('integrates correctly with getAvailabilityStatus', () => {
       // Test that the combined function works as expected
       const testCases = [
-        { beds: 15, group: 4, expected: 'text-green-700 dark:text-green-400' },
-        { beds: 8, group: 4, expected: 'text-orange-600 dark:text-orange-400' },
-        { beds: 3, group: 4, expected: 'text-card-foreground' },
-        { beds: null, group: 4, expected: 'text-card-foreground' }
+        { beds: 15, group: 4, expected: 'text-green-500 font-semibold dark:text-green-400 dark:font-normal' },
+        { beds: 8, group: 4, expected: 'text-orange-400 font-semibold dark:text-orange-400 dark:font-normal' },
+        { beds: 3, group: 4, expected: 'text-gray-300 dark:text-gray-700' },
+        { beds: null, group: 4, expected: 'text-gray-300 dark:text-gray-700' }
       ]
 
       testCases.forEach(({ beds, group, expected }) => {
@@ -168,7 +168,7 @@ describe('availability utilities', () => {
       expect(getAvailabilityColorClassForBeds(6, 4)).toContain('orange')
       
       // No availability: neutral colors for insufficient beds
-      expect(getAvailabilityColorClassForBeds(2, 4)).toBe('text-card-foreground')
+      expect(getAvailabilityColorClassForBeds(2, 4)).toBe('text-gray-300 dark:text-gray-700')
     })
 
     it('handles real-world scenarios correctly', () => {

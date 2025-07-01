@@ -190,7 +190,7 @@ describe('DatePopup', () => {
       render(<DatePopup {...defaultProps} tourDate={tourDateWithHighAvailability} />)
       
       const availabilityText = screen.getByText('15 beds available')
-      expect(availabilityText).toHaveClass('text-green-700')
+      expect(availabilityText).toHaveClass('text-green-500')
     })
 
     it('applies limited availability color for medium bed count', () => {
@@ -209,7 +209,7 @@ describe('DatePopup', () => {
       render(<DatePopup {...defaultProps} tourDate={tourDateWithLimitedAvailability} />)
       
       const availabilityText = screen.getByText('6 beds available')
-      expect(availabilityText).toHaveClass('text-orange-600')
+      expect(availabilityText).toHaveClass('text-orange-400')
     })
 
     it('applies no availability color for insufficient beds', () => {
@@ -228,7 +228,7 @@ describe('DatePopup', () => {
       render(<DatePopup {...defaultProps} tourDate={tourDateWithInsufficientAvailability} />)
       
       const availabilityText = screen.getByText('2 beds available')
-      expect(availabilityText).toHaveClass('text-card-foreground')
+      expect(availabilityText).toHaveClass('text-gray-300')
     })
 
     it('applies muted color for null availability', () => {

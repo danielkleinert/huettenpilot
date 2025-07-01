@@ -187,7 +187,7 @@ describe('CalendarMonth', () => {
       render(<CalendarMonth {...defaultProps} month={yesterdayMonth} />)
       
       const yesterdayElement = screen.getByText(yesterday.getDate().toString())
-      expect(yesterdayElement.parentElement).toHaveClass('text-muted-foreground')
+      expect(yesterdayElement.parentElement).toHaveClass('text-gray-300', 'dark:text-gray-700')
     })
 
     it('applies availability color for dates with tour data', () => {
@@ -197,7 +197,7 @@ describe('CalendarMonth', () => {
       
       const dateElement = screen.getByText('15')
       // 8 beds for group of 4 = limited availability (4 extra beds, less than 5)
-      expect(dateElement.parentElement).toHaveClass('text-orange-600')
+      expect(dateElement.parentElement).toHaveClass('text-orange-400', 'font-semibold', 'dark:text-orange-400', 'dark:font-normal')
     })
 
     it('applies font-medium for dates with sufficient availability', () => {
@@ -280,7 +280,7 @@ describe('CalendarMonth', () => {
       
       const dateElement = screen.getByText('15')
       // Should have good availability color class (8 beds for group of 4 = limited)
-      expect(dateElement.parentElement).toHaveClass('text-orange-600')
+      expect(dateElement.parentElement).toHaveClass('text-orange-400', 'font-semibold', 'dark:text-orange-400', 'dark:font-normal')
     })
   })
 
@@ -304,7 +304,7 @@ describe('CalendarMonth', () => {
       
       const dateElement = screen.getByText('15')
       // 8 beds for group of 8 = exactly enough (limited status)
-      expect(dateElement.parentElement).toHaveClass('text-orange-600')
+      expect(dateElement.parentElement).toHaveClass('text-orange-400', 'font-semibold', 'dark:text-orange-400', 'dark:font-normal')
     })
 
     it('works with different months and years', () => {
@@ -324,7 +324,7 @@ describe('CalendarMonth', () => {
       render(<CalendarMonth {...defaultProps} />)
       
       const dateElement = screen.getByText('15')
-      expect(dateElement.parentElement).toHaveClass('text-card-foreground')
+      expect(dateElement.parentElement).toHaveClass('text-gray-300', 'dark:text-gray-700')
     })
   })
 })

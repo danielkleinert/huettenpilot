@@ -156,12 +156,13 @@ scripts/
 - To update the search list: run `yarn fetch-hut-reservation-info` and `yarn fetch-osm-huts` followed by `yarn generate-hut-list`
 
 ### Common Tasks
-1. Run `yarn lint` to check code quality before committing
+1. **ALWAYS run `/project:validate` before committing** - this ensures build, lint, and tests all pass
 2. Use `yarn build` to verify changes work correctly
 3. Run `yarn test:run` to verify tests pass before committing
-4. New API endpoints go in `src/services/`
-5. New types go in `src/types/index.ts`
-6. UI components should use semantic Tailwind color classes (bg-card, text-foreground, etc.)
-7. Data maintenance scripts are in `scripts/` directory
-8. All new UI text must be translatable - add keys to all language files in `src/i18n/locales/`
-9. Language selector is located in the footer for easy access
+4. Run `yarn lint` to check code quality before committing
+5. New API endpoints go in `src/services/`
+6. New types go in `src/types/index.ts`
+7. UI components should use semantic Tailwind color classes (bg-card, text-foreground, etc.)
+8. Data maintenance scripts are in `scripts/` directory
+9. All new UI text must be translatable - add keys to all language files in `src/i18n/locales/`
+10. Language selector is located in the footer for easy access
