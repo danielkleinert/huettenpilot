@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import type { TourOption } from '@/types'
-import { getAvailabilityColorClassForBeds } from '@/lib/availability'
+import { getAvailabilityColorClassForBeds, AvailabilityStatus, getAvailabilityColorClass } from '@/lib/availability'
 
 interface DatePopupProps {
   selectedDate: Date
@@ -39,18 +39,22 @@ export function DatePopup({
         {tourDate.hutAvailabilities.map(({ hut, availability }, index) => (
           <div key={hut.hutId} className="text-sm">
             <div className="font-medium">
-              {t('calendar.day', { number: index + 1 })}: {hut.hutName}
+              {t('calendar.day', { number: index + 1 })}: {hut.hutId < 0 ? t('hutSelector.placeholderHutName') : hut.hutName}
             </div>
             <div className={`text-sm ${
-              availability 
-                ? getAvailabilityColorClassForBeds(availability.freeBeds, groupSize)
-                : 'text-muted-foreground'
+              hut.hutId < 0 
+                ? getAvailabilityColorClass(AvailabilityStatus.LIMITED)
+                : availability 
+                  ? getAvailabilityColorClassForBeds(availability.freeBeds, groupSize)
+                  : 'text-muted-foreground'
             }`}>
-              {availability 
-                ? availability.hutStatus === 'CLOSED'
-                  ? t('calendar.closed')
-                  : t('calendar.bedsAvailable', { count: availability.freeBeds || 0 })
-                : t('calendar.noAvailabilityData')
+              {hut.hutId < 0
+                ? t('calendar.availabilityUnknown')
+                : availability 
+                  ? availability.hutStatus === 'CLOSED'
+                    ? t('calendar.closed')
+                    : t('calendar.bedsAvailable', { count: availability.freeBeds || 0 })
+                  : t('calendar.noAvailabilityData')
               }
             </div>
           </div>

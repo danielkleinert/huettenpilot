@@ -15,7 +15,7 @@ export function getStateFromUrl(): UrlState {
     : []
 
   return {
-    groupSize: Math.max(1, Math.min(50, groupSize)),
+    groupSize: Math.max(1, Math.min(50, isNaN(groupSize) ? 2 : groupSize)),
     hutIds
   }
 }

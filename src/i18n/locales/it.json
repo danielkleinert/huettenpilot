@@ -8,7 +8,9 @@
     "groupSize": "Dimensione del gruppo",
     "groupSizePlaceholder": "Numero di persone",
     "searchPlaceholder": "Cerca e aggiungi rifugi...",
-    "reverse": "Inverti Ordine"
+    "reverse": "Inverti Ordine",
+    "placeholderHutName": "Segnaposto",
+    "placeholderHutDescription": "Usa per campeggio, alloggi privati o rifugi non nel database"
   },
   "calendar": {
     "title": "Date Tour Disponibili",
@@ -20,6 +22,7 @@
     "bedsAvailable_other": "{{count}} posti letto disponibili",
     "closed": "CHIUSO",
     "noAvailabilityData": "Nessun dato di disponibilità",
+    "availabilityUnknown": "Disponibilità sconosciuta",
     "noDateFound": "Nessuna data con dati di disponibilità trovata.",
     "legend": {
       "available": "Disponibile (5+ posti di riserva)",

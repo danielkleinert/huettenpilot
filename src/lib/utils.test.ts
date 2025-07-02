@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { cn, calculateDistance, normalizeHutName, fuzzyHutNameMatch } from './utils'
+import { cn, calculateDistance, normalizeHutName, fuzzyHutNameMatch, createPlaceholderHut } from './utils'
 
 describe('cn', () => {
   it('merges class names correctly', () => {
@@ -161,5 +161,17 @@ describe('fuzzyHutNameMatch', () => {
     expect(fuzzyHutNameMatch("St. Anton's Lodge", "St Antons Lodge")).toBe(true)
     expect(fuzzyHutNameMatch("Drei-Seen-Hütte", "Drei Seen Hütte")).toBe(true)
     expect(fuzzyHutNameMatch("Weiß-Spitze Hut", "WeissSpitze Hut")).toBe(true)
+  })
+})
+
+describe('createPlaceholderHut', () => {
+  it('creates placeholder hut with id -1', () => {
+    const hut = createPlaceholderHut()
+    
+    expect(hut).toEqual({
+      hutId: -1,
+      hutName: 'Placeholder',
+      coordinates: null
+    })
   })
 })

@@ -3,8 +3,11 @@ import { hutApi } from '@/services/hutApi'
 import type { HutAvailability } from '@/types'
 
 export function useHutAvailability(hutIds: number[]) {
+  const realHutIds = hutIds.filter(id => id > 0)
+  const placeholderHutIds = hutIds.filter(id => id < 0)
+  
   const queries = useQueries({
-    queries: hutIds.map(hutId => ({
+    queries: realHutIds.map(hutId => ({
       queryKey: ['hutAvailability', hutId],
       queryFn: () => hutApi.fetchHutAvailability(hutId),
       staleTime: 5 * 60 * 1000,
@@ -18,13 +21,18 @@ export function useHutAvailability(hutIds: number[]) {
   const isError = queries.some(query => query.isError)
   const errors = queries.filter(query => query.error).map(query => query.error)
   const data: Record<number, HutAvailability[]> = {}
-  hutIds.forEach((hutId, index) => {
+  
+  realHutIds.forEach((hutId, index) => {
     const query = queries[index]
     if (query.data) {
       data[hutId] = query.data
     } else if (query.error) {
       data[hutId] = []
     }
+  })
+  
+  placeholderHutIds.forEach(hutId => {
+    data[hutId] = []
   })
 
   return {

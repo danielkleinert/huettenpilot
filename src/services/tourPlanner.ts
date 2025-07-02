@@ -45,7 +45,9 @@ export class TourPlannerService {
       const dayAvailability = this.findAvailabilityForDate(hutAvailability, targetDate)
       
       if (!dayAvailability) {
-        minAvailableBeds = 0
+        if (hut.hutId >= 0) {
+          minAvailableBeds = 0
+        }
         hutAvailabilities.push({
           hut,
           availability: null

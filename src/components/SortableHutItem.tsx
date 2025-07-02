@@ -1,8 +1,10 @@
-import {Bed, ExternalLink, GripVertical, Mountain, Ticket, X} from 'lucide-react'
+import {Bed, ExternalLink, GripVertical, Mountain, Ticket, X, CircleDashed} from 'lucide-react'
 import {useSortable} from '@dnd-kit/sortable'
 import {CSS} from '@dnd-kit/utilities'
+import {useTranslation} from 'react-i18next'
 import type {Hut} from '@/types'
 import {useHutInfo} from '@/hooks/useHutInfo'
+import {AvailabilityStatus, getAvailabilityColorClass} from '@/lib/availability'
 
 interface SortableHutItemProps {
   hut: Hut
@@ -11,6 +13,7 @@ interface SortableHutItemProps {
 }
 
 export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) {
+  const { t } = useTranslation()
   const {
     attributes,
     listeners,
@@ -20,6 +23,7 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
     isDragging,
   } = useSortable({ id: `${index}` })
 
+  const isPlaceholder = hut.hutId < 0
   const { data: hutInfo, isLoading } = useHutInfo(hut.hutId)
 
   const style = {
@@ -40,6 +44,14 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
   }
 
   const details = () => {
+    if (isPlaceholder) {
+      return (
+        <div className="text-sm text-muted-foreground">
+          {t('hutSelector.placeholderHutDescription')}
+        </div>
+      )
+    }
+
     return <>
       {isLoading && (
           <div className="text-sm text-muted-foreground">Loading hut details...</div>
@@ -116,8 +128,11 @@ export function SortableHutItem({ hut, index, onRemove }: SortableHutItemProps) 
         )}
 
         <div className="flex-1 min-w-0">
-          <div className="font-medium text-success text-lg mb-2">
-            {hut.hutName}
+          <div className="font-medium text-success text-lg mb-2 flex items-center gap-2">
+            {isPlaceholder && (
+              <CircleDashed className={`h-5 w-5 ${getAvailabilityColorClass(AvailabilityStatus.LIMITED)}`} />
+            )}
+            {isPlaceholder ? t('hutSelector.placeholderHutName') : hut.hutName}
           </div>
 
           <div className="hidden @sm:block">

@@ -1,9 +1,11 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CircleDashed } from 'lucide-react'
 import { Input } from './ui/input'
 import hutData from '@/hut_ids.json'
 import type { Hut } from '@/types'
-import { calculateDistance, fuzzyHutNameMatch } from '@/lib/utils'
+import { calculateDistance, fuzzyHutNameMatch, createPlaceholderHut } from '@/lib/utils'
+import { AvailabilityStatus, getAvailabilityColorClass } from '@/lib/availability'
 
 interface HutSearchProps {
   onSelectHut: (hut: Hut) => void
@@ -17,27 +19,38 @@ export function HutSearch({ onSelectHut, selectedHuts }: HutSearchProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1)
 
   const filteredHuts = useMemo(() => {
-    let huts = hutData as Hut[]
+    const placeholderHut = createPlaceholderHut()
+    
+    let huts = [placeholderHut, ...(hutData as Hut[])]
 
     if (searchTerm) {
-      huts = huts.filter(hut => 
-        fuzzyHutNameMatch(hut.hutName, searchTerm)
-      )
+      huts = huts.filter(hut => {
+        if (hut.hutId < 0) {
+          return t('hutSelector.placeholderHutName').toLowerCase().includes(searchTerm.toLowerCase()) ||
+                 'placeholder'.toLowerCase().includes(searchTerm.toLowerCase())
+        }
+        return fuzzyHutNameMatch(hut.hutName, searchTerm)
+      })
     }
 
     const lastHutWithCoords = selectedHuts.slice().reverse().find(hut => hut.coordinates)
     if (lastHutWithCoords) {
-      huts = huts
-        .filter(hut => hut.coordinates !== null)
+      const placeholderHuts = huts.filter(hut => hut.hutId < 0)
+      const regularHutsWithCoords = huts
+        .filter(hut => hut.coordinates !== null && hut.hutId > 0)
         .map(hut => ({
           ...hut,
           distance: calculateDistance(lastHutWithCoords.coordinates!, hut.coordinates!)
         }))
         .sort((a, b) => a.distance - b.distance)
+      
+      huts = searchTerm 
+        ? [...placeholderHuts, ...regularHutsWithCoords]
+        : [...regularHutsWithCoords, ...placeholderHuts]
     }
 
     return huts.slice(0, 10)
-  }, [searchTerm, selectedHuts])
+  }, [searchTerm, selectedHuts, t])
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isFocused || filteredHuts.length === 0) return
@@ -97,7 +110,12 @@ export function HutSearch({ onSelectHut, selectedHuts }: HutSearchProps) {
               }`}
               onClick={() => selectHut(hut)}
             >
-              <div className="font-medium">{hut.hutName}</div>
+              <div className="font-medium flex items-center gap-2">
+                {hut.hutId < 0 && (
+                  <CircleDashed className={`h-4 w-4 ${getAvailabilityColorClass(AvailabilityStatus.LIMITED)}`} />
+                )}
+                {hut.hutId < 0 ? t('hutSelector.placeholderHutName') : hut.hutName}
+              </div>
             </button>
           ))}
         </div>

@@ -8,7 +8,9 @@
     "groupSize": "Gruppengröße",
     "groupSizePlaceholder": "Anzahl Personen",
     "searchPlaceholder": "Hütten suchen und hinzufügen...",
-    "reverse": "Reihenfolge umkehren"
+    "reverse": "Reihenfolge umkehren",
+    "placeholderHutName": "Platzhalter",
+    "placeholderHutDescription": "Für Camping, private Unterkünfte oder Hütten, die nicht in der Datenbank sind"
   },
   "calendar": {
     "title": "Verfügbare Tourdaten",
@@ -20,6 +22,7 @@
     "bedsAvailable_other": "{{count}} Betten verfügbar",
     "closed": "GESCHLOSSEN",
     "noAvailabilityData": "Keine Verfügbarkeitsdaten",
+    "availabilityUnknown": "Verfügbarkeit unbekannt",
     "noDateFound": "Keine Termine mit Verfügbarkeitsdaten gefunden.",
     "legend": {
       "available": "Verfügbar (5+ Betten Reserve)",

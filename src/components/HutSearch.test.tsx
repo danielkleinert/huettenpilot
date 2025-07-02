@@ -27,7 +27,8 @@ vi.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string) => {
       const translations: Record<string, string> = {
-        'hutSelector.searchPlaceholder': 'Search for huts...'
+        'hutSelector.searchPlaceholder': 'Search for huts...',
+        'hutSelector.placeholderHutName': 'Placeholder'
       }
       return translations[key] || key
     }
@@ -45,7 +46,12 @@ vi.mock('@/lib/utils', () => ({
   fuzzyHutNameMatch: vi.fn((hutName: string, searchTerm: string) => {
     const normalize = (str: string) => str.toLowerCase().replace(/['`\-\s]/g, '')
     return normalize(hutName).includes(normalize(searchTerm))
-  })
+  }),
+  createPlaceholderHut: vi.fn((hutId: number = -1) => ({
+    hutId,
+    hutName: 'Placeholder',
+    coordinates: null
+  }))
 }))
 
 describe('HutSearch', () => {
@@ -502,6 +508,94 @@ describe('HutSearch', () => {
       
       await waitFor(() => {
         expect(screen.getByText('Alpine Hut One')).toBeInTheDocument()
+      })
+    })
+  })
+
+  describe('Placeholder hut functionality', () => {
+    it('displays placeholder hut at the top of results', async () => {
+      render(<HutSearch onSelectHut={mockOnSelectHut} selectedHuts={mockSelectedHuts} />)
+      
+      const input = screen.getByPlaceholderText('Search for huts...')
+      fireEvent.focus(input)
+      
+      await waitFor(() => {
+        const buttons = screen.getAllByRole('button')
+        expect(buttons[0]).toHaveTextContent('Placeholder')
+      })
+    })
+
+    it('shows placeholder hut when searching', async () => {
+      render(<HutSearch onSelectHut={mockOnSelectHut} selectedHuts={mockSelectedHuts} />)
+      
+      const input = screen.getByPlaceholderText('Search for huts...')
+      fireEvent.focus(input)
+      fireEvent.change(input, { target: { value: 'placeholder' } })
+      
+      await waitFor(() => {
+        expect(screen.getByText('Placeholder')).toBeInTheDocument()
+      })
+    })
+
+    it('can select placeholder hut', async () => {
+      render(<HutSearch onSelectHut={mockOnSelectHut} selectedHuts={mockSelectedHuts} />)
+      
+      const input = screen.getByPlaceholderText('Search for huts...')
+      fireEvent.focus(input)
+      
+      await waitFor(() => {
+        const placeholderButton = screen.getByText('Placeholder')
+        fireEvent.click(placeholderButton)
+      })
+      
+      expect(mockOnSelectHut).toHaveBeenCalledWith({
+        hutId: -1,
+        hutName: 'Placeholder',
+        coordinates: null
+      })
+    })
+
+    it('displays placeholder hut with CircleDashed icon', async () => {
+      render(<HutSearch onSelectHut={mockOnSelectHut} selectedHuts={mockSelectedHuts} />)
+      
+      const input = screen.getByPlaceholderText('Search for huts...')
+      fireEvent.focus(input)
+      
+      await waitFor(() => {
+        const placeholderButton = screen.getByText('Placeholder').closest('button')
+        expect(placeholderButton).toBeInTheDocument()
+        // Note: Icon testing would require additional setup for SVG elements
+      })
+    })
+
+    it('maintains placeholder at top when searching for other huts', async () => {
+      render(<HutSearch onSelectHut={mockOnSelectHut} selectedHuts={mockSelectedHuts} />)
+      
+      const input = screen.getByPlaceholderText('Search for huts...')
+      fireEvent.focus(input)
+      fireEvent.change(input, { target: { value: 'placeholder' } })
+      
+      await waitFor(() => {
+        const buttons = screen.getAllByRole('button')
+        expect(buttons[0]).toHaveTextContent('Placeholder')
+      })
+    })
+
+    it('shows placeholder when searching with distance sorting', async () => {
+      const selectedHutsWithCoords: Hut[] = [
+        { hutId: 1, hutName: 'Selected Hut', coordinates: [47.0, 11.0] }
+      ]
+      
+      render(<HutSearch onSelectHut={mockOnSelectHut} selectedHuts={selectedHutsWithCoords} />)
+      
+      const input = screen.getByPlaceholderText('Search for huts...')
+      fireEvent.focus(input)
+      fireEvent.change(input, { target: { value: 'placeholder' } })
+      
+      await waitFor(() => {
+        const buttons = screen.getAllByRole('button')
+        // When searching, placeholder should be at top
+        expect(buttons[0]).toHaveTextContent('Placeholder')
       })
     })
   })

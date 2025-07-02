@@ -8,7 +8,9 @@
     "groupSize": "Taille du groupe",
     "groupSizePlaceholder": "Nombre de personnes",
     "searchPlaceholder": "Cherche et ajoute des refuges...",
-    "reverse": "Inverser l'Ordre"
+    "reverse": "Inverser l'Ordre",
+    "placeholderHutName": "Emplacement",
+    "placeholderHutDescription": "Utilise pour le camping, l'hébergement privé ou les refuges non répertoriés dans la base de données"
   },
   "calendar": {
     "title": "Dates de Tour Disponibles",
@@ -20,6 +22,7 @@
     "bedsAvailable_other": "{{count}} lits disponibles",
     "closed": "FERMÉ",
     "noAvailabilityData": "Aucune donnée de disponibilité",
+    "availabilityUnknown": "Disponibilité inconnue",
     "noDateFound": "Aucune date avec des données de disponibilité trouvée.",
     "legend": {
       "available": "Disponible (5+ lits de réserve)",

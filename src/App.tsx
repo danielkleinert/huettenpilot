@@ -14,6 +14,7 @@ import type { Hut, TourOption } from './types'
 import { Users } from 'lucide-react'
 import { siGithub } from 'simple-icons'
 import { getStateFromUrl, updateUrlState } from './lib/urlState'
+import { createPlaceholderHut } from './lib/utils'
 import hutData from '@/hut_ids.json'
 
 function App() {
@@ -63,7 +64,12 @@ function App() {
     
     if (urlState.hutIds.length > 0) {
       const huts = urlState.hutIds
-        .map(id => hutData.find(hut => hut.hutId === id))
+        .map(id => {
+          if (id < 0) {
+            return createPlaceholderHut()
+          }
+          return hutData.find(hut => hut.hutId === id)
+        })
         .filter((hut): hut is Hut => hut !== undefined)
       setSelectedHuts(huts)
     }

@@ -74,7 +74,9 @@ export function createTourLayer(selectedHuts: Hut[]): VectorLayer<VectorSource> 
   const vectorSource = new VectorSource()
   const hutsWithCoordinates = selectedHuts.filter((hut) => hut.coordinates)
 
-  hutsWithCoordinates.forEach((hut, index) => {
+  hutsWithCoordinates.forEach((hut) => {
+    const originalIndex = selectedHuts.findIndex(originalHut => originalHut.hutId === hut.hutId) + 1
+    
     const [lat, lon] = hut.coordinates!
     const feature = new Feature({
       geometry: new Point(fromLonLat([lon, lat])),
@@ -82,7 +84,7 @@ export function createTourLayer(selectedHuts: Hut[]): VectorLayer<VectorSource> 
       hutId: hut.hutId,
       isSelected: true,
     })
-    feature.setStyle(createNumberedMarkerStyle(index + 1))
+    feature.setStyle(createNumberedMarkerStyle(originalIndex))
     vectorSource.addFeature(feature)
   })
 

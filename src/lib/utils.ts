@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
+import type { Hut } from "@/types"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -38,4 +39,12 @@ export function calculateDistance(coord1: [number, number], coord2: [number, num
   
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
   return R * c
+}
+
+export function createPlaceholderHut(): Hut {
+  return {
+    hutId: -1,
+    hutName: 'Placeholder',
+    coordinates: null
+  }
 }

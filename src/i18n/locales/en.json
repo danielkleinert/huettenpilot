@@ -8,7 +8,9 @@
     "groupSize": "Group Size",
     "groupSizePlaceholder": "Number of people",
     "searchPlaceholder": "Search and add huts...",
-    "reverse": "Reverse Order"
+    "reverse": "Reverse Order",
+    "placeholderHutName": "Placeholder",
+    "placeholderHutDescription": "Use for camping, private accommodation, or huts not in the database"
   },
   "calendar": {
     "title": "Available Tour Dates",
@@ -20,6 +22,7 @@
     "bedsAvailable_other": "{{count}} beds available",
     "closed": "CLOSED",
     "noAvailabilityData": "No availability data",
+    "availabilityUnknown": "Availability unknown",
     "noDateFound": "No dates with availability data found.",
     "legend": {
       "available": "Available (5+ beds to spare)",
