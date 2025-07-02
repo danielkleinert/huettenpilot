@@ -8,17 +8,22 @@ export class TourPlannerService {
     if (huts.length === 0) return []
 
     const allDates: TourOption[] = []
-    const firstHutAvailability = availabilityData[huts[0].hutId] || []
     
-    for (const startDay of firstHutAvailability) {
-      const startDate = new Date(startDay.date)
+    const today = new Date()
+    const endDate = new Date(today)
+    endDate.setMonth(today.getMonth() + 4)
+    endDate.setDate(endDate.getDate() + huts.length)
+    
+    const currentDate = new Date(today)
+    while (currentDate <= endDate) {
       const tourDateResult = this.getAvailabilityForAllHuts(
         huts,
         availabilityData,
-        startDate
+        new Date(currentDate)
       )
       
       allDates.push(tourDateResult)
+      currentDate.setDate(currentDate.getDate() + 1)
     }
     
     return allDates.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
