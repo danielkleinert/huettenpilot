@@ -7,7 +7,8 @@
     "title": "Seleziona i rifugi per il tuo tour",
     "groupSize": "Dimensione del gruppo",
     "groupSizePlaceholder": "Numero di persone",
-    "searchPlaceholder": "Cerca e aggiungi rifugi..."
+    "searchPlaceholder": "Cerca e aggiungi rifugi...",
+    "reverse": "Inverti Ordine"
   },
   "calendar": {
     "title": "Date Tour Disponibili",

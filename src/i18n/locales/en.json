@@ -7,7 +7,8 @@
     "title": "Select Huts for Your Tour",
     "groupSize": "Group Size",
     "groupSizePlaceholder": "Number of people",
-    "searchPlaceholder": "Search and add huts..."
+    "searchPlaceholder": "Search and add huts...",
+    "reverse": "Reverse Order"
   },
   "calendar": {
     "title": "Available Tour Dates",

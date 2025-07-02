@@ -2,6 +2,8 @@ import type { Hut } from '@/types'
 import { useTranslation } from 'react-i18next'
 import { SortableHutItem } from './SortableHutItem'
 import { HutSearch } from './HutSearch'
+import { Button } from './ui/button'
+import { ArrowUpDown } from 'lucide-react'
 import {
   DndContext,
   closestCenter,
@@ -59,9 +61,26 @@ export function HutSelector({ selectedHuts, onHutsChange }: HutSelectorProps) {
     onHutsChange(newHuts)
   }
 
+  const reverseHutOrder = () => {
+    onHutsChange([...selectedHuts].reverse())
+  }
+
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold">{t('hutSelector.title')}</h2>
+    <div className="space-y-4 @container ">
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold">{t('hutSelector.title')}</h2>
+        {selectedHuts.length > 1 && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={reverseHutOrder}
+            className="flex items-center gap-2"
+          >
+            <ArrowUpDown className="h-4 w-4" />
+            <span className="hidden @sm:inline">{t('hutSelector.reverse')}</span>
+          </Button>
+        )}
+      </div>
       
       <DndContext
         sensors={sensors}

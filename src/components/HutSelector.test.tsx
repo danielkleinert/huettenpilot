@@ -326,6 +326,98 @@ describe('HutSelector', () => {
     })
   })
 
+  describe('Reverse button functionality', () => {
+    it('does not show reverse button when no huts are selected', () => {
+      render(<HutSelector selectedHuts={[]} onHutsChange={mockOnHutsChange} />)
+      
+      expect(screen.queryByText('hutSelector.reverse')).not.toBeInTheDocument()
+    })
+
+    it('does not show reverse button when only one hut is selected', () => {
+      render(<HutSelector selectedHuts={[mockHuts[0]]} onHutsChange={mockOnHutsChange} />)
+      
+      expect(screen.queryByText('hutSelector.reverse')).not.toBeInTheDocument()
+    })
+
+    it('shows reverse button when two or more huts are selected', () => {
+      render(<HutSelector selectedHuts={[mockHuts[0], mockHuts[1]]} onHutsChange={mockOnHutsChange} />)
+      
+      expect(screen.getByText('hutSelector.reverse')).toBeInTheDocument()
+    })
+
+    it('calls onHutsChange with reversed order when reverse button is clicked', () => {
+      render(<HutSelector selectedHuts={mockHuts} onHutsChange={mockOnHutsChange} />)
+      
+      const reverseButton = screen.getByText('hutSelector.reverse')
+      fireEvent.click(reverseButton)
+      
+      expect(mockOnHutsChange).toHaveBeenCalledWith([
+        mockHuts[2], // Peak Hut 3
+        mockHuts[1], // Mountain Hut 2
+        mockHuts[0]  // Alpine Hut 1
+      ])
+    })
+
+    it('reverses two huts correctly', () => {
+      const twoHuts = [mockHuts[0], mockHuts[1]]
+      render(<HutSelector selectedHuts={twoHuts} onHutsChange={mockOnHutsChange} />)
+      
+      const reverseButton = screen.getByText('hutSelector.reverse')
+      fireEvent.click(reverseButton)
+      
+      expect(mockOnHutsChange).toHaveBeenCalledWith([
+        mockHuts[1], // Mountain Hut 2
+        mockHuts[0]  // Alpine Hut 1
+      ])
+    })
+
+    it('preserves hut data integrity when reversing', () => {
+      const complexHuts: Hut[] = [
+        { hutId: 100, hutName: 'First Hut äöü', coordinates: [47.123, 11.456] },
+        { hutId: 200, hutName: 'Second Hut with symbols!@#', coordinates: [47.789, 11.012] },
+        { hutId: 300, hutName: 'Third Hut', coordinates: null }
+      ]
+      
+      render(<HutSelector selectedHuts={complexHuts} onHutsChange={mockOnHutsChange} />)
+      
+      const reverseButton = screen.getByText('hutSelector.reverse')
+      fireEvent.click(reverseButton)
+      
+      expect(mockOnHutsChange).toHaveBeenCalledWith([
+        complexHuts[2], // Third Hut
+        complexHuts[1], // Second Hut with symbols!@#
+        complexHuts[0]  // First Hut äöü
+      ])
+    })
+
+    it('reverse button appears at the correct position in the header', () => {
+      render(<HutSelector selectedHuts={mockHuts} onHutsChange={mockOnHutsChange} />)
+      
+      const header = screen.getByText('hutSelector.title').parentElement
+      const reverseButton = screen.getByText('hutSelector.reverse')
+      
+      expect(header).toContainElement(reverseButton)
+    })
+
+    it('does not mutate original selectedHuts array when reversing', () => {
+      const originalHuts = [...mockHuts]
+      render(<HutSelector selectedHuts={mockHuts} onHutsChange={mockOnHutsChange} />)
+      
+      const reverseButton = screen.getByText('hutSelector.reverse')
+      fireEvent.click(reverseButton)
+      
+      // Original array should remain unchanged
+      expect(mockHuts).toEqual(originalHuts)
+      
+      // But onHutsChange should be called with reversed copy
+      expect(mockOnHutsChange).toHaveBeenCalledWith([
+        mockHuts[2],
+        mockHuts[1],
+        mockHuts[0]
+      ])
+    })
+  })
+
   describe('Edge cases', () => {
     it('handles empty coordinates gracefully', () => {
       const hutWithNullCoords: Hut = { hutId: 4, hutName: 'No Coords Hut', coordinates: null }

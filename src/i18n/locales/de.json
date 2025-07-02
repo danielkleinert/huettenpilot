@@ -7,7 +7,8 @@
     "title": "Hütten für deine Tour auswählen",
     "groupSize": "Gruppengröße",
     "groupSizePlaceholder": "Anzahl Personen",
-    "searchPlaceholder": "Hütten suchen und hinzufügen..."
+    "searchPlaceholder": "Hütten suchen und hinzufügen...",
+    "reverse": "Reihenfolge umkehren"
   },
   "calendar": {
     "title": "Verfügbare Tourdaten",
