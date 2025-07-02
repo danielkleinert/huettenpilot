@@ -41,6 +41,10 @@ vi.mock('@/lib/utils', () => ({
     const [lat1, lon1] = coord1
     const [lat2, lon2] = coord2
     return Math.sqrt((lat2 - lat1) ** 2 + (lon2 - lon1) ** 2)
+  }),
+  fuzzyHutNameMatch: vi.fn((hutName: string, searchTerm: string) => {
+    const normalize = (str: string) => str.toLowerCase().replace(/['`\-\s]/g, '')
+    return normalize(hutName).includes(normalize(searchTerm))
   })
 }))
 

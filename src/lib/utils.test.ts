@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { cn, calculateDistance } from './utils'
+import { cn, calculateDistance, normalizeHutName, fuzzyHutNameMatch } from './utils'
 
 describe('cn', () => {
   it('merges class names correctly', () => {
@@ -92,5 +92,74 @@ describe('calculateDistance', () => {
     const southPole = [-90.0, 0.0] as [number, number]
     const distance = calculateDistance(northPole, southPole)
     expect(distance).toBeCloseTo(20015, 0) // ~half Earth's circumference
+  })
+})
+
+describe('normalizeHutName', () => {
+  it('normalizes basic strings', () => {
+    expect(normalizeHutName('Test Hut')).toBe('testhut')
+  })
+
+  it('removes apostrophes and quotes', () => {
+    expect(normalizeHutName("St. Jakob's Hut")).toBe('stjakobshut')
+    expect(normalizeHutName("Hut 'Test'")).toBe('huttest')
+    expect(normalizeHutName('Hut `Test`')).toBe('huttest')
+  })
+
+  it('removes hyphens and spaces', () => {
+    expect(normalizeHutName('Alpine-Hut Test')).toBe('alpinehuttest')
+    expect(normalizeHutName('Multi Word Hut-Name')).toBe('multiwordhutname')
+  })
+
+  it('normalizes German umlauts', () => {
+    expect(normalizeHutName('Hütte Öl Ähnlich')).toBe('hutteolahnlich')
+    expect(normalizeHutName('Weiße Spitze')).toBe('weissespitze')
+  })
+})
+
+describe('fuzzyHutNameMatch', () => {
+  it('matches exact names', () => {
+    expect(fuzzyHutNameMatch('Alpine Hut', 'Alpine Hut')).toBe(true)
+  })
+
+  it('matches case insensitive', () => {
+    expect(fuzzyHutNameMatch('Alpine Hut', 'alpine hut')).toBe(true)
+    expect(fuzzyHutNameMatch('alpine hut', 'ALPINE HUT')).toBe(true)
+  })
+
+  it('matches partial names', () => {
+    expect(fuzzyHutNameMatch('Alpine Mountain Hut', 'Alpine')).toBe(true)
+    expect(fuzzyHutNameMatch('Alpine Mountain Hut', 'Mountain')).toBe(true)
+    expect(fuzzyHutNameMatch('Alpine Mountain Hut', 'Hut')).toBe(true)
+  })
+
+  it('matches with different apostrophe styles', () => {
+    expect(fuzzyHutNameMatch("St. Jakob's Hut", "St Jakobs Hut")).toBe(true)
+    expect(fuzzyHutNameMatch("St. Jakob's Hut", "St. Jakobs Hut")).toBe(true)
+    expect(fuzzyHutNameMatch("St. Jakob`s Hut", "St Jakobs")).toBe(true)
+  })
+
+  it('matches with different spacing and hyphens', () => {
+    expect(fuzzyHutNameMatch('Alpine-Mountain Hut', 'AlpineMountain')).toBe(true)
+    expect(fuzzyHutNameMatch('Alpine Mountain-Hut', 'Alpine MountainHut')).toBe(true)
+    expect(fuzzyHutNameMatch('Multi-Word-Hut', 'MultiWordHut')).toBe(true)
+  })
+
+  it('matches with German umlauts', () => {
+    expect(fuzzyHutNameMatch('Münchner Hütte', 'Munchner Hutte')).toBe(true)
+    expect(fuzzyHutNameMatch('Weiße Spitze', 'Weisse Spitze')).toBe(true)
+    expect(fuzzyHutNameMatch('Gößner Hütte', 'Gossner Hutte')).toBe(true)
+  })
+
+  it('does not match unrelated names', () => {
+    expect(fuzzyHutNameMatch('Alpine Hut', 'Valley Lodge')).toBe(false)
+    expect(fuzzyHutNameMatch('Mountain Peak', 'Lake House')).toBe(false)
+  })
+
+  it('handles complex real-world examples', () => {
+    expect(fuzzyHutNameMatch("Berghütte 'Alpenblick'", "Berghütte Alpenblick")).toBe(true)
+    expect(fuzzyHutNameMatch("St. Anton's Lodge", "St Antons Lodge")).toBe(true)
+    expect(fuzzyHutNameMatch("Drei-Seen-Hütte", "Drei Seen Hütte")).toBe(true)
+    expect(fuzzyHutNameMatch("Weiß-Spitze Hut", "WeissSpitze Hut")).toBe(true)
   })
 })

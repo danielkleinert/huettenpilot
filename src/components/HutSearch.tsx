@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Input } from './ui/input'
 import hutData from '@/hut_ids.json'
 import type { Hut } from '@/types'
-import { calculateDistance } from '@/lib/utils'
+import { calculateDistance, fuzzyHutNameMatch } from '@/lib/utils'
 
 interface HutSearchProps {
   onSelectHut: (hut: Hut) => void
@@ -21,7 +21,7 @@ export function HutSearch({ onSelectHut, selectedHuts }: HutSearchProps) {
 
     if (searchTerm) {
       huts = huts.filter(hut => 
-        hut.hutName.toLowerCase().includes(searchTerm.toLowerCase())
+        fuzzyHutNameMatch(hut.hutName, searchTerm)
       )
     }
 
