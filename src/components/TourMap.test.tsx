@@ -3,8 +3,24 @@ import { screen, fireEvent, waitFor } from '@testing-library/react'
 import { render } from '@/test/test-utils'
 import TourMap from './TourMap'
 import type { Hut } from '@/types'
+import React from 'react'
 
-// Mock OpenLayers completely
+vi.mock('framer-motion', () => ({
+  motion: {
+    div: (props: React.HTMLAttributes<HTMLDivElement> & { onLayoutAnimationStart?: () => void }) => {
+      const { onLayoutAnimationStart, children, ...rest } = props
+      if (onLayoutAnimationStart) {
+        setTimeout(onLayoutAnimationStart, 0)
+      }
+      return <div {...rest}>{children}</div>
+    },
+    button: (props: React.HTMLAttributes<HTMLButtonElement>) => {
+      const { children, ...rest } = props
+      return <button {...rest}>{children}</button>
+    }
+  }
+}))
+
 const mockMapInstance = {
   setTarget: vi.fn(),
   getLayers: vi.fn(() => ({
@@ -229,8 +245,10 @@ describe('TourMap', () => {
       expect(fullscreenContainer).toBeInTheDocument()
     })
 
-    it('calls updateSize on map when toggling fullscreen', async () => {
+    it('resizes map when toggling fullscreen', async () => {
       render(<TourMap selectedHuts={[]} />)
+      
+      mockMapInstance.updateSize.mockClear()
       
       const fullscreenButton = screen.getByRole('button', { name: /view fullscreen/i })
       fireEvent.click(fullscreenButton)
