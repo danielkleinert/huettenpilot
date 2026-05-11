@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Hüttenplan – Map Style Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    body { display: flex; flex-direction: column; height: 100vh; background: #1a1a1a; color: #eee; }
+    header {
+      flex: 0 0 auto;
+      display: flex; align-items: center; gap: 16px;
+      padding: 8px 14px;
+      background: #0f0f10;
+      border-bottom: 1px solid #2a2a2a;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    header .group { display: flex; align-items: center; gap: 6px; }
+    header label { color: #aaa; }
+    header select, header button {
+      background: #1f1f22; color: #eee; border: 1px solid #333; border-radius: 4px;
+      padding: 4px 8px; font: inherit; cursor: pointer;
+    }
+    header select:hover, header button:hover { border-color: #555; }
+    header .viewinfo { color: #888; font-variant-numeric: tabular-nums; margin-left: auto; }
+    #maps {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: #2a2a2a;
+      min-height: 0;
+    }
+    #maps.split { grid-template-columns: 1fr 1fr; }
+    .map-pane { position: relative; min-height: 0; }
+    .map-pane .map { position: absolute; inset: 0; }
+    .map-pane .badge {
+      position: absolute; top: 8px; left: 8px; z-index: 2;
+      background: rgba(15, 15, 16, 0.85);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #eee;
+      pointer-events: none;
+    }
+    .map-pane .err {
+      position: absolute; inset: 0; display: none;
+      align-items: center; justify-content: center;
+      background: rgba(40, 0, 0, 0.85); color: #fbb;
+      padding: 20px; text-align: center; font-size: 13px;
+      z-index: 3;
+    }
+    .map-pane .err.show { display: flex; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="group">
+      <label for="style-a">Style:</label>
+      <select id="style-a"></select>
+    </div>
+    <div class="group">
+      <label><input type="checkbox" id="split-toggle" /> Split compare</label>
+    </div>
+    <div class="group" id="style-b-group" style="display:none">
+      <label for="style-b">Right:</label>
+      <select id="style-b"></select>
+    </div>
+    <div class="viewinfo" id="viewinfo">–</div>
+  </header>
+  <div id="maps">
+    <div class="map-pane" id="pane-a">
+      <div class="badge" id="badge-a"></div>
+      <div class="map" id="map-a"></div>
+      <div class="err" id="err-a"></div>
+    </div>
+    <div class="map-pane" id="pane-b" style="display:none">
+      <div class="badge" id="badge-b"></div>
+      <div class="map" id="map-b"></div>
+      <div class="err" id="err-b"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script>
+    const MAPTILER_API_KEY = 'XNY3zRxbtlSGy9ojbIux';
+    const INITIAL = { center: [11.5, 47], zoom: 4.8, pitch: 0, bearing: 0 };
+
+    // Style definitions. `style` is either a URL or an async builder returning a style object.
+    const STYLES = [
+      {
+        id: 'outdoor',
+        label: 'MapTiler Outdoor (default)',
+        style: `https://api.maptiler.com/maps/outdoor-v2/style.json?key=${MAPTILER_API_KEY}`,
+      },
+      {
+        id: 'custom',
+        label: 'MapTiler Outdoor (custom – our edits)',
+        style: '/styles/outdoor-custom.json',
+      },
+      {
+        id: 'basemap-de',
+        label: 'basemap.de topo (Germany)',
+        style: 'https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_top.json',
+      },
+      {
+        id: 'swisstopo',
+        label: 'swisstopo basemap (Switzerland)',
+        style: 'https://vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json',
+      },
+      {
+        id: 'stadia-outdoors',
+        label: 'Stadia Outdoors',
+        style: 'https://tiles.stadiamaps.com/styles/outdoors.json',
+      },
+    ];
+
+    // URL-hash state: lets each tab keep its own selection + viewport across Vite
+    // full-reloads (and makes the view shareable). Format:
+    //   #a=<styleA>&b=<styleB>&s=<0|1>&v=<lng,lat,zoom,bearing,pitch>
+    const knownStyleIds = new Set(STYLES.map(s => s.id));
+    function parseHash() {
+      const h = location.hash.replace(/^#/, '');
+      if (!h) return {};
+      const p = new URLSearchParams(h);
+      const out = {};
+      if (knownStyleIds.has(p.get('a'))) out.styleA = p.get('a');
+      if (knownStyleIds.has(p.get('b'))) out.styleB = p.get('b');
+      if (p.get('s') != null) out.split = p.get('s') === '1';
+      const v = p.get('v');
+      if (v) {
+        const parts = v.split(',').map(Number);
+        if (parts.length >= 3 && parts.every(Number.isFinite)) {
+          out.view = { lng: parts[0], lat: parts[1], zoom: parts[2], bearing: parts[3] || 0, pitch: parts[4] || 0 };
+        }
+      }
+      return out;
+    }
+    let hashState = parseHash();
+
+    function writeHash() {
+      const v = hashState.view;
+      const parts = [];
+      parts.push('a=' + (hashState.styleA || 'outdoor'));
+      parts.push('b=' + (hashState.styleB || 'custom'));
+      parts.push('s=' + (hashState.split ? '1' : '0'));
+      if (v) {
+        const fmt = (n, d) => Number(n).toFixed(d).replace(/\.?0+$/, '');
+        parts.push('v=' + [fmt(v.lng,4), fmt(v.lat,4), fmt(v.zoom,2), fmt(v.bearing||0,1), fmt(v.pitch||0,1)].join(','));
+      }
+      const next = '#' + parts.join('&');
+      if (location.hash !== next) history.replaceState(null, '', next);
+    }
+
+    const initialStyleA = hashState.styleA || 'outdoor';
+    const initialStyleB = hashState.styleB || 'custom';
+    const initialSplit = !!hashState.split;
+    const initialView = hashState.view || null;
+
+    // Populate selects.
+    const selA = document.getElementById('style-a');
+    const selB = document.getElementById('style-b');
+    for (const s of STYLES) {
+      for (const sel of [selA, selB]) {
+        const opt = document.createElement('option');
+        opt.value = s.id;
+        opt.textContent = s.label;
+        sel.appendChild(opt);
+      }
+    }
+    selA.value = initialStyleA;
+    selB.value = initialStyleB;
+
+    function styleById(id) { return STYLES.find(s => s.id === id); }
+
+    async function resolveStyle(def) {
+      return typeof def.style === 'function' ? await def.style() : def.style;
+    }
+
+    function createMap(containerId) {
+      const v = initialView;
+      return new maplibregl.Map({
+        container: containerId,
+        style: { version: 8, sources: {}, layers: [] }, // placeholder; set after async resolve
+        center: v ? [v.lng, v.lat] : INITIAL.center,
+        zoom: v ? v.zoom : INITIAL.zoom,
+        pitch: v ? v.pitch : INITIAL.pitch,
+        bearing: v ? v.bearing : INITIAL.bearing,
+        attributionControl: { compact: true },
+      });
+    }
+
+    async function applyStyle(map, styleId, errEl, badgeEl, label) {
+      errEl.classList.remove('show');
+      errEl.textContent = '';
+      badgeEl.textContent = label;
+      try {
+        const def = styleById(styleId);
+        const style = await resolveStyle(def);
+        // diff:false forces a full rebuild. Without it, MapLibre tries to diff
+        // the old and new styles incrementally and chokes when sources/layers
+        // differ wildly (e.g. our maptiler_planet -> basemap.de's smarttiles_de),
+        // throwing "_checkLoaded undefined" and aborting the sprite load.
+        map.setStyle(style, { diff: false });
+      } catch (e) {
+        console.error('Failed to load style', styleId, e);
+        errEl.textContent = `Failed to load "${label}": ${e.message || e}`;
+        errEl.classList.add('show');
+      }
+    }
+
+    const mapA = createMap('map-a');
+    let mapB = null;
+
+    mapA.on('error', (e) => console.warn('[map A]', e?.error?.message || e));
+
+    // Initial load
+    applyStyle(mapA, selA.value, document.getElementById('err-a'), document.getElementById('badge-a'), styleById(selA.value).label);
+
+    selA.addEventListener('change', () => {
+      const def = styleById(selA.value);
+      applyStyle(mapA, selA.value, document.getElementById('err-a'), document.getElementById('badge-a'), def.label);
+      hashState.styleA = selA.value;
+      writeHash();
+    });
+
+    selB.addEventListener('change', () => {
+      hashState.styleB = selB.value;
+      writeHash();
+      if (!mapB) return;
+      const def = styleById(selB.value);
+      applyStyle(mapB, selB.value, document.getElementById('err-b'), document.getElementById('badge-b'), def.label);
+    });
+
+    // View info
+    const viewinfo = document.getElementById('viewinfo');
+    function updateViewInfo() {
+      const c = mapA.getCenter();
+      viewinfo.textContent = `lon ${c.lng.toFixed(3)}, lat ${c.lat.toFixed(3)}, zoom ${mapA.getZoom().toFixed(2)}`;
+    }
+    mapA.on('move', updateViewInfo);
+    mapA.once('load', updateViewInfo);
+
+    // Persist viewport in URL hash on every move-end (covers pan/zoom/rotate/pitch).
+    mapA.on('moveend', () => {
+      const c = mapA.getCenter();
+      hashState.view = { lng: c.lng, lat: c.lat, zoom: mapA.getZoom(), bearing: mapA.getBearing(), pitch: mapA.getPitch() };
+      writeHash();
+    });
+
+    // Split toggle with synced movement.
+    const splitToggle = document.getElementById('split-toggle');
+    const styleBGroup = document.getElementById('style-b-group');
+    const paneB = document.getElementById('pane-b');
+    const mapsEl = document.getElementById('maps');
+
+    let syncing = false;
+    function bindSync(a, b) {
+      function sync(src, dst) {
+        return () => {
+          if (syncing) return;
+          syncing = true;
+          dst.jumpTo({
+            center: src.getCenter(),
+            zoom: src.getZoom(),
+            bearing: src.getBearing(),
+            pitch: src.getPitch(),
+          });
+          syncing = false;
+        };
+      }
+      a.on('move', sync(a, b));
+      b.on('move', sync(b, a));
+    }
+
+    function setSplit(on) {
+      splitToggle.checked = on;
+      hashState.split = on;
+      writeHash();
+      if (on) {
+        styleBGroup.style.display = '';
+        paneB.style.display = '';
+        mapsEl.classList.add('split');
+        if (!mapB) {
+          mapB = createMap('map-b');
+          mapB.on('error', (e) => console.warn('[map B]', e?.error?.message || e));
+          bindSync(mapA, mapB);
+        } else {
+          mapB.resize();
+        }
+        mapA.resize();
+        const def = styleById(selB.value);
+        applyStyle(mapB, selB.value, document.getElementById('err-b'), document.getElementById('badge-b'), def.label);
+      } else {
+        styleBGroup.style.display = 'none';
+        paneB.style.display = 'none';
+        mapsEl.classList.remove('split');
+        mapA.resize();
+      }
+    }
+
+    splitToggle.addEventListener('change', () => setSplit(splitToggle.checked));
+
+    // Apply persisted split state.
+    if (initialSplit) setSplit(true);
+    else writeHash(); // make sure hash reflects current state on first load
+
+    window.addEventListener('resize', () => {
+      mapA.resize();
+      if (mapB) mapB.resize();
+    });
+  </script>
+</body>
+</html>
