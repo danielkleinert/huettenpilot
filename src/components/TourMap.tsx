@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import type { Hut } from '@/types'
 import { Maximize2, X } from 'lucide-react'
 import { useMap } from '@/hooks/useMap'
 import { useMapLayers } from '@/hooks/useMapLayers'
-import 'ol/ol.css'
 import { motion } from 'framer-motion'
+import '@maptiler/sdk/dist/maptiler-sdk.css'
 
 interface TourMapProps {
   selectedHuts: Hut[]
@@ -14,21 +15,44 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
   const popupRef = useRef<HTMLDivElement>(null)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [controlContainer, setControlContainer] = useState<HTMLDivElement | null>(null)
 
-  const { map, popupHut, setPopupHut } = useMap(mapRef, popupRef)
-  const { fitViewToSelection } = useMapLayers(map, selectedHuts)
+  const { map, popupHut, setPopupHut, isMapLoaded } = useMap(mapRef, popupRef)
+  const { fitViewToSelection } = useMapLayers(map, isMapLoaded, selectedHuts)
 
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen)
     setPopupHut(null)
   }
 
-  const handleAnimationComplete = () => {
+  const handleAnimationStart = () => {
     if (map) {
-      map.updateSize()
+      map.resize()
       fitViewToSelection()
     }
   }
+
+  useEffect(() => {
+    if (!map) return
+
+    const customControl = {
+      onAdd: () => {
+        const container = document.createElement('div')
+        container.className = 'maplibregl-ctrl maplibregl-ctrl-group fullscreen-toggle-ctrl'
+        setControlContainer(container)
+        return container
+      },
+      onRemove: () => {
+        setControlContainer(null)
+      }
+    }
+
+    map.addControl(customControl, 'top-right')
+
+    return () => {
+      map.removeControl(customControl)
+    }
+  }, [map])
 
   return (
     <>
@@ -36,7 +60,7 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
         <motion.div
           layout
           transition={{ duration: .3, ease: 'easeInOut' }}
-          onLayoutAnimationStart={handleAnimationComplete}
+          onLayoutAnimationStart={handleAnimationStart}
           className={
             isFullscreen
               ? 'fixed inset-0 z-50 bg-background'
@@ -45,34 +69,33 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
         >
           <div
             ref={mapRef}
-            className={`${
-              isFullscreen ? 'w-screen h-screen' : 'w-full h-full pointer-events-none'
-            }`}
+            className={`${isFullscreen
+              ? 'w-screen h-screen'
+              : 'w-full h-full pointer-events-none [&_.maplibregl-ctrl-top-right_>_.maplibregl-ctrl-group:not(.fullscreen-toggle-ctrl)]:hidden'
+              } relative`}
           />
-          <motion.button
-            layout
-            transition={{ duration: .3, ease: 'easeInOut' }}
-            onClick={toggleFullscreen}
-            className={`absolute z-10 p-2 rounded-lg border border-border bg-card hover:bg-accent transition-colors shadow-lg ${
-              isFullscreen ? 'top-4 right-4' : 'top-2 right-2'
-            }`}
-            title={isFullscreen ? 'Exit fullscreen' : 'View fullscreen'}
-          >
-            {isFullscreen ? <X className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
-          </motion.button>
+
+          {controlContainer && createPortal(
+            <motion.button
+              layout
+              transition={{ duration: .3, ease: 'easeInOut' }}
+              onClick={toggleFullscreen}
+              className="w-full h-full p-0 m-0 !flex !items-center !justify-center bg-transparent transition-colors hover:bg-gray-100 rounded-sm focus:outline-none"
+              title={isFullscreen ? 'Exit fullscreen' : 'View fullscreen'}
+            >
+              {isFullscreen ? <X className="h-4 w-4 text-black" /> : <Maximize2 className="h-4 w-4 text-black" />}
+            </motion.button>,
+            controlContainer
+          )}
         </motion.div>
       </div>
 
       <div
         ref={popupRef}
-        className={`${
-          popupHut ? 'block' : 'hidden'
-        } absolute z-[60] p-2 bg-card border border-border rounded-lg shadow-lg min-w-max`}
+        className={`${popupHut ? 'block' : 'hidden'
+          } p-2 bg-card border border-border rounded-lg shadow-lg w-max text-foreground text-sm`}
       >
-        <div className="text-sm font-medium text-foreground">{popupHut}</div>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
-          <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-border"></div>
-        </div>
+        <div className="font-medium">{popupHut}</div>
       </div>
     </>
   )

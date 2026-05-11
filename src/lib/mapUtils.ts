@@ -1,114 +1,84 @@
-import { Style, Icon, Circle, Fill, Stroke } from 'ol/style'
-import TileLayer from 'ol/layer/Tile'
-import XYZ from 'ol/source/XYZ'
-import VectorLayer from 'ol/layer/Vector'
-import VectorSource from 'ol/source/Vector'
-import { Feature } from 'ol'
-import { Point, LineString } from 'ol/geom'
-import { fromLonLat } from 'ol/proj'
 import type { Hut } from '@/types'
 import hutIds from '@/hut_ids.json'
+import type { FeatureCollection, Feature, Point, LineString } from 'geojson'
 
-export function createNumberedMarkerStyle(number: number): Style {
-  return new Style({
-    image: new Icon({
-      src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
-        <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="14" fill="#3b82f6" stroke="white" stroke-width="2"/>
-          <text x="16" y="21" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">${number}</text>
-        </svg>
-      `)}`,
-      scale: 1,
-      anchor: [0.5, 0.5],
-    }),
-  })
-}
+export const MAPTILER_API_KEY = 'XNY3zRxbtlSGy9ojbIux';
 
-export function createHutMarkerStyle(): Style {
-  return new Style({
-    image: new Circle({
-      radius: 6,
-      fill: new Fill({
-        color: '#ef4444',
-      }),
-      stroke: new Stroke({
-        color: 'white',
-        width: 2,
-      }),
-    }),
-  })
-}
+export const INITIAL_VIEW = {
+  center: [11.5, 47] as [number, number],
+  zoom: 4.8,
+  pitch: 0,
+  bearing: 0
+};
 
-export function createOpenTopoMapLayer(): TileLayer<XYZ> {
-  return new TileLayer({
-    source: new XYZ({
-      url: 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
-      attributions: [
-        'Map data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: © <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-      ],
-    }),
-  })
-}
+export function getAllHutsGeoJSON(): FeatureCollection<Point> {
+  const features: Feature<Point>[] = []
 
-export function createAllHutsLayer(): VectorLayer<VectorSource> {
-  const vectorSource = new VectorSource()
   hutIds.forEach((hut) => {
     if (hut.coordinates) {
       const [lat, lon] = hut.coordinates
-      const feature = new Feature({
-        geometry: new Point(fromLonLat([lon, lat])),
-        hutName: hut.hutName,
-        hutId: hut.hutId,
+      features.push({
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [lon, lat],
+        },
+        properties: {
+          hutName: hut.hutName,
+          hutId: hut.hutId,
+        },
       })
-      feature.setStyle(createHutMarkerStyle())
-      vectorSource.addFeature(feature)
     }
   })
-  return new VectorLayer({
-    source: vectorSource,
-    zIndex: 1,
-  })
+
+  return {
+    type: 'FeatureCollection',
+    features,
+  }
 }
 
-export function createTourLayer(selectedHuts: Hut[]): VectorLayer<VectorSource> {
-  const vectorSource = new VectorSource()
+export function getTourGeoJSON(selectedHuts: Hut[]): FeatureCollection<Point | LineString> {
+  const features: Feature<Point | LineString>[] = []
   const hutsWithCoordinates = selectedHuts.filter((hut) => hut.coordinates)
 
-  hutsWithCoordinates.forEach((hut) => {
-    const originalIndex = selectedHuts.findIndex(originalHut => originalHut.hutId === hut.hutId) + 1
-    
+  // Add points
+  hutsWithCoordinates.forEach((hut, index) => {
     const [lat, lon] = hut.coordinates!
-    const feature = new Feature({
-      geometry: new Point(fromLonLat([lon, lat])),
-      hutName: hut.hutName,
-      hutId: hut.hutId,
-      isSelected: true,
+    features.push({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [lon, lat],
+      },
+      properties: {
+        hutName: hut.hutName,
+        hutId: hut.hutId,
+        isSelected: true,
+        index: index + 1,
+      },
     })
-    feature.setStyle(createNumberedMarkerStyle(originalIndex))
-    vectorSource.addFeature(feature)
   })
 
+  // Add line
   if (hutsWithCoordinates.length > 1) {
     const lineCoordinates = hutsWithCoordinates.map((hut) => {
       const [lat, lon] = hut.coordinates!
-      return fromLonLat([lon, lat])
+      return [lon, lat]
     })
-    const lineFeature = new Feature({
-      geometry: new LineString(lineCoordinates),
+
+    features.push({
+      type: 'Feature',
+      geometry: {
+        type: 'LineString',
+        coordinates: lineCoordinates,
+      },
+      properties: {},
     })
-    lineFeature.setStyle(
-      new Style({
-        stroke: new Stroke({
-          color: '#3b82f6',
-          width: 3,
-        }),
-      }),
-    )
-    vectorSource.addFeature(lineFeature)
   }
 
-  return new VectorLayer({
-    source: vectorSource,
-    zIndex: 2,
-  })
+  return {
+    type: 'FeatureCollection',
+    features,
+  }
 }
+
