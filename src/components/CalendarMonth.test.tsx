@@ -34,6 +34,8 @@ vi.mock('react-i18next', () => ({
 }))
 
 describe('CalendarMonth', () => {
+  const FUTURE_YEAR = new Date().getFullYear() + 1
+
   const mockHut: Hut = {
     hutId: 1,
     hutName: 'Test Hut',
@@ -51,7 +53,7 @@ describe('CalendarMonth', () => {
   }
 
   const mockTourOption: TourOption = {
-    startDate: new Date(2025, 6, 15), // July 15, 2025 (future date)
+    startDate: new Date(FUTURE_YEAR, 6, 15),
     minAvailableBeds: 8,
     hutAvailabilities: [
       { hut: mockHut, availability: mockAvailability }
@@ -63,7 +65,7 @@ describe('CalendarMonth', () => {
   const mockOnDateHover = vi.fn()
 
   const defaultProps = {
-    month: new Date(2025, 6, 1), // July 2025 (future date)
+    month: new Date(FUTURE_YEAR, 6, 1),
     groupSize: 4,
     hoveredDate: null as Date | null,
     onDateClick: mockOnDateClick,
@@ -79,7 +81,7 @@ describe('CalendarMonth', () => {
   describe('Basic rendering', () => {
     it('renders month title correctly', () => {
       render(<CalendarMonth {...defaultProps} />)
-      expect(screen.getByText('July 2025')).toBeInTheDocument()
+      expect(screen.getByText(`July ${FUTURE_YEAR}`)).toBeInTheDocument()
     })
 
     it('renders all day names', () => {
@@ -93,7 +95,7 @@ describe('CalendarMonth', () => {
       expect(screen.getByText('Sun')).toBeInTheDocument()
     })
 
-    it('renders correct number of days for July 2025', () => {
+    it('renders correct number of days for July', () => {
       render(<CalendarMonth {...defaultProps} />)
       // July has 31 days
       expect(screen.getByText('1')).toBeInTheDocument()
@@ -122,7 +124,7 @@ describe('CalendarMonth', () => {
       const dateElement = screen.getByText('15')
       fireEvent.click(dateElement)
       
-      expect(mockOnDateClick).toHaveBeenCalledWith(new Date(2025, 6, 15))
+      expect(mockOnDateClick).toHaveBeenCalledWith(new Date(FUTURE_YEAR, 6, 15))
     })
 
     it('calls onDateHover when hovering over a date with tour data', () => {
@@ -132,7 +134,7 @@ describe('CalendarMonth', () => {
       const dateElement = screen.getByText('15')
       fireEvent.mouseEnter(dateElement)
       
-      expect(mockOnDateHover).toHaveBeenCalledWith(new Date(2025, 6, 15))
+      expect(mockOnDateHover).toHaveBeenCalledWith(new Date(FUTURE_YEAR, 6, 15))
     })
 
     it('does not call onDateHover when hovering over date without tour data', () => {
@@ -214,12 +216,12 @@ describe('CalendarMonth', () => {
     })
 
     it('highlights dates in tour duration when date is hovered', () => {
-      const hoveredDate = new Date(2025, 6, 15)
+      const hoveredDate = new Date(FUTURE_YEAR, 6, 15)
       const tourDate = {
         ...mockTourOption,
         hutAvailabilities: [
           { hut: mockHut, availability: mockAvailability },
-          { hut: mockHut, availability: { ...mockAvailability, date: '2025-07-16' } }
+          { hut: mockHut, availability: { ...mockAvailability, date: `${FUTURE_YEAR}-07-16` } }
         ]
       }
       
@@ -268,9 +270,9 @@ describe('CalendarMonth', () => {
       expect(mockGetTourOptionForDay).toHaveBeenCalled()
       
       // Verify it's called with actual dates
-      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(2025, 6, 1))
-      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(2025, 6, 15))
-      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(2025, 6, 31))
+      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(FUTURE_YEAR, 6, 1))
+      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(FUTURE_YEAR, 6, 15))
+      expect(mockGetTourOptionForDay).toHaveBeenCalledWith(new Date(FUTURE_YEAR, 6, 31))
     })
 
     it('applies correct styling based on availability status', () => {
@@ -308,10 +310,10 @@ describe('CalendarMonth', () => {
     })
 
     it('works with different months and years', () => {
-      const differentMonth = new Date(2025, 11, 1) // December 2025
+      const differentMonth = new Date(FUTURE_YEAR, 11, 1)
       render(<CalendarMonth {...defaultProps} month={differentMonth} />)
-      
-      expect(screen.getByText('December 2025')).toBeInTheDocument()
+
+      expect(screen.getByText(`December ${FUTURE_YEAR}`)).toBeInTheDocument()
     })
 
     it('handles tour dates with no availability data', () => {
