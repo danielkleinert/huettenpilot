@@ -36,6 +36,15 @@ export function useMap(mapContainer: React.RefObject<HTMLDivElement | null>, pop
     mapInstanceRef.current = map
 
     map.on('load', () => {
+      map.setSky({
+        'sky-color': '#a4cdf2',
+        'horizon-color': '#dbe9f4',
+        'fog-color': '#dbe9f4',
+        'sky-horizon-blend': 0.6,
+        'horizon-fog-blend': 0.6,
+        'fog-ground-blend': 0.8,
+        'atmosphere-blend': 0.8,
+      })
       setIsMapLoaded(true)
     })
 
