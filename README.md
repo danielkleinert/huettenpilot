@@ -1,6 +1,13 @@
 # Hüttenplan 🏔️
 
+**Live app**: [huettenpilot.netlify.app](https://huettenpilot.netlify.app)
+
 Ever tried booking a multi-day Alpine hut tour during peak season? It's like playing Tetris with mountain reservations - you need consecutive nights across multiple huts, but availability is scattered and constantly changing. Hüttenplan solves this by intelligently finding date ranges where all your selected huts have beds available.
+
+## When to use which tool
+
+- **You know your route, but need to find dates that work** → use [Hüttenplan](https://huettenpilot.netlify.app). Pick your huts and see which consecutive nights have beds available across all of them.
+- **You have fixed dates, but need to find a tour** → use the Alpenverein [Bettencheck](https://caa.alpenverein.at/service/bettencheck.html?). Enter your dates and discover which huts have availability.
 
 **Data Source**: All availability data and bookings are powered exclusively by [`hut-reservation.org`](https://hut-reservation.org).
 

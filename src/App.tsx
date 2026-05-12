@@ -11,7 +11,7 @@ import Datenschutz from './components/Datenschutz'
 import { useHutAvailability } from './hooks/useHutAvailability'
 import { TourPlannerService } from './services/tourPlanner'
 import type { Hut, TourOption } from './types'
-import { Users } from 'lucide-react'
+import { Users, ExternalLink } from 'lucide-react'
 import { siGithub } from 'simple-icons'
 import { getStateFromUrl, updateUrlState } from './lib/urlState'
 import { createPlaceholderHut } from './lib/utils'
@@ -69,20 +69,29 @@ function App() {
 
   const renderFooter = () => (
     <footer className="mt-16 pt-8 border-t border-border">
-      <div className="flex justify-center items-center space-x-6">
-        <button 
+      <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+        <button
           onClick={() => setCurrentPage('impressum')}
           className="text-muted-foreground hover:text-foreground underline text-sm"
         >
           Impressum
         </button>
-        <button 
+        <button
           onClick={() => setCurrentPage('datenschutz')}
           className="text-muted-foreground hover:text-foreground underline text-sm"
         >
           Datenschutz
         </button>
-        <a 
+        <a
+          href="https://caa.alpenverein.at/service/bettencheck.html?"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-foreground underline text-sm flex items-center gap-1"
+        >
+          Bettencheck
+          <ExternalLink className="h-3 w-3" />
+        </a>
+        <a
           href="https://github.com/danielkleinert/huettenpilot"
           target="_blank"
           rel="noopener noreferrer"
