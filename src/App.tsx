@@ -17,12 +17,18 @@ import { getStateFromUrl, updateUrlState } from './lib/urlState'
 import { createPlaceholderHut } from './lib/utils'
 import hutData from '@/hut_ids.json'
 
+const initialUrlState = getStateFromUrl()
+const initialHuts: Hut[] = initialUrlState.hutIds
+  .map(id => {
+    if (id < 0) return createPlaceholderHut()
+    return hutData.find(hut => hut.hutId === id)
+  })
+  .filter((hut): hut is Hut => hut !== undefined)
+
 function App() {
   const { t } = useTranslation()
-  const [selectedHuts, setSelectedHuts] = useState<Hut[]>([])
-  const [groupSize, setGroupSize] = useState<number>(2)
-  const [error, setError] = useState<string | null>(null)
-  const [isInitialized, setIsInitialized] = useState(false)
+  const [selectedHuts, setSelectedHuts] = useState<Hut[]>(initialHuts)
+  const [groupSize, setGroupSize] = useState<number>(initialUrlState.groupSize)
   const [currentPage, setCurrentPage] = useState<'main' | 'impressum' | 'datenschutz'>('main')
 
   const hutIds = useMemo(() => selectedHuts.map(hut => hut.hutId), [selectedHuts])
@@ -46,44 +52,16 @@ function App() {
     )
   }, [selectedHuts, availabilityData, groupSize, isLoading])
 
-  useEffect(() => {
-    if (selectedHuts.length === 0) {
-      setError(null)
-    } else if (groupSize < 1) {
-      setError(t('errors.groupSizeInvalid'))
-    } else if (isError && errors.length > 0) {
-      setError(t('errors.fetchFailed'))
-    } else {
-      setError(null)
-    }
+  const error = useMemo(() => {
+    if (selectedHuts.length === 0) return null
+    if (groupSize < 1) return t('errors.groupSizeInvalid')
+    if (isError && errors.length > 0) return t('errors.fetchFailed')
+    return null
   }, [selectedHuts.length, groupSize, isError, errors, t])
 
-  // Initialize state from URL on component mount
   useEffect(() => {
-    const urlState = getStateFromUrl()
-    
-    if (urlState.hutIds.length > 0) {
-      const huts = urlState.hutIds
-        .map(id => {
-          if (id < 0) {
-            return createPlaceholderHut()
-          }
-          return hutData.find(hut => hut.hutId === id)
-        })
-        .filter((hut): hut is Hut => hut !== undefined)
-      setSelectedHuts(huts)
-    }
-    
-    setGroupSize(urlState.groupSize)
-    setIsInitialized(true)
-  }, [])
-
-  // Update URL when state changes
-  useEffect(() => {
-    if (isInitialized) {
-      updateUrlState(groupSize, selectedHuts)
-    }
-  }, [groupSize, selectedHuts, isInitialized])
+    updateUrlState(groupSize, selectedHuts)
+  }, [groupSize, selectedHuts])
 
   const handleHutsChange = (huts: Hut[]) => {
     setSelectedHuts(huts.filter(Boolean))

@@ -58,9 +58,9 @@ const mockMarker = {
 }
 
 vi.mock('@maptiler/sdk', () => ({
-  Map: vi.fn(() => mockMap),
-  Marker: vi.fn(() => mockMarker),
-  LngLatBounds: vi.fn(() => ({ extend: vi.fn() })),
+  Map: vi.fn(function () { return mockMap }),
+  Marker: vi.fn(function () { return mockMarker }),
+  LngLatBounds: vi.fn(function () { return { extend: vi.fn() } }),
   MapStyle: { OUTDOOR: 'outdoor' },
   config: { apiKey: '' },
 }))

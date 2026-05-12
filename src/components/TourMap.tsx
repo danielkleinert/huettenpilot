@@ -17,8 +17,8 @@ export default function TourMap({ selectedHuts }: TourMapProps) {
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [controlContainer, setControlContainer] = useState<HTMLDivElement | null>(null)
 
-  const { map, popupHut, setPopupHut, isMapLoaded } = useMap(mapRef, popupRef)
-  const { fitViewToSelection } = useMapLayers(map, isMapLoaded, selectedHuts)
+  const { map, popupHut, setPopupHut } = useMap(mapRef, popupRef)
+  const { fitViewToSelection } = useMapLayers(map, selectedHuts)
 
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen)

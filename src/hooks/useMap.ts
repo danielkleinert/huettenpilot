@@ -5,18 +5,16 @@ import { MAPTILER_API_KEY, INITIAL_VIEW } from '@/lib/mapUtils'
 import type { Point } from 'geojson'
 
 export function useMap(mapContainer: React.RefObject<HTMLDivElement | null>, popupContainer: React.RefObject<HTMLDivElement | null>) {
-  const mapInstanceRef = useRef<maptilersdk.Map | null>(null)
   const popupMarkerRef = useRef<maptilersdk.Marker | null>(null)
+  const [map, setMap] = useState<maptilersdk.Map | null>(null)
   const [popupHut, setPopupHut] = useState<string | null>(null)
-  const [isMapLoaded, setIsMapLoaded] = useState(false)
 
   useEffect(() => {
     if (!mapContainer.current) return
-    if (mapInstanceRef.current) return
 
     maptilersdk.config.apiKey = MAPTILER_API_KEY
 
-    const map = new maptilersdk.Map({
+    const mapInstance = new maptilersdk.Map({
       container: mapContainer.current,
       style: '/styles/outdoor-custom.json',
       center: INITIAL_VIEW.center,
@@ -33,10 +31,8 @@ export function useMap(mapContainer: React.RefObject<HTMLDivElement | null>, pop
       fullscreenControl: false,
     })
 
-    mapInstanceRef.current = map
-
-    map.on('load', () => {
-      map.setSky({
+    mapInstance.on('load', () => {
+      mapInstance.setSky({
         'sky-color': '#a4cdf2',
         'horizon-color': '#dbe9f4',
         'fog-color': '#dbe9f4',
@@ -45,19 +41,17 @@ export function useMap(mapContainer: React.RefObject<HTMLDivElement | null>, pop
         'fog-ground-blend': 0.8,
         'atmosphere-blend': 0.8,
       })
-      setIsMapLoaded(true)
+      setMap(mapInstance)
     })
 
     return () => {
-      map.remove()
-      mapInstanceRef.current = null
+      mapInstance.remove()
       popupMarkerRef.current = null
-      setIsMapLoaded(false)
+      setMap(null)
     }
   }, [mapContainer])
 
   useEffect(() => {
-    const map = mapInstanceRef.current
     if (!map || !popupContainer.current) return
 
     if (!popupMarkerRef.current) {
@@ -95,26 +89,22 @@ export function useMap(mapContainer: React.RefObject<HTMLDivElement | null>, pop
     const onMouseEnter = () => { map.getCanvas().style.cursor = 'pointer' }
     const onMouseLeave = () => { map.getCanvas().style.cursor = '' }
 
-    if (isMapLoaded) {
-      map.on('click', onClick)
-      map.on('mouseenter', 'all-huts-layer', onMouseEnter)
-      map.on('mouseleave', 'all-huts-layer', onMouseLeave)
-      map.on('mouseenter', 'tour-huts-layer-symbol', onMouseEnter)
-      map.on('mouseleave', 'tour-huts-layer-symbol', onMouseLeave)
-    }
+    map.on('click', onClick)
+    map.on('mouseenter', 'all-huts-layer', onMouseEnter)
+    map.on('mouseleave', 'all-huts-layer', onMouseLeave)
+    map.on('mouseenter', 'tour-huts-layer-symbol', onMouseEnter)
+    map.on('mouseleave', 'tour-huts-layer-symbol', onMouseLeave)
 
     return () => {
-      if (map) {
-        map.off('click', onClick)
-        map.off('mouseenter', 'all-huts-layer', onMouseEnter)
-        map.off('mouseleave', 'all-huts-layer', onMouseLeave)
-        map.off('mouseenter', 'tour-huts-layer-symbol', onMouseEnter)
-        map.off('mouseleave', 'tour-huts-layer-symbol', onMouseLeave)
-      }
+      map.off('click', onClick)
+      map.off('mouseenter', 'all-huts-layer', onMouseEnter)
+      map.off('mouseleave', 'all-huts-layer', onMouseLeave)
+      map.off('mouseenter', 'tour-huts-layer-symbol', onMouseEnter)
+      map.off('mouseleave', 'tour-huts-layer-symbol', onMouseLeave)
     }
 
-  }, [popupContainer, isMapLoaded])
+  }, [map, popupContainer])
 
 
-  return { map: mapInstanceRef.current, popupHut, setPopupHut, isMapLoaded }
+  return { map, popupHut, setPopupHut }
 }

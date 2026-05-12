@@ -4,11 +4,11 @@ import type { Hut } from '@/types'
 import { getAllHutsGeoJSON, getTourGeoJSON, INITIAL_VIEW } from '@/lib/mapUtils'
 import type { FeatureCollection } from 'geojson'
 
-export function useMapLayers(map: maptilersdk.Map | null, isMapLoaded: boolean, selectedHuts: Hut[]) {
+export function useMapLayers(map: maptilersdk.Map | null, selectedHuts: Hut[]) {
 
   // Effect to add sources and layers once
   useEffect(() => {
-    if (!map || !isMapLoaded) return
+    if (!map) return
 
     // All Huts Source
     if (!map.getSource('all-huts-source')) {
@@ -86,7 +86,7 @@ export function useMapLayers(map: maptilersdk.Map | null, isMapLoaded: boolean, 
       })
     }
 
-  }, [map, isMapLoaded])
+  }, [map])
 
   const fitViewToSelection = useCallback(() => {
     if (!map) return
@@ -110,7 +110,7 @@ export function useMapLayers(map: maptilersdk.Map | null, isMapLoaded: boolean, 
   }, [map, selectedHuts])
 
   useEffect(() => {
-    if (!map || !isMapLoaded) return
+    if (!map) return
 
 
     const source = map.getSource('tour-source') as maptilersdk.GeoJSONSource
@@ -119,7 +119,7 @@ export function useMapLayers(map: maptilersdk.Map | null, isMapLoaded: boolean, 
     }
 
     fitViewToSelection()
-  }, [map, isMapLoaded, selectedHuts, fitViewToSelection])
+  }, [map, selectedHuts, fitViewToSelection])
 
   return { fitViewToSelection }
 }
