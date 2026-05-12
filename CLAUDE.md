@@ -108,6 +108,18 @@ scripts/
 - **Language Detection**: Automatic browser language detection
 - **Legal Compliance**: German Impressum and Datenschutz pages with proper GDPR disclosures
 
+## Pre-Commit Requirements
+
+**MANDATORY: Before every commit, you MUST run all of the following and ensure they pass:**
+
+1. `yarn build` - TypeScript compilation and production build must succeed (catches type errors that Netlify will fail on)
+2. `yarn lint` - ESLint must report no errors
+3. `yarn test:run` - All tests must pass
+
+If any of these fail, fix the issue before committing. Do not commit code that has not been validated. The `/project:validate` slash command runs all three in sequence and is the preferred way to validate.
+
+This is non-negotiable: Netlify builds will fail on TypeScript errors, so `yarn build` MUST be run locally before every commit.
+
 ## Development Guidelines
 
 ### Code Style
