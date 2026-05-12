@@ -41,6 +41,7 @@ const mockMap = {
   setLayoutProperty: vi.fn(),
   setPaintProperty: vi.fn(),
   setTerrain: vi.fn(),
+  setSky: vi.fn(),
   getStyle: vi.fn(() => ({ layers: [] })),
   getCanvas: vi.fn(() => ({ style: {} })),
   queryRenderedFeatures: vi.fn(() => []),
