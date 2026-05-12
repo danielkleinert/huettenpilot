@@ -3,7 +3,7 @@
   command = "yarn test:run && yarn build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
 
 
 [[headers]]
