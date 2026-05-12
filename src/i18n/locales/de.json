@@ -24,6 +24,8 @@
     "noAvailabilityData": "Keine Verfügbarkeitsdaten",
     "availabilityUnknown": "Verfügbarkeit unbekannt",
     "noDateFound": "Keine Termine mit Verfügbarkeitsdaten gefunden.",
+    "previousMonth": "Vorheriger Monat",
+    "nextMonth": "Nächster Monat",
     "legend": {
       "available": "Verfügbar (5+ Betten Reserve)",
       "limited": "Begrenzt (weniger als 5 Betten Reserve)",

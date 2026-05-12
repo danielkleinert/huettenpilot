@@ -24,6 +24,8 @@
     "noAvailabilityData": "Aucune donnée de disponibilité",
     "availabilityUnknown": "Disponibilité inconnue",
     "noDateFound": "Aucune date avec des données de disponibilité trouvée.",
+    "previousMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
     "legend": {
       "available": "Disponible (5+ lits de réserve)",
       "limited": "Limité (moins de 5 lits de réserve)",

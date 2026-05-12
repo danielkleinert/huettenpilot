@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import type { TourOption } from '@/types'
 import { CalendarMonth } from './CalendarMonth'
 import { DatePopup } from './DatePopup'
 import { CalendarLegend } from './CalendarLegend'
+import { Button } from './ui/button'
 import { useCalendarUtils } from '@/hooks/useCalendarUtils'
 
 interface TourCalendarProps {
@@ -15,6 +17,7 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
   const { t } = useTranslation()
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
+  const [monthOffset, setMonthOffset] = useState(0)
   const { getTourOptionForDay } = useCalendarUtils(tourDates)
 
   useEffect(() => {
@@ -32,7 +35,7 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
   const today = new Date()
   const months = []
   for (let i = 0; i < 4; i++) {
-    const month = new Date(today.getFullYear(), today.getMonth() + i, 1)
+    const month = new Date(today.getFullYear(), today.getMonth() + monthOffset + i, 1)
     months.push(month)
   }
 
@@ -46,8 +49,29 @@ export function TourCalendar({ tourDates, groupSize }: TourCalendarProps) {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-xl font-semibold">{t('calendar.title')}</h2>
-      
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold">{t('calendar.title')}</h2>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMonthOffset(o => Math.max(0, o - 1))}
+            disabled={monthOffset === 0}
+            aria-label={t('calendar.previousMonth')}
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMonthOffset(o => o + 1)}
+            aria-label={t('calendar.nextMonth')}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </Button>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {months.map((month, monthIndex) => (
           <CalendarMonth

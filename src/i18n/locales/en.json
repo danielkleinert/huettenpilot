@@ -24,6 +24,8 @@
     "noAvailabilityData": "No availability data",
     "availabilityUnknown": "Availability unknown",
     "noDateFound": "No dates with availability data found.",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
     "legend": {
       "available": "Available (5+ beds to spare)",
       "limited": "Limited (less than 5 beds to spare)",
