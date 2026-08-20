@@ -56,6 +56,16 @@ src/
 ├── index.css            # Tailwind CSS imports
 └── hut_ids.json         # Static data with 400+ mountain hut definitions and OSM coordinates
 
+netlify/
+├── edge-functions/
+│   ├── api.ts           # Proxies /api/* to hut-reservation.org
+│   └── mcp.ts           # MCP endpoint at /mcp
+└── mcp/
+    ├── protocol.ts      # Streamable HTTP + JSON-RPC dispatch
+    ├── tools.ts         # Tool definitions, schemas and argument guards
+    ├── huts.ts          # Name search and proximity over hut_ids.json
+    └── upstream.ts      # hut-reservation.org fetching, caching, trimming
+
 scripts/
 ├── fetch-hut-reservation-info.ts # Fetches hut info from hut-reservation.org API to hut_reservation_info.json
 ├── fetch-all-osm-huts.ts # Fetches all Alpine huts from OpenStreetMap
@@ -87,6 +97,20 @@ scripts/
 ### API Integration
 - Netlify Edge Function at `netlify/edge-functions/api.ts` proxies `/api/*` to `https://www.hut-reservation.org`
 - Same-origin policy enforced (no CORS headers) for security
+### MCP Server
+- Netlify Edge Function at `netlify/edge-functions/mcp.ts` serves a stateless MCP endpoint at `POST /mcp`
+- Hand-written Streamable HTTP + JSON-RPC in `netlify/mcp/protocol.ts` - **no MCP SDK dependency**, because a tools-only read-only server needs no sessions, streaming, resources or auth
+- Five read-only tools defined in `netlify/mcp/tools.ts`: `search_huts`, `find_huts_near`, `get_hut_details`, `get_hut_availability`, `create_tour_link`
+- Caching is split by endpoint on purpose:
+  - `hutInfo` is fetched through **our own `/api/*` proxy** on the origin of the incoming request, because that proxy sets `Netlify-CDN-Cache-Control` for 24h - the CDN cache is shared across edge isolates and regions, unlike the in-process `Map`
+  - `getHutAvailability` goes **straight to hut-reservation.org**, because the proxy marks it `no-cache` and a CDN hop would buy nothing
+- hut-reservation.org sends `no-cache, no-store, must-revalidate` on every endpoint; both the proxy and the MCP server deliberately override that with their own TTLs
+- The in-process cache stores the **in-flight promise**, not the resolved value, so concurrent requests for the same hut collapse into one upstream fetch. Failed requests are evicted so a 5xx is never cached
+- Edge functions are capped at **50 ms CPU per request** and Deno Deploy forbids `eval`/`new Function` - keep the endpoint dependency-free and avoid per-request schema compilation
+- Deno requires explicit file extensions on relative imports (`./tools.ts`) and `with { type: 'json' }` on JSON imports; `npx netlify build` catches violations that `yarn build` does not
+- Tool argument errors return JSON-RPC `-32602` with an actionable message; upstream failures return `isError: true` in the result
+- Type-checked via `tsconfig.server.json`, which covers all of `netlify/`
+
 - React Query handles caching (5min for availability, 24h for hut info), retries, and error states
 - Clean separation: `hutApi.ts` only handles HTTP, React Query handles caching
 

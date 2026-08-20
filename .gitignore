@@ -35,3 +35,6 @@ osm_alpine_huts.json
 
 # Local Claude instructions
 CLAUDE.local.md
+
+# Generated locally by the Netlify edge bundler
+deno.lock

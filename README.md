@@ -11,6 +11,29 @@ Ever tried booking a multi-day Alpine hut tour during peak season? It's like pla
 
 **Data Source**: All availability data and bookings are powered exclusively by [`hut-reservation.org`](https://hut-reservation.org).
 
+## MCP server
+
+Hüttenplan also speaks [MCP](https://modelcontextprotocol.io), so an LLM can plan a tour
+against live hut data. Connect it with:
+
+```bash
+claude mcp add --transport http huettenpilot https://huettenpilot.netlify.app/mcp
+```
+
+It exposes five read-only tools:
+
+| Tool | Purpose |
+|---|---|
+| `search_huts` | Find huts by name and get their `hutId` |
+| `find_huts_near` | List huts around a hut or coordinate, nearest first |
+| `get_hut_details` | Altitude, warden, phone, bed categories, booking link |
+| `get_hut_availability` | Free beds per night, up to 90 days per call |
+| `create_tour_link` | Build a Hüttenplan URL that opens the planned tour |
+
+Availability reaches about 500 days ahead — further than the 4-month calendar in the web
+app. There is no booking, trail routing, or weather data: distances are straight-line, and
+reservations still happen on [`hut-reservation.org`](https://hut-reservation.org).
+
 ## Background
 
 Born from the pure frustration of manually checking dozens of hut websites for that perfect week in July, this project became an experiment in AI-driven development. How far could Claude Code take us? Turns out, pretty far - from concept to a fully functional app with 400+ huts, real-time availability, and multi-language support.
